@@ -1,0 +1,9 @@
+/* css document */
+.main-header {min-height: 100px;}
+.nav {
+	margin: 0 auto; 
+	-webkit-transition: margin 2s; /* Safari */
+    transition: margin 2s;
+}
+.md-subheader-inner {transition: all .5s ease-in-out;}
+.nav.slide-nav .md-subheader-inner {margin-left: -35%;}
