@@ -18,9 +18,10 @@
 					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
 						<md-icon style="color: {{base_hue_darkest.value}}">face</md-icon>
 					</md-button>
-					<md-button class="md-icon-button" aria-label="More">
+					<!-- <md-button class="md-icon-button" aria-label="More">
 						<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
-					</md-button>
+					</md-button> -->
+					<md-button style="color: {{base_hue_darkest.value}}" ng-repeat="nav in navigation">{{nav.name}}</md-button>
 				</div>
 			</div>
 			
