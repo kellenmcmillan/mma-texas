@@ -27,8 +27,11 @@
 		</md-subheader>
 		<!-- sticky header -->
 
-		<div style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 200px; z-index: 2">
-			<p style="color: {{base_hue_lightest.value}}; font-size: 12px;">Click Here To Connect With Us!</p>
+		<div layout="row" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 2">
+			<p style="color: {{base_hue_lightest.value}}; font-size: 14px;">Click Here To Connect With Us!</p><span flex></span>
+			<md-button class="md-icon-button" aria-label="More">
+				<md-icon style="color: {{base_hue_lightest.value}}">close</md-icon>
+			</md-button>
 		</div>
 		<md-button style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
 			<md-icon style="color: {{base_hue_lightest.value}}">mail</md-icon>
