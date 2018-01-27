@@ -9,7 +9,7 @@
 .slide-hide-override {display: none!important;}
 .video-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 64px; z-index: 2;
-  background: linear-gradient(90deg, #757575 20px, transparent 1%) center, linear-gradient(#F5F5F5 20px, transparent 1%) center, #9192FB;
+  background: linear-gradient(90deg, transparent 20px, transparent 1%) center, linear-gradient(transparent 20px, transparent 1%) center, #e0e0e0;
   background-size: 22px 22px;
 }
 #slideshow-overlay {
