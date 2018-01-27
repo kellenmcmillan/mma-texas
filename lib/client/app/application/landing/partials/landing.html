@@ -1,7 +1,7 @@
 <div ng-include src="'application/global/style.html'"></div>
 <md-content class="page" style="height: {{window_height}}px">
 	
-	<div class="main-header" layout="row" layout-align="start center" flex>
+	<!-- <div class="main-header" layout="row" layout-align="start center" flex>
 		<div class="md-padding">
 			<div style="margin-left: 100px;">
 				<img ng-src="media/anchorandsage.PNG" style="max-width: 180px; width: 100%; height: auto;">
@@ -22,13 +22,13 @@
 				<md-icon style="color: #BDBDBD">local_grocery_store</md-icon>
 			</md-button>
 		</div>
-	</div>
+	</div> -->
 
-	<section class="md-accent" ng-cloak>
+	<section ng-cloak>
 
 		<!-- sticky header -->
-		<md-subheader md-colors="::{background: 'primary'}" layout-align="center center" class="nav" ng-class="{'slide-nav': slide_nav == true}" layout="row" layout-align=" center" layout flex>
-			<md-button md-colors="::{color: 'background'}" ng-repeat="nav in navigation">{{nav.name}}</md-button>
+		<md-subheader layout-align="center center" class="header" layout="row" layout-align=" center" layout flex>
+			<md-button style="color: {{base_hue_darkest.value}}" ng-repeat="nav in navigation">{{nav.name}}</md-button>
 		</md-subheader>
 		<!-- sticky header -->
 
