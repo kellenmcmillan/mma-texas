@@ -15,10 +15,10 @@
 				</div>
 
 				<div flex-gt-sm="33" layout-align="end center" layout="row">
-					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
+					<md-button style="background-color: {{primary_hue_normal.value}};" class="md-fab md-mini" aria-label="Login" ng-click="showLoginDialog($event)">
 						<md-icon style="color: {{base_hue_darkest.value}}">face</md-icon>
 					</md-button>
-					<md-button class="md-icon-button" aria-label="More">
+					<md-button style="background-color: {{primary_hue_normal.value}};" class="md-fab md-mini" aria-label="More">
 						<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
 					</md-button>
 				</div>
@@ -27,6 +27,9 @@
 		</md-subheader>
 		<!-- sticky header -->
 
+		<md-button style="background-color: {{primary_hue_normal.value}}; position: absolute; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
+			<md-icon style="color: {{base_hue_lightest.value}}">mail</md-icon>
+		</md-button>
 
 		<!-- Slideshow -->
 		<div ng-include style="margin-top: -80px;" src="'application/landing/partials/slideshow.html'"></div>
