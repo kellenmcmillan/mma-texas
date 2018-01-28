@@ -16,10 +16,10 @@
 
 				<div flex-gt-sm="33" layout-align="end center" layout="row">
 					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
-						<md-icon style="color: {{base_hue_lightest.value}}">person</md-icon>
+						<md-icon style="color: {{base_hue_darkest.value}}">person</md-icon>
 					</md-button>
 					<md-button class="md-icon-button" aria-label="More">
-						<md-icon style="color: {{base_hue_lightest.value}}">menu</md-icon>
+						<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
 					</md-button>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 				<md-icon style="color: {{base_hue_lightest.value}}">close</md-icon>
 			</md-button>
 		</div>
-		<md-button style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
+		<md-button ng-click="show_notification = true" style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
 			<md-icon style="color: {{base_hue_lightest.value}}">mail</md-icon>
 		</md-button>
 		<!-- messaging notification -->
