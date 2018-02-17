@@ -4,7 +4,7 @@
 	<section ng-cloak>
 
 		<!-- sticky header -->
-		<md-subheader class="md-whiteframe-4dp header" layout-align="center center" layout="row" layout flex>
+		<md-subheader class="md-whiteframe-4dp header" layout-align="center center" layout="row" layout flex style="z-index: 3">
 
 			<div layout-align="center center" layout="row" layout flex>
 
@@ -44,14 +44,14 @@
 		<!-- Slideshow -->
 
 		<div layout="row" layout-align="center center">
-			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: {{primary_hue_normal.value}}; width: 60%; margin-top: -32px;">
+			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: {{primary_hue_normal.value}}; width: 60%; margin-top: -64px; z-index: 2">
 				<div flex="33" layout="column" layout-align="center center" style="background-color: {{primary_hue_normal.value}}; height: 100%">
-					<h1 style="color: {{base_hue_lightest.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
-					<p style="color: {{base_hue_lightest.value}};">MMA offers a “one-stop shop” by integrating Civil Engineering with Planning, Zoning, Surveying, Landscape Architecture and Construction Management. This eliminates common project obstacles, communication problems, delays &amp; rework.</p>
+					<h1 style="color: {{base_hue_lightest.value}}; font-size: 24px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
+					<p style="color: {{base_hue_lightest.value}}; margin: 16px; line-height: 36px;">MMA offers a “one-stop shop” by integrating Civil Engineering with Planning, Zoning, Surveying, Landscape Architecture and Construction Management.</p>
 				</div>
 				<div flex="66" layout="row" layout-align="center center" style="background-color: #fafafa;">
 					<div layout-wrap layout="row" layout-align="start center">
-						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="50">
+						<div layout-padding ng-repeat="items in [1,2,3,4]" flex="50">
 							<md-card style="background: #fafafa; height: 100%;">
 								<md-card-header>
 									<md-card-header-text>
@@ -61,13 +61,6 @@
 								<md-card-content>
 									<p>MMA's Engineering team utilizes their extensive land development experience.</p>
 								</md-card-content>
-								<md-card-footer>
-									<md-card-actions layout="row" layout-align="start center">
-										<md-button class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">
-		                    				<md-icon style="color: {{base_hue_lightest.value}}">keyboard_arrow_right</md-icon>Learn More&nbsp;&nbsp;
-		                    			</md-button>
-									</md-card-actions>
-								</md-card-footer>
 							</md-card>
 						</div>
 					</div>
