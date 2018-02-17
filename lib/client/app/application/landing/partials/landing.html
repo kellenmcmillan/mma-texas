@@ -44,11 +44,11 @@
 		<!-- Slideshow -->
 
 		<div layout="row" layout-align="center center">
-			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: #fafafa; width: 80%;">
-				<div layout="column" layout-align="center center" style="background-color: {{primary_hue_normal.value}};">
+			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: #fafafa; width: 60%;">
+				<div flex="33" layout="column" layout-align="center center" style="background-color: {{primary_hue_normal.value}}; height: 100%">
 					<h1 style="color: {{base_hue_lightest.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
 				</div>
-				<div layout="row" layout-align="center center" style="margin-top: 32px; margin-bottom: 32px;">
+				<div flex="66" layout="row" layout-align="center center" style="margin-top: 32px; margin-bottom: 32px;">
 					<div layout-wrap layout="row" layout-align="start center">
 						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="40">
 							<md-card style="background: #fafafa; height: 100%;">
