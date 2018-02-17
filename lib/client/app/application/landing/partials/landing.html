@@ -43,18 +43,19 @@
 		<div ng-include src="'application/landing/partials/slideshow.html'"></div>
 		<!-- Slideshow -->
 		
-		<div layout="row" layout-align="center center" style="margin-top: 16px; margin-bottom: 16px;">
+		<div layout="row" layout-align="center center" style="margin-top: 32px; margin-bottom: 32px;">
 			<div layout-wrap layout="row" layout-align="start center">
 				<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="33">
-					<md-card style="background: #fafafa; height: 100%; border: 2px solid {{base_hue_darker.value}};">
+					<md-card style="background: #fafafa; height: 100%;">
 						<md-card-header>
 							<md-card-header-text>
-								<span class="md-title">Title</span>
-								<span class="md-subhead">Sub header</span>
+								<span class="md-title" style="font-size: 24px;">GIS</span>
+								<span class="md-subhead">
+									<h1 style="color: {{primary_hue_normal.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
+								</span>
 							</md-card-header-text>
 						</md-card-header>
 						<md-card-content>
-							<h1 style="color: {{primary_hue_normal.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
 							<p>MMA's Engineering team utilizes their extensive land development experience to help our clients secure all the entitlements required for a successful development in timely and efficient manner. </p>
 						</md-card-content>
 						<md-card-footer>
