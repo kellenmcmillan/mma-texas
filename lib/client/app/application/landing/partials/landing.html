@@ -44,24 +44,24 @@
 		<!-- Slideshow -->
 
 		<div layout="row" layout-align="center center">
-			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: #fafafa; width: 60%;">
+			<md-card layout="row" layout-align="center center" class="md-whiteframe-4dp" style="background: {{primary_hue_normal.value}}; width: 60%;">
 				<div flex="33" layout="column" layout-align="center center" style="background-color: {{primary_hue_normal.value}}; height: 100%">
 					<h1 style="color: {{base_hue_lightest.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
 				</div>
-				<div flex="66" layout="row" layout-align="center center" style="margin-top: 32px; margin-bottom: 32px;">
+				<div flex="66" layout="row" layout-align="center center" style="background-color: #fafafa; margin-top: 32px; margin-bottom: 32px;">
 					<div layout-wrap layout="row" layout-align="start center">
-						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="40">
+						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="50">
 							<md-card style="background: #fafafa; height: 100%;">
 								<md-card-header>
 									<md-card-header-text>
 										<span class="md-title" style="font-size: 24px;">GIS</span>
 										<span class="md-subhead">
-											<h1 style="color: {{primary_hue_normal.value}}; font-size: 32px; line-height: 64px; margin: 0;">Some Sample Text Here</h1>
+											<h1 style="color: {{primary_hue_normal.value}}; font-size: 32px; line-height: 48px; margin: 0;">Some Sample Text Here</h1>
 										</span>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p>MMA's Engineering team utilizes their extensive land development experience to help our clients secure all the entitlements required for a successful development in timely and efficient manner. </p>
+									<p>MMA's Engineering team utilizes their extensive land development experience. </p>
 								</md-card-content>
 								<md-card-footer>
 									<md-card-actions layout="row" layout-align="start center">
