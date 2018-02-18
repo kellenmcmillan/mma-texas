@@ -107,22 +107,40 @@
 
 		<!--  -->
 		<style>
+			md-card.activeGalleryCard {
+				-webkit-animation: colorFill 6s ease-in-out forwards;
+			    animation: colorFill 6s ease-in-out forwards;
+			    animation-timing-function: ease-in-out; 
+			    -webkit-animation-timing-function: ease-in-out;
+			}
 			img.hover {
-			    -webkit-animation: fadeinout 6s ease-in-out forwards;
+			    -webkit-animation: hoverScale 6s ease-in-out forwards;
 			    animation: hoverScale 6s ease-in-out forwards;
 			    animation-timing-function: ease-in-out; 
 			    -webkit-animation-timing-function: ease-in-out;
 			}
 			@-webkit-keyframes hoverScale {
-			  0% {opacity: 0;}
-			  100% {opacity: 0; transform: scale(1.2);}
+				0% {opacity: 0;}
+				100% {opacity: 0; transform: scale(1.2);}
+			}
+			@keyframes hoverScale {
+				0% {opacity: 0;}
+				100% {opacity: 0; transform: scale(1.2);}
+			}
+			@-webkit-keyframes colorFill {
+				0% {background-color: transparent;}
+				100% {background-color: {{primary_hue_normal.value}};}
+			}
+			@keyframes colorFill {
+				0% {background-color: transparent;}
+				100% {background-color: {{primary_hue_normal.value}};}
 			}
 		</style>
 		<div layout="row" layout-align="center center" ng-init="hovered = false">
-			<md-card ng-repeat="item in [1,2,3,4]" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" layout="column" layout-align="center center" flex="25" style="margin: 0; min-height: 400px; overflow: hidden; background-color: {{primary_hue_normal.value}}; position: relative; text-align: center;">
-				<h1 style="z-index: 2; color: {{base_hue_lightest.value}};">MEDICAL OFFICES</h1>
-				<p style="z-index: 2; color: {{base_hue_lightest.value}};">City of Arlington, TX</p>
-				<md-button class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; z-index: 2;">
+			<md-card ng-class="{'activeGalleryCard': hovered == true}" ng-repeat="item in [1,2,3,4]" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" layout="column" layout-align="center center" flex="25" style="margin: 0; min-height: 400px; overflow: hidden; position: relative; text-align: center;">
+				<h1 ng-show="hovered" style="z-index: 2; color: {{base_hue_lightest.value}};">MEDICAL OFFICES</h1>
+				<p ng-show="hovered" style="z-index: 2; color: {{base_hue_lightest.value}};">City of Arlington, TX</p>
+				<md-button ng-show="hovered" class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; z-index: 2;">
 					<md-icon style="color: {{primary_hue_normal.value}};">keyboard_arrow_right</md-icon>View Gallery&nbsp;&nbsp;
 				</md-button>
 				<img ng-class="{'hover': hovered == true}" ng-src="media/hedgcoxe-medical-office(3).jpg" class="md-card-image" alt="Washed Out" style="position: absolute; top: 0; left: 0; opacity: .3; min-height: 100%; min-width: 100%; z-index: 1;">
