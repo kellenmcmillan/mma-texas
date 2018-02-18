@@ -13,7 +13,10 @@
 				</div>
 
 				<div flex-gt-sm="66" layout-align="end center" layout="row">
-					<md-button md-colors="::{color: 'background'}" ng-repeat="nav in navigation">{{nav.name}}</md-button>
+					<md-button style="color: {{base_hue_darkest.value}};" ng-repeat="nav in navigation">
+					<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+					{{nav.name}}
+					</md-button>
 					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
 						<md-icon style="color: {{base_hue_darkest.value}}">person</md-icon>
 					</md-button>
