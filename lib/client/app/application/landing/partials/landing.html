@@ -28,7 +28,7 @@
 		<!-- sticky header -->
 
 		<!-- messaging notification -->
-		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 4">
+		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 2">
 			<p style="color: {{base_hue_lightest.value}}; font-size: 14px; padding: 0 0 0 16px;">Click Here To Connect With Us!</p><span flex></span>
 			<md-button class="md-icon-button" ng-click="show_notification = false" aria-label="More">
 				<md-icon style="color: {{base_hue_lightest.value}}">close</md-icon>
@@ -81,21 +81,23 @@
 		<!--  -->
 		<div layout="row" layout-align="center center">
 			<md-card layout="row" layout-align="center center" style="background: {{primary_hue_normal.value}}; width: 60%; z-index: 2; overflow: hidden; position: relative;">
-				<div flex="100" layout="row" layout-align="start center" style="background-color: #fafafa; z-index: 2">
-					<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="33">
-						<div layout-wrap layout="row" layout-align="center center">
-							<div flex layout="column" layout-align="center center">
-								<md-card style="background: #fafafa; height: 100%;">
-									<md-card-header>
-										<md-card-header-text>
-											<span class="md-title" style="font-size: 24px; font-weight: bold;">GIS</span>
-											<h1 style="color: {{base_hue_darkest.value}}; font-size: 24px; line-height: 64px; margin: 0; z-index: 2">Some Sample Text Here</h1>
-										</md-card-header-text>
-									</md-card-header>
-									<md-card-content>
-										<p>MMA's Engineering team utilizes their extensive land development experience.</p>
-									</md-card-content>
-								</md-card>
+				<div flex="100" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
+					<div layout-wrap layout="row" layout-align="start center">
+						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="33">
+							<div layout-wrap layout="row" layout-align="center center">
+								<div flex layout="column" layout-align="center center">
+									<md-card style="background: #fafafa; height: 100%;">
+										<md-card-header>
+											<md-card-header-text>
+												<span class="md-title" style="font-size: 24px; font-weight: bold;">GIS</span>
+												<h1 style="color: {{base_hue_darkest.value}}; font-size: 24px; line-height: 64px; margin: 0; z-index: 2">Some Sample Text Here</h1>
+											</md-card-header-text>
+										</md-card-header>
+										<md-card-content>
+											<p>MMA's Engineering team utilizes their extensive land development experience.</p>
+										</md-card-content>
+									</md-card>
+								</div>
 							</div>
 						</div>
 					</div>
