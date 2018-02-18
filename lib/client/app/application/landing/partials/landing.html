@@ -8,26 +8,20 @@
 
 			<div layout-align="center center" layout="row" layout flex>
 
-				<div flex-gt-sm="33"></div>
-
 				<div flex-gt-sm="33" layout-align="center center" layout="row">
 					<img src="media/logo.png" style="max-height: 48px;">
 				</div>
 
-				<div flex-gt-sm="33" layout-align="end center" layout="row">
+				<div flex-gt-sm="66" layout-align="end center" layout="row">
+					<md-button md-colors="::{color: 'background'}" ng-repeat="nav in navigation">{{nav.name}}</md-button>
 					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
 						<md-icon style="color: {{base_hue_darkest.value}}">person</md-icon>
-					</md-button>
-					<md-button class="md-icon-button" aria-label="More" ng-click="sideNavToggle()">
-						<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
 					</md-button>
 				</div>
 			</div>
 			
 		</md-subheader>
 		<!-- sticky header -->
-
-		
 
 
 		<!-- messaging notification -->
@@ -117,9 +111,9 @@
 				<img ng-src="media/hedgcoxe-medical-office(3).jpg" class="md-card-image" alt="Washed Out">
 			</md-card>
 			<md-card layout="column" layout-align="center center" style="background: {{primary_hue_normal.value}}; min-height: 400px; margin: 0" flex="50">
-				<md-card-content>
-				<h1 style="text-align: center;">Medical Offices</h1>
-				<p style="text-align: center;">Here's the gallery description</p>
+				<md-card-content style="text-align: center;">
+				<h1>Medical Offices</h1>
+				<p>Here's the gallery description</p>
 				<md-button class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">
 					<md-icon style="color: {{base_hue_lightest.value}}">keyboard_arrow_right</md-icon>View Gallery&nbsp;&nbsp;
 				</md-button>
