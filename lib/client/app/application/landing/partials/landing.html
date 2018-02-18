@@ -18,7 +18,7 @@
 					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
 						<md-icon style="color: {{base_hue_darkest.value}}">person</md-icon>
 					</md-button>
-					<md-button class="md-icon-button" aria-label="More">
+					<md-button class="md-icon-button" aria-label="More" ng-click="sideNavToggle()">
 						<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
 					</md-button>
 				</div>
@@ -126,10 +126,10 @@
 
 		<!--  -->
 		<div layout="row" layout-align="center center">
-			<md-card layout="column" layout-align="center center" flex="50">
+			<md-card layout="column" layout-align="center center" flex="50" style="margin: 0; max-height: 300px">
 				<img ng-src="media/hedgcoxe-medical-office(3).jpg" class="md-card-image" alt="Washed Out">
 			</md-card>
-			<md-card layout="column" layout-align="center center" style="background: {{primary_hue_normal.value}};" flex="50">
+			<md-card layout="column" layout-align="center center" style="background: {{primary_hue_normal.value}}; min-height: 300px; margin: 0" flex="50">
 				<md-card-content>
 				<h1>Medical Offices</h1>
 				<p>Here's the gallery description</p>
@@ -142,7 +142,7 @@
 		<!--  -->
 
 		<!--  -->
-		<div layout="row" layout-align="center center" style="padding-bottom: 64px;">
+		<div layout="row" layout-align="center center" style="padding-top: 64px; padding-bottom: 64px;">
 			<md-card layout="column" layout-align="center center" style="width: 80%; z-index: 2; overflow: hidden; position: relative; background-color: {{base_hue_lightest.value}};">
 				<h1 style="color: {{base_hue_darkest.value}}; font-size: 32px; line-height: 64px; margin: 0; font-weight: bold;">HOW WE SOLVE YOUR PROBLEMS</h1>
 				<div flex="100" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
