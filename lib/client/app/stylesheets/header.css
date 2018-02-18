@@ -1,5 +1,6 @@
 /* css document */
 .main-header {min-height: 100px;}
+.header {z-index: 4!important;}
 .nav {
 	margin: 0 auto; 
 	-webkit-transition: margin 2s; /* Safari */
