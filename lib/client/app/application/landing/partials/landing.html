@@ -17,9 +17,6 @@
 					<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 					{{nav.name}}
 					</md-button>
-					<md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
-						<md-icon style="color: {{base_hue_darkest.value}}">person</md-icon>
-					</md-button>
 				</div>
 			</div>
 			
@@ -110,8 +107,15 @@
 
 		<!--  -->
 		<div layout="row" layout-align="center center">
-			<md-card layout="column" layout-align="center center" flex="50" style="margin: 0; max-height: 400px; overflow: hidden">
-				<img ng-src="media/hedgcoxe-medical-office(3).jpg" class="md-card-image" alt="Washed Out">
+			<md-card layout="column" layout-align="center center" flex="50" style="margin: 0; max-height: 400px; overflow: hidden; background-color: {{primary_hue_normal.value}};">
+				<md-card-content style="text-align: center;">
+				<h1 style="z-index: 2;">Medical Offices</h1>
+				<p style="z-index: 2;">Here's the gallery description</p>
+				<md-button class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; z-index: 2;">
+					<md-icon style="color: {{base_hue_lightest.value}};">keyboard_arrow_right</md-icon>View Gallery&nbsp;&nbsp;
+				</md-button>
+				<img ng-src="media/hedgcoxe-medical-office(3).jpg" class="md-card-image" alt="Washed Out" style="position: absolute; top: 0; left: 0; opacity: .3; min-height: 100%; min-width: 100%; z-index: 1;">
+				</md-card-content>
 			</md-card>
 			<md-card layout="column" layout-align="center center" style="background: {{primary_hue_normal.value}}; min-height: 400px; margin: 0" flex="50">
 				<md-card-content style="text-align: center;">
