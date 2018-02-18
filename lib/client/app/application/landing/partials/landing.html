@@ -80,15 +80,12 @@
 
 		<!--  -->
 		<div layout="row" layout-align="center center">
-			<md-card layout="row" layout-align="center center" class="md-whiteframe-8dp" style="background: {{primary_hue_normal.value}}; width: 60%; z-index: 2; overflow: hidden; position: relative;">
-				<div flex="100" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
+			<md-card layout="row" layout-align="center center" style="background: {{primary_hue_normal.value}}; width: 60%; z-index: 2; overflow: hidden; position: relative;">
+				<div flex="100" layout="row" layout-align="start center" style="background-color: #fafafa; z-index: 2">
 					<div layout-wrap layout="row" layout-align="center center">
 						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="33">
 							<div layout-wrap layout="row" layout-align="center center">
-								<div flex="33" layout="column" layout-align="center center">
-									<md-icon style="color: {{primary_hue_normal.value}}; font-size: 48px;">slow_motion_video</md-icon>
-								</div>
-								<div flex="66" layout="column" layout-align="center center">
+								<div flex layout="column" layout-align="center center">
 									<md-card style="background: #fafafa; height: 100%;">
 										<md-card-header>
 											<md-card-header-text>
