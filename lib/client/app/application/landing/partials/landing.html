@@ -28,7 +28,7 @@
 		<!-- sticky header -->
 
 		<!-- messaging notification -->
-		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 2">
+		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
 			<p style="color: {{base_hue_lightest.value}}; font-size: 14px; padding: 0 0 0 16px;">Click Here To Connect With Us!</p><span flex></span>
 			<md-button class="md-icon-button" ng-click="show_notification = false" aria-label="More">
 				<md-icon style="color: {{base_hue_lightest.value}}">close</md-icon>
@@ -79,7 +79,7 @@
 		<!--  -->
 
 		<!--  -->
-		<div layout="row" layout-align="center center">
+		<div layout="row" layout-align="center center" style="margin-top: 32px; margin-bottom: 32px;">
 			<md-card layout="row" layout-align="center center" style="background: {{primary_hue_normal.value}}; width: 60%; z-index: 2; overflow: hidden; position: relative;">
 				<div flex="100" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
 					<div layout-wrap layout="row" layout-align="start center">
