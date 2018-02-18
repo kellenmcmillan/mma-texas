@@ -42,9 +42,22 @@
 
 
 
-
+    
 	<body ng-controller="colorController">
+        <!-- Side Nav -->
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">Sidenav Right</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-button ng-click="sideNavToggle()">
+                Close Sidenav Right
+                </md-button>
+            </md-content>
+
+        </md-sidenav>
+        <!-- Side Nav -->
 
 		<!-- views -->
         <div ng-view></div>
