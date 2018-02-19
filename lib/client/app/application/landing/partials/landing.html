@@ -307,9 +307,9 @@
 
 		<!--  -->
 		<div layout="row" layout-align="center center">
-			<div flex="100" style="background-color: #F5F5F5; z-index: 2; min-height: 80px;">
-			</div>
-			<md-card layout="row" layout-align="center center" class="md-whiteframe-16dp" style="background: {{base_hue_lightest.value}}; width: 80%; margin-bottom: -64px; position: relative;">
+			<md-card layout-wrap layout="row" layout-align="center center" class="md-whiteframe-16dp" style="background: {{base_hue_lightest.value}}; width: 80%; margin-bottom: -64px; position: relative;">
+				<div style="background-color: #F5F5F5; z-index: 2; min-height: 80px; position: absolute; top: 0; left: 0; width: 100%;">
+				</div>
 				<div flex="33" layout="column" layout-align="center center" style="background-color: {{primary_hue_normal.value}}; height: 100%; min-height: 600px">
 				</div>
 				<div flex="66" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
