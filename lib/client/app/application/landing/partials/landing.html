@@ -13,19 +13,24 @@
 				</div>
 
 				<div flex-gt-sm="66" layout-align="end center" layout="row">
-					<md-button style="color: {{base_hue_darkest.value}};" ng-repeat="nav in navigation">
-					<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+					<md-button ng-click="$mdMenu.open($event)" style="color: {{base_hue_darkest.value}};" ng-repeat="nav in navigation">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 					{{nav.name}}
 					</md-button>
+					<md-menu md-position-mode="target-right target">
+						<md-menu-content width="6">
+							<md-menu-item ng-repeat="item in [1, 2, 3]">
+								<md-button ng-click="ctrl.announceClick($index)"> 
+									<span md-menu-align-target>Option</span> {{item}} 
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
 				</div>
 			</div>
 			
 		</md-subheader>
 		<!-- sticky header -->
-		<div layout="column" layout-align="start center" style="position: fixed: top: 80px; left: 0; z-index: 4; min-height: 200px; min-width: 100px; background-color: {{primary_hue_normal.value}};">
-
-		</div>
-
 
 		<!-- messaging notification -->
 		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
