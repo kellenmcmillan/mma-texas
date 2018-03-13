@@ -1,7 +1,6 @@
 <style>
 	md-menu-item {min-height: 48px;}
 	.border-left {border-left: 1px solid #e0e0e0;}
-	.border-right {border-right: 1px solid #e0e0e0;}
 </style>
 <div ng-include src="'application/global/style.html'"></div>
 <md-content class="page" style="height: {{window_height}}px">
@@ -137,8 +136,8 @@
 				<div flex="100" layout="row" layout-align="center center" style="background-color: #fafafa; z-index: 2">
 					<div layout-wrap layout="row" layout-align="start center">
 						<div layout-padding ng-repeat="items in [1,2,3,4,5]" flex="33">
-						<md-divider style="width: 100%;" ng-show="$index > 3"></md-divider>
-							<div layout-wrap layout="row" layout-align="center center" ng-class="{'border-left': $index > 0 && $index != 3, 'border-right': $index == 4}">
+						<md-divider style="width: 100%;" ng-show="$index > 2"></md-divider>
+							<div layout-wrap layout="row" layout-align="center center" ng-class="{'border-left': $index > 0 && $index != 3}">
 								<div flex layout="column" layout-align="center center">
 									<md-card style="background: #fafafa; height: 100%;">
 										<md-card-header>
