@@ -15,12 +15,10 @@
 				</div>
 
 				<div flex-gt-sm="66" layout-align="end center" layout="row">
+					<md-button style="color: {{base_hue_darkest.value}};">
+						HOME
+					</md-button>
 					<md-menu-bar>
-						<md-menu>
-							<md-button style="color: {{base_hue_darkest.value}};">
-								HOME
-							</md-button>
-						</md-menu>
 						<md-menu>
 							<md-button ng-click="$mdMenu.open()" style="color: {{base_hue_darkest.value}};">
 								<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
@@ -282,17 +280,7 @@
 							</md-card>
 						</div>
 					</div>
-					<!--  -->
-					<div layout="row" layout-align="center center" layout-wrap>
-						<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2; padding-top: 64px; padding-bottom: 64px;">
-							<div layout-wrap layout="row" layout-align="start center" flex>
-								<div flex>
-									<iframe src="https://snazzymaps.com/embed/59273" width="auto" height="450" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--  -->
+					
 					<div layout-padding flex="33">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
@@ -318,6 +306,18 @@
 								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
 							</md-card-content>
 						</md-card>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+
+		<!--  -->
+		<div layout="row" layout-align="center center" layout-wrap>
+			<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2; padding-top: 64px; padding-bottom: 64px;">
+				<div layout-wrap layout="row" layout-align="start center" flex>
+					<div flex>
+						<iframe src="https://snazzymaps.com/embed/59273" width="auto" height="450" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
