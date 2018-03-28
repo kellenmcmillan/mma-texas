@@ -227,30 +227,10 @@
 		<!--  -->
 
 		<!--  -->
-		<div layout="row" layout-align="center center" layout-wrap>
-			<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2; padding-top: 64px; padding-bottom: 64px;">
-				<div layout-wrap layout="row" layout-align="start center" flex="80">
-					<div flex="33">
-						<div layout="column" layout-align="start center">
-							<md-card style="background: transparent; height: 100%;">
-								<md-card-header>
-									<md-card-header-text>
-										<span class="md-title" style="font-size: 24px; font-weight: bold;">WHAT ARE WE DOING?</span>
-									</md-card-header-text>
-								</md-card-header>
-								<md-card-content>
-									<p style="color: {{base_hue_darker.value}}; line-height: 24px;">MMA's engineering team utilizes their extensive land development experience to help our clients secure all the entitlements required for a successful development in timely and efficient manner. We work with the client from concept to construction, integrating all disciplines to effectively manage the total project life cycle. The mma Engineering team excels at delivering technically correct, cost-effective designs. We take pride in providing personalized service to our clients, adapting to their needs and schedule.</p>
-								</md-card-content>
-								<md-card-actions layout="row" layout-align="start center">
-									<md-button class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">
-	            						<md-icon style="color: {{base_hue_lightest.value}}">keyboard_arrow_right</md-icon>Learn More&nbsp;&nbsp;
-	            					</md-button>
-								</md-card-actions>
-							</md-card>
-						</div>
-					</div>
-					
-					<div layout-padding flex="33">
+		<div class="lw-auto-slider" layout="row" layout-align="center center" layout-wrap style="position: relative;">
+			<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2; padding-top: 64px; padding-bottom: 64px; position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+				<div layout="row" layout-align="start center" flex="100" style="overflow-x: scroll;">
+					<div layout-padding flex="100" flex-gt-sm="33">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							<md-card-header>
@@ -263,7 +243,33 @@
 							</md-card-content>
 						</md-card>
 					</div>
-					<div layout-padding flex="33">
+					<div layout-padding flex="100" flex-gt-sm="33">
+						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+							<md-card-header>
+								<md-card-header-text>
+									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">ENTERTAINMENT DISTRICTS</span>
+								</md-card-header-text>
+							</md-card-header>
+							<md-card-content>
+								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
+							</md-card-content>
+						</md-card>
+					</div>
+					<div layout-padding flex="100" flex-gt-sm="33">
+						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<img ng-cloak src="media/arlington-highlands1.jpg" class="md-card-image">
+							<md-card-header>
+								<md-card-header-text>
+									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">COMPLEX URBAN DEVELOPMENT</span>
+								</md-card-header-text>
+							</md-card-header>
+							<md-card-content>
+								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
+							</md-card-content>
+						</md-card>
+					</div>
+					<div layout-padding flex="100" flex-gt-sm="33">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/arlington-highlands1.jpg" class="md-card-image">
 							<md-card-header>
