@@ -16,9 +16,9 @@ polyline{
 }
 
 .lw-auto-slider {height: 600px;}
-.index-blog-post {max-width: 450px;}
+.index-blog-post {max-width: 450px!important;}
 
 @media screen and (max-width: 839px) {
 	.lw-auto-slider {height: 500px;}
-  	.index-blog-post {max-width: 350px;}
+  	.index-blog-post {max-width: 350px!important;}
 }
