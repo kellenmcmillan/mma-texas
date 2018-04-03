@@ -99,7 +99,20 @@
 		<!-- sticky header -->
 
 		<!-- Menu Panel -->
-		<div class="navigation panel" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: red;">
+		<div layout="row" layout-align="center center" class="navigation panel" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{primary_hue_normal.value}};">
+			<div layout="row" layout-align="center center" style="padding-top: 64px; padding-bottom: 64px; position: relative;">
+				<md-list>
+					<md-list-item>
+						<h3>Navigation Item #1</h3>
+					</md-list-item>
+					<md-list-item>
+						<h3>Navigation Item #2</h3>
+					</md-list-item>
+					<md-list-item>
+						<h3>Navigation Item #3</h3>
+					</md-list-item>
+				</md-list>
+			</div>
 	
 		</div>
 
