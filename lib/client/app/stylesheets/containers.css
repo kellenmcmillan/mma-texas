@@ -34,14 +34,16 @@ polyline{
     right: -50%;
 }
 
-@keyframes navigation_open {
+.navigation_item {height: 48px;}
+
+/*@keyframes navigation_open {
     from {right: -50%;}
     to {right: 0;}
 }
 @keyframes navigation_close {
     from {right: 0;}
     to {right: -50%;}
-}
+}*/
 
 .lw-auto-slider {height: 600px;}
 .index-blog-post {max-width: 450px!important; min-width: 33%;}
