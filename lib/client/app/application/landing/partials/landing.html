@@ -99,20 +99,21 @@
 		<!-- sticky header -->
 
 		<!-- Menu Panel -->
-		<div layout="row" layout-align="center center" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{primary_hue_normal.value}};">
+		<div layout="row" layout-align="start center" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darker.value}};">
 			<div layout="row" layout-align="start start" style="padding-top: 64px; padding-bottom: 64px; position: relative;" flex="100">
 				<md-list flex="100">
-					<md-list-item ng-click="" flex="100" layout-padding>
+					<md-list-item ng-click="doPrimaryAction($event)" flex="100" layout-padding>
 						<h3 style="color: {{base_hue_lightest.value}};">Navigation Item #1</h3>
 					</md-list-item>
 					<md-divider></md-divider>
-					<md-list-item ng-click="" flex="100" layout-padding>
+					<md-list-item ng-click="doPrimaryAction($event)" flex="100" layout-padding>
 						<h3 style="color: {{base_hue_lightest.value}};">Navigation Item #2</h3>
 					</md-list-item>
 					<md-divider></md-divider>
-					<md-list-item ng-click="" flex="100" layout-padding>
+					<md-list-item ng-click="doPrimaryAction($event)" flex="100" layout-padding>
 						<h3 style="color: {{base_hue_lightest.value}};">Navigation Item #3</h3>
 					</md-list-item>
+					<md-divider></md-divider>
 				</md-list>
 			</div>
 	
