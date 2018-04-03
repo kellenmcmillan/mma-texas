@@ -14,8 +14,8 @@
 					<img src="media/logo.png" style="max-height: 64px;">
 				</div>
 
-				<div flex-gt-sm="66" layout-align="end center" layout="row">
-					<md-button style="color: {{base_hue_darkest.value}};">
+				<div flex-gt-sm="66" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+					<md-button style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
 						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>&nbsp;&nbsp;home
 					</md-button>
 					<md-menu-bar style="padding-left: 0;">
@@ -97,6 +97,11 @@
 			
 		</md-subheader>
 		<!-- sticky header -->
+
+		<!-- Menu Panel -->
+		<div class="navigation panel" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: red;">
+	
+		</div>
 
 		<!-- messaging notification -->
 		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
