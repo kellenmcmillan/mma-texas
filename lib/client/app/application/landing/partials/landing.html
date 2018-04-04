@@ -101,10 +101,10 @@
 		<!-- Menu Panel -->
 		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
 			<div layout="row" layout-align="start start" style="position: relative;" flex="100">
-				<md-content>
+				<md-content class="navigation container" style="background-color: transparent; width: 100%;">
 					<md-tabs md-dynamic-height md-border-bottom>
 						<md-tab label="one">
-							<md-content class="md-padding" layout="row" layout-align="start start" style="padding-top: 64px; padding-bottom: 64px; position: relative;" flex="100">
+							<md-content class="md-padding" layout="row" layout-align="start start" style="position: relative; background-color: transparent;" flex="100">
 								<md-list flex="100">
 									<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
 										<h3 style="color: {{base_hue_lightest.value}};">Navigation Item #1</h3>
