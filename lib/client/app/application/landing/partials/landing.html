@@ -101,39 +101,21 @@
 		<!-- Menu Panel -->
 		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
 			<div layout="row" layout-align="start start" style="position: relative;" flex="100">
-				<md-content class="navigation container" style="background-color: transparent; width: 100%;">
-					<md-tabs md-dynamic-height md-border-bottom>
-						<md-tab label="one">
-							<md-content class="md-padding" layout="row" layout-align="start start" style="position: relative; background-color: transparent;" flex="100">
-								<md-list flex="100">
-									<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
-										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #1</h3>
-									</md-list-item>
-									<md-divider></md-divider>
-									<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
-										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #2</h3>
-									</md-list-item>
-									<md-divider></md-divider>
-									<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
-										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #3</h3>
-									</md-list-item>
-									<md-divider></md-divider>
-								</md-list>
-							</md-content>
-						</md-tab>
-						<md-tab label="two">
-							<md-content class="md-padding">
-								<h1 class="md-display-2">Tab Two</h1>
-							</md-content>
-						</md-tab>
-						<md-tab label="three">
-							<md-content class="md-padding">
-								<h1 class="md-display-2">Tab Three</h1>
-							</md-content>
-						</md-tab>
-					</md-tabs>
-				</md-content>
-				
+				<md-icon style="color: {{base_hue_darkest.value}}; position: absolute; top: 8px; right: 32px;">close</md-icon>
+				<md-list flex="100">
+					<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
+						<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #1</h3>
+					</md-list-item>
+					<md-divider></md-divider>
+					<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
+						<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #2</h3>
+					</md-list-item>
+					<md-divider></md-divider>
+					<md-list-item class="navigation_item" ng-click="doPrimaryAction($event)" flex="100" layout-padding>
+						<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">Navigation Item #3</h3>
+					</md-list-item>
+					<md-divider></md-divider>
+				</md-list>
 			</div>
 	
 		</div>
