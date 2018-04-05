@@ -35,8 +35,10 @@
 	.navigation .container md-tabs md-ink-bar {
 		color: {{primary_hue_normal.value}}; background-color: {{primary_hue_normal.value}};
 	}
-	.navigation .container .navigation.item {height: 48px; color: {{base_hue_lightest.value}}!important;}
-	.navigation .container .navigation.item:hover {color: {{primary_hue_normal.value}}!important;}
+	.navigation .navigation.item a {text-decoration: none!important;}
+	.navigation .navigation.item a h3 {color: {{base_hue_lightest.value}}!important;}
+	.navigation .navigation.item a h3:hover {color: {{primary_hue_normal.value}}!important;}
+	.navigation .navigation.item {height: 48px;}
 	/* Navigation Container */
 
 </style>
