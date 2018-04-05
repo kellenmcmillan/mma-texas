@@ -34,8 +34,6 @@ polyline{
     right: -50%;
 }
 
-.navigation_item {height: 48px;}
-
 @keyframes navigation_open {
     from {right: -50%;}
     to {right: 0;}
