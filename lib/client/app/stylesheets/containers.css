@@ -30,7 +30,7 @@ polyline{
     right: 0;
 }
 
-.navigation.panel.close, .navigation.panel.open .navigation.social {
+.navigation.panel.close, .navigation.panel.close .navigation.social {
 	animation-name: navigation_close;
     animation-duration: .2s;
     animation-timing-function: ease-in;
