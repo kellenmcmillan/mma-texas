@@ -5,58 +5,51 @@
 <div ng-include src="'application/global/style.html'"></div>
 <md-content class="page" style="height: {{window_height}}px">
 	<section ng-cloak>
+
 		<!-- sticky header -->
 		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
-
 			<div layout-align="center center" layout="row" layout flex>
-
+				<!-- Logo -->
 				<div flex-gt-sm="25" layout-align="center center" layout="row">
 					<img src="media/logo.png" style="max-height: 64px;">
 				</div>
-
+				<!-- Logo -->
+				<!-- Navigation Items -->
 				<div flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
 					<md-button style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
 						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>
 					</md-button>
-					
 					<md-button ng-click="navigation_panel = true; open_menu('ABOUT US')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						ABOUT US
 					</md-button>
-					
 					<md-button ng-click="navigation_panel = true; open_menu('PROJECTS')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						PROJECTS
 					</md-button>
-				
 					<md-button ng-click="navigation_panel = true; open_menu('SERVICES')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						SERVICES
 					</md-button>
-					
 					<md-button ng-click="navigation_panel = true; open_menu('PEOPLE')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						PEOPLE
 					</md-button>
-
 					<md-button ng-click="navigation_panel = true; open_menu('NEWS')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						NEWS
 					</md-button>
-
 					<md-button ng-click="navigation_panel = true; open_menu('CAREERS')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						CAREERS
 					</md-button>
-
 					<md-button ng-click="navigation_panel = true; open_menu('CONTACT US')" style="color: {{base_hue_darkest.value}};">
 						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 						CONTACT US
 					</md-button>
-							
 				</div>
+				<!-- Navigation Items -->
 			</div>
-			
 		</md-subheader>
 		<!-- sticky header -->
 
@@ -118,7 +111,6 @@
 										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">519 E. Border Street<br>Arlington, TX 76010</h3>
 									</div>
 								</md-list-item>
-								<md-divider></md-divider>
 							</md-content>
 						</md-tab>
 						<md-tab label="Hours">
@@ -176,6 +168,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Menu Panel -->
 
 		<!-- messaging notification -->
 		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
@@ -193,20 +186,7 @@
 		<div ng-include src="'application/landing/partials/slideshow.html'"></div>
 		<!-- Slideshow -->
 
-		<!--  -->
-		<!-- <div layout="row" layout-align="center center" style="background-color: #f5f5f5; padding-top: 64px; padding-bottom: 64px;">
-			<md-card layout="column" layout-align="center center" style="background: transparent; width: 80%; z-index: 2; position: relative;">
-				<h1 style="color: {{base_hue_darkest.value}}; font-size: 32px; line-height: 64px; margin: 0; font-weight: bold;">SOME OF OUR PARTNERS</h1>
-				<div flex="100" layout="row" layout-align="center center">
-					<div layout-wrap layout="row" layout-align="center center">
-						<img src="media/spsd-logo.png" style="max-height: 96px;">
-					</div>
-				</div>
-			</md-card>
-		</div> -->
-		<!--  -->
-
-		<!--  -->
+		<!-- Services -->
 		<div layout="row" layout-align="center center" style="padding-top: 64px; padding-bottom: 64px; position: relative;">
 			<md-card layout="column" layout-align="center center" style="background: {{base_hue_lightest.value}}; width: 80%; z-index: 2; overflow: hidden; position: relative;">
 				<h1 style="color: {{base_hue_darkest.value}}; font-size: 32px; line-height: 64px; margin: 0; font-weight: bold;">OUR CORE SERVICES</h1>
@@ -303,13 +283,13 @@
 				</div>
 			</md-card>
 		</div>
-		<!--  -->
+		<!-- Services -->
 
-		<!--  -->
-		<div class="lw-auto-slider" layout="row" layout-align="center center" layout-wrap style="position: relative;">
-			<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2; padding-top: 64px; padding-bottom: 64px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow-x: scroll;">
-				<div layout="row" layout-align="start center" style="width: {{window_width * 2}}px;">
-					<div layout-padding flex="100" flex-gt-sm="33" class="index-blog-post">
+		<!-- Item Carousel -->
+		<div class="lw-auto-slider" style="position: relative;">
+			<div class="lw-auto-slider-container">
+				<div style="width: {{window_width * 2}}px;">
+					<div layout-padding class="index-blog-post">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							<md-card-header>
@@ -322,7 +302,7 @@
 							</md-card-content>
 						</md-card>
 					</div>
-					<div layout-padding flex="100" flex-gt-sm="33" class="index-blog-post">
+					<div layout-padding class="index-blog-post">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							<md-card-header>
@@ -335,7 +315,7 @@
 							</md-card-content>
 						</md-card>
 					</div>
-					<div layout-padding flex="100" flex-gt-sm="33" class="index-blog-post">
+					<div layout-padding class="index-blog-post">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/arlington-highlands1.jpg" class="md-card-image">
 							<md-card-header>
@@ -348,7 +328,7 @@
 							</md-card-content>
 						</md-card>
 					</div>
-					<div layout-padding flex="100" flex-gt-sm="33" class="index-blog-post">
+					<div layout-padding class="index-blog-post">
 						<md-card style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<img ng-cloak src="media/arlington-highlands1.jpg" class="md-card-image">
 							<md-card-header>
@@ -364,9 +344,9 @@
 				</div>
 			</div>
 		</div>
-		<!--  -->
+		<!-- Item Carousel -->
 
-		<!--  -->
+		<!-- Map With Contact Form Overlay -->
 		<div layout="row" layout-align="center center" layout-wrap>
 			<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2;">
 				<div layout-wrap layout="row" layout-align="start center" flex>
@@ -376,8 +356,9 @@
 				</div>
 			</div>
 		</div>
-		<!--  -->
+		<!-- Map With Contact Form Overlay -->
 
+		<!-- Footer -->
 		<div layout="column" layout-align="center center" class="footer-container" flex style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;">
 			<div class="footer-content-top" layout="row" layout-padding flex>
 				<div layout="column" layout-padding layout-align="center center" flex="33">
@@ -438,7 +419,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <md-divider style="width: 100%; border-color: {{base_hue_darker.value}};"></md-divider> -->
 			<div class="footer-content-bottom" layout="row" layout-align="start center" layout-padding flex>
 				<span flex="30"></span>
 				<div layout-padding flex="70">
@@ -457,5 +437,7 @@
 			</div>
 			<img src="media/pexels-photo-859892.jpeg" style="position: absolute; top: 0; left: 0; opacity: .1; min-height: 100%; min-width: 100%; z-index: 1">
 		</div>
+		<!-- Footer -->
+
     </section>
 </md-content>
