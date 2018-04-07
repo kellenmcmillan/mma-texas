@@ -18,80 +18,42 @@
 					<md-button style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
 						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>&nbsp;&nbsp;home
 					</md-button>
-					<md-menu-bar style="padding-left: 0;">
-						<md-menu>
-							<md-button ng-click="$mdMenu.open()" style="color: {{base_hue_darkest.value}};">
-								<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-								PROJECTS
-							</md-button>
-							<md-menu-content>
-								<md-menu-item>
-									<md-button>
-									Project 1
-									</md-button>
-								</md-menu-item>
-								<md-menu-item>
-									<md-button>
-									Project 2
-									</md-button>
-								</md-menu-item>
-							</md-menu-content>
-						</md-menu>
-						<md-menu>
-							<md-button ng-click="$mdMenu.open()" style="color: {{base_hue_darkest.value}};">
-								<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-								SERVICES
-							</md-button>
-							<md-menu-content>
-								<md-menu-item>
-									<md-button>
-									Service 1
-									</md-button>
-								</md-menu-item>
-								<md-menu-item>
-									<md-button>
-									Service 2
-									</md-button>
-								</md-menu-item>
-							</md-menu-content>
-						</md-menu>
-						<md-menu>
-							<md-button ng-click="$mdMenu.open()" style="color: {{base_hue_darkest.value}};">
-								<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-								RESOURCES
-							</md-button>
-							<md-menu-content>
-								<md-menu-item>
-									<md-button>
-									Resource 1
-									</md-button>
-								</md-menu-item>
-								<md-menu-item>
-									<md-button>
-									Resource 2
-									</md-button>
-								</md-menu-item>
-							</md-menu-content>
-						</md-menu>
-						<md-menu>
-							<md-button ng-click="$mdMenu.open()" style="color: {{base_hue_darkest.value}};">
-								<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-								ABOUT
-							</md-button>
-							<md-menu-content>
-								<md-menu-item>
-									<md-button>
-									Our History
-									</md-button>
-								</md-menu-item>
-								<md-menu-item>
-									<md-button>
-									Our Professionals
-									</md-button>
-								</md-menu-item>
-							</md-menu-content>
-						</md-menu>
-					</md-menu-bar>
+					
+					<md-button ng-click="open_menu('ABOUT US')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						ABOUT US
+					</md-button>
+					
+					<md-button ng-click="open_menu('PROJECTS')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						PROJECTS
+					</md-button>
+				
+					<md-button ng-click="open_menu('SERVICES')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						SERVICES
+					</md-button>
+					
+					<md-button ng-click="open_menu('PEOPLE')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						PEOPLE
+					</md-button>
+
+					<md-button ng-click="open_menu('NEWS')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						NEWS
+					</md-button>
+
+					<md-button ng-click="open_menu('CAREERS')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						CAREERS
+					</md-button>
+
+					<md-button ng-click="open_menu('CONTACT US')" style="color: {{base_hue_darkest.value}};">
+						<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+						CONTACT US
+					</md-button>
+							
 				</div>
 			</div>
 			
@@ -102,6 +64,11 @@
 		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
 			<div layout="row" layout-align="start start" style="position: relative;" flex="100">
 				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+				<div flex="100" layout="row" layout-align="start center">
+					<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;" layout-padding>
+						{{open_menu}}
+					</h3>
+				</div>
 				<md-list flex="100" style="margin-top: 48px;">
 					<md-list-item class="navigation item" flex="100" layout-padding>
 						<a href="/"><h3>Navigation Item #1</h3></a>
@@ -118,7 +85,7 @@
 				</md-list>
 			</div>
 			<div class="navigation social" layout="row" layout-align="start start" flex="100">
-				<div layout="row" layout-align="center center" flex="50">
+				<div layout="row" layout-align="center center" flex="50" layout-margin>
 					<div flex="33" layout-align="center center">
 					
 					<img class="navigation icons" src="media/facebook.png">
