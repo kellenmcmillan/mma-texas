@@ -16,7 +16,7 @@
 
 				<div flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
 					<md-button style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
-						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>&nbsp;&nbsp;home
+						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>
 					</md-button>
 					
 					<md-button ng-click="navigation_panel = true; open_menu('ABOUT US')" style="color: {{base_hue_darkest.value}};">
@@ -102,15 +102,27 @@
 						</md-tab>
 						<md-tab label="Hours">
 							<md-content class="md-padding">
-								<p style="color: {{base_hue_lightest.value}}; opacity: .54;">
-								Sunday ................... Closed<br>
-								Monday .......... 7:30AM - 5:00PM<br>
-								Tuesday ......... 7:30AM - 5:00PM<br>
-								Wednesday ....... 7:30AM - 5:00PM<br>
-								Thursday ........ 7:30AM - 5:00PM<br>
-								Friday .......... 7:30AM - 5:00PM<br>
-								Saturday ........ 7:30AM - 5:00PM
-								</p>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Sunday <p class="md-secondary">Closed</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Monday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Tuesday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Wednesday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Thursday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Friday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
+								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
+								Saturday <p class="md-secondary">7:30AM - 5:00PM</p>
+								</md-list-item>
 							</md-content>
 						</md-tab>
 					</md-tabs>
