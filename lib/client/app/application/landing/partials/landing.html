@@ -64,13 +64,20 @@
 		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
 			<div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
 				<div flex="50" layout="row" layout-align="start center" layout-margin>
+					<md-button ng-click="navigation_panel = true; open_menu('CONTACT US')" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}};">
+						<md-icon style="color: {{base_hue_lightest.value}}">lock_outline</md-icon>
+						Log In
+					</md-button>
+				</div>
+				<div flex="50">
+				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+				</div>
+				<div flex="100" layout="row" layout-align="start center" layout-margin>
 					<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;" layout-padding>
 						{{menu_title}}
 					</h3>
 				</div>
 				<div flex="50">
-				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
-				</div>
 				<md-list flex="100" style="margin-top: 48px;">
 					<md-list-item class="navigation item" flex="100" layout-padding>
 						<a href="/"><h3>Navigation Item #1</h3></a>
@@ -105,31 +112,38 @@
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Sunday <p class="md-secondary">Closed</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Monday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Tuesday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Wednesday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Thursday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Friday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 								<md-list-item class="secondary-button-padding" style="color: {{base_hue_lightest.value}}; opacity: .54;">
 								Saturday <p class="md-secondary">7:30AM - 5:00PM</p>
 								</md-list-item>
+								<md-divider></md-divider>
 							</md-content>
 						</md-tab>
 					</md-tabs>
 				</div>
 			</div>
 			<div class="navigation social" layout="row" layout-align="start start" flex="100">
-				<div layout="row" layout-align="center center" flex="50" style="margin-left: 32px;">
+				<div layout="row" layout-align="center center" flex="50" style="margin-left: 24px;">
 					<div flex="33" layout-align="center center">
 					
 					<img class="navigation icons" src="media/facebook.png">
@@ -415,9 +429,6 @@
 				<span flex="30"></span>
 				<div layout-padding flex="70">
 					<div flex layout="row" layout-align="end center">
-						<md-button ng-if="user" class="md-primary md-raised" ng-click="auth.$signOut()" >
-					      	Sign out
-					    </md-button>
 						<div layout-margin>
 							<p style="color: {{base_hue_lightest.value}};">About</p>
 						</div>
