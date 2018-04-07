@@ -61,13 +61,15 @@
 		<!-- sticky header -->
 
 		<!-- Menu Panel -->
-		<div layout="column" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
-			<div layout="row" layout-align="start start" style="position: relative;" flex="100">
-				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
-				<div flex="100" layout="row" layout-align="start center">
+		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
+			<div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
+				<div flex="50" layout="row" layout-align="start center">
 					<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;" layout-padding>
 						{{menu_title}}
 					</h3>
+				</div>
+				<div flex="50">
+				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
 				</div>
 				<md-list flex="100" style="margin-top: 48px;">
 					<md-list-item class="navigation item" flex="100" layout-padding>
