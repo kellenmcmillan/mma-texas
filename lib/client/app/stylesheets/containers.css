@@ -53,6 +53,7 @@ polyline{
 .index-news-post {max-width: 400px!important; width: 33%; overflow: hidden; float: left;}
 .index-news-post md-card {overflow: hidden;}
 .index-news-post img {width: 100%!important; height: auto;}
+.index-news-post post-image {max-height: 300px; overflow: hidden;}
 
 @media screen and (max-width: 839px) {
 	.lw-auto-slider {height: 500px;}
