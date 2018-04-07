@@ -10,11 +10,11 @@
 
 			<div layout-align="center center" layout="row" layout flex>
 
-				<div flex-gt-sm="33" layout-align="center center" layout="row">
+				<div flex-gt-sm="25" layout-align="center center" layout="row">
 					<img src="media/logo.png" style="max-height: 64px;">
 				</div>
 
-				<div flex-gt-sm="66" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+				<div flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
 					<md-button style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
 						<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>&nbsp;&nbsp;home
 					</md-button>
@@ -61,12 +61,12 @@
 		<!-- sticky header -->
 
 		<!-- Menu Panel -->
-		<div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
+		<div layout="column" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
 			<div layout="row" layout-align="start start" style="position: relative;" flex="100">
 				<md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; opacity: .54; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
 				<div flex="100" layout="row" layout-align="start center">
 					<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;" layout-padding>
-						{{open_menu}}
+						{{menu_title}}
 					</h3>
 				</div>
 				<md-list flex="100" style="margin-top: 48px;">
