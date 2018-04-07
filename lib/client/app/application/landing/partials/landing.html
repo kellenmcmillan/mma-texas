@@ -96,14 +96,25 @@
 					<md-tabs md-dynamic-height md-border-bottom>
 						<md-tab label="Contact Info">
 							<md-content class="md-padding">
-								<p style="color: {{base_hue_lightest.value}}; opacity: .54;">
-									Phone: 817-469-1671<br>
-									Fax: 817-274-8757
-								</p>
-								<p style="color: {{base_hue_lightest.value}}; opacity: .54;">
-									Address: 519 E. Border Street<br>
-									Arlington, TX 76010
-								</p>
+								<md-list-item class="md-2-line">
+									<md-icon style="color: {{base_hue_lightest.value}}; opacity: .54;">phone</md-icon>
+									<div class="md-list-item-text md-offset">
+										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">817-469-1671</h3>
+										<p style="color: {{base_hue_lightest.value}}; opacity: .54;">Office</p>
+									</div>
+									<div class="md-list-item-text md-offset">
+										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">817-274-8757</h3>
+										<p style="color: {{base_hue_lightest.value}}; opacity: .54;">Fax</p>
+									</div>
+								</md-list-item>
+								<md-divider></md-divider>
+								<md-list-item class="md-2-line">
+									<md-icon style="color: {{base_hue_lightest.value}}; opacity: .54;">pin_drop</md-icon>
+									<div class="md-list-item-text md-offset">
+										<h3 style="color: {{base_hue_lightest.value}}; opacity: .54;">519 E. Border Street<br>Arlington, TX 76010</h3>
+									</div>
+								</md-list-item>
+								<md-divider></md-divider>
 							</md-content>
 						</md-tab>
 						<md-tab label="Hours">
