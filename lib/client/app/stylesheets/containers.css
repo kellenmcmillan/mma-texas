@@ -20,22 +20,24 @@ polyline{
 	overflow-y: auto; position: fixed; top: 0; z-index: 4;
 }
 .navigation.social {
-	position: fixed; height: 48px; bottom: 0; width: 50%; background-color: red;
+	position: fixed; height: 48px; bottom: 0; width: 50%;
 } 
 
 .navigation.panel.open, .navigation.panel.open .navigation.social {
-	animation-name: navigation_open;
+	/*animation-name: navigation_open;*/
     animation-duration: .2s;
     animation-timing-function: ease-in-out;
     right: 0;
 }
 
 .navigation.panel.close, .navigation.panel.close .navigation.social {
-	animation-name: navigation_close;
+	/*animation-name: navigation_close;*/
     animation-duration: .2s;
     animation-timing-function: ease-in;
     right: -50%;
 }
+
+.navigation.social.icons {width: 36px; height: 36px;}
 
 @keyframes navigation_open {
     from {right: -50%;}
