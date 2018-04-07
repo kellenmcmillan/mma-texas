@@ -37,7 +37,7 @@ polyline{
     right: -50%;
 }
 
-.navigation.social.icons {width: 36px; height: 36px;}
+.navigation.icons {width: 36px; height: 36px;}
 
 @keyframes navigation_open {
     from {right: -50%;}
