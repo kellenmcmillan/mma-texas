@@ -54,7 +54,6 @@ polyline{
 .index-news-post md-card {overflow: hidden;}
 .index-news-post img {width: 100%!important; height: auto;}
 .index-news-post .post-image {max-height: 300px; overflow: hidden;}
-.news.panel {width: 100%; overflow: hidden;}
 
 @media screen and (max-width: 839px) {
 	.lw-auto-slider {height: 500px;}
