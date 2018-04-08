@@ -297,7 +297,7 @@
 				<md-button class="md-whiteframe-4dp" ng-click="null" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<div class="news panel" style="left: 0; width: {{window_width * news_post_width}}px">
+				<div class="news panel" style="left: 0; width: {{(window_width - 16) * news_post_width}}px">
 					<div layout-padding class="index-news-post" ng-repeat="item in ['one', 'two', 'three', 'four']" ng-class="{'one-third': window_width > 840, 'full-width': window_width < 840}">
 						<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
 							<div class="post-image">
