@@ -288,54 +288,7 @@
 		<!-- Item Carousel -->
 		<div class="lw-auto-slider" style="position: relative;">
 			<div class="lw-auto-slider-container">
-				<div class="news panel" ng-if="window_width > 840">
-					<div layout-padding class="index-news-post" ng-class="{'one-third': window_width > 840}">
-						<md-card layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
-							<div class="post-image">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
-							</div>
-							<md-card-header>
-								<md-card-header-text>
-									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">ENTERTAINMENT DISTRICTS</span>
-								</md-card-header-text>
-							</md-card-header>
-							<md-card-content>
-								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
-							</md-card-content>
-						</md-card>
-					</div>
-					<div layout-padding class="index-news-post" ng-class="{'one-third': window_width > 840}">
-						<md-card layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
-							<div class="post-image">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
-							</div>
-							<md-card-header>
-								<md-card-header-text>
-									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">ENTERTAINMENT DISTRICTS</span>
-								</md-card-header-text>
-							</md-card-header>
-							<md-card-content>
-								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
-							</md-card-content>
-						</md-card>
-					</div>
-					<div layout-padding class="index-news-post" ng-class="{'one-third': window_width > 840}">
-						<md-card layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
-							<div class="post-image">
-								<img ng-cloak src="media/arlington-highlands1.jpg" class="md-card-image">
-							</div>
-							<md-card-header>
-								<md-card-header-text>
-									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">COMPLEX URBAN DEVELOPMENT</span>
-								</md-card-header-text>
-							</md-card-header>
-							<md-card-content>
-								<p style="color: {{base_hue_darker.value}};">MMA's Engineering team utilizes their extensive land development experience.</p>
-							</md-card-content>
-						</md-card>
-					</div>
-				</div>
-				<div class="news panel" ng-if="window_width > 840">
+				<div class="news panel" ng-if="window_width > 840" ng-repeat="[1,2]" style="right: -{{$index * window_width + 16}}px">
 					<div layout-padding class="index-news-post" ng-class="{'one-third': window_width > 840}">
 						<md-card layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image">
