@@ -20,7 +20,7 @@ polyline{
 	overflow-y: auto; position: fixed; top: 0; z-index: 4;
 }
 .navigation.social {
-	position: fixed; height: 48px; bottom: 0; width: 50%;
+	position: fixed; height: 48px; bottom: 0; width: 25%;
 } 
 
 .navigation.panel.open, .navigation.panel.open .navigation.social {
@@ -34,18 +34,18 @@ polyline{
 	/*animation-name: navigation_close;*/
     animation-duration: .2s;
     animation-timing-function: ease-in;
-    right: -50%;
+    right: -25%;
 }
 
 .navigation.icons {width: 36px; height: 36px;}
 
 @keyframes navigation_open {
-    from {right: -50%;}
+    from {right: -25%;}
     to {right: 0;}
 }
 @keyframes navigation_close {
     from {right: 0;}
-    to {right: -50%;}
+    to {right: -25%;}
 }
 
 .lw-auto-slider {height: 600px;}
