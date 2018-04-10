@@ -194,10 +194,10 @@
 					<div layout-wrap layout="row" layout-align="start center">
 						
 
-						<div layout-padding flex="33">
+						<div layout-padding flex="33" class="services container">
 							<div layout-wrap layout="row" layout-align="center center" ng-class="{'border-left': $index > 0 && $index != 3}">
 								<div flex layout="column" layout-align="center center">
-									<md-card style="background: #fafafa; height: 100%; text-align: center;">
+									<md-card style="background: #fafafa; height: 100%; text-align: center;" class="service">
 										<md-card-header>
 											<md-card-header-text>
 												<md-icon style="width: 64px; height: 64px;" md-svg-src="media/005-compass.svg">
@@ -212,10 +212,10 @@
 						</div>
 
 
-						<div layout-padding flex="33">
+						<div layout-padding flex="33" class="services container">
 							<div layout-wrap layout="row" layout-align="center center" ng-class="{'border-left': $index > 0 && $index != 3}">
 								<div flex layout="column" layout-align="center center">
-									<md-card style="background: #fafafa; height: 100%; text-align: center;">
+									<md-card style="background: #fafafa; height: 100%; text-align: center;" class="service">
 										<md-card-header>
 											<md-card-header-text>
 												<md-icon style="width: 64px; height: 64px;" md-svg-src="media/003-plant.svg">
@@ -229,10 +229,10 @@
 							</div>
 						</div>
 
-						<div layout-padding flex="33">
+						<div layout-padding flex="33" class="services container">
 							<div layout-wrap layout="row" layout-align="center center">
 								<div flex layout="column" layout-align="center center">
-									<md-card style="background: #fafafa; height: 100%; text-align: center;">
+									<md-card style="background: #fafafa; height: 100%; text-align: center;" class="service">
 										<md-card-header>
 											<md-card-header-text>
 												<md-icon style="width: 64px; height: 64px;" md-svg-src="media/004-whiteboard.svg">
@@ -246,10 +246,10 @@
 							</div>
 						</div>
 
-						<div layout-padding flex="33">
+						<div layout-padding flex="33" class="services container">
 							<div layout-wrap layout="row" layout-align="center center">
 								<div flex layout="column" layout-align="center center">
-									<md-card style="background: #fafafa; height: 100%; text-align: center;">
+									<md-card style="background: #fafafa; height: 100%; text-align: center;" class="service">
 										<md-card-header>
 											<md-card-header-text>
 												<md-icon style="width: 64px; height: 64px;" md-svg-src="media/002-tripod.svg">
@@ -263,10 +263,10 @@
 							</div>
 						</div>
 
-						<div layout-padding flex="33">
+						<div layout-padding flex="33" class="services container">
 							<div layout-wrap layout="row" layout-align="center center">
 								<div flex layout="column" layout-align="center center">
-									<md-card style="background: #fafafa; height: 100%; text-align: center;">
+									<md-card style="background: #fafafa; height: 100%; text-align: center;" class="service">
 										<md-card-header>
 											<md-card-header-text>
 												<md-icon style="width: 64px; height: 64px;" md-svg-src="media/001-travel.svg">
@@ -288,14 +288,14 @@
 		<!-- Item Carousel -->
 		<div class="lw-auto-slider" style="position: relative;">
 			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: center; z-index: 3;">
-				<h1 style="color: {{base_hue_darkest.value}}; font-size: 32px; line-height: 64px; margin: 0; font-weight: bold;">MMA NEWS</h1>
+				<h1 style="color: {{base_hue_darkest.value}}; font-size: 32px; line-height: 64px; margin: 0; font-weight: bold;">MMA IN THE NEWS</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('left')" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
-					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
-				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('right')" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('right')" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
+				</md-button>
+				<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('left')" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="news panel" style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
 					<div layout-padding class="index-news-post" ng-repeat="item in ['one', 'two', 'three', 'four']" ng-class="{'one-third': window_width > 840, 'full-width': window_width < 840}">
