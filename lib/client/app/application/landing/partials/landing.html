@@ -142,7 +142,7 @@
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="news panel" style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
-					<div layout-padding class="index-news-post" ng-repeat="item in ['one', 'two', 'three', 'four']" ng-class="{'one-third': window_width > 840, 'full-width': window_width < 840}">
+					<div layout-padding class="index-news-post" ng-repeat="item in ['one', 'two', 'three', 'four']" ng-class="{'one-third': window_width >= 960 &&, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
 							<div class="post-image">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
@@ -182,7 +182,7 @@
 						<img class="footer logo" src="media/logo-full-white.png">
 					</div>
 				</div>
-				<div laout="column" layout-gt-sm="row" flex="100" flex-gt-sm="66" layout-align="center center">
+				<div layout="column" layout-sm="row" layout-gt-sm="row" flex="100" flex-gt-sm="66" layout-align="center center" layout-wrap>
 					<div layout-padding flex="100" flex-sm="50" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
@@ -236,68 +236,70 @@
 			<div class="footer-content-bottom" layout="column" layout-gt-sm="row" layout-align="start center" layout-padding flex style="z-index: 2">
 				<span flex="30"></span>
 				<div layout-padding flex="100" flex-gt-sm="70">
-					<div flex layout="row" layout-align="end center">
-						<div flex="50" flex-gt-sm="25" layout-margin>
+					<div flex layout="row" layout-align="end center" layout-wrap>
+						<div flex="50" flex-gt-sm="25">
 							<p style="color: {{base_hue_lightest.value}};">{{settings.data.site_name}} &#169; {{year}}</p>
 						</div>
-						<div flex="50" flex-gt-sm="25" layout-margin>
+						<div flex="50" flex-gt-sm="25">
 							<p style="color: {{base_hue_lightest.value}};">Privacy &amp; Terms</p>
 						</div>
-						<div flex="50" flex-gt-sm="25" layout-margin>
+						<div flex="75" flex-gt-sm="25">
 							<h1 class="type heading footer" style="color: {{base_hue_lightest.value}};">Superpowered By Lightweight</h1>
 						</div>
-						<md-menu>
-                            <md-button aria-label="Lightweight menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
-                                <md-icon md-menu-origin style="color: {{base_hue_lightest.value}}">settings</md-icon>
-                            </md-button>
-                            <md-menu-content width="4">
-                                <md-menu-item ng-show="user">
-                                    <md-button ng-click="open_edit_configuration()">
-                                        <md-icon>settings</md-icon>
-                                        App Settings
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item ng-show="user">
-                                    <md-button ng-click="openUserVault()">
-                                        <md-icon>recent_actors</md-icon>
-                                        User Vault
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item ng-show="user">
-                                    <md-button ng-click="openMediaVault(null)">
-                                        <md-icon>photo_library</md-icon>
-                                        Media Vault
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item ng-show="user">
-                                    <md-button disabled ng-click="null">
-                                        <md-icon>assignment</md-icon>
-                                        Task Runner
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-divider ng-show="user"></md-menu-divider>
-                                <a href="/login">
-                                    <md-menu-item ng-show="!user">
-                                        <md-button>
-                                            <md-icon>lock</md-icon>
-                                            Log In
-                                        </md-button>
-                                    </md-menu-item>
-                                </a>
-                                <md-menu-item ng-show="user">
-                                    <md-button ng-click="auth.$signOut()">
-                                        <md-icon>lock_open</md-icon>
-                                        Log Out
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item ng-show="user">
-                                    <md-button ng-click="openMyVault()">
-                                        <md-icon>person</md-icon>
-                                        My Vault
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
+						<div flex="25" flex-gt-sm="25">
+							<md-menu>
+	                            <md-button aria-label="Lightweight menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+	                                <md-icon md-menu-origin style="color: {{base_hue_lightest.value}}">settings</md-icon>
+	                            </md-button>
+	                            <md-menu-content width="4">
+	                                <md-menu-item ng-show="user">
+	                                    <md-button ng-click="open_edit_configuration()">
+	                                        <md-icon>settings</md-icon>
+	                                        App Settings
+	                                    </md-button>
+	                                </md-menu-item>
+	                                <md-menu-item ng-show="user">
+	                                    <md-button ng-click="openUserVault()">
+	                                        <md-icon>recent_actors</md-icon>
+	                                        User Vault
+	                                    </md-button>
+	                                </md-menu-item>
+	                                <md-menu-item ng-show="user">
+	                                    <md-button ng-click="openMediaVault(null)">
+	                                        <md-icon>photo_library</md-icon>
+	                                        Media Vault
+	                                    </md-button>
+	                                </md-menu-item>
+	                                <md-menu-item ng-show="user">
+	                                    <md-button disabled ng-click="null">
+	                                        <md-icon>assignment</md-icon>
+	                                        Task Runner
+	                                    </md-button>
+	                                </md-menu-item>
+	                                <md-menu-divider ng-show="user"></md-menu-divider>
+	                                <a href="/login">
+	                                    <md-menu-item ng-show="!user">
+	                                        <md-button>
+	                                            <md-icon>lock</md-icon>
+	                                            Log In
+	                                        </md-button>
+	                                    </md-menu-item>
+	                                </a>
+	                                <md-menu-item ng-show="user">
+	                                    <md-button ng-click="auth.$signOut()">
+	                                        <md-icon>lock_open</md-icon>
+	                                        Log Out
+	                                    </md-button>
+	                                </md-menu-item>
+	                                <md-menu-item ng-show="user">
+	                                    <md-button ng-click="openMyVault()">
+	                                        <md-icon>person</md-icon>
+	                                        My Vault
+	                                    </md-button>
+	                                </md-menu-item>
+	                            </md-menu-content>
+	                        </md-menu>
+                        </div>
 					</div>
 				</div>
 			</div>
