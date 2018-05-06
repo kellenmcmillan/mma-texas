@@ -183,7 +183,7 @@
 					</div>
 				</div>
 				<div laout="column" layout-gt-sm="row" flex="100" flex-gt-sm="66" layout-align="center center">
-					<div layout-padding flex="100" flex-gt-sm="33">
+					<div layout-padding flex="100" flex-sm="50" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
 								<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Services</p>
@@ -199,7 +199,7 @@
 							</md-list-item>
 						</md-list>
 					</div>
-					<div layout-padding flex="100" flex-gt-sm="33">
+					<div layout-padding flex="100" flex-sm="50" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
 								<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Quick Links</p>
@@ -215,7 +215,7 @@
 							</md-list-item>
 						</md-list>
 					</div>
-					<div layout-padding flex="100" flex-gt-sm="33">
+					<div layout-padding flex="100" flex-sm="50" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
 								<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Stay Connected</p>
@@ -235,16 +235,16 @@
 			</div>
 			<div class="footer-content-bottom" layout="column" layout-gt-sm="row" layout-align="start center" layout-padding flex style="z-index: 2">
 				<span flex="30"></span>
-				<div layout-padding flex="70">
+				<div layout-padding flex="100" flex-gt-sm="70">
 					<div flex layout="row" layout-align="end center">
-						<div layout-margin>
+						<div flex="50" flex-gt-sm="25" layout-margin>
 							<p style="color: {{base_hue_lightest.value}};">{{settings.data.site_name}} &#169; {{year}}</p>
 						</div>
-						<div layout-margin>
+						<div flex="50" flex-gt-sm="25" layout-margin>
 							<p style="color: {{base_hue_lightest.value}};">Privacy &amp; Terms</p>
 						</div>
-						<div layout-margin>
-							<h1 style="font-size: 18px; color: {{base_hue_lightest.value}};">Superpowered By Lightweight</h1>
+						<div flex="50" flex-gt-sm="25" layout-margin>
+							<h1 class="type heading footer" style="color: {{base_hue_lightest.value}};">Superpowered By Lightweight</h1>
 						</div>
 						<md-menu>
                             <md-button aria-label="Lightweight menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
