@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="lightweight" ng-controller="rootController" class="md-accent">
+<html ng-app="lightweightApp" ng-controller="rootController" class="md-accent">
 	
 
 
@@ -12,7 +12,7 @@
         <base href="/">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" ng-content="">
+        <meta name="description" ng-attr-content="{{settings.data.description}}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="theme-color" content="#e0e0e0"/>
         <title>MMA Texas</title>
@@ -47,9 +47,45 @@
 
 	<body ng-controller="colorController">
 
-		<!-- views -->
-        <div ng-view></div>
-        <!-- views -->
+        <!-- editor -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/editor.html'"></div>
+        <!-- editor -->
+
+        <!-- mediaVault -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/editor.html'"></div>
+        <!-- mediaVault -->
+
+        <!-- userVault -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/userVault.html'"></div>
+        <!-- userVault -->
+
+        <!-- myVault -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/myVault.html'"></div>
+        <!-- myVault -->
+
+        <!-- settings -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/settings.html'"></div>
+        <!-- settings -->
+
+        <!-- userVault detail -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/userVaultDetail.html'"></div>
+        <!-- userVault detail -->
+
+        <!-- userVault add user -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
+        <!-- userVault add user -->
+
+        <!-- password reset -->
+        <div ng-if="user" ng-include src="'application/global/dialogs/passwordReset.html'"></div>
+        <!-- password reset -->
+
+        <div ng-controller="lightweightController">
+
+    		<!-- views -->
+            <div ng-view></div>
+            <!-- views -->
+
+        </div>
 
 
 	</body>
@@ -74,6 +110,7 @@
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <!-- jquery -->
 
     <!-- Angular Material & Angular.js Libraries -->
@@ -88,6 +125,7 @@
     <script src="vendors/angular-touch.min.js" type="text/javascript"></script>
     <script src="vendors/angular-uuid.js"></script>
     <script src="vendors/angular-typewrite.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/g/angular.ui-sortable"></script>
     <!-- Angular Material & Angular.js Libraries -->
 
     <!-- AngularFire -->
@@ -107,10 +145,23 @@
     <script src="../routes.js" type="text/javascript"></script>
     <!-- Client routing -->
 
+    <!-- lightweight v 0.5.0 -->
+    <script src="../lightweight.js" type="text/javascript"></script>
+    <!-- lightweight v 0.5.0 -->
+
     <!-- Client Scripts -->
     <script src="../rootController.js" type="text/javascript"></script>
     <script src="../application/directives/palette.js" type="text/javascript"></script>
+    <script src="../application/global/controllers/uservault.js" type="text/javascript"></script>
     <script src="../application/landing/controllers/landingController.js" type="text/javascript"></script>
+    <script src="../application/pages/announcement/controllers/announcementController.js" type="text/javascript"></script>
+    <script src="../application/pages/authentication/controllers/authenticationController.js" type="text/javascript"></script>
+    <script src="../application/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
+    <script src="../application/pages/gallery/controllers/folderController.js" type="text/javascript"></script>
+    <script src="../application/pages/info/controllers/infoController.js" type="text/javascript"></script>
+    <script src="../application/pages/spotlight/controllers/spotlightController.js" type="text/javascript"></script>
+    <script src="../application/pages/team/controllers/teamController.js" type="text/javascript"></script>
+    <script src="../application/pages/authentication/controllers/loginController.js" type="text/javascript"></script>
     <!-- Client Scripts -->
 
     <!-- Image upload script -->
@@ -121,7 +172,7 @@
     <!-- Notification -->
     <script type="text/ng-template" id="toast-template.html">
         <md-toast style="background-color:{{primary_hue_normal.value}};">
-            <span class="md-toast-text" flex>{{toastMessage}}</span>
+            <applicationn class="md-toast-text" flex>{{toastMessage}}</applicationn>
             <md-button ng-show="action" ng-click="null">
             More info
             </md-button>
