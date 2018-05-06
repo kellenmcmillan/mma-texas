@@ -7,8 +7,12 @@
 	<section ng-cloak>
 
 		<!-- header -->
-		<div ng-include src="'application/partials/header.html'"></div>
+		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
 		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
 		<!-- messaging notification -->
 		<div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
@@ -172,14 +176,14 @@
 
 		<!-- Footer -->
 		<div layout="column" layout-align="center center" class="footer-container" flex style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;">
-			<div class="footer-content-top" layout="row" layout-padding flex>
-				<div layout="column" layout-padding layout-align="center center" flex="33">
+			<div class="footer-content-top" layout="column" layout-gt-sm="row" layout-padding flex>
+				<div layout="column" layout-padding layout-align="center center" flex="100" flex-gt-sm="33">
 					<div>
 						<img src="media/logo-full-white.png" style="max-height: 120px;">
 					</div>
 				</div>
-				<div layout="row" flex="66" layout-align="center center">
-					<div layout-padding flex="33">
+				<div layout="row" flex="100" flex-gt-sm="66" layout-align="center center">
+					<div layout-padding flex="100" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
 								<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Services</p>
@@ -195,7 +199,7 @@
 							</md-list-item>
 						</md-list>
 					</div>
-					<div layout-padding flex="33">
+					<div layout-padding flex="100" flex-gt-sm="33">
 						<md-list>
 							<md-list-item>
 								<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Quick Links</p>
@@ -211,7 +215,7 @@
 							</md-list-item>
 						</md-list>
 					</div>
-					<div layout-padding flex="33">
+					<div layout-padding flex="100" flex-gt-sm="33">
 						<div layout="row" layout-padding layout-align="start center">
 							<md-list>
 								<md-list-item>
@@ -231,7 +235,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer-content-bottom" layout="row" layout-align="start center" layout-padding flex>
+			<div class="footer-content-bottom" layout="column" layout-gt-sm="row" layout-align="start center" layout-padding flex>
 				<span flex="30"></span>
 				<div layout-padding flex="70">
 					<div flex layout="row" layout-align="end center">
