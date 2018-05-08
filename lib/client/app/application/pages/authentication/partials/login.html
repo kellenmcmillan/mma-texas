@@ -1,0 +1,51 @@
+<md-content class="page" style="height: {{window_height}}px">
+	<section ng-cloak>
+
+		<!-- header -->
+		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div>
+			<div style="text-align: center;">
+				<img src="{{settings.logo}}" ng-cloak="true">
+			</div>
+			<form name="login" autocomplete="nope">
+				<md-content>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Email</label>
+							<input type="email" name="email" ng-required="true" ng-model="email">
+							<div ng-messages="login.email.$error">
+						    	<div ng-message="required">Email required...</div>
+						    	<div ng-message="email">Enter a valid email...</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Password</label>
+							<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+							<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+						    	<div ng-message="required">Password required!</div>
+						    	<div ng-message="minlength">Password too short!</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<div layout-padding layout="row" layout-align="end center">
+						<div>
+							<md-button style="background: transparent;">
+							Forgot Password
+							</md-button>
+							<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="signIn()">
+							Login
+							</md-button>
+						</div>
+					</div>
+				</md-content>
+			</form>
+		</div>
+		
+	</section>
+</md-content>
