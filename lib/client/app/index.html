@@ -57,7 +57,7 @@
         <!-- mediaVault -->
 
         <!-- userVault -->
-        <div ng-include src="'application/global/dialogs/userVault.html'"></div>
+        <div ng-if="user" ng-include src="'application/global/dialogs/userVault.html'"></div>
         <!-- userVault -->
 
         <!-- myVault -->
@@ -73,7 +73,7 @@
         <!-- userVault detail -->
 
         <!-- userVault add user -->
-        <div ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
+        <div ng-if="user" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
         <!-- userVault add user -->
 
         <!-- password reset -->
