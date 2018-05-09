@@ -3,6 +3,7 @@ input:-webkit-autofill:focus, textarea:-webkit-autofill:focus {-webkit-box-shado
 ul li {list-style-type: none!important;}
 p, h1, h2, h3, h4, h5, h6, li, form, textarea, span, 
 a, div, button{letter-spacing: 0em!important; font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+a {text-decoration: none;}
 
 .type.simulated {font-size: 56px;}
 .type.heading {font-size: 32px;}
