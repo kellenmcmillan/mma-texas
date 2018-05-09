@@ -3,6 +3,12 @@
 	md-content.page {background: {{base_hue_lightest.value}}!important;}
 
 	/* Login Form Color */
+	md-toolbar.login_toolbar,
+	md-dialog.authentication,
+	md-tabs.login_dialog, md-tabs.signup_dialog {background: {{base_hue_lightest.value}}!important;}
+	md-tabs.login_dialog md-tabs-wrapper {display: none;}
+	md-dialog-actions.login_actions {background: {{primary_hue_normal.value}}!important;}
+	md-dialog-actions.login_actions .md-button span, md-dialog-actions.login_actions md-icon {color: {{base_hue_lightest.value}}!important;}
 	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value,
 	md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
 	md-input-container:not(.md-input-invalid).md-input-focused label.lightweight-md-option-label,
@@ -22,10 +28,7 @@
 	md-radio-button.md-checked .md-ink-ripple, md-radio-button.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}}!important;}
 	md-radio-group .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 	md-radio-button.md-checked .md-off, md-radio-button.md-checked .md-off,
-	md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, 
-	md-input-container:not(.md-input-invalid).md-input-focused .md-input, 
-	md-input-container.md-default-theme:not(.md-input-invalid).md-input-resized .md-input, 
-	md-input-container:not(.md-input-invalid).md-input-resized .md-input, md-radio-button.md-default-theme:not([disabled]).md-primary.md-checked .md-off, 
+	md-input-container:not(.md-input-invalid).md-input-focused .md-input, md-radio-button.md-default-theme:not([disabled]).md-primary.md-checked .md-off, 
 	md-radio-button:not([disabled]).md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, 
 	md-radio-button:not([disabled]) .md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary .md-checked .md-off, 
 	md-radio-button:not([disabled]).md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, 
@@ -33,7 +36,7 @@
 	md-radio-group:not([disabled]).md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, 
 	md-radio-group:not([disabled]) .md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary .md-checked .md-off, 
 	md-radio-group:not([disabled]).md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, 
-	md-radio-group:not([disabled]) .md-primary .md-checked .md-off {border-color: {{primary_hue_normal.value}}!important;}
+	md-radio-group:not([disabled]) .md-primary .md-checked .md-off {border-color: {{primary_hue_text__normal.value}};}
 	md-radio-button .md-on, md-radio-button .md-on,
 	md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {background-color: {{primary_hue_text__normal.value}};}
 	md-slider .md-thumb:after, md-slider .md-thumb:after {background: {{primary_hue_normal.value}}; border-color: {{primary_hue_normal.value}};}
