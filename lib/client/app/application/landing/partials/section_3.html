@@ -2,60 +2,6 @@
 	<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2;">
 		<div layout-wrap layout="row" layout-align="start center" flex>
 			<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
-				<div class="index-form" layout-padding>
-					<md-card style="background: #fafafa;" style="width: 100%">
-	                    <form name="index">
-	                    	<div style="text-align: center">
-	                    		<h1>Contact MMA Today!</h1>
-	                    	</div>
-	                        <md-card-content>
-	                            <md-list-item>
-	                                <md-input-container class="md-block lightweight-md-input">
-	                                    <label>Firstname</label>
-	                                    <input name="firstname" ng-model="index_page_contact_form.firstname" minlength="2" required>
-	                                    <div ng-messages="index.firstname.$error" ng-show="index.firstname.$dirty">
-	                                        <div ng-message="required">Firstname required!</div>
-	                                        <div ng-message="minlength">Name too short!</div>
-	                                    </div>
-	                                </md-input-container>
-	                            </md-list-item>
-	                            <md-list-item>
-	                                <md-input-container class="md-block lightweight-md-input">
-	                                    <label>Lastname</label>
-	                                    <input ng-model="index_page_contact_form.lastname" minlength="2" required>
-	                                    <div ng-messages="index.lastname.$error" ng-show="index.lastname.$dirty">
-	                                        <div ng-message="required">Lastname required!</div>
-	                                        <div ng-message="minlength">Name too short!</div>
-	                                    </div>
-	                                </md-input-container>
-	                            </md-list-item>
-	                            <md-list-item>
-	                                <md-input-container class="md-block lightweight-md-input">
-	                                    <label>Email</label>
-	                                    <input type="email" name="email" ng-model="index_page_contact_form.email" required>
-	                                    <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
-	                                        <div ng-message="required">Email required!</div>
-	                                        <div ng-message="email">Enter a valid email!</div>
-	                                    </div>
-	                                </md-input-container>
-	                            </md-list-item>
-	                            <md-list-item>
-	                            	<md-input-container class="md-block lightweight-md-input" flex>
-                                        <label>Message</label>
-                                        <textarea name="message" md-detect-hidden="true" ng-model="index_page_contact_form.message" rows="3" minlength="10" md-maxlength="250"></textarea>
-                                        <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
-	                                        <div ng-message="required">Message required!</div>
-	                                        <div ng-message="minlength">Message too short!</div>
-	                                    </div>
-                                    </md-input-container>
-	                            </md-list-item>
-	                        </md-card-content>
-	                        <md-card-actions layout="row" layout-align="end center" flex>
-	                            <md-button class="md-raised" ng-click="sendIndexForm(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
-	                        </md-card-actions>
-	                    </form>
-	                </md-card>
-				</div>
 				<iframe src="https://snazzymaps.com/embed/64899" width="auto" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 			</div>
 		</div>

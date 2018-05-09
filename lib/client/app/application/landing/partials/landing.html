@@ -15,15 +15,59 @@
 		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
 		<!-- messaging notification -->
-		<!-- <div layout="row" ng-init="show_notification = true" ng-hide="show_notification == false" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
+		<div layout="row" ng-init="show_notification = true; button_clicks = 0" ng-hide="show_notification == false || button_clicks > 0" layout-align="center center" style="background-color: {{base_hue_darkest.value}}; position: fixed; right: 108px; bottom: 54px; height: 56px; width: 300px; z-index: 3">
 			<p style="color: {{base_hue_lightest.value}}; font-size: 14px; padding: 0 0 0 16px;">Click Here To Connect With Us!</p><span flex></span>
 			<md-button class="md-icon-button" ng-click="show_notification = false" aria-label="More">
 				<md-icon style="color: {{base_hue_lightest.value}}">close</md-icon>
 			</md-button>
 		</div>
-		<md-button ng-click="show_notification = true" style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
+		<div class="index-form" layout-padding ng-show="show_notification == true && button_clicks > 0">
+			<md-card style="background: #fafafa;" style="width: 100%">
+                <form name="index">
+                	<div style="text-align: center">
+                		<h1>Contact MMA Today!</h1>
+                	</div>
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Full Name</label>
+                                <input name="name" ng-model="index_page_contact_form.name" minlength="4" required>
+                                <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
+                                    <div ng-message="required">Name required!</div>
+                                    <div ng-message="minlength">Name too short!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Email</label>
+                                <input type="email" name="email" ng-model="index_page_contact_form.email" required>
+                                <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
+                                    <div ng-message="required">Email required!</div>
+                                    <div ng-message="email">Enter a valid email!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                        	<md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Message</label>
+                                <textarea name="message" md-detect-hidden="true" ng-model="index_page_contact_form.message" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
+                                    <div ng-message="required">Message required!</div>
+                                    <div ng-message="minlength">Message too short!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center" flex>
+                        <md-button class="md-raised" ng-click="sendIndexForm(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
+                    </md-card-actions>
+                </form>
+            </md-card>
+		</div>
+		<md-button ng-hide="show_notification == true && button_clicks > 0" ng-click="show_notification = true; button_clicks++" style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
 			<md-icon style="color: {{base_hue_lightest.value}}">mail</md-icon>
-		</md-button> -->
+		</md-button>
 		<!-- messaging notification -->
 
 		<!-- Slideshow -->
