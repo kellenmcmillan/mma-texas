@@ -1,10 +1,13 @@
 <div layout="row" layout-align="center center" layout-wrap>
 	<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2;">
 		<div layout-wrap layout="row" layout-align="start center" flex>
-			<div flex style="margin-bottom: -5px;" layout-align="end center">
-				<div flex="100" flex-sm="80" flex-gt-sm="40" layout-padding>
+			<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
+				<div class="index-form" layout-padding>
 					<md-card style="background: #fafafa;" style="width: 100%">
 	                    <form name="index">
+	                    	<div style="text-align: center">
+	                    		<h1>Contact MMA Today!</h1>
+	                    	</div>
 	                        <md-card-content>
 	                            <md-list-item>
 	                                <md-input-container class="md-block lightweight-md-input">
@@ -36,19 +39,19 @@
 	                                    </div>
 	                                </md-input-container>
 	                            </md-list-item>
-	                            <md-list-itme>
+	                            <md-list-item>
 	                            	<md-input-container class="md-block lightweight-md-input" flex>
                                         <label>Message</label>
-                                        <textarea md-detect-hidden="true" ng-model="index_page_contact_form.message" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                        <textarea name="message" md-detect-hidden="true" ng-model="index_page_contact_form.message" rows="3" minlength="10" md-maxlength="250"></textarea>
                                         <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
 	                                        <div ng-message="required">Message required!</div>
 	                                        <div ng-message="minlength">Message too short!</div>
 	                                    </div>
                                     </md-input-container>
-	                            </md-list-itme>
+	                            </md-list-item>
 	                        </md-card-content>
 	                        <md-card-actions layout="row" layout-align="end center" flex>
-	                            <md-button class="md-raised" ng-click="sendIndexForm(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+	                            <md-button class="md-raised" ng-click="sendIndexForm(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
 	                        </md-card-actions>
 	                    </form>
 	                </md-card>
