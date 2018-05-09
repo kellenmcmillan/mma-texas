@@ -15,6 +15,6 @@
   	.index-news-post {max-width: 350px!important;}
 }
 
-.index-form {position: fixed; right: 32px; top: 16px; min-width: 400px;}
+.index-form {position: fixed; right: 0; top: 81px; min-width: 400px; z-index: 10;}
 .index-form md-input-container {margin: 8px 0!important;}
 /* index-slider */
