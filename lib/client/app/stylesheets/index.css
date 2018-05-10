@@ -12,7 +12,11 @@
 
 @media screen and (max-width: 839px) {
 	.lw-auto-slider {height: 600px;}
-  	.index-news-post {max-width: 350px!important;}
+}
+
+@media screen and (max-width:599px) {
+	.lw-auto-slider {height: 600px;}
+  	.index-news-post.full-width {width: 100%!important;}
 }
 
 .index-form {position: fixed; right: 16px; top: 81px; min-width: 350px; z-index: 10;}
