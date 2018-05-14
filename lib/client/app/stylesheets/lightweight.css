@@ -1,8 +1,8 @@
 /* css */
 
 /* ============================== Curtain ============================== */
-.dialog-curtain {z-index: 20;}
-.secondary-dialog-curtain {z-index: 21;}
+.dialog-curtain {z-index: 21;}
+.secondary-dialog-curtain {z-index: 22;}
 @media screen and (max-width: 839px) {
 .suite-dialog {position: relative!important; width: 100%; margin:0!important;}
 .dialog-curtain, .secondary-dialog-curtain {overflow-y: scroll!important;}
