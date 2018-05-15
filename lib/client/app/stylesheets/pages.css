@@ -47,5 +47,12 @@
   font-size: 14px;
   font-weight: 500;
 }
-/* ===== Lighweight Image Cards ===== */
+.interior-page {min-height: 600px;}
 
+/* ===== Lighweight Image Cards ===== */
+@media (max-width: 959px) {
+	.interior-page {min-height: 500px;}
+}
+@media (max-width: 600px) {
+	.interior-page {min-height: 400px;}
+}
