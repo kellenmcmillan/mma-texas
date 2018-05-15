@@ -28,6 +28,7 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/pages.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/lightweight.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/text.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/cards.css">
@@ -49,15 +50,15 @@
 	<body ng-controller="colorController">
 
         <!-- editor -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/editor.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/editor.html'"></div>
         <!-- editor -->
 
         <!-- mediaVault -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/editor.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/mediaVault.html'"></div>
         <!-- mediaVault -->
 
         <!-- userVault -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/userVault.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/userVault.html'"></div>
         <!-- userVault -->
 
         <!-- myVault -->
@@ -65,15 +66,15 @@
         <!-- myVault -->
 
         <!-- settings -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/settings.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/settings.html'"></div>
         <!-- settings -->
 
         <!-- userVault detail -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/userVaultDetail.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/userVaultDetail.html'"></div>
         <!-- userVault detail -->
 
         <!-- userVault add user -->
-        <div ng-if="user" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
+        <div ng-if="user.security.roles == 'management'" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
         <!-- userVault add user -->
 
         <!-- password reset -->
@@ -81,6 +82,8 @@
         <!-- password reset -->
 
         <div ng-controller="lightweightController">
+
+            <div ng-include src="'application/global/style.html'"></div>
 
     		<!-- views -->
             <div ng-view></div>
@@ -155,9 +158,8 @@
     <script src="../application/directives/palette.js" type="text/javascript"></script>
     <script src="../application/global/controllers/uservault.js" type="text/javascript"></script>
     <script src="../application/landing/controllers/landingController.js" type="text/javascript"></script>
-    <!-- <script src="../application/pages/announcement/controllers/announcementController.js" type="text/javascript"></script>
-    <script src="../application/pages/authentication/controllers/authenticationController.js" type="text/javascript"></script>
-    <script src="../application/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
+    <script src="../application/pages/announcement/controllers/announcementController.js" type="text/javascript"></script>
+    <!-- <script src="../application/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
     <script src="../application/pages/gallery/controllers/folderController.js" type="text/javascript"></script>
     <script src="../application/pages/info/controllers/infoController.js" type="text/javascript"></script>
     <script src="../application/pages/spotlight/controllers/spotlightController.js" type="text/javascript"></script>
