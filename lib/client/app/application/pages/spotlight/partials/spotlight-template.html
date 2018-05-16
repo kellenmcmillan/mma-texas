@@ -22,7 +22,7 @@
 
 	    <div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
 		    <!-- Shrinking Page Title -->
-			<div class="lightweight-interior--hero" flex>
+			<div class="lightweight-interior--hero" flex="100">
 				<div style="width: 100%; height: 100%; z-index: -1!important; position: absolute;">
 				    <div class="interior-page-background"></div>
 				</div>
@@ -37,15 +37,15 @@
 			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
 						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
-						<div class="mdl-grid full-width no-padding">
+						<div style="width: 100%; padding: 0;">
 							<!-- panel images -->
-							<div ng-cloak class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
-								<div class="mdl-card__title mdl-card--expand"></div>
-							</div>
+							<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+								<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+							</md-card>
 							<!-- panel images -->
 						</div>
 						<a ng-if="content.type == 'button'" href="{{content.data.url}}">
-                            <button style="margin-top: 8px; margin-bottom: 16px;" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">{{content.data.button}}</button>
+                            <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
                         </a>
 			        </div>
 		    	</div>

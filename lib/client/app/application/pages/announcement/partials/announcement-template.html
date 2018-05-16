@@ -12,7 +12,7 @@
 		<md-button ng-if="user" ng-click="edit(announcementPage.settings.configs, announcementPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
 	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
 	    </md-button>
-	    
+
 		<div class="interior-page" layout="row" layout-wrap style="width: 100%;">
 
 		    	<!-- tab Panel -->
@@ -28,13 +28,13 @@
 					<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 					<div style="width: 100%;">
 						<!-- panel images -->
-						<div ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
-							<div class="mdl-card__title mdl-card--expand"></div>
-						</div>
+							<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+								<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+							</md-card>
 						<!-- panel images -->
 					</div>
 					<a ng-if="content.type == 'button'" href="{{content.data.url}}">
-	                    <md-button style="margin-top: 8px; margin-bottom: 16px;" class="md-raised">{{content.data.button}}</md-button>
+	                    <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
 	                </a>
 		        </div>
 		    	<!-- tab Panel -->
