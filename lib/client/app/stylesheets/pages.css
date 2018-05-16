@@ -29,11 +29,11 @@
 /* ===== Sidebar Widgets - Directions ===== */
 
 /* ===== Lighweight Image Cards ===== */
-.lightweight-card-image.mdl-card {
+.lightweight-card-image {
  	height: 400px;
 }
 @media (max-width: 839px) {
-	.lightweight-card-image.mdl-card {
+	.lightweight-card-image {
 		height: 200px;
 	}
 }

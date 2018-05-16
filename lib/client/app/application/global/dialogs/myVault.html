@@ -200,7 +200,7 @@
                                                 </md-tab>
                                                 <md-tab label="Shared With Me">
                                                     <md-content class="md-padding">
-                                                        <div layout="column" layout-align="center stretch" flex>
+                                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                                             <md-list class="md-dense" flex>
                                                                 <md-list-item class="md-2-line" flex>
                                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
@@ -216,7 +216,7 @@
                                         </md-content>
                                     </md-card-content>
                             </md-card>
-                            <md-card style="background: #fafafa;" flex="100">
+                            <md-card class="md-whiteframe-4dp" style="background: #fafafa;" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Notifications</span>
@@ -224,7 +224,36 @@
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
-
+                                        <md-tabs md-dynamic-height md-border-bottom>
+                                                <md-tab label="All Notifications">
+                                                    <md-content style="padding: 0;">
+                                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                                            <md-list class="md-dense" flex>
+                                                                <md-list-item class="md-2-line" flex>
+                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
+                                                                    <div class="md-list-item-text">
+                                                                        <h3 style="font-size: 16px;">No Notifications</h3>
+                                                                    </div>
+                                                                </md-list-item>
+                                                            </md-list>
+                                                        </div>
+                                                    </md-content>
+                                                </md-tab>
+                                                <md-tab label="Unread">
+                                                    <md-content class="md-padding">
+                                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                                            <md-list class="md-dense" flex>
+                                                                <md-list-item class="md-2-line" flex>
+                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
+                                                                    <div class="md-list-item-text">
+                                                                        <h3 style="font-size: 16px;">No Unread Notifications</h3>
+                                                                    </div>
+                                                                </md-list-item>
+                                                            </md-list>
+                                                        </div>
+                                                    </md-content>
+                                                </md-tab>
+                                            </md-tabs>
                                     </md-card-content>
                             </md-card>
                         </div>
