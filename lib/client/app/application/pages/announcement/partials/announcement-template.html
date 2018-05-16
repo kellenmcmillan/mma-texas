@@ -1,47 +1,48 @@
-<section flex="100" layout="column" layout-align="start center" class="{{base_hue_lightest.name}}">
+<md-content>
+	<section flex="100" layout="column" layout-align="start center" class="{{base_hue_lightest.name}}">
 
-	<!-- header -->
-	<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
-		<div ng-include src="'application/partials/header.html'"></div>
-	</md-subheader>
-	<!-- header -->
+		<!-- header -->
+		<md-subheader class="header" layout-align="center center" layout="row" flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
 
-	<div ng-include src="'application/partials/navigation-menu.html'"></div>
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
-	<md-button ng-if="user" ng-click="edit(announcementPage.settings.configs, announcementPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
-        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
-    </md-button>
+		<md-button ng-if="user" ng-click="edit(announcementPage.settings.configs, announcementPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
 
-	<div class="interior-page" layout="row" layout-wrap style="width: 100%;">
+		<div class="interior-page" layout="row" layout-wrap style="width: 100%;">
 
-	    	<!-- tab Panel -->
-    		<!-- panel title -->
-	    	<div flex="100" style="padding-top: 16px;">
-		        <h1 class="type heading base-hdst--text" style="margin-top: 8px;">{{announcementPage.data.title}}</h1>
-		    </div>
-		    <!-- panel title -->
+		    	<!-- tab Panel -->
+	    		<!-- panel title -->
+		    	<div flex="100" style="padding-top: 16px;">
+			        <h1 class="type heading base-hdst--text" style="margin-top: 8px;">{{announcementPage.data.title}}</h1>
+			    </div>
+			    <!-- panel title -->
 
-	    	<div ng-repeat="content in announcementPage.data.page.contents" flex="100">
-	    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
-				<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-				<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
-				<div style="width: 100%;">
-					<!-- panel images -->
-					<div ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
-						<div class="mdl-card__title mdl-card--expand"></div>
+		    	<div ng-repeat="content in announcementPage.data.page.contents" flex="100">
+		    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+					<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+					<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+					<div style="width: 100%;">
+						<!-- panel images -->
+						<div ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
+							<div class="mdl-card__title mdl-card--expand"></div>
+						</div>
+						<!-- panel images -->
 					</div>
-					<!-- panel images -->
-				</div>
-				<a ng-if="content.type == 'button'" href="{{content.data.url}}">
-                    <md-button style="margin-top: 8px; margin-bottom: 16px;" class="md-raised">{{content.data.button}}</md-button>
-                </a>
-	        </div>
-	    	<!-- tab Panel -->
+					<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+	                    <md-button style="margin-top: 8px; margin-bottom: 16px;" class="md-raised">{{content.data.button}}</md-button>
+	                </a>
+		        </div>
+		    	<!-- tab Panel -->
 
-	</div>
-</section>
+		</div>
 
-
-<!-- Footer -->
-<div ng-include src="'application/partials/footer.html'"></div>
-<!-- Footer -->
+		<!-- Footer -->
+		<div ng-include src="'application/partials/footer.html'"></div>
+		<!-- Footer -->
+	</section>
+</md-content>
