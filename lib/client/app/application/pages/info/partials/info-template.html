@@ -33,17 +33,17 @@
 		<div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
 
 				<!-- tab Panel Component -->
-			    <div flex="100" flex-sm="100" flex-gt-sm="66" style="z-index: 3;" layout-padding>
+			    <div layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="66" style="z-index: 3;" layout-padding>
 
 			    	<!-- tab Panel -->
 
 		    		<!-- panel title -->
-			    	<div style="padding-top: 16px;">
-				        <h1 class="type heading-2 base-hdst--text" style="margin-top: 8px;">{{infoPage.data.title}}</h1>
+			    	<div flex="100">
+				        <h1 class="type heading-2 base-hdst--text" style="margin-top: 8px;">{{infoPage.data.title}}This is the page Title</h1>
 				    </div>
 				    <!-- panel title -->
 
-				    <div flex="100" layout="row" style="padding: 0!important;">
+				    <div flex="100" layout="row">
 						<!-- panel images -->
 						<md-card flex="100" class="lightweight-card-image md-whitefrap-2dp">
 							<img ng-src="{{infoPage.data.page.foreground.images.source}}" class="md-card-image">
@@ -53,7 +53,7 @@
 
 			    	<br>
 			    	<br>
-			    	<div ng-repeat="content in infoPage.data.page.contents">
+			    	<div ng-repeat="content in infoPage.data.page.contents" flex="100">
 			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
 						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
