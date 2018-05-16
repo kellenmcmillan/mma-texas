@@ -1,5 +1,5 @@
-<md-content>
-	<section flex="100" layout="column" layout-align="start center" class="{{base_hue_lightest.name}}">
+<md-content class="page" style="height: {{window_height}}px">
+	<section class="{{base_hue_lightest.name}}">
 
 		<!-- header -->
 		<md-subheader class="header" layout-align="center center" layout="row" flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
@@ -12,7 +12,7 @@
 		<md-button ng-if="user" ng-click="edit(announcementPage.settings.configs, announcementPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
 	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
 	    </md-button>
-
+	    
 		<div class="interior-page" layout="row" layout-wrap style="width: 100%;">
 
 		    	<!-- tab Panel -->
@@ -40,9 +40,9 @@
 		    	<!-- tab Panel -->
 
 		</div>
-
-		<!-- Footer -->
-		<div ng-include src="'application/partials/footer.html'"></div>
-		<!-- Footer -->
 	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
 </md-content>
