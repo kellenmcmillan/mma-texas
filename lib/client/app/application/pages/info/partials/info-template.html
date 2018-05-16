@@ -26,28 +26,20 @@
 		<div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
 
 			<!-- Shrinking Page Title -->
-			<div flex ng-attr-style="background-color: {{primary_hue_normal.value}}; opacity: .9; height: 200px; line-height: 200px; width: 100%; position: relative; top: 0; z-index: 21; overflow: hidden;">
+			<div flex ng-attr-style="background-color: {{primary_hue_normal.value}}; opacity: .9; height: 200px; line-height: 150px; min-width: 100%; position: relative; top: 0; overflow: hidden; text-align: center;">
 				<div style="width: 100%; height: 100%; position: absolute; z-index: -1!important">
 				    <div class="interior-page-background"></div>
 				</div>
-				<h2 class="type heading {{base_hue_text__lightest.name}}">{{infoPage.data.title}}</h2>
+				<h2 style="color: {{base_hue_text__lightest.value}}" class="type heading">{{infoPage.data.title}}</h2>
 			</div>
 			<!-- Shrinking Page Title -->
 
 			<!-- tab Panel Component -->
 		    <div layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="66" style="z-index: 3;" layout-padding>
 
-		    	<!-- tab Panel -->
-
-	    		<!-- panel title -->
-		    	<div flex="100">
-			        <h1 class="type heading-2 base-hdst--text" style="margin-top: 8px;">{{infoPage.data.title}}This is the page Title</h1>
-			    </div>
-			    <!-- panel title -->
-
 			    <div flex="100" layout="row">
 					<!-- panel images -->
-					<md-card flex="100" class="lightweight-card-image md-whitefrap-2dp">
+					<md-card flex="100" class="lightweight-card-image md-whitefrap-2dp" style="margin: 0">
 						<img ng-src="{{infoPage.data.page.foreground.images.source}}" class="md-card-image">
 					</md-card>
 					<!-- panel images -->
@@ -70,8 +62,6 @@
                         <button style="margin-top: 8px; margin-bottom: 16px;" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">{{content.data.button}}</button>
                     </a>
 		        </div>
-
-		    	<!-- tab Panel -->
 
 		    </div>
 		    <!-- tab Panel Component -->
