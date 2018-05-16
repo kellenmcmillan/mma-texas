@@ -5,8 +5,14 @@
     right: 0; top: 400px; padding:0; margin: 0!important; opacity: 0.1;
 }
 </style>
-<section flex="100" layout="column" layout-align="start center" class="{{base_hue_lightest.name}}">
+<section flex="100" layout="column" layout-align="start center" style="background: {{base_hue_lightest.value}}">
 	
+	<!-- header -->
+	<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+		<div ng-include src="'application/partials/header.html'"></div>
+	</md-subheader>
+	<!-- header -->
+
 	<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
 	<md-button ng-if="user" ng-click="edit(infoPage.settings.configs, infoPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
@@ -26,7 +32,7 @@
 	<div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
 
 			<!-- tab Panel Component -->
-		    <div flex="100" flex-sm="100" flex-gt-sm="66" class="content-box mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone padded-text" style="z-index: 3;">
+		    <div flex="100" flex-sm="100" flex-gt-sm="66" style="z-index: 3;" layout-padding>
 
 		    	<!-- tab Panel -->
 
@@ -70,7 +76,7 @@
             <!-- Map Widget -->
             <div flex="100" flex-sm="100" flex-gt-sm="33" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2;">
 				<div layout-wrap layout="row" layout-align="start center" flex>
-					<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
+					<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center" layout-padding>
 						<iframe src="https://snazzymaps.com/embed/64899" width="auto" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 					</div>
 				</div>
