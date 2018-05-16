@@ -1,4 +1,5 @@
-/* ===== Sidebar Widgets - Panel Navigation ===== */
+.lightweight-interior--hero {height: 400px; line-height: 400px; width: 100%; position: relative; top: 0; z-index: 1; overflow: hidden;}
+.lightweight-interior--hero h2.h2 {font-size: 36px!important;}
 .lightweight-sidebar--heading {display: flex;}
 .lightweight-sidebar--heading i {font-size: 24px; display: inline;}
 .lightweight-sidebar-tabs {
