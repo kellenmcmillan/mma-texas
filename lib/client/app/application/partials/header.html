@@ -6,39 +6,15 @@
 	</div>
 	<!-- Logo -->
 	<!-- Navigation Items -->
-	<!-- <div flex="25" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+	<div flex="25" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
 		<md-button class="md-icon-button navigation menu" style="color: {{base_hue_darkest.value}};" ng-click="navigation_panel = true">
 			<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
 		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('ABOUT US')" style="color: {{base_hue_darkest.value}};">
+		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" style="color: {{base_hue_darkest.value}};">
 			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			ABOUT US
+			{{item.navigation.parent.name}}
 		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('PROJECTS')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			PROJECTS
-		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('SERVICES')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			SERVICES
-		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('PEOPLE')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			PEOPLE
-		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('NEWS')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			NEWS
-		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('CAREERS')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			CAREERS
-		</md-button>
-		<md-button class="navigation link" ng-click="sub_navigation_panel = true; open_menu('CONTACT US')" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
-			CONTACT US
-		</md-button>
-	</div> -->
+	</div>
 	<!-- Navigation Items -->
 </div>
 <!-- sticky header -->
