@@ -273,7 +273,7 @@
                         </md-card-content>
                         <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
                             <div flex></div>
-                            <md-button ng-confirm-message="Are you sure you want to cancel editing this navigation item?" ng-confirm-click="clearParentNav()" ng-confirm-condition="true" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button>
+                            <md-button ng-confirm-message="Are you sure you want to deselect this navigation item?" ng-confirm-click="clearParentNav()" ng-confirm-condition="true" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button>
                             <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$valid" ng-disabled="manageNavigation.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                         </md-card-actions>
                     </form>
