@@ -30,7 +30,7 @@
 				<div style="width: 100%; height: 100%; position: absolute; z-index: -1!important">
 				    <div class="interior-page-background"></div>
 				</div>
-				<h2 style="color: {{base_hue_text__lightest.value}}" class="type heading">{{infoPage.data.title}}</h2>
+				<h2 style="color: {{base_hue_text__darkest.value}}" class="type heading">{{infoPage.data.title}}</h2>
 			</div>
 			<!-- Shrinking Page Title -->
 
@@ -67,7 +67,7 @@
 		    <!-- tab Panel Component -->
 
             <!-- Map Widget -->
-            <div flex="100" flex-sm="100" flex-gt-sm="33" layout="row" layout-align="center center" style="background-color: {{base_hue_lightest.value}}; z-index: 2;">
+            <div flex="100" flex-sm="100" flex-gt-sm="33" layout="row" layout-align="center start" style="background-color: {{base_hue_lightest.value}}; z-index: 2;">
 				<div layout-wrap layout="row" layout-align="start center" flex>
 					<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center" layout-padding>
 						<iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
