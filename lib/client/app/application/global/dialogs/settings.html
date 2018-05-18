@@ -368,7 +368,25 @@
                                     <label>Page Title</label>
                                     <input name="new_page_title" required ng-model="newPageData.title">
                                     <div ng-messages="addNewPage.new_page_title.$error">
-                                        <div ng-message="required">Navigation item name required!</div>
+                                        <div ng-message="required">Page title required!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="newPageData.type == 'blog'">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Subtitle</label>
+                                    <input name="new_page_subtitle" required ng-model="newPageData.subtitle">
+                                    <div ng-messages="addNewPage.new_page_subtitle.$error">
+                                        <div ng-message="required">Page subtitle required!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="newPageData.type == 'blog'">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Headline</label>
+                                    <textarea name="new_page_headline" md-detect-hidden="true" ng-model="newPageData.headline" rows="3" md-maxlength="250" required></textarea>
+                                    <div ng-messages="addNewPage.new_page_headline.$error">
+                                        <div ng-message="required">Page subtitle required!</div>
                                     </div>
                                 </md-input-container>
                             </md-list-item>

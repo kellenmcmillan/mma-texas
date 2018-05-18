@@ -1,0 +1,76 @@
+<style>
+.interior-page-background {
+    background: url('{{blogPage.data.page.foreground.images.source}}') no-repeat;
+    background-size: cover; width: 100%!important; height: 100%; 
+    right: 0; top: 400px; padding:0; margin: 0!important; opacity: 0.1;
+}
+</style>
+<md-content class="page" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lightest.value}}">
+		
+		<!-- header -->
+		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
+
+		<md-button ng-if="user" ng-click="edit(blogPage.settings.configs, blogPage)" class="md-fab custom-deep-button" aria-label="Edit Blog Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
+
+
+		
+		
+		<div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
+
+			<!-- Shrinking Page Title -->
+			<div flex ng-attr-style="background-color: {{primary_hue_normal.value}}; opacity: .9; height: 400px; line-height: 250px; min-width: 100%; position: relative; top: 0; overflow: hidden; text-align: center;">
+				<div style="width: 100%; height: 100%; position: absolute; z-index: -1!important">
+				    <div class="interior-page-background"></div>
+				</div>
+				<h2 style="color: {{base_hue_text__lightest.value}}" class="type simulated">{{blogPage.data.title}}</h2>
+			</div>
+			<!-- Shrinking Page Title -->
+
+			<!-- tab Panel Component -->
+		    <div layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="100" style="z-index: 3;" layout-padding>
+
+			    <div flex="100" flex-gt-sm="75" layout="row">
+					<h1 class="type heading base-hdst--text" ng-bind-html="blogPage.data.title" style="margin-top: 8px;"></h1><br>
+					<p class="base-hdst--text" ng-bind-html="blogPage.data.subtitle"></p>
+					<p class="base-hdst--text" ng-bind-html="blogPage.data.author"></p>
+				</div>
+				<div flex="100" flex-gt-sm="25" layout="row">
+					<p class="base-hdst--text" ng-bind-html="blogPage.data.date"></p>
+				</div>
+
+		    	<br>
+		    	<br>
+		    	<div ng-repeat="content in blogPage.data.page.contents" flex="100">
+		    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+					<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+					<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+					<div class="mdl-grid full-width no-padding">
+						<!-- panel images -->
+							<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+								<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+							</md-card>
+						<!-- panel images -->
+					</div>
+					<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+                        <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+                    </a>
+		        </div>
+
+		    </div>
+		    <!-- tab Panel Component -->
+
+		</div>
+	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
+</md-content>
