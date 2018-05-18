@@ -155,7 +155,7 @@
                                 <!-- Add A Gallery -->
                                 <div flex>
                                     <div ng-show="galleriesgridview == false" layout="column" layout-align="center center" flex="100" layout-wrap layout-margin>
-                                        <md-card class="md-card-base" style="width: 90%">
+                                        <md-card class="md-card-base md-whiteframe-4dp" style="width: 90%">
                                             <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="gallerySortObj">
                                                 <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
                                                     <md-list-item class="noright">
@@ -180,7 +180,7 @@
                                                 <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
                                             </md-button>
                                         </div>
-                                        <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30">
+                                        <md-card ng-show="galleries" class="md-card-base md-whiteframe-4dp" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30">
                                             <md-card-title>
                                                 <md-card-title-text layout="row" layout-align="start center">
                                                     <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
