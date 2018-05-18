@@ -30,7 +30,7 @@
 				<div style="width: 100%; height: 100%; position: absolute; z-index: -1!important">
 				    <div class="interior-page-background"></div>
 				</div>
-				<h2 style="color: {{base_hue_text__darkest.value}}" class="type heading">{{infoPage.data.title}}</h2>
+				<h2 style="color: {{base_hue_text__lightest.value}}" class="type heading">{{infoPage.data.title}}</h2>
 			</div>
 			<!-- Shrinking Page Title -->
 
@@ -39,7 +39,7 @@
 
 			    <div flex="100" layout="row">
 					<!-- panel images -->
-					<md-card flex="100" class="lightweight-card-image md-whitefrap-2dp" style="margin: 0">
+					<md-card flex="100" class="lightweight-card-image md-whitefrap-2dp" style="margin: 0; overflow: hidden;">
 						<img ng-src="{{infoPage.data.page.foreground.images.source}}" class="md-card-image">
 					</md-card>
 					<!-- panel images -->
