@@ -306,10 +306,10 @@
                 </div>
                 <div ng-show="staffgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
-                        <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
+                        <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
-                        <md-button ng-show="staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
+                        <md-button ng-show="staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 168px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
                             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
