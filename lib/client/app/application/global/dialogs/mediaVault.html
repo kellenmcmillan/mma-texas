@@ -138,12 +138,12 @@
                                 </div>
                             </md-tab-body>
                         </md-tab>
-                        <md-tab id="Galleries">
-                            <md-tab-label>Manage Galleries</md-tab-label>
+                        <md-tab id="Projects">
+                            <md-tab-label>Manage Projects</md-tab-label>
                             <md-tab-body>
                                 <div layout-margin flex>
                                     <form name="uploads">
-                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
+                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Project</md-button>
                                         <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
                                         {{galleriesgridview == false ? "Grid View" : "List View"}}
                                         <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
@@ -183,7 +183,7 @@
                                         <md-card ng-show="galleries" class="md-card-base md-whiteframe-4dp" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30">
                                             <md-card-title>
                                                 <md-card-title-text layout="row" layout-align="start center">
-                                                    <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
+                                                    <span class="md-headline">{{gallery.name || "New Project"}}</span>
                                                 </md-card-title-text>
                                             </md-card-title>
                                             <md-card-content>
@@ -206,7 +206,7 @@
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>
-                                                    <p>Featured Gallery</p>
+                                                    <p>Featured Project</p>
                                                     <md-switch class="md-secondary" ng-model="gallery.featured"></md-switch>
                                                 </md-list-item>
                                                 <md-list-item flex layout="row">
