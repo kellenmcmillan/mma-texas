@@ -20,26 +20,23 @@
 				<div style="width: 100%; height: 100%; position: absolute;">
 				    <img ng-src="{{blogPage.data.page.background.images.source}}">
 				</div>
-				<h2 style="color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{blogPage.data.title}}</h2>
+				<h2 style="color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{blogPage.data.headline}}</h2>
 			</div>
 			<!-- Shrinking Page Title -->
 
 			<!-- tab Panel Component -->
 		    <div layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="100" style="z-index: 3; min-height: 300px;" layout-padding>
 
-				<md-list class="md-dense" flex="100" flex-gt-sm="75">
+				<md-list class="md-dense" flex="100">
                     <md-list-item class="md-3-line" flex style="padding: 0;">
                         <!-- <md-icon class="md-avatar-icon" aria-label="View details" style="color: {{base_hue_darkest.value}};">face</md-icon> -->
                         <div class="md-list-item-text">
                         	<h3 style="font-size: 24px;">{{blogPage.data.title}}</h3>
                             <h3 style="font-size: 16px;">{{blogPage.data.subtitle}}</h3>
-                            <p style="font-size: 16px;">{{blogPage.data.author}}</p>
+                            <p style="font-size: 16px;">{{blogPage.data.author}} {{blogPage.data.date | date : "MMM d, y h:mm:ss a"}}</p>
                         </div>
                     </md-list-item>
                 </md-list>
-				<div flex="100" flex-gt-sm="25" layout="row">
-					<p class="base-hdst--text">{{blogPage.data.date | date : "MMM d, y h:mm:ss a"}}</p>
-				</div>
 		    	<div ng-repeat="content in blogPage.data.page.contents" flex="100">
 		    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
 					<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
