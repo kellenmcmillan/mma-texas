@@ -21,32 +21,33 @@
 	    </md-button>
 
 	    <div class="interior-page" flex="100" layout="row" layout-wrap style="width: 100%;">
-		    <!-- Shrinking Page Title -->
-			<div class="lightweight-interior--hero" flex="100">
-				<div style="width: 100%; height: 100%; z-index: -1!important; position: absolute;">
-				    <div class="interior-page-background"></div>
+
+			<!-- Page Title -->
+			<div layout="row" flex="100" style="height: 600px; position: relative; top: 0; overflow: hidden; text-align: center;">
+				<div style="width: 100%; height: 100%; position: absolute;">
+				    <img ng-src="{{spotlightPage.data.page.background.images.source}}">
 				</div>
-				<h1 class="type heading" style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_lightest.value}};">{{spotlightPage.data.title}}</h2>
+				<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{spotlightPage.data.title}}</h2>
 			</div>
-			<!-- Shrinking Page Title -->
+			<!-- =Page Title -->
 			
 			<div flex="80" class="md-whiteframe-4dp" style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 90vh; background-color: {{base_hue_lightest.value}}">
 
 		    	<div style="margin-bottom: 100px;">
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
-			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
 						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
-						<div style="width: 100%; padding: 0;">
+						<div style="width: 100%; padding: 0">
 							<!-- panel images -->
-							<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
-								<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
-							</md-card>
+								<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+									<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+								</md-card>
 							<!-- panel images -->
 						</div>
 						<a ng-if="content.type == 'button'" href="{{content.data.url}}">
-                            <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
-                        </a>
+	                        <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+	                    </a>
 			        </div>
 		    	</div>
 
