@@ -6,7 +6,7 @@
 }
 </style>
 <md-content class="page" style="height: {{window_height}}px">
-	<section style="background: {{base_hue_lighter.value}}">
+	<section style="background: {{base_hue_lightest.value}}">
 
 		<!-- header -->
 		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
@@ -31,7 +31,7 @@
 			</div>
 			<!-- =Page Title -->
 			
-			<div class="md-whiteframe-4dp" layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="80" layout-align="start start" ng-attr-style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 600px; background-color: {{base_hue_lightest.value}};" layout-padding layout-margin>
+			<div class="md-whiteframe-4dp" layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="80" layout-align="start start" ng-attr-style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 600px; background-color: {{base_hue_lightest.value}};" layout-padding layout-margin>
 
 		    	<div style="margin-bottom: 100px;">
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
@@ -50,6 +50,11 @@
 	                    </a>
 			        </div>
 		    	</div>
+
+			</div>
+
+			<div class="md-whiteframe-4dp" layout="row" layout-wrap flex="80" flex-sm="20" flex-gt-sm="20" layout-align="start start" ng-attr-style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 600px; background-color: {{base_hue_lightest.value}};" layout-padding layout-margin>
+
 
 			</div>
 
