@@ -33,10 +33,10 @@
 			
 			<div layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="60" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
-		    	<div ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
+		    	<div flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
 		    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{spotlightPage.data.title}}</h2>
 		    	</div>
-		    	<div ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; height: 400px;" layout-margin layout-padding>
+		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; height: 400px;" layout-margin layout-padding>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
