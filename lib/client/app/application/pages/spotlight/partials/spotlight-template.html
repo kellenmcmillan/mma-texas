@@ -6,7 +6,7 @@
 }
 </style>
 <md-content class="page" style="height: {{window_height}}px">
-	<section style="background: {{base_hue_lightest.value}}">
+	<section style="background: {{primary_hue_normal.value}}">
 
 		<!-- header -->
 		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
@@ -23,17 +23,20 @@
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 
 			<!-- Page Title -->
-			<div layout="row" flex="100" style="height: 500px; position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darker_darkest_opacity.value}};">
-				<div style="width: 100%; height: 100%; position: absolute;">
+			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
+				<!-- <div style="width: 100%; height: 100%; position: absolute;">
 				    <img style="opacity: .2; width: 100%; height: auto;" ng-src="{{spotlightPage.data.page.background.images.source}}">
-				</div>
+				</div> -->
 				<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{spotlightPage.data.title}}</h2>
 			</div>
 			<!-- =Page Title -->
 			
-			<div layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -104px; z-index: 1; min-height: 600px; background-color: {{base_hue_lightest.value}}; border: 1px solid rgb(224, 224, 224);" layout-padding layout-margin>
+			<div layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="60" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
-		    	<div style="margin-bottom: 100px;">
+		    	<div ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
+		    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{spotlightPage.data.title}}</h2>
+		    	</div>
+		    	<div ng-attr-style="margin-bottom: 100px; width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
@@ -53,7 +56,7 @@
 
 			</div>
 
-			<div layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="30" layout-align="start start" ng-attr-style="margin-top: -104px; z-index: 1; min-height: 600px; background-color: {{base_hue_lightest.value}}; border: 1px solid rgb(224, 224, 224);" layout-padding layout-margin>
+			<div layout="row" layout-wrap flex="80" flex-sm="80" flex-gt-sm="40" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
 
 			</div>

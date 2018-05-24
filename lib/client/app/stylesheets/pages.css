@@ -57,3 +57,5 @@
 @media (max-width: 600px) {
 	.interior-page {min-height: 400px;}
 }
+
+.spotlight.header {height: 500px;}
