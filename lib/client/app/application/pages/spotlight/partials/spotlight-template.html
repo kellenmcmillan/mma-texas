@@ -23,7 +23,7 @@
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 
 			<!-- Page Title -->
-			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
+			<div id="spotlight-canvas" class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
 				<!-- <div style="width: 100%; height: 100%; position: absolute;">
 				    <img style="opacity: .2; width: 100%; height: auto;" ng-src="{{spotlightPage.data.page.background.images.source}}">
 				</div> -->
@@ -33,12 +33,14 @@
 			
 			<div class="md-whiteframe-6dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
-		    	<div flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
-		    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
-		    			{{spotlightPage.data.title}}
-		    		</h2>
+		    	<div layout="row" layout-align="center center" flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
+		    		<div layout="row" layout-align="center center" flex="100">
+			    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
+			    			{{spotlightPage.data.title}}
+			    		</h2>
+		    		</div>
 		    	</div>
-		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; height: 400px;" layout-margin layout-padding>
+		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
@@ -70,3 +72,134 @@
 	<div ng-include src="'application/partials/footer.html'"></div>
 	<!-- Footer -->
 </md-content>
+
+<script>
+    var canvas;
+    var context;
+    var proton;
+    var renderer;
+    var emitter, pointZone;
+    var R, num;
+    var pointer;
+
+    main();
+
+    function main() {
+        num = Math.min(parseInt(window.innerWidth / (1000 / 145)), 400);
+        R = 140;
+        pointer = { x: 0, y: 0, r: 0 };
+
+        initCanvas();
+        createProton(num);
+        setTimeout(addMouseEvent, 200);
+        addRenderer();
+        tick();
+    }
+
+    function initCanvas() {
+        canvas = document.getElementById("spotlight-canvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        context = canvas.getContext('2d');
+    }
+
+    function createProton(num) {
+        proton = new Proton;
+
+        emitter = new Proton.Emitter();
+        emitter.rate = new Proton.Rate(new Proton.Span(num), new Proton.Span(.05, .2));
+
+        emitter.addInitialize(new Proton.Mass(1));
+        emitter.addInitialize(new Proton.Radius(1, 4));
+        emitter.addInitialize(new Proton.Life(Infinity));
+
+        pointZone = new Proton.Position(new Proton.RectZone(0, 0, canvas.width, canvas.height));
+        emitter.addInitialize(pointZone);
+        emitter.addInitialize(new Proton.Velocity(new Proton.Span(.3, .6), new Proton.Span(0, 360), 'polar'));
+
+        emitter.addBehaviour(new Proton.Alpha(Proton.getSpan(0.2, .9)));
+        emitter.addBehaviour(new Proton.Color('#BDBDBD'));
+        emitter.addBehaviour(new Proton.CrossZone(new Proton.RectZone(0, 0, canvas.width, canvas.height), 'cross'));
+
+        emitter.emit('once');
+        emitter.damping = 0;
+        proton.addEmitter(emitter);
+    }
+
+    function addRenderer() {
+        renderer = new Proton.CanvasRenderer(canvas);
+        renderer.onProtonUpdateAfter = function () {
+            var particles = emitter.particles;
+
+            for (var i = 0; i < particles.length; i++) {
+                for (var j = i + 1; j < particles.length; j++) {
+                    var pA = particles[i];
+                    var pB = particles[j];
+                    var dis = pA.p.distanceTo(pB.p);
+
+                    if (dis < R) {
+                        var alpha = (1 - dis / R) * .5;
+                        context.strokeStyle = 'rgba(189,189,189,' + alpha + ')';
+                        context.beginPath();
+                        context.moveTo(pA.p.x, pA.p.y);
+                        context.lineTo(pB.p.x, pB.p.y);
+                        context.closePath();
+                        context.stroke();
+                    }
+                }
+            }
+        }
+
+        proton.addRenderer(renderer);
+    }
+
+    function addMouseEvent() {
+        emitter.rate = new Proton.Rate(new Proton.Span(3), .5);
+        emitter.removeInitialize(pointZone);
+
+        canvas.addEventListener('mousedown', function (e) {
+            for (var i = 0; i < 3; i++)
+                emitter.particles[i].dead = true;
+
+            setTimeout(function () {
+                emitter.p.x = getPos(e).x;
+                emitter.p.y = getPos(e).y;
+                emitter.emit('once');
+            }, 60);
+        });
+
+        canvas.addEventListener('mouseup', function (e) {
+            emitter.stop();
+        });
+
+        canvas.addEventListener('mousemove', function (e) {
+            var p0 = emitter.particles[0];
+            p0.radius = 0;
+            var ease = .3;
+
+            p0.p.x += (getPos(e).x - p0.p.x) * ease;
+            p0.p.y += (getPos(e).y - p0.p.y) * ease;
+        });
+    }
+
+    /// 
+    var _pos = { x: 0, y: 0 };
+    function getPos(e) {
+        if (e.layerX !== undefined) {
+            _pos.x = e.layerX;
+            _pos.y = e.layerY;
+        } else if (e.offsetX !== undefined) {
+            _pos.x = e.offsetX;
+            _pos.y = e.offsetY;
+        }
+
+        return _pos;
+    }
+
+    function tick() {
+        requestAnimationFrame(tick);
+
+        proton.update();
+        proton.stats.update(3);
+    }
+</script>
