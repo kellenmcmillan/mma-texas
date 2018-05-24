@@ -23,21 +23,23 @@
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 
 			<!-- Page Title -->
-			<canvas id="spotlight-canvas" class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
+			<div id="spotlight-canvas" class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
 				<!-- <div style="width: 100%; height: 100%; position: absolute;">
 				    <img style="opacity: .2; width: 100%; height: auto;" ng-src="{{spotlightPage.data.page.background.images.source}}">
 				</div> -->
 				<!-- <h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">{{spotlightPage.data.title}}</h2> -->
-			</canvas>
+			</div>
 			<!-- =Page Title -->
 			
 			<div class="md-whiteframe-6dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
 		    	<div layout="row" layout-align="center center" flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
 		    		<div layout="row" layout-align="center center" flex="100">
-			    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
-			    			{{spotlightPage.data.title}}
-			    		</h2>
+		    			<canvas id="spotlight-canvas" class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
+							<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
+				    			{{spotlightPage.data.title}}
+				    		</h2>
+						</canvas>
 		    		</div>
 		    	</div>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
