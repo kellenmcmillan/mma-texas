@@ -32,13 +32,9 @@
 			<!-- =Page Title -->
 			
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
-				<md-card-header-text>
-					<span class="md-title">{{spotlightPage.data.title}}</span>
-					<span class="md-subhead">subhead</span>
-				</md-card-header-text>
-				<img style="height: 400px;" class="md-card-image" ng-src="{{spotlightPage.data.page.background.images.source}}">
-
+				<img style="height: 400px; margin: 0;" class="md-card-image" ng-src="{{spotlightPage.data.page.background.images.source}}">
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
+		    		<h1 class="type simulated">{{spotlightPage.data.title}}</h1>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
