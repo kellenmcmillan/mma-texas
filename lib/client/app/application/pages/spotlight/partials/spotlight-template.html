@@ -31,15 +31,13 @@
 			</div>
 			<!-- =Page Title -->
 			
-			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
+			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
+				<md-card-header-text>
+					<span class="md-title">{{spotlightPage.data.title}}</span>
+					<span class="md-subhead">subhead</span>
+				</md-card-header-text>
+				<img style="height: 400px;" class="md-card-image" ng-src="{{spotlightPage.data.page.background.images.source}}">
 
-		    	<div layout="row" layout-align="center center" flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
-		    		<div layout="row" layout-align="center center" flex="100">
-			    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
-			    			{{spotlightPage.data.title}}
-			    		</h2>
-		    		</div>
-		    	</div>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
@@ -58,7 +56,7 @@
 			        </div>
 		    	</div>
 
-			</div>
+			</md-card>
 
 			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; height: 600px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
