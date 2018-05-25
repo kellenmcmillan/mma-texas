@@ -33,8 +33,11 @@
 			
 			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 
-		    	<div layout="row" layout-align="center center" flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; background-color: {{primary_hue_normal.value}}; height: 400px;">
+		    	<div layout="row" layout-align="center center" flex="100" ng-attr-style="width: 100%; margin: 0; padding: 0; height: 400px;">
 		    		<div layout="row" layout-align="center center" flex="100">
+			    		<div style="width: 100%; height: 100%; position: absolute;">
+						    <img style="min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="{{spotlightPage.data.page.background.images.source}}">
+						</div>
 			    		<h2 style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8); color: {{base_hue_text__lightest.value}}; position: relative; margin: auto;" class="type simulated">
 			    			{{spotlightPage.data.title}}
 			    		</h2>
