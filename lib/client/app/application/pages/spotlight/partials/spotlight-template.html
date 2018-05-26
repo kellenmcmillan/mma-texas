@@ -5,7 +5,7 @@
     right: 0; top: 200px; padding:0; margin: 0!important;
 }
 </style>
-<md-content class="page" style="height: {{window_height}}px">
+<md-content class="page spotlight" style="height: {{window_height}}px">
 	<section style="background: {{base_hue_lighter.value}}">
 
 		<!-- header -->
@@ -57,11 +57,11 @@
 
 			</md-card>
 
-			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
-				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative;">
+			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
+				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
 	                <form name="spotlight">
-	                	<div style="text-align: center">
-	                		<h1>Contact mma Today!</h1>
+	                	<div style="text-align: left; padding-left: 16px; border-left: 42px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                		<h1 style="color: {{primary_hue_normal.value}};">Contact mma Today!</h1>
 	                	</div>
 	                    <md-card-content>
 	                        <md-list-item>
@@ -84,6 +84,17 @@
 	                                </div>
 	                            </md-input-container>
 	                        </md-list-item>
+	                        <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Phone</label>
+                                    <input ng-model="spotlight_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+                                    <div ng-messages="spotlight.phone.$error" ng-show="spotlight.phone.$dirty">
+                                        <div ng-message="required">Phone number required!</div>
+                                        <div ng-message="minlength">Phone number too short!</div>
+                                        <div ng-message="pattern">Not a valid phone number!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
 	                        <md-list-item>
 	                        	<md-input-container class="md-block lightweight-md-input" flex>
 	                                <label>Message</label>
