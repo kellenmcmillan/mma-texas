@@ -32,12 +32,19 @@
 			<!-- =Page Title -->
 			
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;" layout-margin>
-				<img style="height: 400px; margin: 0;" class="md-card-image" ng-src="{{spotlightPage.data.page.background.images.source}}">
+				<div style="height: 400px; margin: 0;">
+					<img style="min-height: 100%; min-width: 100%; width: auto; height: auto; margin: 0;" ng-src="{{spotlightPage.data.page.background.images.source}}">
+				<div>
 				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
 			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
 			    </md-button>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
-		    		<h1 class="type simulated">{{spotlightPage.data.title}}</h1>
+		    		<!-- <h1 class="type simulated">{{spotlightPage.data.title}}</h1> -->
+		    		<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">{{spotlightPage.data.title}}</span>
+						</md-card-title-text>
+					</md-card-title>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
@@ -60,7 +67,7 @@
 			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
 				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
 	                <form name="spotlight">
-	                	<div style="text-align: left; padding-left: 16px; border-left: 42px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
 	                		<h1 style="color: {{primary_hue_normal.value}};">Contact mma Today!</h1>
 	                	</div>
 	                    <md-card-content>

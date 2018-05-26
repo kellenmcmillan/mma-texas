@@ -59,10 +59,10 @@
 }
 
 .spotlight.hero {height: 416px;}
-.pages.spotlight .sidebar.form {margin-top: -400px;}
+.page.spotlight .sidebar.form {margin-top: -400px;}
 @media (max-width: 959px) {
-	.pages.spotlight .sidebar.form {margin-top: 0;}
+	.page.spotlight .sidebar.form {margin-top: 0;}
 }
 @media (max-width: 600px) {
-	.pages.spotlight .sidebar.form {margin-top: 0;}
+	.page.spotlight .sidebar.form {margin-top: 0;}
 }
