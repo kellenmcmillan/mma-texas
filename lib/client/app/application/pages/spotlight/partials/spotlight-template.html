@@ -34,8 +34,8 @@
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;" layout-margin>
 				<img style="height: 400px; margin: 0;" class="md-card-image" ng-src="{{spotlightPage.data.page.background.images.source}}">
 				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
-		        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
-		    </md-button>
+			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
+			    </md-button>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 		    		<h1 class="type simulated">{{spotlightPage.data.title}}</h1>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
@@ -57,9 +57,56 @@
 
 			</md-card>
 
-			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; height: 600px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
-
-
+			<div class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0;" layout-margin>
+				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative;">
+					<md-button style="position: absolute; top: 24px; right: 8px;" class="md-icon-button" ng-click="show_notification = false" aria-label="More">
+						<md-icon style="color: {{base_hue_darkest.value}}">close</md-icon>
+					</md-button>
+	                <form name="spotlight">
+	                	<div style="text-align: center">
+	                		<h1>Contact MMA Today!</h1>
+	                	</div>
+	                    <md-card-content>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Full Name</label>
+	                                <input name="name" ng-model="spotlight_page_contact_form.name" minlength="4" required>
+	                                <div ng-messages="spotlight.name.$error" ng-show="spotlight.name.$dirty">
+	                                    <div ng-message="required">Name required!</div>
+	                                    <div ng-message="minlength">Name too short!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Email</label>
+	                                <input type="email" name="email" ng-model="spotlight_page_contact_form.email" required>
+	                                <div ng-messages="spotlight.email.$error" ng-show="spotlight.email.$dirty">
+	                                    <div ng-message="required">Email required!</div>
+	                                    <div ng-message="email">Enter a valid email!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                        	<md-input-container class="md-block lightweight-md-input" flex>
+	                                <label>Message</label>
+	                                <textarea name="message" md-detect-hidden="true" ng-model="spotlight_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+	                                <div ng-messages="spotlight.message.$error" ng-show="spotlight.message.$dirty">
+	                                    <div ng-message="required">Message required!</div>
+	                                    <div ng-message="minlength">Message too short!</div>
+	                                    <div ng-message="md-maxlength">Message too long!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                    </md-card-content>
+	                    <md-card-actions layout="row" layout-align="end center" flex>
+	                        <md-button class="md-raised" ng-click="sendIndexLead(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
+	                    </md-card-actions>
+	                    <md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{base_hue_lightest.value}}; position: absolute; bottom: -16px; right: 8px;">
+					        <md-icon style="color: {{primary_hue_normal.value}};">share</md-icon>
+					    </md-button>
+	                </form>
+	            </md-card>
 			</div>
 
 		</div>
