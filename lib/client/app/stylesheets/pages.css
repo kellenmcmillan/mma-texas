@@ -32,6 +32,7 @@
 /* ===== Lighweight Image Cards ===== */
 .lightweight-card-image {
  	height: 400px;
+ 	overflow: hidden;
 }
 @media (max-width: 839px) {
 	.lightweight-card-image {
