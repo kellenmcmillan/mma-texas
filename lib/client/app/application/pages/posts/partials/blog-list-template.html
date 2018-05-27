@@ -18,6 +18,7 @@
 	                		<h1 style="color: {{primary_hue_normal.value}};">{{settings.data.company_name}} News</h1>
 	                	</div>
 	                    <md-card-content>
+	                    	<h1 style="color: {{base_hue_darkest.value}};">Enter Search Term</h1>
 	                        <md-list-item>
 	                            <md-button ng-click="queryUser(queryUserFilter)" class="md-icon-button" aria-label="Search Media">
 	                                <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
@@ -27,9 +28,7 @@
 	                                <input ng-model="queryUserFilter">
 	                            </md-input-container>
 	                        </md-list-item>
-	                        <md-divider></md-divider>
-	                        <p>Or</p>
-	                       	<p>Filter by date</p>
+	                        <h1 style="color: {{base_hue_darkest.value}};">Filter By Date</h1>
 	                        <md-list-item>
 		                        <md-radio-group>
 	                                <span>
