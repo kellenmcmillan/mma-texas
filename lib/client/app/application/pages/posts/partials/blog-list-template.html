@@ -57,9 +57,10 @@
 			<md-card class="md-whiteframe-8dp" ng-repeat="blog in bloglist" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 3; background-color: {{base_hue_lightest.value}}; cursor: pointer;" layout-padding>
 				<md-list class="md-dense" flex>
 					<a ng-href="{{blog.settings.url}}">
-                    <md-list-item class="md-2-line" flex>
+                    <md-list-item class="md-3-line" flex>
                         <div class="md-list-item-text">
-                            <h3 style="font-size: 24px;">{{blog.data.headline}} </h3>
+                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
+                            <h3 style="font-size: 24px;">{{blog.data.headline}}</h3>
                             <p> By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}} </p>
                         </div>                        
                     </md-list-item>
