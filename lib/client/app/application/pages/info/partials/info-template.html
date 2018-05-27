@@ -28,7 +28,7 @@
 			<!-- =Page Title -->
 
 			<!-- tab Panel Component -->
-		    <md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" style="z-index: 3; min-height: 500px;" layout-padding layout-margin>
+		    <md-card class="md-whiteframe-8dp" layout="row" layout-align="center start" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" style="z-index: 3; min-height: 500px;" layout-padding layout-margin>
 
 		    	<div ng-repeat="content in infoPage.data.page.contents" flex="100">
 		    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
@@ -50,12 +50,15 @@
 		    <!-- tab Panel Component -->
 
             <!-- Map Widget -->
-            <div class="md-whiteframe-8dp" flex="90" flex-sm="90" flex-gt-sm="25" layout="row" layout-align="center start" style="background-color: {{base_hue_lightest.value}}; z-index: 2;" layout-margin>
+            <div class="md-whiteframe-8dp" flex="90" flex-sm="90" flex-gt-sm="25" layout="row" layout-align="center start" style="z-index: 2; position: relative;">
 				<div layout-wrap layout="row" layout-align="start center" flex>
 					<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
 						<iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 					</div>
 				</div>
+				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			        <md-icon style="color: {{base_hue_lighter.value}};">directions</md-icon>
+			    </md-button>
 			</div>
             <!-- Map Widget -->
 
