@@ -59,7 +59,7 @@
 	.interior-page {min-height: 400px;}
 }
 
-.spotlight.hero {height: 416px;}
+.spotlight.hero {height: 408px;}
 .page.spotlight .sidebar.form {margin-top: -400px;}
 @media (max-width: 959px) {
 	.page.spotlight .sidebar.form {margin-top: 0;}
