@@ -18,7 +18,7 @@
 	                		<h1 style="color: {{primary_hue_normal.value}};">{{settings.data.company_name}} News</h1>
 	                	</div>
 	                    <md-card-content>
-	                    	<h1 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Enter Search Term</h1>
+	                    	<h3 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Enter Search Term</h3>
 	                        <md-list-item>
 	                            <md-button ng-click="queryUser(queryUserFilter)" class="md-icon-button" aria-label="Search Media">
 	                                <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
@@ -28,7 +28,7 @@
 	                                <input ng-model="queryUserFilter">
 	                            </md-input-container>
 	                        </md-list-item>
-	                        <h1 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Filter By Date</h1>
+	                        <h3 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Filter By Date</h3>
 	                        <md-list-item>
 		                        <md-radio-group>
 	                                <span>
@@ -61,16 +61,13 @@
                     <md-list-item class="md-3-line" flex>
                         <div class="md-list-item-text">
                         	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
-                            <h3 style="font-size: 24px;">{{blog.data.headline}}</h3>
-                            <p> By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}} </p>
+                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.headline}}</p>
+                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}}</p>
                         </div>                        
                     </md-list-item>
                     </a>
                 </md-list>
 		    </md-card>
-
-		    
-
 		</div>
 	</section>
 	<!-- Footer -->
