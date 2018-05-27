@@ -19,7 +19,7 @@
 		<div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 
 			<!-- Page Title -->
-			<div layout="row" flex="100" flex-sm="100" flex-gt-sm="100" style="height: 600px; position: relative; top: 0; margin: 0; padding: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darker_darkest_opacity.value}};">
+			<div layout="row" flex="100" flex-sm="100" flex-gt-sm="100" style="height: 600px; position: relative; top: 0; margin: 0 0 8px 0; padding: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darker_darkest_opacity.value}};">
 				<div style="width: 100%; height: 100%; position: absolute; margin: 0;">
 				    <img style="min-height: 100%; min-width: 100%; height: auto; width: auto;" ng-src="{{infoPage.data.page.foreground.images.source}}">
 				</div>
@@ -28,7 +28,7 @@
 			<!-- =Page Title -->
 
 			<!-- tab Panel Component -->
-		    <md-card class="md-whiteframe-8dp" layout="row" layout-align="center start" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" style="z-index: 3; min-height: 500px;" layout-padding layout-margin>
+		    <md-card class="md-whiteframe-8dp" layout="row" layout-align="center start" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" style="z-index: 3; min-height: 500px; margin-bottom: 100px;" layout-padding layout-margin>
 
 		    	<div ng-repeat="content in infoPage.data.page.contents" flex="100">
 		    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
