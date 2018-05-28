@@ -242,7 +242,17 @@
                             <!-- For Blogs -->
                         </md-list-item>
 
-                        <!-- If it's a page project -->
+                        <!-- If it's a blog - headline -->
+                        <md-list-item ng-show="!items_sortable && editor_element.settings.page_type == 'blog'">
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Headline</label>
+                                <input ng-model="editor_element.data.description">
+                                <textarea md-detect-hidden="true" ng-model="editor_element.data.headline" rows="3" md-maxlength="250"></textarea>
+                            </md-input-container>
+                        </md-list-item>
+                        <!-- If it's a blog - headline -->
+
+                        <!-- If it's a page project - description -->
                         <md-list-item ng-show="!items_sortable && editor_element.settings.page_type == 'project'">
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Description</label>
@@ -250,7 +260,7 @@
                                 <textarea md-detect-hidden="true" ng-model="editor_element.data.description" rows="3" md-maxlength="250"></textarea>
                             </md-input-container>
                         </md-list-item>
-                        <!-- If it's a page project -->
+                        <!-- If it's a page project - description -->
 
                         <!-- if it's an element with a title, subtitle, etc. -->
 
