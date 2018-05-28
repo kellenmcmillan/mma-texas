@@ -390,16 +390,6 @@
                                     </div>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-if="newPageData.type == 'project'">
-                                <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
-                                    <label class="lightweight-md-option-label">Choose Tags</label>
-                                    <md-select ng-model="newPageData.tags" multiple>
-                                        <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
-                                            {{fileTag.tag}}
-                                        </md-option>
-                                    </md-select>
-                                </md-input-container>
-                            </md-list-item>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-dropdown">
                                     <label>Page Type</label>
@@ -411,6 +401,16 @@
                                     <div ng-messages="addNewPage.new_page_type.$error">
                                         <div ng-message="required">A page type is required!</div>
                                     </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="newPageData.type == 'project'">
+                                <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
+                                    <label class="lightweight-md-option-label">Choose Tags</label>
+                                    <md-select ng-model="newPageData.tag" multiple>
+                                        <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                            {{fileTag.tag}}
+                                        </md-option>
+                                    </md-select>
                                 </md-input-container>
                             </md-list-item>
                             <!-- ///////////////////////// -->
