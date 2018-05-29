@@ -5,7 +5,7 @@
     right: 0; top: 200px; padding:0; margin: 0!important;
 }
 </style>
-<md-content class="page spotlight" style="height: {{window_height}}px">
+<md-content class="page project" style="height: {{window_height}}px">
 	<section style="background: {{base_hue_lighter.value}}">
 
 		<!-- header -->
@@ -22,7 +22,7 @@
 
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 			
-			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 				<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
 					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -75%; left: -16.5%;" ng-src="{{projectPage.data.page.background.images.source}}">
 				</div>
@@ -52,7 +52,7 @@
 
 			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0;">
 				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
-	                <form name="spotlight">
+	                <form name="project">
 	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
 	                		<h1 style="color: {{primary_hue_normal.value}};">Contact mma Today!</h1>
 	                	</div>
@@ -60,8 +60,8 @@
 	                        <md-list-item>
 	                            <md-input-container class="md-block lightweight-md-input">
 	                                <label>Full Name</label>
-	                                <input name="name" ng-model="spotlight_page_contact_form.name" minlength="4" required>
-	                                <div ng-messages="spotlight.name.$error" ng-show="spotlight.name.$dirty">
+	                                <input name="name" ng-model="project_page_contact_form.name" minlength="4" required>
+	                                <div ng-messages="project.name.$error" ng-show="project.name.$dirty">
 	                                    <div ng-message="required">Name required!</div>
 	                                    <div ng-message="minlength">Name too short!</div>
 	                                </div>
@@ -70,8 +70,8 @@
 	                        <md-list-item>
 	                            <md-input-container class="md-block lightweight-md-input">
 	                                <label>Email</label>
-	                                <input type="email" name="email" ng-model="spotlight_page_contact_form.email" required>
-	                                <div ng-messages="spotlight.email.$error" ng-show="spotlight.email.$dirty">
+	                                <input type="email" name="email" ng-model="project_page_contact_form.email" required>
+	                                <div ng-messages="project.email.$error" ng-show="project.email.$dirty">
 	                                    <div ng-message="required">Email required!</div>
 	                                    <div ng-message="email">Enter a valid email!</div>
 	                                </div>
@@ -80,8 +80,8 @@
 	                        <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input">
                                     <label>Phone</label>
-                                    <input ng-model="spotlight_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
-                                    <div ng-messages="spotlight.phone.$error" ng-show="spotlight.phone.$dirty">
+                                    <input ng-model="project_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+                                    <div ng-messages="project.phone.$error" ng-show="project.phone.$dirty">
                                         <div ng-message="required">Phone number required!</div>
                                         <div ng-message="minlength">Phone number too short!</div>
                                         <div ng-message="pattern">Not a valid phone number!</div>
@@ -91,8 +91,8 @@
 	                        <md-list-item>
 	                        	<md-input-container class="md-block lightweight-md-input" flex>
 	                                <label>Message</label>
-	                                <textarea name="message" md-detect-hidden="true" ng-model="spotlight_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
-	                                <div ng-messages="spotlight.message.$error" ng-show="spotlight.message.$dirty">
+	                                <textarea name="message" md-detect-hidden="true" ng-model="project_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+	                                <div ng-messages="project.message.$error" ng-show="project.message.$dirty">
 	                                    <div ng-message="required">Message required!</div>
 	                                    <div ng-message="minlength">Message too short!</div>
 	                                    <div ng-message="md-maxlength">Message too long!</div>
