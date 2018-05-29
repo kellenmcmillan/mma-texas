@@ -25,7 +25,7 @@
 					<div layout-padding class="index-news-post" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
 							<div class="post-image">
-								<img ng-cloak ng-src="{{item.data.page.foreground.images.source}}" class="md-card-image">
+								<img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image">
 							</div>
 							<md-card-header>
 								<md-card-header-text>
