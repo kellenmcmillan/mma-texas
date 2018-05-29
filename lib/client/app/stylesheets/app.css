@@ -3,7 +3,7 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 
 .projects-listing {width: 50%; overflow: hidden; float: left; box-sizing: border-box;}
 .projects-listing md-card {overflow: hidden;}
-.projects-listing img {width: 100%!important; height: auto;}
+.projects-listing img {max-height: 100%; max-width: 100%; height: auto; width: auto;}
 .projects-listing .post-image {max-height: 300px; overflow: hidden;}
 
 @media screen and (max-width: 959px) {
