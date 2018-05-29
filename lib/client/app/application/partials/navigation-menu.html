@@ -45,7 +45,7 @@
             </h2>
         </div>
         <md-list flex="100">
-            <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link" style="cursor: pointer;">
+            <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu()" class="navigation item" flex="100" layout-padding>
                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon>
                     <p>{{child.name}}</p>
