@@ -23,9 +23,11 @@
 				</md-button>
 				<div class="news panel" style="left: 0; width: {{scroll_bar_aware_window_width * civil_engineering_row.panel_width}}px; transform:translate({{civil_engineering_row.amount_to_slide}},0);" ng-swipe-left="civil_engineering_row.panel_swipe('left')" ng-swipe-right="civil_engineering_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card layout="row" layout-sm="row" layout-gt-sm="column" layout-padding style="background: transparent; height: 100%; padding: 0;">
+						<md-card layout="column" layout-sm="column" layout-gt-sm="row" layout-padding style="background: transparent; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
-								<img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image">
+								<!-- <img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image"> -->
+								<img ng-cloak ng-src="https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png" class="md-card-image">
+								
 							</div>
 							<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
 								<md-card-header>
