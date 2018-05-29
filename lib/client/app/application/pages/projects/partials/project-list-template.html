@@ -25,9 +25,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout-gt-sm="100" layout-wrap layout="column" layout-sm="column" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
-								<!-- <img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image"> -->
-								<img ng-cloak ng-src="https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png" class="md-card-image">
-								
+								<img ng-cloak ng-src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -36,7 +34,7 @@
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
+									<p style="color: {{base_hue_darker.value}};">{{item.data.description}}</p>
 								</md-card-content>
 							</div>
 						</md-card>
@@ -62,7 +60,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in landscape_architecture_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="100" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -71,7 +69,7 @@
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
+									<p style="color: {{base_hue_darker.value}};">{{item.data.description}}</p>
 								</md-card-content>
 							</div>
 						</md-card>
@@ -94,10 +92,10 @@
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * planning_row.panel_width}}px; transform:translate({{planning_row.amount_to_slide}},0);" ng-swipe-left="planning_row.panel_swipe('left')" ng-swipe-right="planning_row.panel_swipe('right')">
-					<div layout-padding class="projects-listing" ng-repeat="item in planning_row" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
+					<div layout-padding class="projects-listing" ng-repeat="item in planning_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="100" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -132,7 +130,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in surveying_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="100" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -141,7 +139,7 @@
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
+									<p style="color: {{base_hue_darker.value}};">{{item.data.description}}</p>
 								</md-card-content>
 							</div>
 						</md-card>
@@ -167,7 +165,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in gis_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="100" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -176,7 +174,7 @@
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
+									<p style="color: {{base_hue_darker.value}};">{{item.data.description}}</p>
 								</md-card-content>
 							</div>
 						</md-card>
@@ -202,7 +200,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in projects_aerial_mapping.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="100" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
-								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 								<md-card-header>
@@ -211,7 +209,7 @@
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
-									<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
+									<p style="color: {{base_hue_darker.value}};">{{item.data.description}}</p>
 								</md-card-content>
 							</div>
 						</md-card>
