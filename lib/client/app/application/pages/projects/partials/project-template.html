@@ -23,7 +23,7 @@
 			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
 			    </md-button>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
-		    		<h1 class="type simulated" style="margin-bottom: 24px;">{{projectPage.data.title}}</h1>
+		    		<h1 class="type heading" style="margin-bottom: 24px;">{{projectPage.data.title}}</h1>
 			    	<div ng-repeat="content in projectPage.data.page.contents">
 			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
