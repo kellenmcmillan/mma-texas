@@ -4,7 +4,7 @@
 
 .navigation.menu {display: none;}
 @media screen and (max-width: 959px) {
-    .navigation.link {display: none;}
+    /*.navigation.link {display: none;}*/
     .navigation.menu {display: inline-block;}
 } 
 
