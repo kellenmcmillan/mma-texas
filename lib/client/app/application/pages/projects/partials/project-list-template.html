@@ -23,11 +23,12 @@
 				</md-button>
 				<div class="news panel" style="left: 0; width: {{scroll_bar_aware_window_width * civil_engineering_row.panel_width}}px; transform:translate({{civil_engineering_row.amount_to_slide}},0);" ng-swipe-left="civil_engineering_row.panel_swipe('left')" ng-swipe-right="civil_engineering_row.panel_swipe('right')">
 					<div layout-padding class="index-news-post" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card layout="row" layout-sm="row" layout-gt-sm="column" layout-padding style="background: transparent; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
 								<img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image">
 							</div>
-							<md-card-header>
+							<div class="post-image" flex="100" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
+								<md-card-header>
 								<md-card-header-text>
 									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">Brand New Look</span>
 								</md-card-header-text>
@@ -35,6 +36,7 @@
 							<md-card-content>
 								<p style="color: {{base_hue_darker.value}};">Welcome to MMA's new web experience!</p>
 							</md-card-content>
+							</div>
 						</md-card>
 					</div>
 				</div>
