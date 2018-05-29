@@ -1,2 +1,16 @@
 /* css document */
 md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
+
+.projects-listing {width: 50%; overflow: hidden; float: left; box-sizing: border-box;}
+.projects-listing md-card {overflow: hidden;}
+.projects-listing img {width: 100%!important; height: auto;}
+.projects-listing .post-image {max-height: 300px; overflow: hidden;}
+
+@media screen and (max-width: 959px) {
+	.projects-listing.full-width {width: 100%!important;}
+}
+
+@media screen and (max-width:599px) {
+	.lw-auto-slider {height: 600px;}
+  	.projects-listing.full-width {width: 100%!important;}
+}
