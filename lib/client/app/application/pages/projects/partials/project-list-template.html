@@ -23,13 +23,13 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * civil_engineering_row.panel_width}}px; transform:translate({{civil_engineering_row.amount_to_slide}},0);" ng-swipe-left="civil_engineering_row.panel_swipe('left')" ng-swipe-right="civil_engineering_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="column" layout-gt-sm="row" layout-padding style="background: transparent; height: 100%; padding: 0;">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout="column" layout-sm="column" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
 							<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
 								<!-- <img ng-cloak ng-src="{{item.page.foreground.images.source}}" class="md-card-image"> -->
 								<img ng-cloak ng-src="https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png" class="md-card-image">
 								
 							</div>
-							<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
+							<div flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; max-width: 50%;">
 								<md-card-header>
 								<md-card-header-text>
 									<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">Brand New Look</span>
@@ -60,8 +60,8 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * landscape_architecture_row.panel_width}}px; transform:translate({{landscape_architecture_row.amount_to_slide}},0);" ng-swipe-left="landscape_architecture_row.panel_swipe('left')" ng-swipe-right="landscape_architecture_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in landscape_architecture_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							</div>
 							<md-card-header>
@@ -93,8 +93,8 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * planning_row.panel_width}}px; transform:translate({{planning_row.amount_to_slide}},0);" ng-swipe-left="planning_row.panel_swipe('left')" ng-swipe-right="planning_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in planning_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							</div>
 							<md-card-header>
@@ -126,8 +126,8 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * surveying_row.panel_width}}px; transform:translate({{surveying_row.amount_to_slide}},0);" ng-swipe-left="surveying_row.panel_swipe('left')" ng-swipe-right="surveying_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in surveying_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							</div>
 							<md-card-header>
@@ -159,8 +159,8 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * gis_row.panel_width}}px; transform:translate({{gis_row.amount_to_slide}},0);" ng-swipe-left="gis_row.panel_swipe('left')" ng-swipe-right="gis_row.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in gis_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							</div>
 							<md-card-header>
@@ -192,8 +192,8 @@
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * projects_aerial_mapping.panel_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="projects_aerial_mapping.panel_swipe('left')" ng-swipe-right="projects_aerial_mapping.panel_swipe('right')">
 					<div layout-padding class="projects-listing" ng-repeat="item in projects_aerial_mapping.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-						<md-card class="md-whiteframe-6dp" layout-padding style="background: transparent; height: 100%; padding: 0;">
-							<div class="post-image">
+						<md-card class="md-whiteframe-6dp" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0;">
+							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50">
 								<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 							</div>
 							<md-card-header>
