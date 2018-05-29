@@ -17,7 +17,7 @@
 
 @media screen and (max-width:599px) {
 	.lw-auto-slider {height: 600px;}
-	.lw-auto-slider.projects {height: 600px;}
+	.lw-auto-slider.projects {height: 750px;}
   	.index-news-post.full-width {width: 100%!important;}
 }
 
