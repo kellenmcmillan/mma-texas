@@ -1,7 +1,7 @@
 /* css document */
 md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 
-.projects-listing {width: 50%; overflow: hidden; float: left; box-sizing: border-box;}
+.projects-listing {width: 100%; overflow: hidden; float: left; box-sizing: border-box;}
 .projects-listing md-card {overflow: hidden;}
 .projects-listing img {max-height: 400px; min-width: 100%; height: auto; width: auto;}
 .projects-listing .post-image {max-height: 300px; overflow: hidden;}
