@@ -7,7 +7,7 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 .projects-listing .post-image {max-height: 300px;}
 
 @media screen and (max-width: 959px) {
-	/*.projects-listing.full-width {width: 100%!important;}*/
+	/**/
 }
 
 @media screen and (max-width:599px) {
