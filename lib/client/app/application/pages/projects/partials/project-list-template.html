@@ -222,7 +222,7 @@
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * projects_aerial_mapping.panel_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="projects_aerial_mapping.panel_swipe('left')" ng-swipe-right="projects_aerial_mapping.panel_swipe('right')">
-					<div layout-padding class="projects-listing" ng-repeat="item in projects_aerial_mapping.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
+					<div layout-padding class="projects-listing" ng-repeat="item in aerial_mapping_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-sm="row" layout-gt-sm="row" layout-wrap layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="padding: 0;">
 								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
