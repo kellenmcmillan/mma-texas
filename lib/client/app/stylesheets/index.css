@@ -6,6 +6,7 @@
 .lw-auto-slider {height: 600px;}
 .lw-auto-slider.projects {height: 500px;}
 .lw-auto-slider-container {background-color: #F5F5F5; z-index: 2; padding-top: 112px; padding-bottom: 64px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden;}
+.lw-auto-slider-container.projects {background-color: #F5F5F5; z-index: 2; padding-top: 0; padding-bottom: 16px; width: 100%; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden;}
 .index-news-post {width: 33%; overflow: hidden; float: left; box-sizing: border-box;}
 .index-news-post md-card {overflow: hidden;}
 .index-news-post img {width: 100%!important; height: auto;}
