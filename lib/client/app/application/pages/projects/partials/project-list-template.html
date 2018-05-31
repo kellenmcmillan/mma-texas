@@ -25,7 +25,7 @@
 					<div layout-padding class="projects-listing" ng-repeat="item in civil_engineering_row.data" ng-class="{'one-half': window_width >= 960, 'full-width': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 						<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="column" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 							<div class="post-image" flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
-								<img ng-cloak ng-src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+								<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 							</div>
 							<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
 							<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}};">
