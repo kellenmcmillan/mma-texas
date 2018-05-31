@@ -11,14 +11,14 @@
 
 		<!-- slider #1 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_civil_engineering.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Civil Engineering</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="civil_engineering_row.panel_swipe('right')" ng-disabled="civil_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="civil_engineering_row.panel_swipe('right')" ng-disabled="civil_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="civil_engineering_row.panel_swipe('left')" ng-disabled="civil_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="civil_engineering_row.panel_swipe('left')" ng-disabled="civil_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * civil_engineering_row.panel_width}}px; transform:translate({{civil_engineering_row.amount_to_slide}},0);" ng-swipe-left="civil_engineering_row.panel_swipe('left')" ng-swipe-right="civil_engineering_row.panel_swipe('right')">
@@ -35,7 +35,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
@@ -51,14 +51,14 @@
 
 		<!-- slider #2 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_landscape_architecture.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Landscape Architecture</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="landscape_architecture_row.panel_swipe('right')" ng-disabled="architecture_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="landscape_architecture_row.panel_swipe('right')" ng-disabled="architecture_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="landscape_architecture_row.panel_swipe('left')" ng-disabled="architecture_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="landscape_architecture_row.panel_swipe('left')" ng-disabled="architecture_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * landscape_architecture_row.panel_width}}px; transform:translate({{landscape_architecture_row.amount_to_slide}},0);" ng-swipe-left="landscape_architecture_row.panel_swipe('left')" ng-swipe-right="landscape_architecture_row.panel_swipe('right')">
@@ -75,7 +75,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
@@ -91,14 +91,14 @@
 
 		<!-- slider #3 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_planning.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Planning</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="planning_row.panel_swipe('right')" ng-disabled="projects_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="planning_row.panel_swipe('right')" ng-disabled="projects_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="planning_row.panel_swipe('left')" ng-disabled="projects_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="planning_row.panel_swipe('left')" ng-disabled="projects_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * planning_row.panel_width}}px; transform:translate({{planning_row.amount_to_slide}},0);" ng-swipe-left="planning_row.panel_swipe('left')" ng-swipe-right="planning_row.panel_swipe('right')">
@@ -115,7 +115,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
@@ -131,14 +131,14 @@
 
 		<!-- slider #4 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_surveying.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Surveying</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="surveying_row.panel_swipe('right')" ng-disabled="surveying_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="surveying_row.panel_swipe('right')" ng-disabled="surveying_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="surveying_row.panel_swipe('left')" ng-disabled="surveying_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="surveying_row.panel_swipe('left')" ng-disabled="surveying_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * surveying_row.panel_width}}px; transform:translate({{surveying_row.amount_to_slide}},0);" ng-swipe-left="surveying_row.panel_swipe('left')" ng-swipe-right="surveying_row.panel_swipe('right')">
@@ -155,7 +155,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
@@ -171,14 +171,14 @@
 
 		<!-- slider #5 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_gis.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">GIS</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="gis_row.panel_swipe('right')" ng-disabled="gis_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="gis_row.panel_swipe('right')" ng-disabled="gis_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="gis_row.panel_swipe('left')" ng-disabled="gis_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="gis_row.panel_swipe('left')" ng-disabled="gis_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * gis_row.panel_width}}px; transform:translate({{gis_row.amount_to_slide}},0);" ng-swipe-left="gis_row.panel_swipe('left')" ng-swipe-right="gis_row.panel_swipe('right')">
@@ -195,7 +195,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
@@ -211,14 +211,14 @@
 
 		<!-- slider #6 -->
 		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_aerial_mapping.length">
-			<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: left; z-index: 3;">
+			<div style="position: absolute; width: 100%; left: 0; top: 84px; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Aerial Mapping</h1>
 			</div>
 			<div class="lw-auto-slider-container">
-				<md-button class="md-whiteframe-4dp" ng-click="projects_aerial_mapping.panel_swipe('right')" ng-disabled="aerial_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="projects_aerial_mapping.panel_swipe('right')" ng-disabled="aerial_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 				</md-button>
-				<md-button class="md-whiteframe-4dp" ng-click="projects_aerial_mapping.panel_swipe('left')" ng-disabled="aerial_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+				<md-button class="md-whiteframe-4dp" ng-click="projects_aerial_mapping.panel_swipe('left')" ng-disabled="aerial_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 41%; z-index: 3; height: 128px; min-width: 24px;">
 					<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 				</md-button>
 				<div class="projects panel" style="left: 0; width: {{scroll_bar_aware_window_width * projects_aerial_mapping.panel_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="projects_aerial_mapping.panel_swipe('left')" ng-swipe-right="projects_aerial_mapping.panel_swipe('right')">
@@ -235,7 +235,7 @@
 							<div flex="100" flex-sm="100" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%; min-height: 250px">
 								<md-card-header>
 									<md-card-header-text>
-										<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</span>
+										<h1 class="type heading" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
 									</md-card-header-text>
 								</md-card-header>
 								<md-card-content>
