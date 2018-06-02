@@ -1,23 +1,23 @@
 <div class="lw-auto-slider" style="position: relative;">
 	<div style="position: absolute; width: 100%; left: 0; top: 48px; text-align: center; z-index: 3;">
-		<h1 class="type heading" style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">MMA IN THE NEWS</h1>
+		<h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">MMA IN THE NEWS</h1>
 	</div>
 	<div class="lw-auto-slider-container">
-		<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('right')" ng-disabled="news_post_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
-			<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
+		<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('right')" ng-disabled="news_post_swipe == false" ng-attr-style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+			<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
 		</md-button>
-		<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('left')" ng-disabled="news_post_swipe == false" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
-			<md-icon style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
+		<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('left')" ng-disabled="news_post_swipe == false" ng-attr-style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
+			<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 		</md-button>
-		<div class="news panel" style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
-			<div layout-padding class="index-news-post" ng-repeat="item in ['one']" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
+		<div class="news panel" ng-attr-style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
+			<div layout-padding class="index-news-post" ng-repeat="item in bloglist | limit:7" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 				<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
 					<div class="post-image">
 						<img ng-cloak src="media/six-flags1.jpg" class="md-card-image">
 					</div>
 					<md-card-header>
 						<md-card-header-text>
-							<span class="md-title" style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">Brand New Look</span>
+							<span class="md-title" ng-attr-style="font-size: 18px; font-weight: bold; color: {{primary_hue_normal.value}};">Brand New Look</span>
 						</md-card-header-text>
 					</md-card-header>
 					<md-card-content>
