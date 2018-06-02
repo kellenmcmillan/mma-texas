@@ -11,21 +11,20 @@
 		</md-button>
 		<div class="news panel" ng-attr-style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
 			<div layout-padding class="index-news-post" ng-repeat="blog in bloglist | limitTo:7" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
-				<a ng-href="{{blog.settings.url}}">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout-align="center center" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; position: relative;">
 					<md-list class="md-dense" flex>
-						<a ng-href="{{blog.settings.url}}">
 	                    <md-list-item class="md-3-line" flex>
-	                        <div class="md-list-item-text">
-	                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
-	                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.headline}}</p>
-	                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}}</p>
-	                        </div>                        
+	                    	<a ng-href="{{blog.settings.url}}">
+		                        <div class="md-list-item-text">
+		                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
+		                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.subtitle}}</p>
+		                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm a"}}</p>
+		                        </div>
+	                        </a>                        
 	                    </md-list-item>
-	                    </a>
+	                    
 	                </md-list>
 				</md-card>
-				</a>
 			</div>
 		</div>
 	</div>
