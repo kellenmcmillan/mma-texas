@@ -54,21 +54,22 @@
 	                </form>
 	            </md-card>
 			</div>
-
-			<md-card class="md-whiteframe-8dp" ng-repeat="blog in bloglist" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 3; background-color: {{base_hue_lightest.value}}; cursor: pointer;" layout-padding>
-				<md-list class="md-dense" flex>
-					<a ng-href="{{blog.settings.url}}">
-                    <md-list-item class="md-3-line" flex>
-                    	<md-icon class="md-avatar-icon" aria-label="View details" style="color: {{primary_hue_normal.value}};">description</md-icon>
-                        <div class="md-list-item-text">
-                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
-                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.headline}}</p>
-                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}}</p>
-                        </div>                        
-                    </md-list-item>
-                    </a>
-                </md-list>
-		    </md-card>
+			<div layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="50" layout-align="start start">
+				<md-card class="md-whiteframe-8dp" ng-repeat="blog in bloglist" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="100" layout-align="start start" ng-attr-style="z-index: 3; background-color: {{base_hue_lightest.value}}; cursor: pointer;" layout-padding>
+					<md-list class="md-dense" flex>
+						<a ng-href="{{blog.settings.url}}">
+	                    <md-list-item class="md-3-line" flex>
+	                    	<md-icon class="md-avatar-icon" aria-label="View details" style="color: {{primary_hue_normal.value}};">description</md-icon>
+	                        <div class="md-list-item-text">
+	                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
+	                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.headline}}</p>
+	                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}}</p>
+	                        </div>                        
+	                    </md-list-item>
+	                    </a>
+	                </md-list>
+			    </md-card>
+		    </div>
 		</div>
 	</section>
 	<!-- Footer -->
