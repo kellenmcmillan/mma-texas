@@ -24,7 +24,7 @@
 		<div class="index-form" layout-padding ng-show="show_notification == true">
 			<md-card style="background: #fafafa; width: 100%; position: relative;">
 				<md-button style="position: absolute; top: 24px; right: 8px;" class="md-icon-button" ng-click="show_notification = false" aria-label="More">
-					<md-icon style="color: {{base_hue_darkest.value}}">close</md-icon>
+					<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
 				</md-button>
                 <form name="index">
                 	<div style="text-align: center">
@@ -64,7 +64,7 @@
                         </md-list-item>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center" flex>
-                        <md-button class="md-raised" ng-click="sendIndexLead(index_page_contact_form)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
+                        <md-button class="md-raised" ng-click="sendIndexLead(index_page_contact_form)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
                     </md-card-actions>
                 </form>
             </md-card>
