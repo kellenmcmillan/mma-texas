@@ -10,7 +10,7 @@
 			<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
 		</md-button>
 		<div class="news panel" ng-attr-style="left: 0; width: {{scroll_bar_aware_window_width * news_post_width}}px; transform:translate({{amount_to_slide}},0);" ng-swipe-left="panel_swipe('left')" ng-swipe-right="panel_swipe('right')">
-			<div layout-padding class="index-news-post" ng-repeat="blog in bloglist | limit:7" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
+			<div layout-padding class="index-news-post" ng-repeat="blog in bloglist | limitTo:7" ng-class="{'one-third': window_width >= 960, 'one-half': window_width < 960 && window_width > 600, 'full-width': window_width < 600}">
 				<a ng-href="{{blog.settings.url}}">
 				<md-card layout-padding style="background: transparent; height: 100%; padding: 0;">
 					<md-card-header>
