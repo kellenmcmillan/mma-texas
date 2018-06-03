@@ -1,4 +1,4 @@
-<div flex layout="row" layout-align="center start" layout-wrap ng-attr-style="background-color: {{primary_hue_normal.value}}; margin: 0; padding: 0; padding-bottom: 64px;">
+<div flex layout="row" layout-align="center start" layout-wrap ng-attr-style="background-color: {{base_hue_darkest.value}}; margin: 0; padding: 0; padding-bottom: 64px;">
 	<div flex="100" style="text-align: center; margin-top: 64px">
 		<h1 class="type heading" ng-attr-style="color: {{base_hue_lightest.value}}; line-height: 64px; margin: 0; font-weight: bold;">mma NEWS</h1>
 	</div>
@@ -15,8 +15,8 @@
 					<p md-truncate>{{blog.data.page.contents[0].data}}</p>
 				</md-card-content>
 				<a ng-href="{{blog.settings.url}}" style="position: absolute; bottom: -32px; right: 8px;">
-					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit blog post" style="background-color: {{base_hue_lightest.value}}!important; z-index: 1;">
-	        			<md-icon style="color: {{primary_hue_normal.value}};">subdirectory_arrow_right</md-icon>
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit blog post" style="background-color: {{primary_hue_normal.value}}!important; z-index: 1;">
+	        			<md-icon style="color: {{base_hue_lightest.value}};">subdirectory_arrow_right</md-icon>
 					</md-button>
 				</a>
 			</md-card>
