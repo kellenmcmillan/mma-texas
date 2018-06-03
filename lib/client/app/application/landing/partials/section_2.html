@@ -4,14 +4,15 @@
 	</div>
 	<div flex="100" layout-align="center center" layout-align-sm="start start" layout-align-gt-sm="start start" layout="row" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding>
 		<div ng-repeat="blog in bloglist | limitTo:6" flex="100" flex-sm="50" flex-gt-sm="33" layout-wrap>
-			<md-card flex="100" class="md-whiteframe-6dp" style="background: {{base_hue_lightest.value}}; position: relative;">
+			<md-card flex="100" class="md-whiteframe-6dp" style="background: {{base_hue_lighter.value}}; position: relative;">
 				<md-card-title>
-					<md-card-title-text>
+					<md-card-title-text style="width: 100%">
 						<md-truncate class="md-headline">{{blog.data.title}}</md-truncate>
 					</md-card-title-text>
 				</md-card-title>
-				<md-card-content>
+				<md-card-content style="max-height: 200px;">
 					<p>{{blog.data.subtitle}}</p>
+					<p md-truncate>{{blog.data.page.contents[0]}}</p>
 				</md-card-content>
 				<a ng-href="{{blog.settings.url}}" style="position: absolute; bottom: -32px; right: 8px;">
 					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit blog post" style="background-color: {{base_hue_lightest.value}}!important; z-index: 1;">
