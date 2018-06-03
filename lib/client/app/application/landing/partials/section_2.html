@@ -10,8 +10,8 @@
 						<md-truncate class="md-headline">{{blog.data.title}}</md-truncate>
 					</md-card-title-text>
 				</md-card-title>
-				<md-card-content style="max-height: 200px; padding-bottom: 16px;">
-					<p>{{blog.data.subtitle}}</p>
+				<md-card-content style="max-height: 200px; padding-bottom: 36px;">
+					<p style="color: {{primary_hue_normal.value}};">{{blog.data.subtitle}}</p>
 					<p md-truncate>{{blog.data.page.contents[0].data}}</p>
 				</md-card-content>
 				<a ng-href="{{blog.settings.url}}" style="position: absolute; bottom: -32px; right: 8px;">
