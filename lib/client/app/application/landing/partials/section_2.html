@@ -4,7 +4,7 @@
 	</div>
 	<div flex="100" layout-align="center center" layout-align-sm="space-around start" layout-align-gt-sm="space-around start" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding>
 		<div ng-repeat="blog in bloglist | limitTo:7" flex="100" flex-sm="50" flex-gt-sm="33" layout-wrap>
-			<md-card class="md-whiteframe-6dp" style="background: {{base_hue_lightest.value}}; position: relative;">
+			<md-card flex="100" class="md-whiteframe-6dp" style="background: {{base_hue_lightest.value}}; position: relative;">
 				<md-card-title>
 					<md-card-title-text>
 						<span class="md-headline">{{blog.data.title}}</span>
