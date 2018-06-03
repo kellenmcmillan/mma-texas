@@ -3,26 +3,17 @@
 		<h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">mma NEWS</h1>
 	</div>
 	<div flex="100" layout-align="center start" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row">
-		<!-- <md-button class="md-whiteframe-4dp" ng-click="panel_swipe('right')" ng-disabled="news_post_swipe == false" ng-attr-style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; left: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
-			<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_left</md-icon>
-		</md-button>
-		<md-button class="md-whiteframe-4dp" ng-click="panel_swipe('left')" ng-disabled="news_post_swipe == false" ng-attr-style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}}; position: absolute; right: 8px; top: 34%; z-index: 3; height: 128px; min-width: 24px;">
-			<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: bold;">keyboard_arrow_right</md-icon>
-		</md-button> -->
-		<div layout-padding ng-repeat="blog in bloglist | limitTo:7" flex="100" flex-sm="50" flex-gt-sm="33">
-			<md-card class="md-whiteframe-6dp" layout-align="center center" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; position: relative;">
-				<md-list class="md-dense" flex>
-                    <md-list-item class="md-3-line" flex>
-                    	<a ng-href="{{blog.settings.url}}">
-	                        <div class="md-list-item-text">
-	                        	<h3 style="font-size: 32px;">{{blog.data.title}}</h3>
-	                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.subtitle}}</p>
-	                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm a"}}</p>
-	                        </div>
-                        </a>                        
-                    </md-list-item>
-                    
-                </md-list>
+		<div ng-repeat="blog in bloglist | limitTo:7" flex="100" flex-sm="50" flex-gt-sm="33" layout-wrap>
+			<md-card class="md-whiteframe-6dp" style="background: {{base_hue_lightest.value}}; position: relative;">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{blog.data.title}}</span>
+						<span class="md-subhead">{{blog.data.subtitle}}</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-content>
+					<p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm a"}}</p>
+				</md-card-content>
 			</md-card>
 		</div>
 	</div>
