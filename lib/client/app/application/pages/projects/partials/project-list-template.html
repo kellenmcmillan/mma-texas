@@ -9,8 +9,39 @@
 
 		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
+		<div layout="row" layout-wrap layout-align="start center" flex="100" ng-attr-style="background-color: {{primary_hue_normal.value}}; padding: 0; margin: 0;">
+			<div flex="100" flex-sm="50" flex-gt-sm="50">
+				<h1>{{select_project_type}}</h1>
+			</div>
+			<md-list-item flex="100" flex-sm="50" flex-gt-sm="50">
+                <md-input-container class="md-block lightweight-md-dropdown">
+                    <label>Select a project category</label>
+                    <md-select ng-model="select_project_type">
+                        <md-option ng-value="'Civil Engineering'">
+                            Civil Engineering
+                        </md-option>
+                        <md-option ng-value="'Landscape Architecture'">
+                            Landscape Architecture
+                        </md-option>
+                        <md-option ng-value="'Planning'">
+                            Planning
+                        </md-option>
+                        <md-option ng-value="'Surveying'">
+                            Surveying
+                        </md-option>
+                        <md-option ng-value="'GIS'">
+                            GIS
+                        </md-option>
+                        <md-option ng-value="'Aerial Mapping'">
+                            Aerial Mapping
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-list-item>
+		</div>
+
 		<!-- slider #1 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_civil_engineering.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'Civil Engineering'" ng-if="projects_civil_engineering.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Civil Engineering</h1>
 			</div>
@@ -50,7 +81,7 @@
 		<!-- slider #1 -->
 
 		<!-- slider #2 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_landscape_architecture.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'Landscape Architecture'" ng-if="projects_landscape_architecture.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Landscape Architecture</h1>
 			</div>
@@ -90,7 +121,7 @@
 		<!-- slider #2 -->
 
 		<!-- slider #3 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_planning.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'Planning'" ng-if="projects_planning.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Planning</h1>
 			</div>
@@ -130,7 +161,7 @@
 		<!-- slider #3 -->
 
 		<!-- slider #4 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_surveying.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'Surveying'" ng-if="projects_surveying.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Surveying</h1>
 			</div>
@@ -170,7 +201,7 @@
 		<!-- slider #4 -->
 
 		<!-- slider #5 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_gis.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'GIS'" ng-if="projects_gis.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">GIS</h1>
 			</div>
@@ -210,7 +241,7 @@
 		<!-- slider #5 -->
 
 		<!-- slider #6 -->
-		<div class="lw-auto-slider projects" style="position: relative;" ng-if="projects_aerial_mapping.length">
+		<div class="lw-auto-slider projects" style="position: relative;" ng-show="select_project_type == 'Aerial Mapping'" ng-if="projects_aerial_mapping.length">
 			<div style="position: relative; padding-left: 16px; padding-top: 16px; padding-bottom: 8px; width: 100%; text-align: left; z-index: 3;">
 				<h1 class="type heading-2" style="color: {{base_hue_darkest.value}}; line-height: 32px; padding-left: 16px; margin: 0; font-weight: bold;">Aerial Mapping</h1>
 			</div>
