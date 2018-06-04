@@ -115,7 +115,8 @@
 	.projects-dropdown md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label,
 	.projects-dropdown md-input-container:not(.md-input-invalid).md-input-has-value label,
 	.projects-dropdown md-select.md-default-theme .md-select-icon, 
-	.projects-dropdown md-select .md-select-icon {color: {{base_hue_lightest.value}}!important;}
+	.projects-dropdown md-select .md-select-icon,
+	.md-select-value>span:not(.md-select-icon) .md-text {color: {{base_hue_lightest.value}}!important;}
 
 	.md-card-base {background-color: {{base_hue_lightest.value}};}
 	.mediaVault md-tabs#views {min-height: {{window_height + 100}}px!important;}
@@ -162,6 +163,6 @@
 	.projects.panel {overflow: hidden; transition: all .5s ease-in-out;}
 	/* projects-carousel */
 
-	.page.projects {min-height: {{window_height}};}
+	.page.projects .listing {min-height: {{window_height - 200}}px;}
 
 </style>
