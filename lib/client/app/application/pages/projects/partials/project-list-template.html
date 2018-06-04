@@ -17,7 +17,7 @@
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Select a project category</label>
                     <md-select ng-model="select_project_type">
-                    	<md-option ng-selected="true" value="Select a project">
+                    	<md-option ng-selected="true" value="Select a project type">
                             Select a project type
                         </md-option>
                         <md-option ng-if="projects_civil_engineering.length" value="Civil Engineering">
@@ -43,7 +43,7 @@
             </md-list-item>
 		</div>
 
-		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Select a project'">
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Select a project type'">
 		</div>
 
 		<!-- slider #1 -->
