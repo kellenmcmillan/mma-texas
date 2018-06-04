@@ -10,10 +10,10 @@
 		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
 		<div class="md-whiteframe-6dp projects-dropdown" layout="row" layout-wrap layout-align="start center" layout-padding flex="100" ng-attr-style="background-color: {{primary_hue_normal.value}}; padding: 0; margin: 0; width: 100%;">
-			<div flex>
+			<div layout-margin layout-padding flex>
 				<h1 ng-attr-style="color: {{base_hue_lightest.value}};">{{select_project_type}}</h1>
 			</div>
-			<md-list-item flex>
+			<md-list-item layout-margin layout-padding flex>
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Select a project category</label>
                     <md-select ng-model="select_project_type">
