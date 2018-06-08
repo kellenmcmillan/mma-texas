@@ -16,8 +16,8 @@
 
 		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
-	    <div class="interior-page" flex="100" layout="row" layout-wrap layout-align="center start" layout-wrap style="width: 100%;">
-	    	<md-card class="md-whiteframe-6dp" flex="100" flex-sm="50" flex-gt-sm="33" ng-repeat="member in settings.staff.members">
+	    <div class="interior-page" flex="100" layout="row" layout-wrap layout-align="start start" layout-wrap style="width: 100%;">
+	    	<md-card class="md-whiteframe-6dp" flex="100" flex-sm="33" flex-gt-sm="25" ng-repeat="member in settings.staff.members">
 	    		<img ng-src="{{member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image" alt="Washed Out">
 	    	</md-card>
 		</div>
