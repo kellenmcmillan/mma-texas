@@ -1,15 +1,13 @@
 <!-- Hero Slideshow -->
-<div class="lightweight-hero--slideshow mdl-grid component slideshow" hero-element style="position: relative;">
-	<span id="top" hash="top" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
-
-	<div class="slide--display" slideshow-container>
+<div class="lightweight-hero--slideshow component slideshow" hero-element style="position: relative;" layout="row">
+	<div flex="100" layout="row" layout-align="center center" slideshow-container>
 		<div class="video-overlay"></div>
 		<video class="slideshow_slide_image" style="display: block; margin: 0 auto; width: auto; height: auto; min-width: 100%; min-height: 100%;" autoplay loop>
   			<source src="https://storage.googleapis.com/mma-texas.appspot.com/media/video/mma-hero.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>
-        <div class="slideshow-content" style="z-index: 1;" flex>
-        	<div style="position: relative; max-width: 468px; height: 300px; background-color: rgba(0,0,0,.18); border-radius: 0 40px 0 40px;" layout="row" layout-align="center center" flex>
+        <div style="z-index: 1;" flex="90" layout="row">
+        	<div style="position: relative; max-width: 100%; height: 120px; background-color: rgba(0,0,0,.18); border-radius: 0 40px 0 40px;" layout="row" layout-align="center center" flex="100">
 	            <div layout="row" layout-margin layout-align="start center">
 	                <div layout="column" layout-align="center start">
 	                    <h1 class="type simulated" ng-attr-style="color: {{base_hue_lightest.value}}; line-height: 64px; margin: 0; text-shadow: 1px 1.5px rgba(10,10,10,0.4)">We strive to <span ng-attr-style="color: {{primary_hue_normal.value}}" typewrite initial-delay="2000" blink-cursor="true" ng-attr-text="valueStatements"></span></h1>
