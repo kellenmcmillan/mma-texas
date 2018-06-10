@@ -188,13 +188,15 @@
                                                     <md-content style="padding: 0;">
                                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                                             <md-list class="md-dense" flex>
-                                                                <md-list-item ng-if="me.files < 1" class="md-2-line" flex>
+                                                                <md-list-item ng-repeat="file in me.files" class="md-2-line" flex>
                                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
                                                                     <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">No Files</h3>
+                                                                        <h3 style="font-size: 16px;">{{file.filename}}</h3>
                                                                     </div>
                                                                 </md-list-item>
-                                                                <md-list-item class="md-2-line" ng-repeat="file in me.files" flex>
+                                                            </md-list>
+                                                            <md-list ng-show="!me.files.length" class="md-dense" flex>
+                                                                <md-list-item class="md-2-line" flex>
                                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
                                                                     <div class="md-list-item-text">
                                                                         <h3 style="font-size: 16px;">No Files</h3>
