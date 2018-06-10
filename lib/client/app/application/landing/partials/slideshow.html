@@ -1,15 +1,17 @@
 <style>
+	.slideshow_slide_video {display: block; margin: 0 auto; width: auto; height: auto; min-width: 100%; min-height: 100%;}
 	@media screen and (max-width: 600px) {
 		.lightweight-hero--slideshow.component.slideshow {
 			max-height: 300px!important;
 		}
+		.slideshow_slide_video {display: block; margin: 0 auto; width: auto; height: auto; min-width: 150%; min-height: 150%;}
 	}
 </style>
 <!-- Hero Slideshow -->
 <div class="lightweight-hero--slideshow component slideshow" hero-element style="position: relative;" layout="row">
 	<div class="video-container" flex="100" layout="row" layout-align="center center" slideshow-container>
 		<div class="video-overlay"></div>
-		<video class="slideshow_slide_image" style="display: block; margin: 0 auto; width: auto; height: auto; min-width: 100%; min-height: 100%;" autoplay loop>
+		<video class="slideshow_slide_video"" autoplay loop>
   			<source src="https://storage.googleapis.com/mma-texas.appspot.com/media/video/mma-hero.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>
