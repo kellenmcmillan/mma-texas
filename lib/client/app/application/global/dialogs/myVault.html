@@ -4,7 +4,7 @@
     .md-default-theme .md-datepicker-open .md-datepicker-calendar-icon, .md-datepicker-open .md-datepicker-calendar-icon {color: {{primary_hue_normal.value}}!important;}
     .md-default-theme .md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator, .md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator {border: 1px solid {{primary_hue_normal.value}};}
 </style>
-<div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="usersController">
+<div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="lightweightController">
     <md-card class="suite-dialog md-card-base">
         <md-card-title style="position: relative;">
             <md-menu>
@@ -199,7 +199,7 @@
                                                     </md-content>
                                                 </md-tab>
                                                 <md-tab label="Shared With Me">
-                                                    <md-content class="md-padding">
+                                                    <md-content style="padding: 0;">
                                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                                             <md-list class="md-dense" flex>
                                                                 <md-list-item class="md-2-line" flex>
@@ -240,7 +240,7 @@
                                                     </md-content>
                                                 </md-tab>
                                                 <md-tab label="Unread">
-                                                    <md-content class="md-padding">
+                                                    <md-content style="padding: 0;">
                                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                                             <md-list class="md-dense" flex>
                                                                 <md-list-item class="md-2-line" flex>
