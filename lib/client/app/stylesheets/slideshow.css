@@ -51,7 +51,7 @@
 /* Structure */
 
 /* Media */
-.slideshow_slide_image {opacity: 1; width: 100%; height: auto; will-change: opacity; max-width: inherit!important;}
+.slideshow_slide_image {opacity: 1;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
@@ -117,5 +117,5 @@
 
 
 
-@media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
-@media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
+/*@media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
+@media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}*/
