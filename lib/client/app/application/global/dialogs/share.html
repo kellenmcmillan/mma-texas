@@ -17,16 +17,6 @@
             <md-content flex>
                 <div layout="row" layout-align="start start" flex>
                     <md-list-item flex="100">
-                        <md-input-container class="md-block lightweight-md-input">
-                            <label>Firstname</label>
-                            <input name="firstname" ng-model="me.firstname" minlength="3" required>
-                            <div ng-messages="myvault.firstname.$error" ng-show="myvault.firstname.$dirty">
-                                <div ng-message="required">Firstname required!</div>
-                                <div ng-message="minlength">Name too short!</div>
-                            </div>
-                        </md-input-container>
-                    </md-list-item>
-                    <md-list-item flex="100">
                         <md-input-container class="md-block lightweight-md-dropdown">
                             <label>Users</label>
                             <md-select ng-model="share_to">
