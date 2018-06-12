@@ -101,7 +101,15 @@
 
 
 
+    <!-- sripts -->
+    <script>
+    navigator.serviceWorker.register('../firebase-messaging.js')
+        .then((registration) => {
+        messaging.useServiceWorker(registration);
 
+        // Request permission and get token.....
+        });
+    </script>
 
 
 
@@ -195,8 +203,7 @@
     </script>
     <!-- Notification -->
 
-    <!-- sripts -->
-
+    
 
 
 </html>
