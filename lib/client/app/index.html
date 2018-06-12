@@ -102,13 +102,15 @@
 
 
     <!-- sripts -->
-    <script type="text/javascript">
-    navigator.serviceWorker.register('../firebase-messaging.js')
-        .then((registration) => {
-        messaging.useServiceWorker(registration);
-
-        // Request permission and get token.....
-        });
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../firebase-messaging.js')
+            .then((registered) => {
+                messaging.useServiceWorker(registration);
+                console.log("registered service worker");
+            })
+            .catch(err => console.error('Looks like there is an error....', err))
+        }     
     </script>
 
 
