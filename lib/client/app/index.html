@@ -104,7 +104,7 @@
     <!-- sripts -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../firebase-messaging.js')
+            navigator.serviceWorker.register('../firebase-messaging-sw.js')
             .then((registered) => {
                 console.log("registered service worker");
             })
