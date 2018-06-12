@@ -194,7 +194,25 @@
         </md-toast>
     </script>
     <!-- Notification -->
-
+    <script>
+    navigator.serviceworker.register('../firebase-messaging-sw.js')
+    .then((registration) => {
+        const messaging = firebase.messaging();
+        messaging.useServiceWorker(registration);
+        return messaging.getToken();
+    })
+    .then((token) => {
+        if (token) {
+            sendTokenToServer(token);
+            updateUIForPushEnabled(token);
+        } else {
+            // Show permission request.
+            console.log('No Instance ID token available. Request permission to generate one.');
+            // Show permission UI.
+            updateUIForPushPermissionRequired();
+            setTokenSentToServer(false);
+        }
+    });</script>
     <!-- sripts -->
 
 
