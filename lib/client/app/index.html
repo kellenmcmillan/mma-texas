@@ -106,7 +106,6 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('../firebase-messaging.js')
             .then((registered) => {
-                messaging.useServiceWorker(registration);
                 console.log("registered service worker");
             })
             .catch(err => console.error('Looks like there is an error....', err))
