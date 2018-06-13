@@ -193,8 +193,8 @@
     <!-- Notification -->
     <script type="text/ng-template" id="toast-template.html">
         <md-toast style="background-color:{{primary_hue_normal.value}};">
-            <applicationn class="md-toast-text" flex>{{toastMessage}}</applicationn>
-            <md-button ng-show="action" ng-click="null">
+            <span class="md-toast-text" flex>{{toastMessage}}</span>
+            <md-button ng-show="action" ng-click="openMoreInfo($event)">
             More info
             </md-button>
             <md-button ng-click="closeToast()">
