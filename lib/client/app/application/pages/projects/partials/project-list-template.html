@@ -58,7 +58,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Commercial'" ng-if="projects_commercial.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_commercial" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -87,7 +87,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Education'" ng-if="projects_education.length">
 			
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_education" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -116,7 +116,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Energy'" ng-if="projects_energy.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_energy" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -145,7 +145,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Entertainment'" ng-if="projects_entertainment.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_entertainment" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -174,7 +174,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Government'" ng-if="projects_government.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_government" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -203,7 +203,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Healthcare'" ng-if="projects_healthcare.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_healthcare" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -232,7 +232,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Multi-Family Residential'" ng-if="projects_multi_family_residential.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_multi_family_residential" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
@@ -261,7 +261,7 @@
 		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Single Family Residential'" ng-if="projects_single_family_residential.length">
 
 			<div layout-padding class="projects-listing" ng-repeat="item in projects_single_family_residential" flex="100" flex-sm="100" flex-gt-sm="50">
-				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
 					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
 						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
 					</div>
