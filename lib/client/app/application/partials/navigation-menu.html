@@ -55,7 +55,7 @@
         </md-list>
         <br><br>
         <div class="container" ng-if="menu_title != 'Galleries'" flex="100" layout-margin style="padding-bottom: 48px;" class="navigation widget">
-            <md-tabs md-dynamic-height md-border-bottom>
+            <md-tabs md-dynamic-height md-border-bottom ng-hide="menu_title == 'Projects'">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding">
                         <md-list-item class="md-2-line">
