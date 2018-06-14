@@ -103,7 +103,7 @@
 
     <!-- sripts -->
     <script>
-        if ('serviceWorker' in navigator) {
+        if ('Notification' in window && navigator.serviceWorker) {
             navigator.serviceWorker.register('../firebase-messaging-sw.js')
             .then((registered) => {
                 console.log("registered service worker");
