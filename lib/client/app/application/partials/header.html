@@ -1,5 +1,8 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
 <!-- sticky header -->
-<div layout-align="center center" layout="row" layout flex>
+<div layout-align="center center" layout="row" layout flex ng-class="{'header-ms-explorer': browser == 'ie'}">
 	<!-- Logo -->
 	<div flex="100" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="center center" layout="row">
 		
