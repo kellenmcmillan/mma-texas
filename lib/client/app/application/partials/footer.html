@@ -1,4 +1,11 @@
-<div layout="column" layout-align="center center" class="footer-container" flex ng-attr-style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;">
+<style>
+	
+.footer-container.footer-ms-explorer {height: 500px;}
+
+
+</style>
+
+<div layout="column" layout-align="center center" class="footer-container" flex ng-attr-style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;"  ng-class="{'footer-ms-explorer': browser == 'ie'}">
 	<div class="footer-content-top" layout="column" layout-gt-sm="row" layout-padding flex style="z-index: 2">
 		<div layout="column" layout-padding layout-align="center center" flex="100" flex-gt-sm="33">
 			<div>
@@ -25,7 +32,7 @@
 			<div layout-padding flex="100" flex-sm="33" flex-gt-sm="33">
 				<md-list>
 					<md-list-item>
-						<p style="font-weight: bold; color: {{base_hue_lightest.value}};">Quick Links</p>
+						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};">Quick Links</p>
 					</md-list-item>
 					<md-list-item>
 						<a href="/"><p ng-attr-style="color: {{base_hue_lightest.value}};">About Us</p></a>
@@ -64,35 +71,35 @@
 					<p ng-attr-style="color: {{base_hue_lightest.value}};">{{settings.data.company_name}} &#169; {{year}}</p>
 				</div>
 				<div flex="50" flex-sm="25" flex-gt-sm="25">
-					<a href="/"><p style="color: {{base_hue_lightest.value}};">Privacy &amp; Terms</p></a>
+					<a href="/"><p ng-attr-style="color: {{base_hue_lightest.value}};">Privacy &amp; Terms</p></a>
 				</div>
 				<div flex="100" flex-sm="50" flex-gt-sm="50">
-					<h1 class="type heading footer" style="display: inline-block; color: {{base_hue_lightest.value}};">Superpowered By Lightweight</h1>
+					<h1 class="type heading footer" ng-attr-style="display: inline-block; color: {{base_hue_lightest.value}};">Superpowered By Lightweight</h1>
 					<md-menu style="display: inline-block;">
 	                    <md-button aria-label="Lightweight menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
 	                        <md-icon md-menu-origin ng-attr-style="color: {{base_hue_lightest.value}}">settings</md-icon>
 	                    </md-button>
 	                    <md-menu-content width="4">
-	                        <md-menu-item ng-show="user">
+	                        <md-menu-item ng-show="user.security.roles == 'management'">
 	                            <md-button ng-click="open_edit_configuration()">
 	                                <md-icon>settings</md-icon>
 	                                App Settings
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="user">
+	                        <md-menu-item ng-show="user.security.roles == 'management'">
 	                            <md-button ng-click="openUserVault()">
 	                                <md-icon>recent_actors</md-icon>
 	                                User Vault
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="user">
+	                        <md-menu-item ng-show="user.security.roles == 'management'">
 	                            <md-button ng-click="openMediaVault(null)">
 	                                <md-icon>photo_library</md-icon>
 	                                Media Vault
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="user">
-	                            <md-button disabled ng-click="null">
+	                        <md-menu-item ng-show="user.security.roles == 'management'">
+	                            <md-button ng-click="null">
 	                                <md-icon>assignment</md-icon>
 	                                Task Runner
 	                            </md-button>
