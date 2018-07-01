@@ -1,8 +1,6 @@
-<style>
-	.header-ms-explorer {position: fixed; width: 100%;}
-</style>
+
 <!-- sticky header -->
-<div layout-align="center center" layout="row" layout flex ng-class="{'header-ms-explorer': browser == 'ie'}">
+<div layout-align="center center" layout="row" layout flex>
 	<!-- Logo -->
 	<div flex="100" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="center center" layout="row">
 		
@@ -11,11 +9,11 @@
 	<!-- Logo -->
 	<!-- Navigation Items -->
 	<div flex="25" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
-		<md-button class="md-icon-button navigation menu" style="color: {{base_hue_darkest.value}};" ng-click="open_parent_menu()">
-			<md-icon style="color: {{base_hue_darkest.value}}">menu</md-icon>
+		<md-button class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_parent_menu()">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
 		</md-button>
-		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" style="color: {{base_hue_darkest.value}};">
-			<md-icon style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" ng-attr-style="color: {{base_hue_darkest.value}};">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 			{{item.navigation.parent.name}}
 		</md-button>
 	</div>

@@ -1,8 +1,11 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
 <md-content class="page" style="height: {{window_height}}px">
 	<section class="{{base_hue_lightest.name}}">
 
 		<!-- header -->
-		<md-subheader class="header" layout-align="center center" layout="row" flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0">
+		<md-subheader class="header" layout-align="center center" layout="row" flex style="z-index: 5; box-shadow: none; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- header -->
