@@ -33,8 +33,9 @@
                         </md-card-header-text>
                     </md-card-header>
                     <md-card-content>
+                        <md-divider></md-divider>
                         <md-list-item>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">menu</md-icon>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
                             <p>Task Title</p>
                             <md-switch class="md-secondary"></md-switch>
                         </md-list-item>
@@ -46,7 +47,70 @@
                     </md-card-actions>
                 </md-card>
             </div>
-            <div flex="100" flex-gt-sm="40">
+            <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
+                
+                <md-card class="md-whiteframe-4dp" style="background: #fafafa;" flex="100">
+                        <md-card-header>
+                            <md-card-header-text>
+                                <span class="md-title">Notifications</span>
+                                <span class="md-subhead">Manage Notifications</span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content>
+                            <md-tabs md-dynamic-height md-border-bottom>
+                                <md-tab label="All Notifications">
+                                    <md-content style="padding: 0;">
+                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                                    <p>Notification Name</p><span flex></span>
+                                                    <md-menu class="md-secondary">
+                                                        <md-button class="md-icon-button">
+                                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
+                                                        </md-button>
+                                                        <md-menu-content width="4">
+                                                            <md-menu-item>
+                                                                <md-button>
+                                                                View Notification
+                                                                </md-button>
+                                                            </md-menu-item>
+                                                            <md-menu-item>
+                                                                <md-button>
+                                                                Dismiss Notification
+                                                                </md-button>
+                                                            </md-menu-item>
+                                                            <md-menu-divider></md-menu-divider>
+                                                            <md-menu-item>
+                                                                <md-button>
+                                                                Notifications
+                                                                </md-button>
+                                                            </md-menu-item>
+                                                        </md-menu-content>
+                                                    </md-list-item>
+                                                </md-menu>
+                                            </md-list>
+                                        </div>
+                                    </md-content>
+                                </md-tab>
+                                <md-tab label="Archived">
+                                    <md-content style="padding: 0;">
+                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item class="md-2-line" flex>
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
+                                                    <div class="md-list-item-text">
+                                                        <h3 style="font-size: 16px;">No Archived Notifications</h3>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </md-content>
+                                </md-tab>
+                            </md-tabs>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!-- <div flex="100" flex-gt-sm="40">
                 <md-card class="md-card-base md-whiteframe-4dp">
                     <md-card-header>
                         <md-card-header-text>
@@ -55,7 +119,7 @@
                     </md-card-header>
                     <md-card-content layout="row" layout-wrap layout-align="center start">
                         <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
-                            <p>Notification Name</p>
+                            <p>Notification Name</p><span flex></span>
                             <md-menu class="md-secondary">
                                 <md-button class="md-icon-button">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
@@ -63,12 +127,12 @@
                                 <md-menu-content width="4">
                                     <md-menu-item>
                                         <md-button>
-                                        Redial
+                                        View Notification
                                         </md-button>
                                     </md-menu-item>
                                     <md-menu-item>
                                         <md-button>
-                                        Check voicemail
+                                        Dismiss Notification
                                         </md-button>
                                     </md-menu-item>
                                     <md-menu-divider></md-menu-divider>
@@ -86,7 +150,7 @@
                         <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
                     </md-card-actions>
                 </md-card>
-            </div>
+            </div> -->
             <!-- columns -->
         </md-card-content>
         <!-- Company Info Screen -->
