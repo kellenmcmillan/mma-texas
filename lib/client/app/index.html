@@ -63,6 +63,10 @@
         <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/userVault.html'"></div>
         <!-- userVault -->
 
+        <!-- taskrunner -->
+        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/tasks.html'"></div>
+        <!-- taskrunner -->
+
         <!-- myVault -->
         <div ng-if="user" ng-include src="'application/global/dialogs/myVault.html'"></div>
         <!-- myVault -->
