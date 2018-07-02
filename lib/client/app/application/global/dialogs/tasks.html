@@ -21,7 +21,6 @@
             
         </md-card-title>
 
-        <!-- Company Info Screen -->
         <md-card-content layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
             <!-- columns -->
             <div flex="100" flex-gt-sm="40">
@@ -33,7 +32,7 @@
                         </md-card-header-text>
                     </md-card-header>>
                     <md-card-content>
-                        <md-list-item>
+                        <!-- <md-list-item>
                             <md-menu>
                                 <md-button class="md-icon-button">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
@@ -59,7 +58,38 @@
                             </md-menu>
                             <p>Task Title</p>
                             <md-switch class="md-secondary"></md-switch>
-                        </md-list-item>
+                        </md-list-item> -->
+                        <md-list class="md-dense" flex>
+                            <md-list-item class="md-2-line" flex>
+                                <md-menu class="md-secondary">
+                                    <md-button class="md-icon-button">
+                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
+                                    </md-button>
+                                    <md-menu-content width="4">
+                                        <md-menu-item>
+                                            <md-button>
+                                            View Task
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button>
+                                            Run Task
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-divider></md-menu-divider>
+                                        <md-menu-item>
+                                            <md-button>
+                                            Delete Task
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                                <div class="md-list-item-text">
+                                    <h3 style="font-size: 16px;">Task Title</h3>
+                                </div>
+                                <md-switch class="md-secondary"></md-switch>
+                            </md-list-item>
+                        </md-list>
                     </md-card-content>
                 </md-card>
             </div>
@@ -78,8 +108,7 @@
                                     <md-content style="padding: 0;">
                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                             <md-list class="md-dense" flex>
-                                                <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
-                                                    <p>Notification Name</p><span flex></span>
+                                                <md-list-item class="md-2-line" flex>
                                                     <md-menu class="md-secondary">
                                                         <md-button class="md-icon-button">
                                                             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">more_vert</md-icon>
@@ -103,6 +132,12 @@
                                                             </md-menu-item>
                                                         </md-menu-content>
                                                     </md-menu>
+                                                    <div class="md-list-item-text">
+                                                        <h3 style="font-size: 16px;">Notification Name</h3>
+                                                    </div>
+                                                    <md-button class="md-secondary md-icon-button" ng-click="openShare(file)">
+                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
+                                                    </md-button>
                                                 </md-list-item>
                                             </md-list>
                                         </div>
