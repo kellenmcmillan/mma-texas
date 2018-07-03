@@ -58,7 +58,36 @@
                                     </md-menu-content>
                                 </md-menu>
                                 <div class="md-list-item-text">
-                                    <p style="font-size: 16px;">New Task Name</p>
+                                    <p style="font-size: 16px;">New Lead</p>
+                                </div>
+                                <md-switch class="md-secondary"></md-switch>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-menu>
+                                    <md-button class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="task menu" md-font-library="material-icons">more_vert</md-icon>
+                                    </md-button>
+                                    <md-menu-content width="4">
+                                        <md-menu-item>
+                                            <md-button>
+                                            Run Task
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button>
+                                            Delete Task
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-divider></md-menu-divider>
+                                        <md-menu-item>
+                                            <md-button>
+                                            View Task
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">New Blog Post</p>
                                 </div>
                                 <md-switch class="md-secondary"></md-switch>
                             </md-list-item>
@@ -83,7 +112,29 @@
                                             <md-list class="md-dense" flex>
                                                 <md-list-item flex>
                                                     <div class="md-list-item-text">
-                                                        <p style="font-size: 16px;">07/02 - Notification Name</p>
+                                                        <p style="font-size: 16px;">07/02 - New Lead Submission</p>
+                                                    </div>
+                                                    <md-menu>
+                                                        <md-button class="md-icon-button md-secondary">
+                                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="notification menu" md-font-library="material-icons">more_vert</md-icon>
+                                                        </md-button>
+                                                        <md-menu-content width="4">
+                                                            <md-menu-item>
+                                                                <md-button>
+                                                                View Notification
+                                                                </md-button>
+                                                            </md-menu-item>
+                                                            <md-menu-item>
+                                                                <md-button>
+                                                                Dismiss Notification
+                                                                </md-button>
+                                                            </md-menu-item>
+                                                        </md-menu-content>
+                                                    </md-menu>
+                                                </md-list-item>
+                                                <md-list-item flex>
+                                                    <div class="md-list-item-text">
+                                                        <p style="font-size: 16px;">07/01 - New Lead Submission</p>
                                                     </div>
                                                     <md-menu>
                                                         <md-button class="md-icon-button md-secondary">
