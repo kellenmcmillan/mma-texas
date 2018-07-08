@@ -66,7 +66,6 @@
                                     <md-list-item>
                                         <label>User Generated</label>
                                         <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
-                                           User Generated
                                         </md-checkbox>
                                     </md-list-item>
                                     <md-list-item ng-show="!task.isGeneratedByUser">
@@ -80,17 +79,17 @@
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <div class="md-block lightweight-md-input" flex>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Task Alerts</label>
                                             <md-select ng-model="task.alert_roles" multiple required>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <div class="md-block lightweight-md-input" flex>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Channels</label>
                                             <md-select ng-model="task.channels" multiple>
                                                 <md-option ng-value="'Email'">
@@ -100,10 +99,10 @@
                                                     Notification
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>                                    
                                     <md-list-item>
-                                        <div class="md-block lightweight-md-input" flex>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Is This Reoccuring Task?</label>
                                             <md-select ng-model="task.isReoccuring" required>
                                                 <md-option ng-value="true">
@@ -113,7 +112,7 @@
                                                     No
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>
                                     <md-list-item ng-show="!task.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -122,7 +121,7 @@
                                         </md-input-container>
                                     </md-list-item>                                      
                                     <md-list-item ng-show="task.isReoccuring">
-                                        <div class="md-block lightweight-md-input" flex>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
                                                 <md-option ng-value="'onCreate'">
@@ -141,10 +140,10 @@
                                                     Monthly
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>
                                     <md-list-item ng-show="task.isReoccuring">
-                                        <div class="md-block lightweight-md-input" flex>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="task.runDay">
                                                 <md-option ng-value="'Sunday'">
@@ -169,25 +168,25 @@
                                                     Saturday
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
+                                        <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Hour</label>
                                             <md-select ng-model="task.runTimeHour">
                                                 <md-option ng-repeat="time in times" ng-value="time">
                                                     {{time}}
                                                 </md-option>
                                             </md-select>
-                                        </div>
-                                        <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
+                                        </md-input-container>
+                                        <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Meridiem</label>
                                             <md-select ng-model="task.runTimeMeridiem">
                                                 <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                     {{meridiem}}
                                                 </md-option>
                                             </md-select>
-                                        </div>
+                                        </md-input-container>
                                     </md-list-item>                                 
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
