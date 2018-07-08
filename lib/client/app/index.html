@@ -51,6 +51,8 @@
 
 	<body ng-controller="colorController">
 
+        <div ng-include src="'application/global/style.html'"></div>
+
         <!-- editor -->
         <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/editor.html'"></div>
         <!-- editor -->
@@ -93,8 +95,6 @@
         <!-- password reset -->
 
         <div ng-controller="lightweightController">
-
-            <div ng-include src="'application/global/style.html'"></div>
 
     		<!-- views -->
             <div ng-view></div>
