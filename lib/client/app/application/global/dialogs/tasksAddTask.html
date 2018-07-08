@@ -99,13 +99,13 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="task.isReoccuring == 'false'">
+                                    <md-list-item ng-if="!task.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Specify A Run Date For The Task</label>
                                             <md-datepicker flex ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                         </md-input-container>
                                     </md-list-item>                                      
-                                    <md-list-item ng-if="task.isReoccuring == 'true'">
+                                    <md-list-item ng-if="task.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
@@ -127,7 +127,7 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="task.isReoccuring == 'true'">
+                                    <md-list-item ng-if="task.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="task.runDay">
