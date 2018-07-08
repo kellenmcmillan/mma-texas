@@ -61,12 +61,9 @@
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Is This Task User Generated</label>
-                                            <md-checkbox aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
-                                               User Generated
-                                            </md-checkbox>
-                                        </md-input-container>
+                                        <md-checkbox aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
+                                           User Generated
+                                        </md-checkbox>
                                     </md-list-item>
                                     <md-list-item ng-show="!task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -117,14 +114,14 @@
                                     <md-list-item ng-show="!task.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Specify A Run Date For The Task</label>
-                                            <md-datepicker flex ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
+                                            <md-datepicker flex style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                         </md-input-container>
                                     </md-list-item>                                      
                                     <md-list-item ng-show="task.isReoccuring">
                                         <div class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
-                                                <md-option ng-value="once created">
+                                                <md-option ng-value="onCreate">
                                                     Once Created
                                                 </md-option>
                                                 <md-option ng-value="daily">
@@ -179,8 +176,8 @@
                                                 </md-option>
                                             </md-select>
                                         </div>
-                                        <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="30">
-                                            <label>Run This Task In The Morning Or Later In The Day</label>
+                                        <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
+                                            <label>Time Of Day</label>
                                             <md-select ng-model="task.runTimeMeridiem">
                                                 <md-option ng-repeat="meridiem in meridiems" ng-value="{{meridiem}}">
                                                     {{meridiem}}
