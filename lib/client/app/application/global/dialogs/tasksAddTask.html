@@ -64,6 +64,7 @@
                                         <md-checkbox aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
                                            User Generated
                                         </md-checkbox>
+                                        <label class="md-secondary">User Generated</label>
                                     </md-list-item>
                                     <md-list-item ng-show="!task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -77,7 +78,7 @@
                                     </md-list-item>
                                     <md-list-item>
                                         <div class="md-block lightweight-md-input" flex>
-                                            <label>User Types To Receive Task Alerts</label>
+                                            <label>User Types To Send Task Alerts</label>
                                             <md-select ng-model="task.alert_roles" multiple required>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
@@ -88,11 +89,11 @@
                                     <md-list-item>
                                         <div class="md-block lightweight-md-input" flex>
                                             <label>Choose Channels</label>
-                                            <md-select ng-model="task.channels" multiple required>
-                                                <md-option ng-value="email">
+                                            <md-select ng-model="task.channels" multiple>
+                                                <md-option ng-value="'Email'">
                                                     Email
                                                 </md-option>
-                                                <md-option ng-value="notification">
+                                                <md-option ng-value="'Notification'">
                                                     Notification
                                                 </md-option>
                                             </md-select>
@@ -121,19 +122,19 @@
                                         <div class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
-                                                <md-option ng-value="onCreate">
+                                                <md-option ng-value="'onCreate'">
                                                     Once Created
                                                 </md-option>
-                                                <md-option ng-value="daily">
+                                                <md-option ng-value="'Daily'">
                                                     Daily
                                                 </md-option>
-                                                <md-option ng-value="weekly">
+                                                <md-option ng-value="'Weekly'">
                                                     Weekly
                                                 </md-option>
-                                                <md-option ng-value="bi-weekly">
+                                                <md-option ng-value="'Bi-weekly'">
                                                     Bi-Weekly
                                                 </md-option>
-                                                <md-option ng-value="monthly">
+                                                <md-option ng-value="'Monthly'">
                                                     Monthly
                                                 </md-option>
                                             </md-select>
@@ -143,25 +144,25 @@
                                         <div class="md-block lightweight-md-input" flex>
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="task.runDay">
-                                                <md-option ng-value="0">
+                                                <md-option ng-value="'Sunday'">
                                                     Sunday
                                                 </md-option>
-                                                <md-option ng-value="1">
+                                                <md-option ng-value="'Monday'">
                                                     Monday
                                                 </md-option>
-                                                <md-option ng-value="2">
+                                                <md-option ng-value="'Tuesday'">
                                                     Tuesday
                                                 </md-option>
-                                                <md-option ng-value="3">
+                                                <md-option ng-value="'Wednesday'">
                                                     Wednesday
                                                 </md-option>
-                                                <md-option ng-value="4">
+                                                <md-option ng-value="'Thursday'">
                                                     Thursday
                                                 </md-option>
-                                                <md-option ng-value="5">
+                                                <md-option ng-value="'Friday'">
                                                     Friday
                                                 </md-option>
-                                                <md-option ng-value="6">
+                                                <md-option ng-value="'Saturday'">
                                                     Saturday
                                                 </md-option>
                                             </md-select>
@@ -171,7 +172,7 @@
                                         <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Choose A Time To Run The Task</label>
                                             <md-select ng-model="task.runTimeHour">
-                                                <md-option ng-repeat="time in times" ng-value="{{time}}">
+                                                <md-option ng-repeat="time in times" ng-value="time">
                                                     {{time}}
                                                 </md-option>
                                             </md-select>
@@ -179,7 +180,7 @@
                                         <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Time Of Day</label>
                                             <md-select ng-model="task.runTimeMeridiem">
-                                                <md-option ng-repeat="meridiem in meridiems" ng-value="{{meridiem}}">
+                                                <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                     {{meridiem}}
                                                 </md-option>
                                             </md-select>
