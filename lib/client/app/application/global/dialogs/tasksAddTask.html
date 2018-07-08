@@ -173,7 +173,7 @@
                                     </md-list-item>
                                     <md-list-item>
                                         <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
-                                            <label>Choose A Time To Run The Task</label>
+                                            <label>Hour</label>
                                             <md-select ng-model="task.runTimeHour">
                                                 <md-option ng-repeat="time in times" ng-value="time">
                                                     {{time}}
@@ -181,7 +181,7 @@
                                             </md-select>
                                         </div>
                                         <div class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
-                                            <label>Time Of Day</label>
+                                            <label>Meridiem</label>
                                             <md-select ng-model="task.runTimeMeridiem">
                                                 <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                     {{meridiem}}
