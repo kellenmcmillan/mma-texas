@@ -66,7 +66,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Link</label>
                                             <md-select name="item_url" ng-model="task.link">
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
                                                     {{url.url}}
                                                 </md-option>
@@ -82,7 +82,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>App Activity Trigger</label>
                                             <md-select name="activity_trigger" ng-model="task.activity_trigger" multiple required>
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="trigger in app_triggers" ng-value="trigger">
                                                     {{trigger}}
                                                 </md-option>
@@ -96,7 +96,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Notifications To</label>
                                             <md-select name="send_to" ng-model="task.send_to_roles" multiple required>
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
@@ -110,7 +110,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Task Alerts</label>
                                             <md-select name="alert_users" ng-model="task.alert_roles" multiple required>
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
@@ -124,7 +124,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Channels</label>
                                             <md-select ng-model="task.channels" multiple>
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-value="'Email'">
                                                     Email
                                                 </md-option>
@@ -137,11 +137,11 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>                                    
-                                    <md-list-item>
+                                    <md-list-item ng-show="!task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Is This Reoccuring Task?</label>
                                             <md-select ng-model="task.isReoccuring" required>
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-value="true">
                                                     Yes
                                                 </md-option>
@@ -151,17 +151,17 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-show="!task.isReoccuring">
+                                    <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Specify A Run Date For The Task</label>
                                             <md-datepicker flex style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                         </md-input-container>
                                     </md-list-item>                                      
-                                    <md-list-item ng-show="task.isReoccuring">
+                                    <md-list-item ng-show="task.isReoccuring && !task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-value="'onCreate'">
                                                     Once Created
                                                 </md-option>
@@ -180,11 +180,11 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-show="task.isReoccuring">
+                                    <md-list-item ng-show="task.isReoccuring && !task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="task.runDay">
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-value="'Sunday'">
                                                     Sunday
                                                 </md-option>
@@ -209,11 +209,10 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item>
+                                    <md-list-item ng-show="!task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Hour</label>
                                             <md-select ng-model="task.runTimeHour">
-                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-repeat="time in times" ng-value="time">
                                                     {{time}}
                                                 </md-option>
@@ -222,7 +221,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Meridiem</label>
                                             <md-select ng-model="task.runTimeMeridiem">
-                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                     {{meridiem}}
                                                 </md-option>
