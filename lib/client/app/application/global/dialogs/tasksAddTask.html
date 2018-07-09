@@ -7,14 +7,23 @@
 </style>
 <div class="secondary-dialog-curtain taskrunner" ng-show="task_runner_task_add_visible == true" ng-controller="lightweightController">
     <md-card class="suite-dialog md-card-base card inputs">
-        <md-card-title style="position: relative;">
-            <md-button class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="null">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">menu</md-icon>
+
+        <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
+
+
+            <!-- Action Buttons -->
+            <md-button class="md-fab md-mini" aria-label="Add a task menu" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="null">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="menu icon" md-font-library="material-icons">menu</md-icon>
             </md-button>
+            <!-- Action Buttons -->
+
+
             <md-card-title-text>
                 <span class="md-headline">Create A New Task</span>
             </md-card-title-text>
+            
         </md-card-title>
+
         <md-card-content flex>
             <md-content class="md-padding" flex>
                 <div layout="column" layout-align="center center" layout-margin flex>
@@ -47,9 +56,9 @@
                                             <label>Task Body</label>
                                             <textarea name="body" md-detect-hidden="true" ng-model="task.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
                                             <div ng-messages="addTask.body.$error" ng-show="addTask.body.$dirty">
-                                                <div ng-message="required">Task Body required!</div>
-                                                <div ng-message="minlength">Task Body too short!</div>
-                                                <div ng-message="md-maxlength">Task Body too long!</div>
+                                                <div ng-message="required">Task body required!</div>
+                                                <div ng-message="minlength">Task body too short!</div>
+                                                <div ng-message="md-maxlength">Task body too long!</div>
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
@@ -57,6 +66,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Link</label>
                                             <md-select name="item_url" ng-model="task.link">
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
                                                     {{url.url}}
                                                 </md-option>
@@ -68,35 +78,61 @@
                                         <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
                                         </md-checkbox>
                                     </md-list-item>
+                                    <md-list-item ng-show="task.isGeneratedByUser">
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>App Activity Trigger</label>
+                                            <md-select name="activity_trigger" ng-model="task.activity_trigger" multiple required>
+                                                <md-option ng-selected="true"><em>None</em></md-option>
+                                                <md-option ng-repeat="trigger in app_triggers" ng-value="trigger">
+                                                    {{trigger}}
+                                                </md-option>
+                                            </md-select>
+                                            <div ng-messages="addTask.activity_trigger.$error" ng-show="addTask.activity_trigger.$dirty">
+                                                <div ng-message="required">App interaction trigger required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
                                     <md-list-item ng-show="!task.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Notifications To</label>
-                                            <md-select ng-model="task.send_to_roles" multiple required>
+                                            <md-select name="send_to" ng-model="task.send_to_roles" multiple required>
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
+                                            <div ng-messages="addTask.send_to.$error" ng-show="addTask.send_to.$dirty">
+                                                <div ng-message="required">Recipient type required!</div>
+                                            </div>
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Task Alerts</label>
-                                            <md-select ng-model="task.alert_roles" multiple required>
+                                            <md-select name="alert_users" ng-model="task.alert_roles" multiple required>
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
+                                            <div ng-messages="addTask.alert_users.$error" ng-show="addTask.alert_users.$dirty">
+                                                <div ng-message="required">Alert receiver type required!</div>
+                                            </div>
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Channels</label>
                                             <md-select ng-model="task.channels" multiple>
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-value="'Email'">
                                                     Email
                                                 </md-option>
                                                 <md-option ng-value="'Notification'">
                                                     Notification
+                                                </md-option>
+                                                <md-option ng-value="'In App Dialog'">
+                                                    In App Dialog
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
@@ -105,6 +141,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Is This Reoccuring Task?</label>
                                             <md-select ng-model="task.isReoccuring" required>
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-value="true">
                                                     Yes
                                                 </md-option>
@@ -124,6 +161,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="task.frequency">
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-value="'onCreate'">
                                                     Once Created
                                                 </md-option>
@@ -146,6 +184,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="task.runDay">
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-value="'Sunday'">
                                                     Sunday
                                                 </md-option>
@@ -174,6 +213,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Hour</label>
                                             <md-select ng-model="task.runTimeHour">
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-repeat="time in times" ng-value="time">
                                                     {{time}}
                                                 </md-option>
@@ -182,6 +222,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Meridiem</label>
                                             <md-select ng-model="task.runTimeMeridiem">
+                                                <md-option ng-selected="true"><em>None</em></md-option>
                                                 <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                     {{meridiem}}
                                                 </md-option>
