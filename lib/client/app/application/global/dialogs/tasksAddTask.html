@@ -235,7 +235,7 @@
                             <md-button ng-click="mediavault_filepicker(task)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                             </md-button>
-                            <img ng-value="'{{task.source}}'" ng-src="{{'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png' || task.source}}" class="md-card-image">
+                            <img ng-value="'{{task.source}}'" ng-src="{{ task.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
                         </md-card>
                     </div>
                 </div>
