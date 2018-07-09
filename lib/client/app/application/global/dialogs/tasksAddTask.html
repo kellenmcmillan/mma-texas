@@ -102,9 +102,9 @@
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item> 
-                                        <span ng-show="!task.channels == 'In App Dialog'">
+                                        <span ng-show="task.channels != 'In App Dialog'">
                                             <md-list-item ng-show="!task.isGeneratedByUser">
-                                                <md-input-container class="md-block lightweight-md-input" flex ng-required="!task.channels == 'In App Dialog' && !task.isGeneratedByUser">
+                                                <md-input-container class="md-block lightweight-md-input" flex ng-required="task.channels != 'In App Dialog' && !task.isGeneratedByUser">
                                                     <label>User Types To Send Notifications To</label>
                                                     <md-select name="send_to" ng-model="task.send_to_roles" multiple>
                                                         <md-option><em>None</em></md-option>
@@ -120,7 +120,7 @@
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>User Types To Send Task Alerts</label>
-                                                    <md-select name="alert_users" ng-model="task.alert_roles" multiple ng-required="!task.channels == 'In App Dialog'">
+                                                    <md-select name="alert_users" ng-model="task.alert_roles" multiple ng-required="task.channels != 'In App Dialog'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                             {{role.role}}
@@ -134,7 +134,7 @@
                                             <md-list-item ng-show="!task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Is This Reoccuring Task?</label>
-                                                    <md-select ng-model="task.isReoccuring" ng-required="!task.channels == 'In App Dialog' && !task.isGeneratedByUser">
+                                                    <md-select ng-model="task.isReoccuring" ng-required="task.channels != 'In App Dialog' && !task.isGeneratedByUser">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-value="true">
                                                             Yes
@@ -146,7 +146,7 @@
                                                 </md-input-container>
                                             </md-list-item>
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser">
-                                                <md-input-container class="md-block lightweight-md-input" flex ng-required="!task.channels == 'In App Dialog' && !task.isReoccuring">
+                                                <md-input-container class="md-block lightweight-md-input" flex ng-required="task.channels != 'In App Dialog' && !task.isReoccuring">
                                                     <label>Specify A Run Date For The Task</label>
                                                     <md-datepicker flex style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                                 </md-input-container>
@@ -226,7 +226,7 @@
                                     </span>                                 
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="closeCreateTask()">Cancel</md-button>
+                                    <md-button ng-click="closeCreateTask(); clearTaskModel()">Cancel</md-button>
                                     <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </form>
@@ -238,7 +238,7 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
-            <md-button class="md-raised" ng-click="closeCreateTask()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
+            <md-button class="md-raised" ng-click="closeCreateTask(); clearTaskModel()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
     </md-card>
 </div>
