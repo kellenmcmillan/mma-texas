@@ -227,7 +227,7 @@
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="closeCreateTask(); clearTaskModel(createTaskForm)">Cancel</md-button>
-                                    <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    <md-button class="md-raised" ng-confirm-message="Are you sure you want to save this task?" ng-confirm-click="createTask(task)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             </form>
                         </md-card>
