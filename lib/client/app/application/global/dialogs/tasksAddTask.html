@@ -11,7 +11,7 @@
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
 
             <md-card-title-text>
-                <span class="md-headline">Create A New Task</span>
+                <span class="md-headline">{{task.name || 'Create A New Task'}}</span>
             </md-card-title-text>
             
         </md-card-title>
@@ -21,13 +21,13 @@
                 <div layout="column" layout-align="center center" layout-margin flex>
                     <div style="width: 100%" layout="row" layout-align="center start" flex>
                         <md-card class="md-whiteframe-4dp" style="background: #fafafa;" flex flex-gt-sm="40">
-                            <form name="addTask">
+                            <form name="createTaskForm">
                                 <md-card-content>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Name</label>
                                             <input name="name" ng-model="task.name" minlength="3" required>
-                                            <div ng-messages="addTask.name.$error" ng-show="addTask.name.$dirty">
+                                            <div ng-messages="createTaskForm.name.$error" ng-show="createTaskForm.name.$dirty">
                                                 <div ng-message="required">Task name required!</div>
                                                 <div ng-message="minlength">Task name too short!</div>
                                             </div>
@@ -37,7 +37,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Title</label>
                                             <input name="title" ng-model="task.title" minlength="3" required>
-                                            <div ng-messages="addTask.title.$error" ng-show="addTask.title.$dirty">
+                                            <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$dirty">
                                                 <div ng-message="required">Task title required!</div>
                                                 <div ng-message="minlength">Task title too short!</div>
                                             </div>
@@ -47,14 +47,14 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Body</label>
                                             <textarea name="body" md-detect-hidden="true" ng-model="task.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                            <div ng-messages="addTask.body.$error" ng-show="addTask.body.$dirty">
+                                            <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$dirty">
                                                 <div ng-message="required">Task body required!</div>
                                                 <div ng-message="minlength">Task body too short!</div>
                                                 <div ng-message="md-maxlength">Task body too long!</div>
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
-                                    <span ng-show="addTask.title.$dirty">
+                                    <span ng-show="createTaskForm.title.$dirty">
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Link</label>
@@ -80,7 +80,7 @@
                                                         {{trigger}}
                                                     </md-option>
                                                 </md-select>
-                                                <div ng-messages="addTask.activity_trigger.$error" ng-show="addTask.activity_trigger.$dirty">
+                                                <div ng-messages="createTaskForm.activity_trigger.$error" ng-show="createTaskForm.activity_trigger.$dirty">
                                                     <div ng-message="required">App interaction trigger required!</div>
                                                 </div>
                                             </md-input-container>
@@ -112,7 +112,7 @@
                                                             {{role.role}}
                                                         </md-option>
                                                     </md-select>
-                                                    <div ng-messages="addTask.send_to.$error" ng-show="addTask.send_to.$dirty">
+                                                    <div ng-messages="createTaskForm.send_to.$error" ng-show="createTaskForm.send_to.$dirty">
                                                         <div ng-message="required">Recipient type required!</div>
                                                     </div>
                                                 </md-input-container>
@@ -126,7 +126,7 @@
                                                             {{role.role}}
                                                         </md-option>
                                                     </md-select>
-                                                    <div ng-messages="addTask.alert_users.$error" ng-show="addTask.alert_users.$dirty">
+                                                    <div ng-messages="createTaskForm.alert_users.$error" ng-show="createTaskForm.alert_users.$dirty">
                                                         <div ng-message="required">Alert receiver type required!</div>
                                                     </div>
                                                 </md-input-container>
@@ -226,7 +226,7 @@
                                     </span>                                 
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="closeCreateTask(); clearTaskModel()">Cancel</md-button>
+                                    <md-button ng-click="closeCreateTask(); createTaskForm.$setPristine()">Cancel</md-button>
                                     <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </form>
@@ -244,7 +244,7 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
-            <md-button class="md-raised" ng-click="closeCreateTask(); clearTaskModel()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
+            <md-button class="md-raised" ng-click="closeCreateTask(); createTaskForm.$setPristine()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
     </md-card>
 </div>
