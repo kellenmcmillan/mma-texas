@@ -33,7 +33,7 @@
                     </md-card-header>
                     <md-card-content>
                         <md-list class="md-dense" flex>
-                            <md-list-item>
+                            <md-list-item ng-repeat="task in tasklist">
                                 <md-menu>
                                     <md-button class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
                                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="task menu" md-font-library="material-icons">more_vert</md-icon>
@@ -58,39 +58,9 @@
                                     </md-menu-content>
                                 </md-menu>
                                 <div class="md-list-item-text">
-                                    <p style="font-size: 16px;">New Lead</p>
+                                    <p style="font-size: 16px;">{{task.title}}</p>
                                 </div>
-                                <md-switch class="md-secondary"></md-switch>
-                                <md-divider></md-divider>
-                            </md-list-item>
-                            <md-list-item>
-                                <md-menu>
-                                    <md-button class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
-                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="task menu" md-font-library="material-icons">more_vert</md-icon>
-                                    </md-button>
-                                    <md-menu-content width="4">
-                                        <md-menu-item>
-                                            <md-button>
-                                            Run Task
-                                            </md-button>
-                                        </md-menu-item>
-                                        <md-menu-item>
-                                            <md-button>
-                                            Delete Task
-                                            </md-button>
-                                        </md-menu-item>
-                                        <md-menu-divider></md-menu-divider>
-                                        <md-menu-item>
-                                            <md-button>
-                                            View Task
-                                            </md-button>
-                                        </md-menu-item>
-                                    </md-menu-content>
-                                </md-menu>
-                                <div class="md-list-item-text">
-                                    <p style="font-size: 16px;">New Blog Post</p>
-                                </div>
-                                <md-switch class="md-secondary"></md-switch>
+                                <md-switch class="md-secondary" ng-model="task.enabled" ng-confirm-message="Are you sure you want to update this task?" ng-confirm-click="updateTask(task)" ng-confirm-condition="true"></md-switch>
                                 <md-divider></md-divider>
                             </md-list-item>
                         </md-list>
