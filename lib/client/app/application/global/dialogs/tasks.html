@@ -60,7 +60,7 @@
                                 <div class="md-list-item-text">
                                     <p style="font-size: 16px;">{{task.title}}</p>
                                 </div>
-                                <md-switch class="md-secondary" ng-model="task.enabled" ng-confirm-message="Are you sure you want to update this task?" ng-confirm-click="updateTask(task)" ng-confirm-condition="true"></md-switch>
+                                <md-switch class="md-secondary" ng-model="task.enabled" ng-confirm-message="Are you sure you want to update this task?" ng-confirm-click="enableDisableTask(task)" ng-confirm-condition="true"></md-switch>
                                 <md-divider></md-divider>
                             </md-list-item>
                         </md-list>
