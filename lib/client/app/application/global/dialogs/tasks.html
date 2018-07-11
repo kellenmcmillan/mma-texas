@@ -33,7 +33,7 @@
                     </md-card-header>
                     <md-card-content>
                         <md-list class="md-dense" flex>
-                            <md-list-item ng-repeat="task in tasklist">
+                            <md-list-item ng-repeat="task in tasklist track by $index">
                                 <md-menu>
                                     <md-button class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
                                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="task menu" md-font-library="material-icons">more_vert</md-icon>
