@@ -65,10 +65,9 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item>
+                                    <md-list-item ng-show="updateTaskObj.isGeneratedByUser">
                                         <label style="color: rgba(0,0,0,0.38);">Is This Task User Generated</label>
-                                        <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="updateTaskObj.isGeneratedByUser">
-                                        </md-checkbox>
+                                        <p class="md-secondary">{{updateTaskObj.isGeneratedByUser ? 'Yes' : 'No'}}</p>
                                     </md-list-item>
                                     <md-list-item ng-show="updateTaskObj.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
