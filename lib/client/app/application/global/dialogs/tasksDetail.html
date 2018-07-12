@@ -65,12 +65,12 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.isGeneratedByUser">
+                                    <md-list-item>
                                         <label style="color: rgba(0,0,0,0.38);">Is This Task User Generated</label>
                                         <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="updateTaskObj.isGeneratedByUser">
                                         </md-checkbox>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.isGeneratedByUser">
+                                    <md-list-item ng-show="updateTaskObj.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>App Activity Trigger</label>
                                             <md-select name="activity_trigger" ng-model="updateTaskObj.activity_trigger" ng-required="updateTaskObj.isGeneratedByUser">
@@ -101,7 +101,7 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item> 
-                                    <md-list-item ng-if="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
+                                    <md-list-item ng-show="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>User Types To Send Notifications To</label>
                                             <md-select name="send_to" ng-model="updateTaskObj.send_to_roles" multiple flex ng-required="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
@@ -115,7 +115,7 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.channels != 'In App Dialog'">
+                                    <md-list-item ng-show="updateTaskObj.channels != 'In App Dialog'">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Task Alerts</label>
                                             <md-select name="alert_users" ng-model="updateTaskObj.alert_roles" multiple ng-required="updateTaskObj.channels != 'In App Dialog'">
@@ -129,7 +129,7 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>                                   
-                                    <md-list-item ng-if="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
+                                    <md-list-item ng-show="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Is This Reoccuring Task?</label>
                                             <md-select ng-model="updateTaskObj.isReoccuring" ng-required="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isGeneratedByUser">
@@ -143,13 +143,13 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isReoccuring">
+                                    <md-list-item ng-show="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex ng-required="updateTaskObj.channels != 'In App Dialog' && !updateTaskObj.isReoccuring">
                                             <label>Specify A Run Date For The Task</label>
                                             <md-datepicker flex style="width: 100%;" ng-model="updateTaskObj.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                         </md-input-container>
                                     </md-list-item>                                      
-                                    <md-list-item ng-if="updateTaskObj.isReoccuring">
+                                    <md-list-item ng-show="updateTaskObj.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>How Often Does This Task Run?</label>
                                             <md-select ng-model="updateTaskObj.frequency" ng-required="updateTaskObj.isReoccuring">
@@ -172,7 +172,7 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.isReoccuring">
+                                    <md-list-item ng-show="updateTaskObj.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="updateTaskObj.runDay" ng-required="updateTaskObj.isReoccuring">
@@ -201,7 +201,7 @@
                                             </md-select>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item ng-if="updateTaskObj.isReoccuring">
+                                    <md-list-item ng-show="updateTaskObj.isReoccuring">
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Hour</label>
                                             <md-select ng-model="updateTaskObj.runTimeHour" ng-required="updateTaskObj.isReoccuring">
