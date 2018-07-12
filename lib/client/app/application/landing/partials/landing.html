@@ -63,9 +63,10 @@
                                 </div>
                             </md-input-container>
                         </md-list-item>
+                        <input type="hidden" ng-model="index_page_contact_form.source" ng-value="Home Page">
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center" flex>
-                        <md-button class="md-raised" ng-click="sendIndexLead(index_page_contact_form)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
+                        <md-button class="md-raised" ng-click="sendLead(index_page_contact_form)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
                     </md-card-actions>
                 </form>
             </md-card>
