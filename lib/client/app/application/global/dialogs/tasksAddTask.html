@@ -206,7 +206,7 @@
                                             <md-list-item ng-show="!task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                                     <label>Hour</label>
-                                                    <md-select ng-model="task.runTimeHour" ng-required="task.isReoccuring">
+                                                    <md-select ng-model="task.runTimeHour" ng-required="!task.isGeneratedByUse">
                                                         <md-option ng-repeat="time in times" ng-value="time">
                                                             {{time}}
                                                         </md-option>
@@ -214,7 +214,7 @@
                                                 </md-input-container>
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                                     <label>Meridiem</label>
-                                                    <md-select ng-model="task.runTimeMeridiem" ng-required="task.isReoccuring">
+                                                    <md-select ng-model="task.runTimeMeridiem" ng-required="!task.isGeneratedByUse">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
                                                             {{meridiem}}
