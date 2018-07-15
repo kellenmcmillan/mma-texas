@@ -204,7 +204,7 @@
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Specify A Run Date For The Task</label>
-                                                    <md-datepicker flex="80" style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
+                                                    <md-datepicker flex="80" style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
                                                     <div ng-messages="createTaskForm.runDate.$error">
                                                         <div ng-message="required">Run date required!</div>
                                                     </div>
