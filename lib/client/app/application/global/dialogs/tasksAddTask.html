@@ -33,7 +33,7 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-divider></md-divider>
+                                    
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Title</label>
@@ -44,7 +44,7 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-divider></md-divider>
+                                    
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Body</label>
@@ -56,7 +56,7 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-divider></md-divider>
+                                    
                                     <span ng-show="createTaskForm.title.$dirty">
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -69,7 +69,7 @@
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Channels</label>
@@ -87,25 +87,25 @@
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <md-list-item>
                                             <label style="color: rgba(0,0,0,0.38);">Is This Task User Generated</label>
                                             <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
                                             </md-checkbox>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <md-list-item>
                                             <label style="color: rgba(0,0,0,0.38);">Is This Task Manually Triggered</label>
                                             <md-checkbox class="md-secondary" aria-label="Is this task manually triggered checkbox" ng-model="task.isManuallyTriggered" ng-init="false">
                                             </md-checkbox>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <md-list-item ng-show="!task.isGeneratedByUser && !task.isManuallyTriggered">
                                             <label style="color: rgba(0,0,0,0.38);">Is This Task Reoccuring</label>
                                             <md-checkbox class="md-secondary" aria-label="Is this task manually triggered checkbox" ng-model="task.isReoccuring" ng-required="task.channels != 'In App Dialog' && !task.isGeneratedByUser && !task.isManuallyTriggered" ng-init="false">
                                             </md-checkbox>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <md-list-item ng-show="task.isGeneratedByUser">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>App Activity Trigger</label>
@@ -120,7 +120,7 @@
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        
                                         <span ng-show="task.channels != 'In App Dialog'">
                                             <md-list-item ng-show="!task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input">
@@ -136,7 +136,7 @@
                                                     </div>
                                                 </md-input-container>
                                             </md-list-item>
-                                            <md-divider></md-divider>
+                                            
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>User Types To Send Task Alerts</label>
@@ -151,14 +151,14 @@
                                                     </div>
                                                 </md-input-container>
                                             </md-list-item> 
-                                            <md-divider></md-divider>                                  
+                                                                              
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser && !task.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex ng-required="task.channels != 'In App Dialog' && !task.isReoccuring && !task.isManuallyTriggered">
                                                     <label>Specify A Run Date For The Task</label>
                                                     <md-datepicker flex style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                                 </md-input-container>
                                             </md-list-item>
-                                            <md-divider></md-divider>                    
+                                                                
                                             <md-list-item ng-show="task.isReoccuring && !task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>How Often Does This Task Run?</label>
@@ -182,7 +182,7 @@
                                                     </md-select>
                                                 </md-input-container>
                                             </md-list-item>
-                                            <md-divider></md-divider>
+                                            
                                             <md-list-item ng-show="task.isReoccuring && !task.isGeneratedByUser && !task.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Day To Run The Task</label>
@@ -212,7 +212,7 @@
                                                     </md-select>
                                                 </md-input-container>
                                             </md-list-item>
-                                            <md-divider></md-divider>
+                                            
                                             <md-list-item ng-show="!task.isGeneratedByUser && !task.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                                     <label>Hour</label>
