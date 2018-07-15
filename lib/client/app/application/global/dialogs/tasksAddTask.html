@@ -191,9 +191,9 @@
                                             <md-subheader class="md-no-sticky"><h3>Task Scheduling</h3></md-subheader>
                                                                               
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser">
-                                                <md-input-container class="md-block lightweight-md-input" flex ng-required="!task.isReoccuring && !task.isGeneratedByUser">
+                                                <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Specify A Run Date For The Task</label>
-                                                    <md-datepicker flex style="width: 100%;" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
+                                                    <md-datepicker flex style="width: 100%;" ng-required="!task.isReoccuring && !task.isGeneratedByUser" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                                 </md-input-container>
                                             </md-list-item>
                                                                 
