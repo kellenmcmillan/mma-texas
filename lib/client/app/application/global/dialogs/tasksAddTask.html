@@ -24,7 +24,7 @@
                             <form name="createTaskForm">
                                 <md-card-content>
 
-                                    <md-subheader class="md-no-sticky">Task Content</md-subheader>
+                                    <md-subheader class="md-no-sticky"><h3>Task Content</h3></md-subheader>
 
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -74,7 +74,7 @@
 
                                     <md-divider></md-divider>
 
-                                    <md-subheader class="md-no-sticky">Task Targeting</md-subheader>
+                                    <md-subheader class="md-no-sticky"><h3>Task Targeting</h3></md-subheader>
 
                                     <span ng-show="createTaskForm.title.$dirty">                                        
                                         <md-list-item>
@@ -161,7 +161,7 @@
 
                                             <md-divider></md-divider> 
 
-                                            <md-subheader class="md-no-sticky">Task Scheduling</md-subheader>
+                                            <md-subheader class="md-no-sticky"><h3>Task Scheduling</h3></md-subheader>
                                                                               
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser && !task.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex ng-required="task.channels != 'In App Dialog' && !task.isReoccuring && !task.isManuallyTriggered">
