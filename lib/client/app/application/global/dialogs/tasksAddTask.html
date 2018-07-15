@@ -88,13 +88,13 @@
                                             </md-input-container>
                                         </md-list-item>
                                         
-                                        <md-list-item>
+                                        <md-list-item ng-show="!task.isReoccuring">
                                             <label style="color: rgba(0,0,0,0.38);">Is This Task User Generated</label>
                                             <md-checkbox class="md-secondary" aria-label="Is this task user generated checkbox" ng-model="task.isGeneratedByUser" ng-init="false">
                                             </md-checkbox>
                                         </md-list-item>
                                         
-                                        <md-list-item>
+                                        <md-list-item ng-show="!task.isReoccuring">
                                             <label style="color: rgba(0,0,0,0.38);">Is This Task Manually Triggered</label>
                                             <md-checkbox class="md-secondary" aria-label="Is this task manually triggered checkbox" ng-model="task.isManuallyTriggered" ng-init="false">
                                             </md-checkbox>
@@ -212,7 +212,7 @@
                                                     </md-select>
                                                 </md-input-container>
                                             </md-list-item>
-                                            
+
                                             <md-list-item ng-show="!task.isGeneratedByUser && !task.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                                     <label>Hour</label>
