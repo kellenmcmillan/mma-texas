@@ -204,7 +204,10 @@
                                             <md-list-item ng-show="!task.isReoccuring && !task.isGeneratedByUser">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Specify A Run Date For The Task</label>
-                                                    <md-datepicker flex style="width: 100%;" name="runDate" ng-required="!task.isReoccuring && !task.isGeneratedByUser" ng-model="task.runDate" md-placeholder="No Date Chosen"></md-datepicker>
+                                                    <md-datepicker flex style="width: 100%;" name="runDate" ng-model="task.runDate" ng-required="!task.isReoccuring && !task.isGeneratedByUser" md-placeholder="No Date Chosen"></md-datepicker>
+                                                    <div ng-messages="createTaskForm.runDate.$error">
+                                                        <div ng-message="required">Run date required!</div>
+                                                    </div>
                                                 </md-input-container>
                                             </md-list-item>
                                                                 
@@ -285,7 +288,7 @@
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="closeCreateTask(); clearForm(createTaskForm)">Cancel</md-button>
-                                    <md-button class="md-raised" ng-confirm-message="Are you sure you want to save this task?" ng-confirm-click="createTask(task)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button class="md-raised" ng-confirm-message="Are you sure you want to save this task?" ng-confirm-click="createTask(task); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             </form>
                         </md-card>
