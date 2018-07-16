@@ -57,7 +57,7 @@
 	                            <md-input-container class="md-block lightweight-md-input">
 	                                <label>Full Name</label>
 	                                <input name="name" ng-model="project_page_contact_form.name" minlength="4" required>
-	                                <div ng-messages="project.name.$error" ng-show="project.name.$dirty">
+	                                <div ng-messages="projectForm.name.$error" ng-show="projectForm.name.$dirty">
 	                                    <div ng-message="required">Name required!</div>
 	                                    <div ng-message="minlength">Name too short!</div>
 	                                </div>
@@ -67,7 +67,7 @@
 	                            <md-input-container class="md-block lightweight-md-input">
 	                                <label>Email</label>
 	                                <input type="email" name="email" ng-model="project_page_contact_form.email" required>
-	                                <div ng-messages="project.email.$error" ng-show="project.email.$dirty">
+	                                <div ng-messages="projectForm.email.$error" ng-show="projectForm.email.$dirty">
 	                                    <div ng-message="required">Email required!</div>
 	                                    <div ng-message="email">Enter a valid email!</div>
 	                                </div>
@@ -77,7 +77,7 @@
                                 <md-input-container class="md-block lightweight-md-input">
                                     <label>Phone</label>
                                     <input ng-model="project_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
-                                    <div ng-messages="project.phone.$error" ng-show="project.phone.$dirty">
+                                    <div ng-messages="projectForm.phone.$error" ng-show="projectForm.phone.$dirty">
                                         <div ng-message="required">Phone number required!</div>
                                         <div ng-message="minlength">Phone number too short!</div>
                                         <div ng-message="pattern">Not a valid phone number!</div>
@@ -88,7 +88,7 @@
 	                        	<md-input-container class="md-block lightweight-md-input" flex>
 	                                <label>Message</label>
 	                                <textarea name="message" md-detect-hidden="true" ng-model="project_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
-	                                <div ng-messages="project.message.$error" ng-show="project.message.$dirty">
+	                                <div ng-messages="projectForm.message.$error" ng-show="projectForm.message.$dirty">
 	                                    <div ng-message="required">Message required!</div>
 	                                    <div ng-message="minlength">Message too short!</div>
 	                                    <div ng-message="md-maxlength">Message too long!</div>
@@ -96,7 +96,7 @@
 	                            </md-input-container>
 	                        </md-list-item>
 	                    </md-card-content>
-	                    <md-button ng-click="sendLead(project_page_contact_form, projectPage.data.title); clearForm(project)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+	                    <md-button ng-click="sendLead(project_page_contact_form, projectPage.data.title); clearForm(projectForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
 					        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
 					    </md-button>
 	                </form>

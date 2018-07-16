@@ -28,7 +28,7 @@
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input">
                                 <label>Full Name</label>
-                                <input name="name" ng-model="index_page_contact_form.name" minlength="4" required>
+                                <input name="name" ng-model="indexForm.name" minlength="4" required>
                                 <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
                                     <div ng-message="required">Name required!</div>
                                     <div ng-message="minlength">Name too short!</div>
@@ -38,7 +38,7 @@
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input">
                                 <label>Email</label>
-                                <input type="email" name="email" ng-model="index_page_contact_form.email" required>
+                                <input type="email" name="email" ng-model="indexForm.email" required>
                                 <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
                                     <div ng-message="required">Email required!</div>
                                     <div ng-message="email">Enter a valid email!</div>
@@ -48,7 +48,7 @@
                         <md-list-item>
                         	<md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Message</label>
-                                <textarea name="message" md-detect-hidden="true" ng-model="index_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                <textarea name="message" md-detect-hidden="true" ng-model="indexForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
                                 <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
                                     <div ng-message="required">Message required!</div>
                                     <div ng-message="minlength">Message too short!</div>
@@ -58,7 +58,7 @@
                         </md-list-item>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center" flex>
-                        <md-button class="md-raised" ng-click="sendLead(index_page_contact_form, 'Home Page'); clearTaskModel(index_page_contact_form)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
+                        <md-button class="md-raised" ng-click="sendLead(indexForm, 'Home Page'); clearTaskModel(indexForm)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Send</md-button>
                     </md-card-actions>
                 </form>
             </md-card>
