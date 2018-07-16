@@ -68,8 +68,8 @@
                                 <md-switch class="md-secondary" ng-model="task.enabled"></md-switch>
                                 <md-divider></md-divider>
                             </md-list-item>
-                            <md-list-item>
-                                <p ng-if="tasklist.length == 0">You don't have any tasks configured yet.</p>
+                            <md-list-item ng-show="!tasklist.length">
+                                <p>You don't have any tasks configured yet.</p>
                             </md-list-item>
                         </md-list>
                     </md-card-content>
