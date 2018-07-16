@@ -158,7 +158,7 @@
                                     <md-list-item ng-show="!taskUpdateObj.isReoccuring && !taskUpdateObj.isGeneratedByUser">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Specify A Run Date For The Task</label>
-                                            <md-datepicker flex style="width: 100%;" ng-required="!taskUpdateObj.isReoccuring && !taskUpdateObj.isGeneratedByUser" ng-model="taskUpdateObj.taskDate" md-placeholder="No Date Chosen"></md-datepicker>
+                                            <md-datepicker flex style="width: 100%;" ng-required="!taskUpdateObj.isReoccuring && !taskUpdateObj.isGeneratedByUser" ng-model="taskUpdateObj.runDate" md-placeholder="No Date Chosen"></md-datepicker>
                                         </md-input-container>
                                     </md-list-item>                                     
                                     <md-list-item ng-show="taskUpdateObj.isReoccuring">
