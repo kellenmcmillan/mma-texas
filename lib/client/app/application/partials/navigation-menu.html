@@ -77,31 +77,31 @@
                 <md-tab label="Hours">
                     <md-content class="md-padding">
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start}} - {{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
+                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start}} - {{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
+                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start + ' - '}}{{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Tuesday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Tuesday <p class="md-secondary">{{settings.data.hours.tuesday.start == 'Closed' ? 'Closed' : settings.data.hours.tuesday.start + ' - '}}{{settings.data.hours.tuesday.end == 'Closed' ? '' : settings.data.hours.tuesday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Wednesday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Wednesday <p class="md-secondary">{{settings.data.hours.wednesday.start == 'Closed' ? 'Closed' : settings.data.hours.wednesday.start + ' - '}}{{settings.data.hours.wednesday.end == 'Closed' ? '' : settings.data.hours.wednesday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Thursday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Thursday <p class="md-secondary">{{settings.data.hours.thursday.start == 'Closed' ? 'Closed' : settings.data.hours.thursday.start + ' - '}}{{settings.data.hours.thursday.end == 'Closed' ? '' : settings.data.hours.thursday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Friday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Friday <p class="md-secondary">{{settings.data.hours.friday.start == 'Closed' ? 'Closed' : settings.data.hours.friday.start + ' - '}}{{settings.data.hours.friday.end == 'Closed' ? '' : settings.data.hours.friday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Saturday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Saturday <p class="md-secondary">{{settings.data.hours.saturday.start == 'Closed' ? 'Closed' : settings.data.hours.saturday.start + ' - '}}{{settings.data.hours.saturday.end == 'Closed' ? '' : settings.data.hours.saturday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                     </md-content>
