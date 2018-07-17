@@ -77,11 +77,11 @@
                 <md-tab label="Hours">
                     <md-content class="md-padding">
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Sunday <p class="md-secondary">Closed</p>
+                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start}} - {{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
-                        Monday <p class="md-secondary">7:30AM - 5:00PM</p>
+                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start}} - {{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
