@@ -4,7 +4,8 @@
     background-size: cover; width: 100%!important; height: 100%; 
     right: 0; top: 200px; padding:0; margin: 0!important;
 }
-	.header-ms-explorer {position: fixed; width: 100%;}
+.header-ms-explorer {position: fixed; width: 100%;}
+.team-member-popup-image {height: auto!important; width: 100%!important;}
 </style>
 <md-content class="page spotlight" style="height: {{window_height}}px">
 	<section style="background: {{base_hue_lighter.value}}">
@@ -28,12 +29,12 @@
 
 		<!-- Dialog Component -->
 		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="show_dialog">
-			<md-card class="md-whiteframe-6dp" style="position: relative;" flex="100" layout="row" layout-wrap>
+			<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: relative;" flex="100" layout="row" layout-wrap>
 				<i class="material-icons" ng-attr-style="cursor: pointer; position: absolute; top: 16px; right: 16px; color: {{base_hue_darkest.value}};" ng-click="show_dialog = false; team_member = null">close</i>
 				<div flex="100" flex-gt-sm="40">
-	    			<img ng-src="{{team_member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image" alt="Team member {{team_member.name}}" style="height: 100%; width: auto;">
+	    			<img ng-src="{{team_member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image" ng-class="{'team-member-popup-image': window_width > 960}" alt="Team member {{team_member.name}}" style="height: 100%; width: auto;">
 	    		</div>
-	    		<div flex="100" flex-gt-sm="60" layout="row" layout-align="center center" ng-attr-style="background-color: {{base_hue_lightest.value}};">
+	    		<div flex="100" flex-gt-sm="60" layout="row" layout-align="center center" layout-padding ng-attr-style="background-color: {{base_hue_lightest.value}};">
 	    			<div>
 	    				<h5 ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">{{team_member.name || 'Team Member\'s Name'}}</h5>
 			    		<h5 ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">{{team_member.title || 'Position | Title'}}</h5>
