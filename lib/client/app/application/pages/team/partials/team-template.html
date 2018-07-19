@@ -6,6 +6,7 @@
 }
 .header-ms-explorer {position: fixed; width: 100%;}
 .team-member-popup-image {height: auto!important; width: 100%!important;}
+.team-member-image-popup-desktop {height: 100%; width: auto;}
 </style>
 <md-content class="page spotlight" style="height: {{window_height}}px">
 	<section style="background: {{base_hue_lighter.value}}">
@@ -28,11 +29,11 @@
 		</div>
 
 		<!-- Dialog Component -->
-		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="show_dialog">
+		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000; margin-top: 24px; margin-bottom: 24px" ng-show="show_dialog">
 			<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: relative;" flex="100" layout="row" layout-wrap>
 				<i class="material-icons" ng-attr-style="cursor: pointer; position: absolute; top: 16px; right: 16px; color: {{base_hue_darkest.value}};" ng-click="show_dialog = false; team_member = null">close</i>
 				<div flex="100" flex-gt-sm="40">
-	    			<img ng-src="{{team_member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image" ng-class="{'team-member-popup-image': window_width > 960}" alt="Team member {{team_member.name}}" style="height: 100%; width: auto;">
+	    			<img ng-src="{{team_member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image team-member-image-popup-desktop" ng-class="{'team-member-popup-image': window_width < 960}" alt="Team member {{team_member.name}}" style="height: 100%; width: auto;">
 	    		</div>
 	    		<div flex="100" flex-gt-sm="60" layout="row" layout-align="center center" layout-padding ng-attr-style="background-color: {{base_hue_lightest.value}};">
 	    			<div>
