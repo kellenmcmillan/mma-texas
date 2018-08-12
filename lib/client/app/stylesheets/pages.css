@@ -30,7 +30,7 @@
 /* ===== Sidebar Widgets - Directions ===== */
 
 /* ===== Lighweight Image Cards ===== */
-.lightweight-card-image {
+/*.lightweight-card-image {
  	height: 400px;
  	overflow: hidden;
 }
@@ -38,7 +38,7 @@
 	.lightweight-card-image {
 		height: 200px;
 	}
-}
+}*/
 .lightweight-card-image > .mdl-card__actions {
   height: 52px;
   padding: 16px;
