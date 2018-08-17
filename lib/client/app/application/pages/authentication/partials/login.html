@@ -14,10 +14,13 @@
 
 		<div layout="row" layout-align="center center">
 			<div style="text-align: center;">
-				<img src="{{settings.logo}}" ng-cloak="true">
+				<img src="{{settings.data.logo}}" ng-cloak="true">
+			</div>
+			<div style="text-align: center">
+				<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			</div>
 			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;">
-				<form name="login" autocomplete="nope">
+				<form name="login" autocomplete="nope" ng-show="!progressAnimation">
 					<md-content>
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
