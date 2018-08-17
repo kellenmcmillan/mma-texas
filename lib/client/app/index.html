@@ -67,6 +67,89 @@
 
 
 	<body ng-controller="colorController">
+        <style>
+            .spinner {
+              width: 40px;
+              height: 40px;
+              background-color: #333;
+
+              margin: 100px auto;
+              -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+              animation: sk-rotateplane 1.2s infinite ease-in-out;
+            }
+
+            @-webkit-keyframes sk-rotateplane {
+              0% { -webkit-transform: perspective(120px) }
+              50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+              100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+            }
+
+            @keyframes sk-rotateplane {
+              0% { 
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+              } 50% { 
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+              } 100% { 
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+              }
+            }
+
+            /* --------------------------------- */
+
+            .default-spinner {
+              width: 40px;
+              height: 40px;
+              margin: 100px auto;
+              background-color: #333;
+
+              border-radius: 100%;  
+              -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+              animation: sk-scaleout 1.0s infinite ease-in-out;
+            }
+
+            @-webkit-keyframes sk-scaleout {
+              0% { -webkit-transform: scale(0) }
+              100% {
+                -webkit-transform: scale(1.0);
+                opacity: 0;
+              }
+            }
+
+            @keyframes sk-scaleout {
+              0% { 
+                -webkit-transform: scale(0);
+                transform: scale(0);
+              } 100% {
+                -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+                opacity: 0;
+              }
+            }
+        </style>
+
+        <!-- Page Loading  -->
+        <md-content class="loading_page" ng-show="page_is_loading == true" id="load_page" style="position: fixed; width: 100%; height: 100%; background-color: #e0e0e0; z-index:20000; top: 0; left: 0; text-align: center;">
+    
+            <section ng-cloak>
+
+                <div layout="row" layout-align="center center">
+                    <div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px; text-align: center;">
+                        <div ng-if="!settings.logo" class="default-spinner"></div>
+                        <div ng-show="settings.logo" class="spinner"><img class="spinner" src="{{settings.logo}}" ng-cloak="true"></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </md-content>
+        <!-- Page Loading -->
+
+        <!-- Page Loading Component -->
+        <loading-screen></loading-screen>
+        <!-- Page Loading Component -->
 
         <div ng-include src="'application/global/style.html'"></div>
 
@@ -197,6 +280,7 @@
     <script src="../application/directives/palette.js" type="text/javascript"></script>
     <script src="../application/landing/controllers/landingController.js" type="text/javascript"></script>
     <script src="../application/pages/announcement/controllers/announcementController.js" type="text/javascript"></script>
+    <script src="../loading.js" type="text/javascript"></script>
     <!-- <script src="../application/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
     <script src="../application/pages/gallery/controllers/folderController.js" type="text/javascript"></script> -->
     <script src="../application/pages/info/controllers/infoController.js" type="text/javascript"></script>
