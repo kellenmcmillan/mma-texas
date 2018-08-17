@@ -6,14 +6,18 @@
     opacity: 0;
 }
 #loading {
-        -webkit-animation: rotation 2s infinite linear;
+        will-change: transform;
+        animation: roll 3s infinite;
+        -webkit-animation: roll 2s infinite;
 }
 
 @-webkit-keyframes rotation {
         from {
+                transform: rotate(0deg);
                 -webkit-transform: rotate(0deg);
         }
         to {
+                transform: rotate(359deg);
                 -webkit-transform: rotate(359deg);
         }
 }
