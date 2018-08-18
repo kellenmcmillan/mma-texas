@@ -158,7 +158,6 @@
                             <md-input-container class="md-block lightweight-md-dropdown">
                                 <label>Sunday Open</label>
                                 <md-select ng-model="settings.data.hours.sunday.start">
-                                    <md-option><em>Closed</em></md-option>
                                     <md-option ng-repeat="time in times" ng-value="time">
                                         {{time}}
                                     </md-option>
