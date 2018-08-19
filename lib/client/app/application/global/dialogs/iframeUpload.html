@@ -15,23 +15,23 @@
         </md-card-header>
         <md-card-content flex>
             <md-content flex>
-                <div layout="column" layout-align="start start" flex>
+                <div layout="row" layout-wrap layout-align="start center" flex>
 
-                    <md-list-item>
+                    <md-list-item flex="100">
                         <md-input-container class="md-block lightweight-md-input">
                             <label>Resource Title</label>
                             <input ng-model="iframe.title">
                         </md-input-container>
                     </md-list-item>
                     
-                    <md-list-item>
+                    <md-list-item flex="100">
                         <md-input-container class="md-block lightweight-md-input">
                             <label>Resource Link</label>
                             <input ng-model="iframe.source">
                         </md-input-container>
                     </md-list-item>
 
-                    <md-list-item>
+                    <md-list-item flex="100">
                         <md-input-container class="md-block lightweight-md-dropdown">
                             <label>Share Resource</label>
                             <md-select multiple ng-model="iframe.share">
