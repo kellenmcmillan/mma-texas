@@ -193,9 +193,10 @@
                                                                         <h3 style="font-size: 16px;">{{file.name}}</h3>
                                                                     </div>
                                                                     <md-menu class="md-secondary">
-                                                                        <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style=" background-color: {{base_hue_lightest.value}}!important;">
-                                                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">more_vert</md-icon>
+                                                                        <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style=" background-color: {{primary_hue_normal.value}}!important;">
+                                                                            <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">more_vert</md-icon>
                                                                         </md-button>
+                                                                        
                                                                         <md-menu-content width="4">
                                                                             <md-menu-item>
                                                                                 <md-button ng-click="openShare(file)">
@@ -207,6 +208,12 @@
                                                                                 <md-button>
                                                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_download</md-icon>
                                                                                     Download Resource
+                                                                                </md-button>
+                                                                            </md-menu-item>
+                                                                            <md-menu-item>
+                                                                                <md-button ng-click="deleteMyFile(me, file)">
+                                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                                                                    Delete File
                                                                                 </md-button>
                                                                             </md-menu-item>
                                                                         </md-menu-content>
@@ -232,9 +239,25 @@
                                                                     <div class="md-list-item-text">
                                                                         <h3 style="font-size: 16px;">{{file.name}}</h3>
                                                                     </div>
-                                                                    <md-button class="md-secondary md-icon-button">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
+                                                                    <md-menu class="md-secondary">
+                                                                        <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style=" background-color: {{primary_hue_normal.value}}!important;">
+                                                                            <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">more_vert</md-icon>
+                                                                        </md-button>
+                                                                        <md-menu-content width="4">
+                                                                            <md-menu-item>
+                                                                                <md-button ng-click="openShare(file)">
+                                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
+                                                                                    Share With Users
+                                                                                </md-button>
+                                                                            </md-menu-item>
+                                                                            <md-menu-item>
+                                                                                <md-button>
+                                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                                                                    Delete
+                                                                                </md-button>
+                                                                            </md-menu-item>
+                                                                        </md-menu-content>
+                                                                    </md-menu>
                                                                 </md-list-item>
                                                             </md-list>
                                                             <md-list ng-if="!me.files_shared" class="md-dense" flex>
