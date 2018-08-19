@@ -190,7 +190,7 @@
                                                             <md-list class="md-dense" flex>
                                                                 <md-list-item ng-repeat="file in me.files" class="md-2-line" flex>
                                                                     <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">{{file.name}}</h3>
+                                                                        <h3 style="font-size: 16px;">{{file.name || file.title}}</h3>
                                                                     </div>
                                                                     <md-menu class="md-secondary">
                                                                         <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style=" background-color: {{primary_hue_normal.value}}!important;">
