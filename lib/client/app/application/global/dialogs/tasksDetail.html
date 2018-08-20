@@ -189,25 +189,25 @@
                                             <label>Choose Which Day To Run The Task</label>
                                             <md-select ng-model="taskUpdateObj.runDay" ng-required="taskUpdateObj.isReoccuring">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="'Sunday'">
+                                                <md-option ng-value="'sunday'">
                                                     Sunday
                                                 </md-option>
-                                                <md-option ng-value="'Monday'">
+                                                <md-option ng-value="'monday'">
                                                     Monday
                                                 </md-option>
-                                                <md-option ng-value="'Tuesday'">
+                                                <md-option ng-value="'tuesday'">
                                                     Tuesday
                                                 </md-option>
-                                                <md-option ng-value="'Wednesday'">
+                                                <md-option ng-value="'wednesday'">
                                                     Wednesday
                                                 </md-option>
-                                                <md-option ng-value="'Thursday'">
+                                                <md-option ng-value="'thursday'">
                                                     Thursday
                                                 </md-option>
-                                                <md-option ng-value="'Friday'">
+                                                <md-option ng-value="'friday'">
                                                     Friday
                                                 </md-option>
-                                                <md-option ng-value="'Saturday'">
+                                                <md-option ng-value="'saturday'">
                                                     Saturday
                                                 </md-option>
                                             </md-select>
@@ -216,18 +216,9 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
                                             <label>Hour</label>
-                                            <md-select ng-model="taskUpdateObj.runTimeHour" ng-required="true">
-                                                <md-option ng-repeat="time in times" ng-value="time">
+                                            <md-select ng-model="taskUpdateObj.runTime" ng-required="true">
+                                                <md-option ng-repeat="time in timesSans" ng-value="time">
                                                     {{time}}
-                                                </md-option>
-                                            </md-select>
-                                        </md-input-container>
-                                        <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="50">
-                                            <label>Meridiem</label>
-                                            <md-select ng-model="taskUpdateObj.runTimeMeridiem" ng-required="true">
-                                                <md-option><em>None</em></md-option>
-                                                <md-option ng-repeat="meridiem in meridiems" ng-value="meridiem">
-                                                    {{meridiem}}
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
