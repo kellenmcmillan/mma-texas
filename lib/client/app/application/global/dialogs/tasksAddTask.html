@@ -264,7 +264,7 @@
                                                 </md-input-container>
                                             </md-list-item>
                                             
-                                            <md-list-item ng-show="taskAddObj.isReoccuring && !taskAddObj.isGeneratedByUser && !taskAddObj.isManuallyTriggered">
+                                            <md-list-item ng-show="taskAddObj.isReoccuring != 'monthly' && !taskAddObj.isGeneratedByUser && !taskAddObj.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Day To Run The Task</label>
                                                     <md-select ng-model="taskAddObj.runDay" ng-required="taskAddObj.isReoccuring">
