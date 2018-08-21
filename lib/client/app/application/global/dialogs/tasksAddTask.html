@@ -308,12 +308,12 @@
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="closeCreateTask(); clearForm(createTaskForm)">Cancel</md-button>
-                                    <md-button class="md-raised" ng-confirm-message="Are you sure you want to save this task?" ng-confirm-click="createTask(task); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button class="md-raised" ng-confirm-message="Are you sure you want to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             </form>
                         </md-card>
                         <md-card ng-show="taskAddObj.channels == 'In App Dialog'" class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;" flex flex-gt-sm="40">
-                            <md-button ng-click="mediavault_filepicker(task)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
+                            <md-button ng-click="mediavault_filepicker(taskAddObj)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                             </md-button>
                             <img ng-value="'{{taskAddObj.source}}'" ng-src="{{ taskAddObj.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
