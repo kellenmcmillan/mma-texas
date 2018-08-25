@@ -283,7 +283,7 @@
                                             <md-list-item ng-show="taskAddObj.isReoccuring != 'daily' && taskAddObj.isReoccuring != 'weekly' && !taskAddObj.isGeneratedByUser && !taskAddObj.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Week To Run The Task</label>
-                                                    <md-select ng-model="taskAddObj.reoccuring_week" name="createTaskForm.reoccuring_week" ng-required="taskAddObj.isReoccuring && taskAddObj.isReoccuring != 'daily' && taskAddObj.isReoccuring != 'weekly'">
+                                                    <md-select ng-model="taskAddObj.run_week" name="createTaskForm.run_week" ng-required="taskAddObj.isReoccuring && taskAddObj.isReoccuring != 'daily' && taskAddObj.isReoccuring != 'weekly'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-value="0">
                                                             Week 1
@@ -299,7 +299,7 @@
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="createTaskForm.reoccuring_week.$error">
+                                                <div ng-messages="createTaskForm.run_week.$error">
                                                     <div ng-message="required">Run week required!</div>
                                                 </div>
                                             </md-list-item>
@@ -307,7 +307,7 @@
                                             <md-list-item ng-show="taskAddObj.isReoccuring != 'monthly' && !taskAddObj.isGeneratedByUser && !taskAddObj.isManuallyTriggered">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Day To Run The Task</label>
-                                                    <md-select ng-model="taskAddObj.runDay" ng-required="taskAddObj.isReoccuring" name="createTaskForm.runDay">
+                                                    <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.isReoccuring" name="createTaskForm.run_day">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-value="0">
                                                             Sunday
@@ -332,7 +332,7 @@
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="createTaskForm.runDay.$error">
+                                                <div ng-messages="createTaskForm.run_day.$error">
                                                     <div ng-message="required">Run week required!</div>
                                                 </div>
                                             </md-list-item>
@@ -340,13 +340,13 @@
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="100">
                                                     <label>Hour</label>
-                                                    <md-select ng-model="taskAddObj.runTime" ng-required="true" name="createTaskForm.runTime">
-                                                        <md-option ng-repeat="time in timesSans" ng-value="time">
-                                                            {{time}}
+                                                    <md-select ng-model="taskAddObj.run_clock_time" ng-required="true" name="createTaskForm.run_clock_time">
+                                                        <md-option ng-repeat="time in timeObject" ng-value="time">
+                                                            {{time.time}}
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="createTaskForm.runTime.$error">
+                                                <div ng-messages="createTaskForm.run_clock_time.$error">
                                                     <div ng-message="required">Run time required!</div>
                                                 </div>                                                
                                             </md-list-item>
