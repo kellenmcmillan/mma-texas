@@ -341,8 +341,8 @@
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="100">
                                                     <label>Hour</label>
                                                     <md-select ng-model="taskAddObj.run_clock_time" ng-required="true" name="createTaskForm.run_clock_time">
-                                                        <md-option ng-repeat="time in timeObject track by $index" ng-value="timeObject[$index]">
-                                                            {{time.time}}
+                                                        <md-option ng-repeat="time in timesSans" ng-value="time">
+                                                            {{time}}
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
