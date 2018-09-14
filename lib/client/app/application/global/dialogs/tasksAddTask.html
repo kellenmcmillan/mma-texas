@@ -168,7 +168,7 @@
                                 </md-card-content>
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.$error" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -293,7 +293,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                    <md-button ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.$error" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -345,8 +345,6 @@
                                         </md-input-container>
                                     </md-list-item>
 
-                                    <md-divider></md-divider>
-
                                     <span ng-show="taskAddObj.taskType == 'onetime' || taskAddObj.taskType == 'reoccuring'">
 
                                         <md-card-header>
@@ -360,7 +358,7 @@
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Specify A Date To Run This Task</label>
 
-                                                <md-datepicker flex="80" style="width: 100%;" ng-model="taskAddObj.runDate" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
+                                                <md-datepicker flex="80" ng-model="taskAddObj.runDate" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
                                                 
                                                 <div ng-messages="createTaskForm.task_date.$error">
                                                     <div ng-message="required">Run date required!</div>
@@ -433,10 +431,10 @@
                                             </div>
                                         </md-list-item>
                                         
-                                        <md-list-item ng-show="taskAddObj.frequency !='daily'">
+                                        <md-list-item ng-show="taskAddObj.frequency != 'daily' || taskAddObj.frequency != 'onetime'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
-                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily'" name="createTaskForm.run_day">
+                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily' || taskAddObj.frequency !='weekly'" name="createTaskForm.run_day">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="0">
                                                         Sunday
@@ -486,7 +484,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_three = false; part_two = true">Back</md-button>
-                                    <md-button class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.$error" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             
                             </md-card>
