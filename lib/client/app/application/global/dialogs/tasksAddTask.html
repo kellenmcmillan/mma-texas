@@ -1,4 +1,4 @@
-<!-- View Styles -->
+View Styles -->
 
 <style>
     md-list-item md-input-container {width: 100%;}
@@ -256,9 +256,9 @@
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="createTaskForm.send_to_roles.$error" ng-show="createTaskForm.send_to_roles.$dirty">
+                                            <!-- <div ng-messages="createTaskForm.send_to_roles.$error" ng-show="createTaskForm.send_to_roles.$dirty">
                                                 <div ng-message="required">Recipient type required!</div>
-                                            </div>
+                                            </div> -->
                                         </md-input-container>
                                     </md-list-item>
 
@@ -277,15 +277,15 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>User Types To Send Report To</label>
-                                            <md-select name="send_alert_to_roles" ng-model="taskAddObj.alert_roles" multiple ng-required="true">
+                                            <md-select name="send_alert_to_roles" ng-model="taskAddObj.alert_roles" multiple>
                                                 <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="createTaskForm.send_alert_to_roles.$error" ng-show="createTaskForm.send_alert_to_roles.$dirty">
+                                            <!-- <div ng-messages="createTaskForm.send_alert_to_roles.$error" ng-show="createTaskForm.send_alert_to_roles.$dirty">
                                                 <div ng-message="required">Alert receiver type required!</div>
-                                            </div>
+                                            </div> -->
                                         </md-input-container>
                                     </md-list-item>
 
@@ -293,7 +293,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.channels.$error ||" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.channels.$error" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -515,4 +515,4 @@
     </md-card>
 
 </div>
-<!-- Backend Dialog Boilerplate -->
+<!-- Backend Dialog Boilerplate
