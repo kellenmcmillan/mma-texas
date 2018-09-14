@@ -86,19 +86,19 @@
                                             <label>Task Greeting <i>(Optional)</i></label>
                                             <md-select name="greeting" ng-model="taskAddObj.greeting">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="Hello Name">
+                                                <md-option ng-value="'Hello Name'">
                                                     Hello Name
                                                 </md-option>
-                                                <md-option ng-value="Hey There">
+                                                <md-option ng-value="'Hey There'">
                                                     Hey There
                                                 </md-option>
-                                                <md-option ng-value="Name">
+                                                <md-option ng-value="'Name'">
                                                     Name
                                                 </md-option>
-                                                <md-option ng-value="Good Time Of Day Name">
+                                                <md-option ng-value="'Good Time Of Day Name'">
                                                     Good Time Of Day Name
                                                 </md-option>
-                                                <md-option ng-value="Hi Name">
+                                                <md-option ng-value="'Hi Name'">
                                                     Hi Name
                                                 </md-option>
                                             </md-select>
@@ -122,19 +122,19 @@
                                             <label>Task Salutation <i>(Optional)</i></label>
                                             <md-select name="salutation" ng-model="taskAddObj.salutation">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="Sincerely">
+                                                <md-option ng-value="'Sincerely'">
                                                     Sincerely
                                                 </md-option>
-                                                <md-option ng-value="Kindly">
+                                                <md-option ng-value="'Kindly'">
                                                     Kindly
                                                 </md-option>
-                                                <md-option ng-value="Thanks">
+                                                <md-option ng-value="'Thanks'">
                                                     Thanks
                                                 </md-option>
-                                                <md-option ng-value="Have a great day">
+                                                <md-option ng-value="'Have a great day'">
                                                     Have a great day
                                                 </md-option>
-                                                <md-option ng-value="See you soon">
+                                                <md-option ng-value="'See you soon'">
                                                     See you soon
                                                 </md-option>
                                             </md-select>
@@ -146,7 +146,7 @@
                                             <label>Task Link <i>(Optional)</i></label>
                                             <md-select name="item_url" ng-model="taskAddObj.link">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="Custom"><em>Enter a custom URL</em></md-option>
+                                                <md-option ng-value="'Custom'"><em>Enter a custom URL</em></md-option>
                                                 <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
                                                     {{url.url}}
                                                 </md-option>
@@ -239,7 +239,7 @@
                                             <label>Specify Users To Send Message To</label>
                                             <md-select name="send_to_users" ng-model="taskAddObj.send_to_users" multiple flex>
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="respond">Respond To User Action</md-option>
+                                                <md-option ng-value="'respond'">Respond To User Action</md-option>
                                                 <md-option ng-hide="taskAddObj.send_to_users == 'respond'" ng-repeat="user in userslist" ng-value="user.id">
                                                     {{user.firstname}} {{user.lastname}}
                                                 </md-option>
@@ -326,13 +326,13 @@
                                             <label>What type of task is this?</label>
                                             <md-select name="typeOfTrigger" ng-model="taskAddObj.taskType" ng-required="true">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="onetime">
+                                                <md-option ng-value="'onetime'">
                                                     One Time
                                                 </md-option>
-                                                <md-option ng-value="reoccuring">
+                                                <md-option ng-value="'reoccuring'">
                                                     Reoccuring
                                                 </md-option>
-                                                <md-option ng-value="manual">
+                                                <md-option ng-value="'manual'">
                                                     Manual
                                                 </md-option>
                                                 <md-option ng-disabled="true">
@@ -433,7 +433,7 @@
                                             </div>
                                         </md-list-item>
                                         
-                                        <md-list-item ng-show="">
+                                        <md-list-item ng-show="taskAddObj.frequency !='daily'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
                                                 <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily'" name="createTaskForm.run_day">
@@ -466,7 +466,7 @@
                                             </div>
                                         </md-list-item>
 
-                                        <md-list-item ng-hide="taskAddObj =='manual'">
+                                        <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="100">
                                                 <label>Hour</label>
                                                 <md-select ng-model="taskAddObj.run_clock_time" ng-required="true" name="createTaskForm.run_clock_time">
