@@ -168,7 +168,7 @@
                                 </md-card-content>
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.$error" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.title.$error || createTaskForm.body.$error || createTaskForm.subject.$error || createTaskForm.customURL.$error" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -201,7 +201,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Choose Channels</label>
-                                            <md-select name="channels" ng-model="taskAddObj.channels" multiple required>
+                                            <md-select name="channels" ng-model="taskAddObj.channels" multiple ng-required="true">
                                                 <md-option><em>None</em></md-option>
                                                 <md-option ng-value="'Email'">
                                                     Email
@@ -265,7 +265,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>Specify Users To Send Report To</label>
-                                            <md-select name="send_report_to_users" ng-model="taskAddObj.send_report_to_users" multiple flex ng-required="!taskAddObj.isGeneratedByUser">
+                                            <md-select name="send_report_to_users" ng-model="taskAddObj.send_report_to_users" multiple flex>
                                                 <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="user in userslist" ng-value="user.id">
                                                     {{user.firstname}} {{user.lastname}}
@@ -293,7 +293,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.$error" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.$pristine || createTaskForm.channels.$error ||" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
