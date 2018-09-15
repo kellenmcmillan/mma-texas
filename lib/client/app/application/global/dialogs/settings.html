@@ -37,6 +37,7 @@
             <md-card-title-text>
                 <span class="md-headline">{{setting}}</span>
             </md-card-title-text>
+
             <md-list-item>
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Column</label>
@@ -59,6 +60,13 @@
                     </md-select>
                 </md-input-container>
             </md-list-item>
+
+            <span flex></span>
+
+            <md-button style="background-color: {{base_hue_lighter.value}}" class="md-fab md-mini" aria-label="cancel new task creation" ng-confirm-message="Are you sure you exit settings? Unsaved changes may be discarded" ng-confirm-click="close_edit_configuration()" ng-confirm-condition="true">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+            </md-button>
+
         </md-card-title>
 
         <!-- Company Info Screen -->
@@ -612,10 +620,10 @@
         <!-- Manage Staff Screen -->
 
 
-        <md-card-actions layout="row" layout-align="end center" class="footer-backend">
+        <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
             <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="close_edit_configuration()">Close</md-button>
-        </md-card-actions>
+        </md-card-actions> -->
     </md-card>
 </div>

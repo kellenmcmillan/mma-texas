@@ -4,6 +4,11 @@
             <md-card-title-text>
                 <span class="md-headline">Media Vault</span>
             </md-card-title-text>
+            <span flex></span>
+
+            <md-button style="background-color: {{base_hue_lighter.value}}" class="md-fab md-mini" aria-label="cancel new task creation" ng-confirm-message="Are you sure you want to exit Media Vault?" ng-confirm-click="closeMediaVault()" ng-confirm-condition="true">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+            </md-button>
         </md-card-title>
         <md-card-content flex>
                 <md-content class="md-padding" flex>
