@@ -26,6 +26,12 @@
             <md-card-title-text>
                 <span class="md-headline">Create A New Task</span>
             </md-card-title-text>
+
+            <span flex>
+            
+            <md-button class="md-button" aria-label="cancel new task creation" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+            </md-button>
             
         </md-card-title>
 
@@ -506,11 +512,11 @@
 
         </md-card-content>
 
-        <md-card-actions layout="row" layout-align="end center" class="footer-backend">
+        <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
             <md-button class="md-raised" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
-        </md-card-actions>
+        </md-card-actions> -->
 
     </md-card>
 
