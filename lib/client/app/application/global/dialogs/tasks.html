@@ -24,7 +24,7 @@
         <md-card-content layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
             <!-- columns -->
             <div flex="100" flex-gt-sm="40">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                     <md-card-header>
                         <md-card-header-text>
                             <span class="md-title">Tasks</span>
@@ -76,7 +76,7 @@
                 </md-card>
             </div>
             <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
-                <md-card class="md-whiteframe-4dp" style="background: #fafafa;" flex="100">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                         <md-card-header>
                             <md-card-header-text>
                                 <span class="md-title">Reports</span>
@@ -184,7 +184,7 @@
         <!-- Company Info Screen -->
 
 
-        <md-card-actions layout="row" layout-align="end center">
+        <md-card-actions layout="row" layout-align="end center" class="footer-backend">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
             <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="closeTaskRunner()">Close</md-button>

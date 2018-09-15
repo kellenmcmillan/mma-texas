@@ -23,6 +23,8 @@
 .upload-dialog {z-index: 2003;}
 /* ============================== dialogs ============================== */
 
+.footer-backend {margin: 0!important; padding: 8px!important; border-top: 1px solid rgba(33,33,33,.15);}
+
 
 
 

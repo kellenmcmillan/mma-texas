@@ -48,7 +48,7 @@
                         <!-- ============================= PART ONE CONTENT =============================== -->
                         <!-- ============================= PART ONE CONTENT =============================== -->
 
-                            <md-card ng-show="part_one == true" class="md-whiteframe-4dp" style="background: #fafafa;" flex flex-gt-sm="40">
+                            <md-card ng-show="part_one == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
                                 
                                 <md-card-content>
 
@@ -187,7 +187,7 @@
                             <!-- ============================= PART TWO DELIVERY =============================== -->
                             <!-- ============================= PART TWO DELIVERY =============================== -->
 
-                            <md-card ng-show="part_two == true" class="md-whiteframe-4dp" style="background: #fafafa;" flex flex-gt-sm="40">
+                            <md-card ng-show="part_two == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
                                 
                                 <md-card-content>
 
@@ -310,7 +310,7 @@
                             <!-- ============================= PART THREE AUTOMATION =============================== -->
                             <!-- ============================= PART THREE AUTOMATION =============================== -->
 
-                            <md-card ng-show="part_three == true" class="md-whiteframe-4dp" style="background: #fafafa;" flex flex-gt-sm="40">
+                            <md-card ng-show="part_three == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
                             
                                 <md-card-content>
 
@@ -506,7 +506,7 @@
 
         </md-card-content>
 
-        <md-card-actions layout="row" layout-align="end center">
+        <md-card-actions layout="row" layout-align="end center" class="footer-backend">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
             <md-button class="md-raised" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
