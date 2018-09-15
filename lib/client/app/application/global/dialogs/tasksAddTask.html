@@ -157,7 +157,7 @@
                                     <md-list-item ng-show="taskAddObj.link == 'Custom'">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Custom URL</label>
-                                            <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" required>
+                                            <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" ng-required="taskAddObj.link == 'Custom'">
                                             <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$error">
                                                 <div ng-message="required">Task custom URL required!</div>
                                                 <div ng-message="minlength">Task custom URL too short!</div>
