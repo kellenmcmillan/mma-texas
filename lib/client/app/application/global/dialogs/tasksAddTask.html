@@ -63,7 +63,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Title</label>
                                             <input name="title" ng-model="taskAddObj.title" minlength="3" required>
-                                            <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$dirty">
+                                            <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$error">
                                                 <div ng-message="required">Task title required!</div>
                                                 <div ng-message="minlength">Task title too short!</div>
                                             </div>
@@ -74,7 +74,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Subject</label>
                                             <input name="subject" ng-model="taskAddObj.subject" minlength="3" required>
-                                            <div ng-messages="createTaskForm.subject.$error" ng-show="createTaskForm.subject.$dirty">
+                                            <div ng-messages="createTaskForm.subject.$error" ng-show="createTaskForm.subject.$error">
                                                 <div ng-message="required">Task subject required!</div>
                                                 <div ng-message="minlength">Task subject too short!</div>
                                             </div>
@@ -109,7 +109,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Body</label>
                                             <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                            <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$dirty">
+                                            <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$error">
                                                 <div ng-message="required">Task body required!</div>
                                                 <div ng-message="minlength">Task body too short!</div>
                                                 <div ng-message="md-maxlength">Task body too long!</div>
@@ -146,7 +146,7 @@
                                             <label>Task Link <i>(Optional)</i></label>
                                             <md-select name="item_url" ng-model="taskAddObj.link">
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="'Custom'"><em>Enter a custom URL</em></md-option>
+                                                <md-option ng-value="'Custom'">Enter a custom URL</md-option>
                                                 <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
                                                     {{url.url}}
                                                 </md-option>
@@ -158,7 +158,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Custom URL</label>
                                             <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" required>
-                                            <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$dirty">
+                                            <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$error">
                                                 <div ng-message="required">Task custom URL required!</div>
                                                 <div ng-message="minlength">Task custom URL too short!</div>
                                             </div>
@@ -168,7 +168,7 @@
                                 </md-card-content>
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-disabled="createTaskForm.title.$error || createTaskForm.body.$error || createTaskForm.subject.$error || createTaskForm.customURL.$error" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.title.$invalid || createTaskForm.body.$invalid || createTaskForm.subject.$invalid || createTaskForm.customURL.$invalid" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -213,7 +213,7 @@
                                                     In App Dialog
                                                 </md-option> -->
                                             </md-select>
-                                            <div ng-messages="createTaskForm.channels.$error" ng-show="createTaskForm.channels.$dirty">
+                                            <div ng-messages="createTaskForm.channels.$error" ng-show="createTaskForm.channels.$invalid">
                                                 <div ng-message="required">Task channel required!</div>
                                             </div>
                                         </md-input-container>
@@ -293,7 +293,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.channels.$error" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                    <md-button ng-disabled="createTaskForm.channels.$invalid" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
                             
                             </md-card>
@@ -339,7 +339,7 @@
                                                     User Generated
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="createTaskForm.typeOfTrigger.$error" ng-show="createTaskForm.typeOfTrigger.$dirty">
+                                            <div ng-messages="createTaskForm.typeOfTrigger.$error" ng-show="createTaskForm.typeOfTrigger.$invalid">
                                                 <div ng-message="required">This option must be selected!</div>
                                             </div>
                                         </md-input-container>
