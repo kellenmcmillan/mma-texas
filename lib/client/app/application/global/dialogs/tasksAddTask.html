@@ -18,14 +18,16 @@
 
     <md-card class="suite-dialog md-card-base card inputs">
 
-        <div class="backend sidebar" layout="column" layout-alight="center start" layout-wrap>
-            <span style="height:48px;" flex></span>
+        <div class="backend sidebar" layout="flex" layout-alight="center start" layout-wrap>
+            <span style="height:48px; width: 100%;" flex></span>
             <md-list-item class="avatar">
                 <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer; font-size: 36px; width: 36px; height: 36px;" aria-label="Remove Task" md-font-library="material-icons">face</md-icon>
                 <span style="color: {{base_hue_darker.value}}; font-size: 18px;">{{me.firstname}} {{me.lastname}}</span>
             </md-list-item>
             <md-list-item class="menu button">
-                <md-button ng-confirm-message="Are you sure you want to sign out?" ng-confirm-click="auth.$signOut()" ng-confirm-condition="true" class="md-raised lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 80%;">Sign Out</md-button>
+                <md-button ng-confirm-message="Are you sure you want to sign out?" ng-confirm-click="auth.$signOut()" ng-confirm-condition="true" class="md-raised lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 80%;">
+                <md-icon style="color: {{base_hue_lightest.value}}; font-size: 36px; width: 36px; height: 36px;" aria-label="Remove Task" md-font-library="material-icons">lock_open</md-icon>Sign Out
+                </md-button>
             </md-list-item>
         </div>
 
