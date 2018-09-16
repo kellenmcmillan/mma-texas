@@ -6,7 +6,10 @@
 </style>
 <div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="lightweightController">
     <md-card class="suite-dialog md-card-base card inputs">
+        
         <md-card-title style="position: relative;">
+
+            <!-- =================== Upload Various Resources =================== -->
             <md-menu>
                 <md-button class="md-fab md-mini" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">cloud_upload</md-icon>
@@ -54,10 +57,14 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
+            <!-- =================== Upload Various Resources =================== -->
+
             <md-menu>
+                
                 <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">menu</md-icon>
                 </md-button>
+
                 <md-menu-content width="4">
                     <md-menu-item>
                         <md-button ng-click="openPasswordReset(me)">
@@ -72,7 +79,9 @@
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
+
             </md-menu>
+
             <md-card-title-text>
                 <md-list-item>
                     <div class="md-list-item-text">
@@ -80,12 +89,13 @@
                     </div>
                 </md-list-item>
             </md-card-title-text>
+            
             <span flex></span>
 
-            <md-button style="background-color: {{base_hue_lightest.value}}" class="md-fab md-mini" aria-label="cancel new task creation" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
-            </md-button>
+            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
+
         </md-card-title>
+
         <md-card-content flex>
             <md-content flex>
                 <div layout="column" layout-align="center center" flex>
