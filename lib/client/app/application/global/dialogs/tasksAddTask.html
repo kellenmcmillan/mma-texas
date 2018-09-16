@@ -14,10 +14,12 @@
 
 <div class="secondary-dialog-curtain taskrunner" ng-show="task_runner_task_add_visible == true" ng-controller="lightweightController">
 
-    <div class="backend sidebar">
-    </div>
+    
 
     <md-card class="suite-dialog md-card-base card inputs">
+
+        <div class="backend sidebar">
+        </div>
 
         <!-- =================== App Header =================== -->
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
@@ -30,7 +32,7 @@
 
             <span flex></span>
 
-            <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
+            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
             
         </md-card-title>
         <!-- =================== App Header =================== -->
