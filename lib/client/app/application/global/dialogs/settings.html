@@ -5,21 +5,28 @@
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
 
 
-            <!-- Action Buttons -->
+            <!-- =================== Start Action Buttons =================== -->
 
+            <!-- =================== Toggle View - Staff Settings =================== -->
             <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="switchViewStaff()">
                 <md-icon ng-show="staffgridview == true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                 <md-icon ng-show="staffgridview == false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
             </md-button>
+            <!-- =================== Toggle View - Staff Settings =================== -->
 
+            <!-- =================== Add Staff - Staff Settings =================== -->
             <md-button ng-show="setting == 'Manage Staff'" ng-disabled="new_staff_member" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
+            <!-- =================== Add Staff - Staff Settings =================== -->
 
+            <!-- =================== Create A Page - Manage Pages Setting =================== -->
             <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
+            <!-- =================== Create A Page - Manage Pages Setting =================== -->
 
+            <!-- =================== Open Manage Navigation Items Menu =================== -->
             <md-menu ng-show="setting == 'Edit Navigation'">
                 <md-button ng-disabled="manageNavigation.$invalid" md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Select Parent Navigation Item" md-font-library="material-icons">link</md-icon>
@@ -32,20 +39,25 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
+            <!-- =================== Open Manage Navigation Items Menu =================== -->
 
+            <!-- =================== Add Navigation Items To Parent =================== -->
             <md-button ng-show="setting == 'Edit Navigation'" class="md-fab md-mini" aria-label="Add a child navigation item" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addChildNavItem()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
+            <!-- =================== Add Navigation Items To Parent =================== -->
 
-            <!-- Action Buttons -->
+            <!-- =================== End Action Buttons =================== -->
 
-
+            <!-- =================== App Title =================== -->
             <md-card-title-text>
                 <span class="md-headline">{{setting}}</span>
             </md-card-title-text>
+            <!-- =================== App Title =================== -->
 
             <span flex></span>
 
+            <!-- =================== Change Setting View =================== -->
             <md-list-item>
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Column</label>
@@ -68,8 +80,11 @@
                     </md-select>
                 </md-input-container>
             </md-list-item>
+            <!-- =================== Change Setting View =================== -->
 
+            <!-- =================== Additional App Action Buttons =================== -->
             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you exit settings? Unsaved changes may be discarded" ng-confirm-click="close_edit_configuration()" ng-confirm-condition="true">close</md-icon>
+            <!-- =================== Additional App Action Buttons =================== -->
 
         </md-card-title>
 
