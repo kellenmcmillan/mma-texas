@@ -21,14 +21,13 @@
 
             <span flex></span>
 
-            <md-button style="background-color: {{base_hue_lightest.value}}!important;" class="md-fab md-mini" aria-label="cancel new task creation" ng-confirm-message="Are you sure you want to exit Task Runner?" ng-confirm-click="closeTaskRunner()" ng-confirm-condition="true">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
-            </md-button>
+            <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to exit Task Runner?" ng-confirm-click="closeTaskRunner()" ng-confirm-condition="true">close</md-icon>
+
             
         </md-card-title>
 
         <md-card-content layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
-            <!-- columns -->
+
             <div flex="100" flex-gt-sm="40">
                 <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                     <md-card-header>
@@ -81,6 +80,7 @@
                     </md-card-content>
                 </md-card>
             </div>
+            
             <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
                 <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                         <md-card-header>

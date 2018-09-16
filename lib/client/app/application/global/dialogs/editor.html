@@ -151,14 +151,9 @@
 
             <span flex></span>
             
-            <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{base_hue_lightest.value}}!important;">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
-            </md-button>
+            <md-icon ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
 
-            <md-button style="background-color: {{base_hue_lightest.value}}!important;" class="md-fab md-mini" aria-label="cancel new task creation" ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
-            </md-button>
-
+            <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">close</md-icon>
 
         </md-card-title>
     <!-- Dialog Editor | Header -->
