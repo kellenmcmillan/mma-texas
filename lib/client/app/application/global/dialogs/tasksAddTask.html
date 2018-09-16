@@ -18,7 +18,13 @@
 
     <md-card class="suite-dialog md-card-base card inputs">
 
-        <div class="backend sidebar">
+        <div class="backend sidebar" layout="row" layout-alight="center start" layout-wrap>
+            <span flex="100" layout="row">
+                <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">face</md-icon>&nbsp;&nbsp;{{me.firstname}} {{me.lastname}}
+            </span>
+            <span>
+                <md-button ng-confirm-message="Are you sure you want to sign out?" ng-confirm-click="auth.$signOut()" ng-confirm-condition="true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Sign Out</md-button>
+            </span>
         </div>
 
         <!-- =================== App Header =================== -->
