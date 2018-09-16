@@ -129,6 +129,8 @@
 	.projects-dropdown .md-select-value, 
 	.projects-dropdown md-select.md-default-theme .md-select-value {border-bottom-color: {{base_hue_lightest.value}}; min-width: 150px;}
 	.suite-dialog .lightweight-md-dropdown.normal md-select:not([disabled]):focus .md-select-value {border-bottom-color: rgba(0,0,0,0.12);}
+	.suite-dialog .backend.sidebar .avatar {max-height: 48px;}
+	.suite-dialog .backend.sidebar .menu.button {max-height: 48px;}
 	@media screen and (min-width: 840px) {
 	    .suite-dialog > md-card-content {
 	        overflow-y: scroll;
@@ -145,6 +147,10 @@
 	        overflow-y: auto;
 	        min-height: {{window_height - 80}}px!important;
 	        width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
+	    }
+	    .suite-dialog .backend.sidebar {
+	    	height: {{window_height - 84}}px!important; width: 300px; position: absolute; top: 84px; left: 0; 
+	        background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 20; padding: 0!important; overflow-y: auto;
 	    }
 	}
 	/* md-cards */
