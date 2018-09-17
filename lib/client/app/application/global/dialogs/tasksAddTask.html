@@ -415,7 +415,7 @@
                                         <md-list-item ng-show="taskAddObj.frequency != 'daily' || taskAddObj.task_type != 'onetime'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
-                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily' || taskAddObj.frequency !='weekly'" name="createTaskForm.run_day">
+                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily'" name="createTaskForm.run_day">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="0">
                                                         Sunday
