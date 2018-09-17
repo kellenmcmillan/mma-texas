@@ -344,7 +344,7 @@
             <md-content flex ng-show="edit_info == true">
                 <div layout="column" layout-align="center center" flex>
                     <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
+                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
                             <form name="myvault">
                                 <md-card-header>
                                     <md-card-header-text>
@@ -416,7 +416,7 @@
                                             <input ng-model="me.address.zipcode">
                                         </md-input-container>
                                     </md-list-item>
-                                    <md-list-item>
+                                    <!-- <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
                                             <md-select ng-disabled="true" ng-model="me.security.roles">
@@ -425,7 +425,7 @@
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
-                                    </md-list-item>
+                                    </md-list-item> -->
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="edit_info = false; overview = true;" style="color: {{base_hue_darkest.value}};">Cancel</md-button>
