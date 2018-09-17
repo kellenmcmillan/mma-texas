@@ -7,7 +7,7 @@
 @media screen and (max-width: 839px) {
 .suite-dialog {position: relative!important; width: calc(100% - 300px); margin:0!important;}
 .dialog-curtain, .secondary-dialog-curtain, .tertiary-dialog-curtain {overflow-y: scroll!important;}
-/*.suite-dialog > md-card-title {min-height: 150px;}*/
+.suite-dialog > md-card-title {max-height: 84px!important; box-sizing: border-box;}
 .mediaVault .suite-dialog > md-card-title {max-height: 64px; min-height: 64px;}
 .userVault .suite-dialog > md-card-title {max-height: 64px; min-height: 64px;}
 }
@@ -15,14 +15,18 @@
 .suite-dialog, .secondary-dialog-curtain, .tertiary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;}
 
 	@media screen and (min-width: 840px) {
-	    .suite-dialog > md-card-title {max-height: 84px; box-sizing: border-box;}
 		.userVault .suite-dialog > md-card-title, .mediaVault .suite-dialog > md-card-title, 
-		.blogVault .suite-dialog > md-card-title {height: 84px; box-sizing: border-box;}
+		.blogVault .suite-dialog > md-card-title, .taskrunner .suite-dialog > md-card-title, 
+		.settings .suite-dialog > md-card-title {
+			height: 84px!important; min-height: 84px; max-height: 84px; box-sizing: border-box;
+		}
 	}
 	@media screen and (max-width: 839px) {
-	    .suite-dialog > md-card-title {max-height: 84px!important; box-sizing: border-box;}
 		.userVault .suite-dialog > md-card-title, .mediaVault .suite-dialog > md-card-title, 
-		.blogVault .suite-dialog > md-card-title {height: 84px!important; box-sizing: border-box;}
+		.blogVault .suite-dialog > md-card-title, .taskrunner .suite-dialog > md-card-title, 
+		.settings .suite-dialog > md-card-title {
+			height: 84px!important; min-height: 84px; max-height: 84px; box-sizing: border-box;
+		}
 		.suite-dialog {width: 100%; margin:0!important;}
 	}
 /* ============================== Curtain ============================== */

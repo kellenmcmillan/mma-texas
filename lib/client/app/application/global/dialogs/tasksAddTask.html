@@ -360,33 +360,7 @@
                                                 <span class="md-title">Task Scheduling</span>
                                                 <span class="md-subhead">Determine When To Run This Task</span>
                                             </md-card-header-text>
-                                        </md-card-header>
-                                                                          
-                                        <md-list-item ng-show="taskAddObj.taskType == 'onetime'">
-                                            <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Specify A Date To Run This Task</label>
-
-                                                <md-datepicker flex="80" ng-model="taskAddObj.runDate" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
-                                                
-                                                <div ng-messages="createTaskForm.task_date.$invalid">
-                                                    <div ng-message="required">Run date required!</div>
-                                                </div>
-
-                                            </md-input-container>
-                                        </md-list-item>
-
-                                        <!-- <md-list-item>
-                                            <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Specify A Reoccuring Run Date For The Task</label>
-
-                                                <md-datepicker flex="80" style="width: 100%;" ng-model="taskAddObj.reoccuringRunDate" name="reoccuring_task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
-                                                
-                                                <div ng-messages="createTaskForm.reoccuring_task_date.$invalid">
-                                                    <div ng-message="required">Run date required!</div>
-                                                </div>
-
-                                            </md-input-container>
-                                        </md-list-item> -->
+                                        </md-card-header>                                        
                                                             
                                         <md-list-item ng-show="taskAddObj.taskType == 'reoccuring'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -407,6 +381,9 @@
                                                     </md-option>
                                                     <md-option ng-value="'monthly'">
                                                         Monthly
+                                                    </md-option>
+                                                    <md-option ng-value="'annually'">
+                                                        Annually
                                                     </md-option>
                                                 </md-select>
                                                 <div ng-messages="createTaskForm.frequency.$invalid">
@@ -439,7 +416,7 @@
                                             </div>
                                         </md-list-item>
                                         
-                                        <md-list-item ng-show="taskAddObj.frequency != 'daily' || taskAddObj.frequency != 'onetime'">
+                                        <md-list-item ng-show="taskAddObj.frequency != 'daily' || taskAddObj.taskType != 'onetime'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
                                                 <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency !='daily' || taskAddObj.frequency !='weekly'" name="createTaskForm.run_day">
@@ -470,6 +447,19 @@
                                             <div ng-messages="createTaskForm.run_day.$invalid">
                                                 <div ng-message="required">Run day required!</div>
                                             </div>
+                                        </md-list-item>
+
+                                        <md-list-item ng-show="taskAddObj.taskType == 'onetime'">
+                                            <md-input-container class="md-block lightweight-md-input" ng-required="taskAddObj.taskType == 'onetime'" flex>
+                                                <label>Specify A Date To Run This Task</label>
+
+                                                <md-datepicker flex="80" ng-model="taskAddObj.task_date" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
+                                                
+                                                <div ng-messages="createTaskForm.task_date.$invalid">
+                                                    <div ng-message="required">Run date required!</div>
+                                                </div>
+
+                                            </md-input-container>
                                         </md-list-item>
 
                                         <md-list-item>
