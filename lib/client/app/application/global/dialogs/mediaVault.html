@@ -2,17 +2,22 @@
 
     <md-card class="suite-dialog md-card-base card inputs" ng-init="view_media = true; view_tags = false; view_upload = false">
 
+        <div ng-include src="'application/partials/backend-menu.html'"></div>
+
         <!-- =================== App Header =================== -->
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
 
             <!-- =================== Action Buttons =================== -->
-            <md-button class="md-fab md-mini" aria-label="View Media Vault" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = true; view_tags = false; view_upload = false">
+            <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+            </md-button>
+            <md-button class="md-fab md-mini" aria-label="View Media Vault" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = true; view_tags = false; view_upload = false">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">perm_media</md-icon>
             </md-button>
-            <md-button class="md-fab md-mini" aria-label="Manage Image Tags" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = false; view_tags = true; view_upload = false">
+            <md-button class="md-fab md-mini" aria-label="Manage Image Tags" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = false; view_tags = true; view_upload = false">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">style</md-icon>
             </md-button>
-            <md-button class="md-fab md-mini" aria-label="Upload Media" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = false; view_tags = false; view_upload = true">
+            <md-button class="md-fab md-mini" aria-label="Upload Media" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;" ng-click="view_media = false; view_tags = false; view_upload = true">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">cloud_upload</md-icon>
             </md-button>
             <!-- =================== Action Buttons =================== -->
