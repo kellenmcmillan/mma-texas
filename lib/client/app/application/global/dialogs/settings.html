@@ -3,7 +3,7 @@
     <md-card class="suite-dialog md-card-base">
 
         <div ng-include src="'application/partials/backend-menu.html'"></div>
-    
+
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
 
 
@@ -98,7 +98,7 @@
         <md-card-content ng-show="setting == 'Company Info'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
             <!-- columns -->
             <div flex="100" flex-gt-sm="40">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                     <md-card-header>
                         <md-card-header-text>
                             <span class="md-title">Company Info</span>
@@ -179,7 +179,7 @@
                 </md-card>
             </div>
             <div flex="100" flex-gt-sm="40">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                     <md-card-header>
                         <md-card-header-text>
                             <span class="md-title">Company Hours</span>
@@ -344,7 +344,7 @@
             
             <!-- columns -->
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="page in pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
+                    <md-card class="md-card-base" ng-repeat="page in pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                         <md-card-title>
                             <md-card-title-text>
                                 <span class="md-headline">{{page.settings.name}}</span>
@@ -379,7 +379,7 @@
         <md-card-content ng-show="setting == 'Add Page'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                     <form name="addNewPage">
                         <md-card-content>
                             <md-list-item>
@@ -462,7 +462,7 @@
         <md-card-content ng-show="setting == 'Edit Navigation'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
             <!-- columns -->
             <div flex flex-gt-sm="60">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                     <form name="manageNavigation">
                         <md-card-title ng-if="child_nav_items.length > 0">
                             <md-card-title-text>
@@ -524,7 +524,7 @@
             
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base" style="width: 90%" flex>
+                    <md-card class="md-card-base" style="width: 90%; background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex>
                         <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="staffSortObj">
                             <div ng-repeat="staff in staffSortObj">
                                 <md-list-item class="noright">
@@ -540,7 +540,7 @@
                     </md-card>
                 </div>
                 <div ng-show="staffgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
+                    <md-card class="md-card-base" ng-repeat="staff in settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
