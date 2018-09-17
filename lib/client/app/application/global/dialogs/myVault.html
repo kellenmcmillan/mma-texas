@@ -104,87 +104,85 @@
 
             <!-- =================== Start Additional Action Items =================== -->
 
-            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
+            <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
 
             <!-- =================== End Additional Action Items =================== -->
 
         </md-card-title>
 
-        <md-card-content flex>
+        <md-card-content flex ng-init="overview = true; edit_info = false;">
 
             <!-- =================== Start User Info Summary =================== -->
-            <md-content flex>
+            <md-content flex ng-show="overview == true">
                 <div layout="column" layout-align="center center" flex>
                     <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
                         <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
-                            <form name="myvault">
-                                <md-card-header>
-                                    <md-card-header-text>
-                                        <span class="md-title">Personal Info</span>
-                                        <span class="md-subhead">Your Basic Bio</span>
-                                    </md-card-header-text>
-                                </md-card-header>
-                                <md-card-content>
-                                    <md-list-item>
-                                        <span>Firstname</span>
-                                        <span class="md-secondary">
-                                        {{me.firstname}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Lastname</span>
-                                        <span class="md-secondary">
-                                        {{me.lastname}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Email</span>
-                                        <span class="md-secondary">
-                                        {{me.email}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Phone</span>
-                                        <span class="md-secondary">
-                                        {{me.phone}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Street Address</span>
-                                        <span class="md-secondary">
-                                        {{me.address.street}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>City</span>
-                                        <span class="md-secondary">
-                                        {{me.address.city}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>State</span>
-                                        <span class="md-secondary">
-                                        {{me.address.state}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Zipcode</span>
-                                        <span class="md-secondary">
-                                        {{me.address.zipcode}}
-                                        </span>
-                                    </md-list-item>
-                                </md-card-content>
-                                <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Edit Your Personal Info</md-button>
-                                </md-card-actions>
-                            </form>
+                            <md-card-header>
+                                <md-card-header-text>
+                                    <span class="md-title">Personal Info</span>
+                                    <span class="md-subhead">Your Basic Bio</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <md-card-content>
+                                <md-list-item>
+                                    <span>Firstname</span>
+                                    <span class="md-secondary">
+                                    {{me.firstname}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>Lastname</span>
+                                    <span class="md-secondary">
+                                    {{me.lastname}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>Email</span>
+                                    <span class="md-secondary">
+                                    {{me.email}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>Phone</span>
+                                    <span class="md-secondary">
+                                    {{me.phone}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>Street Address</span>
+                                    <span class="md-secondary">
+                                    {{me.address.street}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>City</span>
+                                    <span class="md-secondary">
+                                    {{me.address.city}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>State</span>
+                                    <span class="md-secondary">
+                                    {{me.address.state}}
+                                    </span>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <md-list-item>
+                                    <span>Zipcode</span>
+                                    <span class="md-secondary">
+                                    {{me.address.zipcode}}
+                                    </span>
+                                </md-list-item>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center" flex>
+                                <md-button class="md-raised" ng-click="overview = false; edit_info = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Edit Your Personal Info</md-button>
+                            </md-card-actions>
                         </md-card>
                         <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
                             <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
@@ -343,10 +341,10 @@
 
 
 
-            <md-content flex>
+            <md-content flex ng-show="edit_info == true">
                 <div layout="column" layout-align="center center" flex>
                     <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="80">
+                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
                             <form name="myvault">
                                 <md-card-header>
                                     <md-card-header-text>
@@ -430,6 +428,7 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button ng-click="edit_info = false; overview = true;" style="color: {{base_hue_darkest.value}};">Cancel</md-button>
                                     <md-button class="md-raised" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </form>

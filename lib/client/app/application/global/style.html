@@ -129,7 +129,14 @@
 	.projects-dropdown .md-select-value, 
 	.projects-dropdown md-select.md-default-theme .md-select-value {border-bottom-color: {{base_hue_lightest.value}}; min-width: 150px;}
 	.suite-dialog .lightweight-md-dropdown.normal md-select:not([disabled]):focus .md-select-value {border-bottom-color: rgba(0,0,0,0.12);}
-	.suite-dialog .backend.sidebar {will-change: left; transition: left .2s ease-in; border-right: 1px solid rgba(0,0,0,.15); z-index: 2; background-color: {{base_hue_lightest.value}}; position: fixed;}
+	.suite-dialog .backend.sidebar {
+		will-change: left; transition: left .2s ease-in; 
+		border-right: 1px solid rgba(0,0,0,.15); z-index: 2; 
+		background-color: {{base_hue_lightest.value}}; 
+		position: fixed; height: {{window_height - 84}}px!important; 
+		width: 300px; top: 84px; margin: 0;
+		padding: 0!important; overflow-y: auto;
+	}
 	.suite-dialog .backend.sidebar .avatar {max-height: 48px;}
 	.suite-dialog .backend.sidebar .menu.button {max-height: 48px;}
 	@media screen and (min-width: 840px) {
@@ -139,10 +146,10 @@
 	        background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1; padding: 0!important;
 	    }
 	    .suite-dialog .backend.sidebar.open {
-	    	height: {{window_height - 84}}px!important; width: 300px; top: 84px; left: 0; margin: 0; padding: 0!important; overflow-y: auto;
+	    	left: 0;
 	    }
 	    .suite-dialog .backend.sidebar.closed {
-	    	height: {{window_height - 84}}px!important; width: 300px; top: 84px; left: -300px; margin: 0; padding: 0!important; overflow-y: auto;
+	    	left: -300px;
 	    }
 	}
 	@media screen and (max-width: 839px) {
@@ -152,10 +159,10 @@
 	        width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
 	    }
 	    .suite-dialog .backend.sidebar.open {
-	    	height: {{window_height - 84}}px!important; width: 300px; position: absolute; top: 84px; left: 0; margin: 0; padding: 0!important; overflow-y: auto;
+	    	left: 0;
 	    }
 	    .suite-dialog .backend.sidebar.closed {
-	    	height: {{window_height - 84}}px!important; width: 300px; position: absolute; top: 84px; left: -300px; margin: 0; padding: 0!important; overflow-y: auto;
+	    	left: -300px;
 	    }
 	}
 	/* md-cards */
