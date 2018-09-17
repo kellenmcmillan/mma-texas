@@ -169,7 +169,7 @@
         <!-- If its an element with a title -->
         <md-card-content ng-if="editor_element.settings.configs.title_view == true" ng-show="view == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <div flex flex-gt-sm="40">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base">
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -193,7 +193,7 @@
 
             <!-- Content Editor -->
             <div flex flex-gt-sm="40" style="width: 100%">
-                <md-card class="md-card-base md-whiteframe-4dp">
+                <md-card class="md-card-base">
                     <md-card-content>
 
                         <!-- if it's an element with a title, subtitle, etc. -->
@@ -326,7 +326,7 @@
                                         </div>
                                     </form>
 
-                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                                         <md-button ng-click="mediavault_filepicker(content)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                         </md-button>
@@ -412,7 +412,7 @@
                                         </div>
                                     </form>
 
-                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                                         <md-button ng-click="mediavault_filepicker(content)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                         </md-button>
@@ -498,7 +498,7 @@
                                         </div>
                                     </form>
 
-                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                                         <md-button ng-click="mediavault_filepicker(content)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                         </md-button>
@@ -548,7 +548,7 @@
 
             <!-- Primary Image Editor | Index Element -->
             <div flex flex-gt-sm="40" ng-if="editor_element.background.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
@@ -556,7 +556,7 @@
                 </md-card>
             </div>
             <div flex flex-gt-sm="40" ng-if="editor_element.foreground.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
@@ -567,7 +567,7 @@
 
             <!-- Primary Image Editor | Index Element - Multiple Columns/Tabs -->
             <div flex flex-gt-sm="40" ng-if="editor_element.data.items[view].background.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
@@ -575,7 +575,7 @@
                 </md-card>
             </div>
             <div flex flex-gt-sm="40" ng-if="editor_element.data.items[view].foreground.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
@@ -586,7 +586,7 @@
 
             <!-- Primary Image Editor | Page -->
             <div flex flex-gt-sm="40" ng-if="editor_element.data.page.background.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.data.page.background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
@@ -594,7 +594,7 @@
                 </md-card>
             </div>
             <div flex flex-gt-sm="40" ng-if="editor_element.data.page.foreground.images && editor_element.settings.configs.primary_image == true">
-                <md-card class="md-card-base md-whiteframe-4dp" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="mediavault_filepicker(editor_element.data.page.foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
