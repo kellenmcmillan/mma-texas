@@ -1,6 +1,6 @@
 <div class="backend sidebar" ng-class="{'open': sidebarOpen, 'closed': !sidebarOpen}" layout="row" layout-align="start start" layout-wrap>
     <span style="height:48px; width: 100%;" flex="100"></span>
-    <md-list-item class="avatar" flex="100">
+    <md-list-item flex="100">
         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; font-size: 36px; width: 36px; height: 36px;" aria-label="Remove Task" md-font-library="material-icons">face</md-icon>
         <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{me.firstname}} {{me.lastname}}</span>
     </md-list-item>
@@ -9,21 +9,20 @@
         <md-icon style="color: {{base_hue_lightest.value}};" aria-label="Remove Task" md-font-library="material-icons">lock_open</md-icon>&nbsp;&nbsp;&nbsp;Sign Out
         </md-button>
     </md-list-item>
-
-    <md-list-item class="avatar" flex="100" ng-confirm-message="Are you sure you want to exit? Unsaved changes may be lost" ng-confirm-click="closeAllApps(); open_edit_configuration()" ng-confirm-condition="true">
-        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">settings</md-icon>
+    <md-list-item flex="100" ng-click="closeAllApps(); open_edit_configuration()">
+        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 8px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">settings</md-icon>
         <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Settings</span>
     </md-list-item>
-    <md-list-item class="avatar" flex="100" ng-confirm-message="Are you sure you want to exit? Unsaved changes may be lost" ng-confirm-click="closeAllApps(); openUserVault()" ng-confirm-condition="true">
-        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">recent_actors</md-icon>
+    <md-list-item flex="100" ng-click="closeAllApps(); openUserVault()">
+        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 8px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">recent_actors</md-icon>
         <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">User Vault</span>
     </md-list-item>
-    <md-list-item class="avatar" flex="100" ng-confirm-message="Are you sure you want to exit? Unsaved changes may be lost" ng-confirm-click="closeAllApps(); openMediaVault(null)" ng-confirm-condition="true">
-        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">photo_library</md-icon>
+    <md-list-item flex="100" ng-click="closeAllApps(); openMediaVault(null)">
+        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 8px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">photo_library</md-icon>
         <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Media Vault</span>
     </md-list-item>
-    <md-list-item class="avatar" flex="100" ng-confirm-message="Are you sure you want to exit? Unsaved changes may be lost" ng-confirm-click="closeAllApps(); openTaskRunner()" ng-confirm-condition="true">
-        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">assignment</md-icon>
+    <md-list-item flex="100" ng-click="closeAllApps(); openTaskRunner()">
+        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 8px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">assignment</md-icon>
         <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Task Runner</span>
     </md-list-item>
 </div>
