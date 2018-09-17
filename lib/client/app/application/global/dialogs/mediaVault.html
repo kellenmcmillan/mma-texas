@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex style="width: 100%;">
-                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="25" style="position: relative;">
+                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="25" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                             <md-button ng-show="!gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = true">
                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                             </md-button>
