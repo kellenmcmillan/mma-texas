@@ -15,7 +15,7 @@
             
             <!-- =================== Change Setting View =================== -->
             <md-menu>
-                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-button ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">more_vert</md-icon>
                 </md-button>
                 <md-menu-content width="4">
