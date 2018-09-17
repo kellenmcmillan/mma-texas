@@ -71,7 +71,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Title</label>
                                             <input name="title" ng-model="taskAddObj.title" minlength="3" required>
-                                            <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$error">
+                                            <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$invalid">
                                                 <div ng-message="required">Task title required!</div>
                                                 <div ng-message="minlength">Task title too short!</div>
                                             </div>
@@ -82,7 +82,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Subject</label>
                                             <input name="subject" ng-model="taskAddObj.subject" minlength="3" required>
-                                            <div ng-messages="createTaskForm.subject.$error" ng-show="createTaskForm.subject.$error">
+                                            <div ng-messages="createTaskForm.subject.$error" ng-show="createTaskForm.subject.$invalid">
                                                 <div ng-message="required">Task subject required!</div>
                                                 <div ng-message="minlength">Task subject too short!</div>
                                             </div>
@@ -117,7 +117,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Task Body</label>
                                             <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                            <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$error">
+                                            <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
                                                 <div ng-message="required">Task body required!</div>
                                                 <div ng-message="minlength">Task body too short!</div>
                                                 <div ng-message="md-maxlength">Task body too long!</div>
@@ -166,7 +166,7 @@
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Custom URL</label>
                                             <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" ng-required="taskAddObj.link == 'Custom'">
-                                            <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$error">
+                                            <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$invalid">
                                                 <div ng-message="required">Task custom URL required!</div>
                                                 <div ng-message="minlength">Task custom URL too short!</div>
                                             </div>
@@ -236,7 +236,7 @@
                                                     {{trigger}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="createTaskForm.activity_trigger.$error" ng-show="createTaskForm.activity_trigger.$dirty">
+                                            <div ng-messages="createTaskForm.activity_trigger.$invalid" ng-show="createTaskForm.activity_trigger.$dirty">
                                                 <div ng-message="required">App interaction trigger required!</div>
                                             </div>
                                         </md-input-container>
@@ -264,7 +264,7 @@
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
-                                            <!-- <div ng-messages="createTaskForm.send_to_roles.$error" ng-show="createTaskForm.send_to_roles.$dirty">
+                                            <!-- <div ng-messages="createTaskForm.send_to_roles.$invalid" ng-show="createTaskForm.send_to_roles.$dirty">
                                                 <div ng-message="required">Recipient type required!</div>
                                             </div> -->
                                         </md-input-container>
@@ -291,7 +291,7 @@
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
-                                            <!-- <div ng-messages="createTaskForm.send_alert_to_roles.$error" ng-show="createTaskForm.send_alert_to_roles.$dirty">
+                                            <!-- <div ng-messages="createTaskForm.send_alert_to_roles.$invalid" ng-show="createTaskForm.send_alert_to_roles.$dirty">
                                                 <div ng-message="required">Alert receiver type required!</div>
                                             </div> -->
                                         </md-input-container>
@@ -347,7 +347,7 @@
                                                     User Generated
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="createTaskForm.typeOfTrigger.$error" ng-show="createTaskForm.typeOfTrigger.$invalid">
+                                            <div ng-messages="createTaskForm.typeOfTrigger.$touched" ng-show="createTaskForm.typeOfTrigger.$invalid">
                                                 <div ng-message="required">This option must be selected!</div>
                                             </div>
                                         </md-input-container>
@@ -362,13 +362,13 @@
                                             </md-card-header-text>
                                         </md-card-header>
                                                                           
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskAddObj.taskType == 'onetime'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Specify A Date To Run This Task</label>
 
                                                 <md-datepicker flex="80" ng-model="taskAddObj.runDate" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
                                                 
-                                                <div ng-messages="createTaskForm.task_date.$error">
+                                                <div ng-messages="createTaskForm.task_date.$invalid">
                                                     <div ng-message="required">Run date required!</div>
                                                 </div>
 
@@ -381,7 +381,7 @@
 
                                                 <md-datepicker flex="80" style="width: 100%;" ng-model="taskAddObj.reoccuringRunDate" name="reoccuring_task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
                                                 
-                                                <div ng-messages="createTaskForm.reoccuring_task_date.$error">
+                                                <div ng-messages="createTaskForm.reoccuring_task_date.$invalid">
                                                     <div ng-message="required">Run date required!</div>
                                                 </div>
 
@@ -409,7 +409,7 @@
                                                         Monthly
                                                     </md-option>
                                                 </md-select>
-                                                <div ng-messages="createTaskForm.frequency.$error">
+                                                <div ng-messages="createTaskForm.frequency.$invalid">
                                                     <div ng-message="required">Run frequency required!</div>
                                                 </div>
                                             </md-input-container>
@@ -434,7 +434,7 @@
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
-                                            <div ng-messages="createTaskForm.run_week.$error">
+                                            <div ng-messages="createTaskForm.run_week.$invalid">
                                                 <div ng-message="required">Run week required!</div>
                                             </div>
                                         </md-list-item>
@@ -467,7 +467,7 @@
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
-                                            <div ng-messages="createTaskForm.run_day.$error">
+                                            <div ng-messages="createTaskForm.run_day.$invalid">
                                                 <div ng-message="required">Run day required!</div>
                                             </div>
                                         </md-list-item>
@@ -481,7 +481,7 @@
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
-                                            <div ng-messages="createTaskForm.run_clock_time.$error">
+                                            <div ng-messages="createTaskForm.run_clock_time.$invalid">
                                                 <div ng-message="required">Run time required!</div>
                                             </div>                                                
                                         </md-list-item>
@@ -492,7 +492,7 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_three = false; part_two = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.$error" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             
                             </md-card>
