@@ -20,7 +20,7 @@
 		.blogVault .suite-dialog > md-card-title {max-height: 84px; box-sizing: border-box;}
 	}
 	@media screen and (max-width: 839px) {
-	    .suite-dialog > md-card-title {max-height: 168px; box-sizing: border-box;}
+	    .suite-dialog > md-card-title {max-height: 84px; box-sizing: border-box;}
 		.userVault .suite-dialog > md-card-title, .mediaVault .suite-dialog > md-card-title, 
 		.blogVault .suite-dialog > md-card-title {max-height: 168px; box-sizing: border-box;}
 		.suite-dialog {width: 100%; margin:0!important;}
