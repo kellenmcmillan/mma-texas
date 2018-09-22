@@ -96,25 +96,25 @@
 	                        <md-icon md-menu-origin ng-attr-style="color: {{base_hue_lightest.value}}">settings</md-icon>
 	                    </md-button>
 	                    <md-menu-content width="4">
-	                        <md-menu-item ng-show="me.security.roles == 'management'">
+	                        <md-menu-item ng-show="isAuthorized('Settings', me.security.roles)">
 	                            <md-button ng-click="open_edit_configuration()">
 	                                <md-icon>settings</md-icon>
 	                                App Settings
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="me.security.roles == 'management'">
+	                        <md-menu-item ng-show="isAuthorized('UserVault', me.security.roles)">
 	                            <md-button ng-click="openUserVault()">
 	                                <md-icon>recent_actors</md-icon>
 	                                User Vault
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="me.security.roles == 'management'">
+	                        <md-menu-item ng-show="isAuthorized('MediaVault', me.security.roles)">
 	                            <md-button ng-click="openMediaVault(null)">
 	                                <md-icon>photo_library</md-icon>
 	                                Media Vault
 	                            </md-button>
 	                        </md-menu-item>
-	                        <md-menu-item ng-show="me.security.roles == 'management'">
+	                        <md-menu-item ng-show="isAuthorized('TaskRunner', me.security.roles)">
 	                            <md-button ng-click="openTaskRunner()">
 	                                <md-icon>assignment</md-icon>
 	                                Task Runner

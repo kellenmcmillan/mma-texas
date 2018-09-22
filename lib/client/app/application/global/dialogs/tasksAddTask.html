@@ -227,21 +227,6 @@
                                         </md-input-container>
                                     </md-list-item>
                                     
-                                    <!-- <md-list-item ng-show="taskAddObj.isGeneratedByUser">
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>App Activity Trigger</label>
-                                            <md-select name="activity_trigger" ng-model="taskAddObj.activity_trigger" ng-required="taskAddObj.isGeneratedByUser">
-                                                <md-option><em>None</em></md-option>
-                                                <md-option ng-repeat="trigger in app_triggers" ng-value="trigger">
-                                                    {{trigger}}
-                                                </md-option>
-                                            </md-select>
-                                            <div ng-messages="createTaskForm.activity_trigger.$invalid" ng-show="createTaskForm.activity_trigger.$dirty">
-                                                <div ng-message="required">App interaction trigger required!</div>
-                                            </div>
-                                        </md-input-container>
-                                    </md-list-item> -->
-                                    
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>Specify Users To Send Message To</label>
@@ -343,7 +328,7 @@
                                                 <md-option ng-value="'manual'">
                                                     Manual
                                                 </md-option>
-                                                <md-option ng-disabled="true">
+                                                <md-option ng-value="'user generated'">
                                                     User Generated
                                                 </md-option>
                                             </md-select>
@@ -352,6 +337,25 @@
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
+
+                                    <span ng-show="taskAddObj.task_type == 'user generated'">
+
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>App Activity Trigger</label>
+                                                <md-select name="activity_trigger" ng-model="taskAddObj.activity_trigger" ng-required="taskAddObj.task_type == 'user generated'">
+                                                    <md-option><em>None</em></md-option>
+                                                    <md-option ng-repeat="trigger in app_triggers" ng-value="trigger">
+                                                        {{trigger}}
+                                                    </md-option>
+                                                </md-select>
+                                                <div ng-messages="createTaskForm.activity_trigger.$invalid" ng-show="createTaskForm.activity_trigger.$dirty">
+                                                    <div ng-message="required">App interaction trigger required!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
+
+                                    </span>
 
                                     <span ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'reoccuring'">
 

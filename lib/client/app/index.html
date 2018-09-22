@@ -98,21 +98,23 @@
         <div ng-include src="'application/global/style.html'"></div>
 
         <!-- editor -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/editor.html'"></div>
+        <div ng-if="isAuthorized('AppLab', me.security.roles)" ng-include src="'application/global/dialogs/editor.html'"></div>
         <!-- editor -->
 
         <!-- mediaVault -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/mediaVault.html'"></div>
+        <div ng-if="isAuthorized('MediaVault', me.security.roles)" ng-include src="'application/global/dialogs/mediaVault.html'"></div>
         <!-- mediaVault -->
 
         <!-- userVault -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/userVault.html'"></div>
+        <div ng-if="isAuthorized('UserVault', me.security.roles)" ng-include src="'application/global/dialogs/userVault.html'"></div>
+        <div ng-if="isAuthorized('UserVault', me.security.roles)" ng-include src="'application/global/dialogs/userVaultDetail.html'"></div>
+        <div ng-if="isAuthorized('UserVault', me.security.roles)" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
         <!-- userVault -->
 
         <!-- taskrunner -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/tasks.html'"></div>
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/tasksAddTask.html'"></div>
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/tasksDetail.html'"></div>
+        <div ng-if="isAuthorized('TaskRunner', me.security.roles)" ng-include src="'application/global/dialogs/tasks.html'"></div>
+        <div ng-if="isAuthorized('TaskRunner', me.security.roles)" ng-include src="'application/global/dialogs/tasksAddTask.html'"></div>
+        <div ng-if="isAuthorized('TaskRunner', me.security.roles)" ng-include src="'application/global/dialogs/tasksDetail.html'"></div>
         <!-- taskrunner -->
 
         <!-- myVault -->
@@ -120,20 +122,20 @@
         <!-- myVault -->
 
         <!-- myVault -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/share.html'"></div>
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/iframeUpload.html'"></div>
+        <div ng-if="user" ng-include src="'application/global/dialogs/share.html'"></div>
+        <div ng-if="isAuthorized('TaskRunner', me.security.roles)" ng-include src="'application/global/dialogs/iframeUpload.html'"></div>
         <!-- myVault -->
 
         <!-- settings -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/settings.html'"></div>
+        <div ng-if="isAuthorized('Settings', me.security.roles)" ng-include src="'application/global/dialogs/settings.html'"></div>
         <!-- settings -->
 
         <!-- userVault detail -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/userVaultDetail.html'"></div>
+        
         <!-- userVault detail -->
 
         <!-- userVault add user -->
-        <div ng-if="me.security.roles == 'management'" ng-include src="'application/global/dialogs/userVaultAddUser.html'"></div>
+        
         <!-- userVault add user -->
 
         <!-- password reset -->
