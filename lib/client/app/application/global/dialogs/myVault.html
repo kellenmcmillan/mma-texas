@@ -293,16 +293,16 @@
                                         <md-list class="md-dense" flex>
                                             <md-list-item ng-repeat="file in me.files" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                 <p md-truncate>{{file.name || file.title}}</p>
-                                                <span ng-show="hovered">
-                                                    <a href="{{file.link}}" target="_blank" class="md-secondary" style="text-decoration: none;">
-                                                    <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">launch</md-icon>
+                                                <span class="md-secondary" ng-show="hovered">
+                                                    <a href="{{file.link}}" target="_blank" style="text-decoration: none;">
+                                                        <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">launch</md-icon>
                                                     </a>
                                                     &nbsp;
-                                                    <md-icon ng-click="openShare(file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">share</md-icon>
+                                                    <md-icon ng-click="openShare(file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
                                                     &nbsp;
-                                                    <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">cloud_download</md-icon>
+                                                    <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_download</md-icon>
                                                     &nbsp;
-                                                    <md-icon ng-click="deleteMyFile(me, file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">delete</md-icon>
+                                                    <md-icon ng-click="deleteMyFile(me, file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
                                                 </span>
                                                 <md-divider ng-if="!$last"></md-divider>
                                             </md-list-item>
