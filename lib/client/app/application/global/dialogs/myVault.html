@@ -301,13 +301,16 @@
                                     <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                         <md-list class="md-dense" flex>
                                             <md-list-item ng-repeat="file in me.files" class="noright">
-                                                <h3 style="font-size: 16px;">{{file.name || file.title}}</h3>
+                                                <p>{{file.name || file.title}}</p>
                                                 <a href="{{file.link}}" target="_blank" class="md-secondary" style="text-decoration: none;">
                                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">launch</md-icon>
                                                 </a>
-                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">share</md-icon>
+                                                &nbsp;
+                                                <md-icon ng-click="openShare(file)" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">share</md-icon>
+                                                &nbsp;
                                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">cloud_download</md-icon>
-                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">delete</md-icon>
+                                                &nbsp;
+                                                <md-icon ng-click="deleteMyFile(me, file)" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons" class="md-secondary">delete</md-icon>
                                                 <md-divider ng-if="!$last"></md-divider>
                                             </md-list-item>
                                             <!-- <md-list-item ng-repeat="file in me.files" class="md-2-line" flex>
