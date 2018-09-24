@@ -151,17 +151,20 @@
                                     </md-card-header-text>
                                 </md-card-header>
                                 <md-card-content>
-                                    <md-list-item ng-repeat="file in me.files | limitTo:3" class="md-2-line" flex>
-                                        <div class="md-list-item-text">
-                                            <h3 style="font-size: 16px;">{{file.name || file.title}}</h3>
-                                        </div>
-                                        <md-divider ng-if="!$last"></md-divider>
-                                    </md-list-item>
-                                    <md-list-item ng-if="!me.files" class="md-2-line" flex>
-                                        <div class="md-list-item-text">
-                                            <h3 style="font-size: 16px;">No Files</h3>
-                                        </div>
-                                    </md-list-item>
+                                    <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                        <md-list class="md-dense" flex>
+                                            <md-list-item ng-repeat="file in me.files | limitTo:3" flex>
+                                                <p md-truncate>{{file.name || file.title}}</p>
+                                                <md-divider ng-if="!$last"></md-divider>
+                                            </md-list-item>
+                                            <md-list-item class="md-dense" ng-if="!me.files" flex>
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                <div class="md-list-item-text">
+                                                    <h3 style="font-size: 16px;">No Files</h3>
+                                                </div>
+                                            </md-list-item>
+                                        </md-list>
+                                    </div>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Files</md-button>
@@ -175,13 +178,24 @@
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
-                                        <md-list-item class="md-2-line" flex>
-                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                            <div class="md-list-item-text">
-                                                <h3 style="font-size: 16px;">No Notifications</h3>
-                                            </div>
-                                        </md-list-item>
+                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item ng-repeat="notification in me.notifications | limitTo:3" flex>
+                                                    <p ng-class="{'bold': notification.unread == true}" md-truncate>{{notification.title}} | {{notification.subject}}</p>
+                                                    <md-divider ng-if="!$last"></md-divider>
+                                                </md-list-item>
+                                                <md-list-item flex>
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                    <div class="md-list-item-text">
+                                                        <h3 style="font-size: 16px;">No Notifications</h3>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
                                     </md-card-content>
+                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                        <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Notifications</md-button>
+                                    </md-card-actions>
                             </md-card>
                         </div>
                     </div>
@@ -306,48 +320,10 @@
                                                 </span>
                                                 <md-divider ng-if="!$last"></md-divider>
                                             </md-list-item>
-                                            <!-- <md-list-item ng-repeat="file in me.files" class="md-2-line" flex>
-                                                <div class="md-list-item-text">
-                                                    <h3 style="font-size: 16px;">{{file.name || file.title}}</h3>
-                                                </div>
-                                                <md-menu class="md-secondary">
-
-                                                    <md-icon md-menu-origin ng-click="openMenu($mdMenu, $event)" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">more_vert</md-icon>
-                                                    
-                                                    <md-menu-content width="4">
-                                                        <md-menu-item>
-                                                            <md-button style="color: {{base_hue_darkest.value}};">
-                                                                <a href="{{file.link}}" target="_blank">
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">launch</md-icon>
-                                                                    Preview Resource
-                                                                </a>
-                                                            </md-button>
-                                                        </md-menu-item>
-                                                        <md-menu-item>
-                                                            <md-button ng-click="openShare(file)">
-                                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
-                                                                Share With Users
-                                                            </md-button>
-                                                        </md-menu-item>
-                                                        <md-menu-item>
-                                                            <md-button>
-                                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_download</md-icon>
-                                                                Download Resource
-                                                            </md-button>
-                                                        </md-menu-item>
-                                                        <md-menu-item>
-                                                            <md-button ng-click="deleteMyFile(me, file)">
-                                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
-                                                                Delete File
-                                                            </md-button>
-                                                        </md-menu-item>
-                                                    </md-menu-content>
-                                                </md-menu>
-                                                <md-divider ng-if="!$last"></md-divider>
-                                            </md-list-item> -->
                                         </md-list>
                                         <md-list ng-if="!me.files" class="md-dense" flex>
-                                            <md-list-item class="md-2-line" flex>
+                                            <md-list-item flex>
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
                                                 <div class="md-list-item-text">
                                                     <h3 style="font-size: 16px;">No Files</h3>
                                                 </div>

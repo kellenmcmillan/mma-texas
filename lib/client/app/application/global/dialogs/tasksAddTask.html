@@ -232,7 +232,7 @@
                                             <label>Specify Users To Send Message To</label>
                                             <md-select name="send_to_users" ng-model="taskAddObj.send_to_users" multiple flex>
                                                 <md-option><em>None</em></md-option>
-                                                <md-option ng-value="'respond'">Respond To User Action</md-option>
+                                                <!-- <md-option ng-value="'respond'">Respond To User Action</md-option> -->
                                                 <md-option ng-hide="taskAddObj.send_to_users == 'respond'" ng-repeat="user in userslist" ng-value="user.id">
                                                     {{user.firstname}} {{user.lastname}}
                                                 </md-option>
@@ -416,7 +416,7 @@
                                             </div>
                                         </md-list-item>
                                         
-                                        <md-list-item ng-show="taskAddObj.task_type != 'daily' && taskAddObj.task_type != 'onetime'">
+                                        <md-list-item ng-show="taskAddObj.task_type != 'daily' && taskAddObj.task_type != 'onetime' && taskAddObj.task_type != 'annually'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
                                                 <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.task_type !='daily'" name="createTaskForm.run_day">
@@ -449,8 +449,8 @@
                                             </div>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="taskAddObj.task_type == 'onetime'">
-                                            <md-input-container class="md-block lightweight-md-input" ng-required="taskAddObj.task_type == 'onetime'" flex>
+                                        <md-list-item ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'annually'">
+                                            <md-input-container class="md-block lightweight-md-input" ng-required="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'annually'" flex>
                                                 <label>Specify A Date To Run This Task</label>
 
                                                 <md-datepicker flex="80" ng-model="taskAddObj.task_date" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
@@ -482,14 +482,113 @@
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_three = false; part_two = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button ng-disabled="createTaskForm.$invalid" ng-click="part_three = false; part_four = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                 </md-card-actions>
-                            
+
                             </md-card>
+
+                                
+                            
+                            
 
                             <!-- ============================= PART THREE AUTOMATION =============================== -->
                             <!-- ============================= PART THREE AUTOMATION =============================== -->
                             <!-- ============================= PART THREE AUTOMATION =============================== -->
+
+
+
+
+
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+
+
+
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+                            <!-- ============================= PART FOUR CONFIRM TASK =============================== -->
+
+                                <md-card ng-show="part_four == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Task Review</span>
+                                            <span class="md-subhead">Review Your Task Details Before Saving</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content>
+                                        <md-list-item>
+                                            <span>Title</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.title}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Subject</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.subject}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Lastname</span>
+                                            <span class="md-secondary">
+                                            {{me.lastname}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Email</span>
+                                            <span class="md-secondary">
+                                            {{me.email}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Phone</span>
+                                            <span class="md-secondary">
+                                            {{me.phone}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Street Address</span>
+                                            <span class="md-secondary">
+                                            {{me.address.street}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>City</span>
+                                            <span class="md-secondary">
+                                            {{me.address.city}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>State</span>
+                                            <span class="md-secondary">
+                                            {{me.address.state}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Zipcode</span>
+                                            <span class="md-secondary">
+                                            {{me.address.zipcode}}
+                                            </span>
+                                        </md-list-item>
+                                    </md-card-content>
+
+                                <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button ng-click="part_three = false; part_two = true">Back</md-button>
+                                    <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                </md-card-actions>
+                            
+                            
+
+                            </md-card>
 
                         </form>
 
