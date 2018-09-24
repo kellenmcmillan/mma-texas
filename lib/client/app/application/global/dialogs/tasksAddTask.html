@@ -531,45 +531,94 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item>
-                                            <span>Lastname</span>
+                                        <md-list-item ng-if="taskAddObj.greeting">
+                                            <span>Greeting</span>
                                             <span class="md-secondary">
-                                            {{me.lastname}}
+                                            {{taskAddObj.greeting}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.greeting"></md-divider>
+                                        <md-list-item>
+                                            <span>Body</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.body}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item>
-                                            <span>Email</span>
-                                            <span class="md-secondary">
-                                            {{me.email}}
-                                            </span>
-                                        </md-list-item>
-                                        <md-divider></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-if="taskAddObj.salutation">
                                             <span>Phone</span>
                                             <span class="md-secondary">
-                                            {{me.phone}}
+                                            {{taskAddObj.salutation}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.salutation"></md-divider>
+                                        <md-list-item ng-if="taskAddObj.link">
+                                            <span>Link</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.link}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.link"></md-divider>
+                                        <md-list-item ng-if="taskAddObj.customURL">
+                                            <span>Custom Link</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.customURL}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.customURL"></md-divider>
+                                        <md-list-item>
+                                            <span>Channels</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.channels}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item ng-if="taskAddObj.send_to_users">
+                                            <span>Send To Individuals</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.send_to_users}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
+                                        <md-list-item ng-if="taskAddObj.send_to_roles">
+                                            <span>Send To Groups</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.send_to_roles}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item ng-if="taskAddObj.send_report_to_users">
+                                            <span>Report To Individuals</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.send_report_to_users}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
+                                        <md-list-item>
+                                            <span>Zipcode</span>
+                                            <span class="md-secondary">
+                                            {{me.address.zipcode}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span>Street Address</span>
+                                            <span>Zipcode</span>
                                             <span class="md-secondary">
-                                            {{me.address.street}}
+                                            {{me.address.zipcode}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span>City</span>
+                                            <span>Zipcode</span>
                                             <span class="md-secondary">
-                                            {{me.address.city}}
+                                            {{me.address.zipcode}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span>State</span>
+                                            <span>Zipcode</span>
                                             <span class="md-secondary">
-                                            {{me.address.state}}
+                                            {{me.address.zipcode}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
@@ -582,7 +631,7 @@
                                     </md-card-content>
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="part_three = false; part_two = true">Back</md-button>
+                                    <md-button ng-click="part_four = false; part_three = true">Back</md-button>
                                     <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             
