@@ -328,7 +328,7 @@
                                                 <md-option ng-value="'manual'">
                                                     Manual
                                                 </md-option>
-                                                <md-option ng-value="'user generated'">
+                                                <md-option ng-disabled="true" ng-value="'user generated'">
                                                     User Generated
                                                 </md-option>
                                             </md-select>
@@ -416,10 +416,10 @@
                                             </div>
                                         </md-list-item>
                                         
-                                        <md-list-item ng-show="taskAddObj.task_type != 'daily' && taskAddObj.task_type != 'onetime' && taskAddObj.task_type != 'annually'">
+                                        <md-list-item ng-show="taskAddObj.frequency != 'daily' && taskAddObj.task_type != 'onetime' && taskAddObj.frequency != 'annually'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Which Day To Run The Task</label>
-                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.task_type !='daily'" name="createTaskForm.run_day">
+                                                <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency ='monthly' || taskAddObj.frequency ='bi-weekly' || taskAddObj.frequency ='weekly'" name="createTaskForm.run_day">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="0">
                                                         Sunday
@@ -449,7 +449,7 @@
                                             </div>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'annually'">
+                                        <md-list-item ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.frequency == 'annually'">
                                             <md-input-container class="md-block lightweight-md-input" ng-required="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'annually'" flex>
                                                 <label>Specify A Date To Run This Task</label>
 
@@ -569,7 +569,7 @@
                                         <md-list-item>
                                             <span>Channels</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.channels}}
+                                            {{taskAddObj.channels | json}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
@@ -583,14 +583,14 @@
                                         <md-list-item ng-if="taskAddObj.send_to_roles">
                                             <span>Send To Groups</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_to_roles}}
+                                            {{taskAddObj.send_to_roles | json}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_report_to_users">
                                             <span>Report To Individuals</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_report_to_users}}
+                                            {{taskAddObj.send_report_to_users | json}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
