@@ -538,7 +538,7 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.greeting"></md-divider>
-                                        <md-list-item>
+                                        <md-list-item class="md-3-line">
                                             <span>Body</span>
                                             <span class="md-secondary">
                                             {{taskAddObj.body}}
@@ -569,35 +569,35 @@
                                         <md-list-item>
                                             <span>Channels</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.channels | json}}
+                                            {{taskAddObj.channels.toString()}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_to_users">
                                             <span>Send To Individuals</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_to_users.length > 1 : 'Multiple Users' : 'Single User'}}
+                                            {{taskAddObj.send_to_users.toString()}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_to_roles">
                                             <span>Send To Groups</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_to_roles | json}}
+                                            {{taskAddObj.send_to_roles.toString()}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_report_to_users">
                                             <span>Report To Individuals</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_report_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
+                                            {{taskAddObj.send_report_to_users.toString()}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
                                         <md-list-item>
                                             <span>Report To Groups</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.alert_roles}}
+                                            {{taskAddObj.alert_roles.toString()}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
