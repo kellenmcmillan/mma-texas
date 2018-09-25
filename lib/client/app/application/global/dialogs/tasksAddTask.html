@@ -576,7 +576,7 @@
                                         <md-list-item ng-if="taskAddObj.send_to_users">
                                             <span>Send To Individuals</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_to_users}}
+                                            {{taskAddObj.send_to_users.length > 1 : 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
@@ -590,49 +590,63 @@
                                         <md-list-item ng-if="taskAddObj.send_report_to_users">
                                             <span>Report To Individuals</span>
                                             <span class="md-secondary">
-                                            {{taskAddObj.send_report_to_users | json}}
+                                            {{taskAddObj.send_report_to_users.length > 1 : 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
                                         <md-list-item>
-                                            <span>Zipcode</span>
+                                            <span>Report To Groups</span>
                                             <span class="md-secondary">
-                                            {{me.address.zipcode}}
+                                            {{taskAddObj.alert_roles}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
+                                        <md-list-item>
+                                            <span>Task Type</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.task_type}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item>
-                                            <span>Zipcode</span>
+                                        <md-list-item ng-if="taskAddObj.frequency">
+                                            <span>Reoccurs</span>
                                             <span class="md-secondary">
-                                            {{me.address.zipcode}}
+                                            {{taskAddObj.frequency}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
-                                        <md-list-item>
-                                            <span>Zipcode</span>
+                                        <md-divider ng-if="taskAddObj.frequency"></md-divider>
+                                        <md-list-item ng-if="taskAddObj.run_week">
+                                            <span>Runs On Week</span>
                                             <span class="md-secondary">
-                                            {{me.address.zipcode}}
+                                            {{taskAddObj.run_week + 1}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        <md-divider ng-if="taskAddObj.run_week"></md-divider>
                                         <md-list-item>
-                                            <span>Zipcode</span>
+                                            <span>Day Of The Week</span>
                                             <span class="md-secondary">
-                                            {{me.address.zipcode}}
+                                            {{taskAddObj.run_day == 0 ? 'Sunday' : taskAddObj.run_day == 1 ? 'Monday' : taskAddObj.run_day == 2 ? 'Tuesday' : taskAddObj.run_day == 3 ? 'Wednesday' : taskAddObj.run_day == 4 ? 'Thursday' : taskAddObj.run_day == 5 ? 'Friday' : taskAddObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        <md-divider ng-if="taskAddObj.run_day"></md-divider>
                                         <md-list-item>
-                                            <span>Zipcode</span>
+                                            <span>Runs On This Date</span>
                                             <span class="md-secondary">
-                                            {{me.address.zipcode}}
+                                            {{taskAddObj.task_date}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.task_date"></md-divider>
+                                        <md-list-item>
+                                            <span>Runs At This Time</span>
+                                            <span class="md-secondary">
+                                            {{taskAddObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
                                     </md-card-content>
 
                                 <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button ng-click="part_four = false; part_three = true">Back</md-button>
-                                    <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                    <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                 </md-card-actions>
                             
                             
