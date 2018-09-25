@@ -21,25 +21,27 @@
         <div ng-include src="'application/partials/backend-menu.html'"></div>
 
         <!-- =================== App Header =================== -->
-        <md-card-title style="position: relative;" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap>
+        <md-subheader>
+            <md-card-title style="position: relative;" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap>
 
-            <!-- =================== Start Action Buttons =================== -->
-            <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
-            </md-button>
-            <!-- =================== End Action Buttons =================== -->
+                <!-- =================== Start Action Buttons =================== -->
+                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <!-- =================== End Action Buttons =================== -->
 
-            <!-- =================== App Title =================== -->
-            <md-card-title-text>
-                <span class="md-headline">Create A New Task</span>
-            </md-card-title-text>
-            <!-- =================== App Title =================== -->
+                <!-- =================== App Title =================== -->
+                <md-card-title-text>
+                    <span class="md-headline">Create A New Task</span>
+                </md-card-title-text>
+                <!-- =================== App Title =================== -->
 
-            <span flex></span>
+                <span flex></span>
 
-            <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
-            
-        </md-card-title>
+                <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
+                
+            </md-card-title>
+        </md-subheader>
         <!-- =================== App Header =================== -->
 
         <md-card-content flex>
@@ -519,126 +521,126 @@
                                     <md-card-content>
                                         <md-list-item>
                                             <span>Title</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.title}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
                                             <span>Subject</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.subject}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.greeting">
                                             <span>Greeting</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.greeting}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.greeting"></md-divider>
                                         <md-list-item>
-                                            <span flex flex-gt-sm="20">Body</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span>Body&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.body}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.salutation">
-                                            <span>Phone</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span>Salutation</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.salutation}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.salutation"></md-divider>
                                         <md-list-item ng-if="taskAddObj.link">
                                             <span>Link</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.link}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.link"></md-divider>
                                         <md-list-item ng-if="taskAddObj.customURL">
                                             <span>Custom Link</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.customURL}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.customURL"></md-divider>
                                         <md-list-item>
                                             <span>Channels</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.channels.join(', ')}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_to_users">
                                             <span>Send To Individuals</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.send_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_to_roles">
                                             <span>Send To Groups</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.send_to_roles.join(', ')}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        <md-divider ng-if="taskAddObj.send_to_roles"></md-divider>
                                         <md-list-item ng-if="taskAddObj.send_report_to_users">
                                             <span>Report To Individuals</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.send_report_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
                                         <md-list-item>
                                             <span>Report To Groups</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.alert_roles.join(', ')}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
+                                        <md-divider ng-if="taskAddObj.alert_roles"></md-divider>
                                         <md-list-item>
                                             <span>Task Type</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.task_type}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-if="taskAddObj.frequency">
                                             <span>Reoccurs</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.frequency}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.frequency"></md-divider>
                                         <md-list-item ng-if="taskAddObj.run_week">
                                             <span>Runs On Week</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_week + 1}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.run_week"></md-divider>
                                         <md-list-item>
                                             <span>Day Of The Week</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_day == 0 ? 'Sunday' : taskAddObj.run_day == 1 ? 'Monday' : taskAddObj.run_day == 2 ? 'Tuesday' : taskAddObj.run_day == 3 ? 'Wednesday' : taskAddObj.run_day == 4 ? 'Thursday' : taskAddObj.run_day == 5 ? 'Friday' : taskAddObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
                                             </span>
                                         </md-list-item>
+                                        <md-divider ng-if="taskAddObj.run_day"></md-divider>
                                         <md-list-item ng-if="taskAddObj.task_date">
                                             <span>Runs On This Date</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.task_date}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.task_date"></md-divider>
-                                        <md-divider ng-if="!taskAddObj.task_date"></md-divider>
                                         <md-list-item>
                                             <span>Runs At This Time</span>
-                                            <span flex flex-gt-sm="80" md-truncate class="md-secondary">
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
