@@ -36,11 +36,18 @@
 					<p md-truncate>{{blog.data.page.contents[0].data}}</p>
 				</md-card-content>
 				<a ng-href="{{blog.settings.url}}" style="position: absolute; bottom: -32px; right: 8px;">
-					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit blog post" style="background-color: {{primary_hue_normal.value}}!important; z-index: 1;">
+					<md-button class="md-fab custom-deep-button" aria-label="Visit blog post" style="background-color: {{primary_hue_normal.value}}!important; z-index: 1;">
 	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
 					</md-button>
 				</a>
 			</md-card>
 		</div>
+	</div>
+	<div flex="100" style="text-align: center; margin-top: 64px; z-index: 2">
+		<md-button class="md-raised lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 100px;">
+			<a href="/blog">
+        	<md-icon style="color: {{base_hue_lightest.value}};" aria-label="Remove Task" md-font-library="material-icons">subdirectory_arrow_right</md-icon>&nbsp;&nbsp;&nbsp;More News
+        	</a>
+        </md-button>
 	</div>
 </div>
