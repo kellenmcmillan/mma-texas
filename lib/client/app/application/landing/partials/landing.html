@@ -17,10 +17,13 @@
         <div class="dialog-curtain" ng-show="show_index_form == true" style="overflow-y: auto!important;">
     		<div class="index-form" layout-padding>
     			<md-card class="custom-deep-card" style="background: #fafafa; width: 100%; position: relative;">
-    				<md-button style="position: absolute; top: 24px; right: 8px;" class="md-icon-button" ng-click="show_index_form = false" aria-label="More">
+    				<md-button ng-show="!progressAnimation" style="position: absolute; top: 24px; right: 8px;" class="md-icon-button" ng-click="show_index_form = false" aria-label="More">
     					<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
     				</md-button>
-                    <form name="index">
+                    <div style="text-align: center">
+                        <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+                    </div>
+                    <form name="index" ng-show="!progressAnimation">
                     	<div style="text-align: center">
                     		<h1>Contact MMA Today!</h1>
                     	</div>
