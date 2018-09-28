@@ -9,9 +9,9 @@
     <md-content class="page" style="height: {{window_height}}px">
 
     <!-- header -->
-    <md-subheader class="header md-whiteframe-6dp" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
+    <md-subheader class="header md-whiteframe-6dp" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
-        <div ng-include src="'application/partials/backend-menu.html'"></div>
+        
 
         <!-- =================== Start Action Buttons =================== -->
         <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
@@ -61,6 +61,8 @@
         <!-- =================== End Additional Action Items =================== -->
     </md-subheader>
     <!-- header -->
+
+    <div ng-include src="'application/partials/backend-menu.html'"></div>
     
     <md-card class="md-card-base card inputs">
 
