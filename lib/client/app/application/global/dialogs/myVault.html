@@ -6,60 +6,65 @@
     md-list-item.hovered {box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);}
 </style>
 <div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="lightweightController">
-    <md-card class="suite-dialog md-card-base card inputs">
+    <md-content class="page" style="height: {{window_height}}px">
+
+    <!-- header -->
+    <md-subheader class="header md-whiteframe-6dp" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
         <div ng-include src="'application/partials/backend-menu.html'"></div>
-        
-        <md-card-title style="position: relative;" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap>
 
-            <!-- =================== Start Action Buttons =================== -->
-            <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+        <!-- =================== Start Action Buttons =================== -->
+        <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+        </md-button>
+
+        <!-- =================== Action Buttons - Account =================== -->
+        <md-menu>
+            
+            <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 73px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
             </md-button>
 
-            <!-- =================== Action Buttons - Account =================== -->
-            <md-menu>
-                
-                <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 73px; background-color: {{base_hue_lightest.value}}!important;">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
-                </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="openPasswordReset(me)">
+                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">rotate_left</md-icon>
+                        Reset Password
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon ng-click="deleteUser()" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                        Remove Account
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
 
-                <md-menu-content width="4">
-                    <md-menu-item>
-                        <md-button ng-click="openPasswordReset(me)">
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">rotate_left</md-icon>
-                            Reset Password
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button>
-                            <md-icon ng-click="deleteUser()" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
-                            Remove Account
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
+        </md-menu>
 
-            </md-menu>
+        <!-- =================== End Action Buttons =================== -->
 
-            <!-- =================== End Action Buttons =================== -->
+        <!-- <md-card-title-text> -->
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3 class="md-headline" style="font-size: 24px;">{{me.firstname || me.email}} {{me.lastname}}</h3>
+                </div>
+            </md-list-item>
+        <!-- </md-card-title-text> -->
+        
+        <span flex></span>
 
-            <md-card-title-text>
-                <md-list-item>
-                    <div class="md-list-item-text">
-                        <h3 class="md-headline" style="font-size: 24px;">{{me.firstname || me.email}} {{me.lastname}}</h3>
-                    </div>
-                </md-list-item>
-            </md-card-title-text>
-            
-            <span flex></span>
+        <!-- =================== Start Additional Action Items =================== -->
 
-            <!-- =================== Start Additional Action Items =================== -->
+        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
 
-            <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
+        <!-- =================== End Additional Action Items =================== -->
+    </md-subheader>
+    <!-- header -->
+    
+    <md-card class="md-card-base card inputs">
 
-            <!-- =================== End Additional Action Items =================== -->
-
-        </md-card-title>
+        
 
         <md-card-content flex ng-init="overview = true; edit_info = false;">
 
@@ -389,4 +394,6 @@
 
         </md-card-content>
     </md-card>
+
+    </md-content>
 </div>
