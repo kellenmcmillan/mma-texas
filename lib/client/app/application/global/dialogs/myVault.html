@@ -28,7 +28,7 @@
 
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
                 <!-- =================== Mini App Title =================== -->
-                <div flex="100" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+                <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
                     <h3 class="md-headline" style="font-size: 24px;">MyVault</h3>
                 </div>
                 <!-- =================== Mini App Title =================== -->
@@ -69,11 +69,11 @@
                 <!-- =================== End Action Buttons =================== -->
 
 
-                
+
 
                 <!-- =================== Navigation Items =================== -->
 
-                <div flex="25" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <md-button class="md-icon-button" aria-label="Close My Vault">
                         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
                     </md-button>
@@ -111,6 +111,10 @@
                 <md-content flex ng-show="overview == true">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
+
+
+
+
                             <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100" flex-gt-sm="40">
                                 <md-card-header>
                                     <md-card-header-text>
@@ -186,7 +190,15 @@
                                     <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Edit Your Personal Info</md-button>
                                 </md-card-actions>
                             </md-card>
+
+
+
+
                             <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
+
+
+
+
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -214,6 +226,10 @@
                                         <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Files</md-button>
                                     </md-card-actions>
                                 </md-card>
+
+
+
+
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
                                         <md-card-header>
                                             <md-card-header-text>
@@ -241,7 +257,15 @@
                                             <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Notifications</md-button>
                                         </md-card-actions>
                                 </md-card>
+
+
+
+
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </md-content>
