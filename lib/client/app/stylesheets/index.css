@@ -18,6 +18,6 @@
   	.index-news-post.full-width {width: 100%!important;}
 }
 
-.index-form {position: fixed; right: 16px; top: 81px; min-width: 350px; z-index: 10;}
+.index-form {position: fixed; right: calc(50% - 175px); top: 100px; width: 350px; z-index: 10;}
 .index-form md-input-container {margin: 8px 0!important;}
 /* index-slider */
