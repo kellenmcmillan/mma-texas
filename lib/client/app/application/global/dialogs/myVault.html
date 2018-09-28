@@ -6,22 +6,27 @@
     md-list-item.hovered {box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);}
 </style>
 <div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="lightweightController">
-    <md-content class="page" style="height: {{window_height}}px">
+    
+    <md-content class="page suite-dialog" style="height: {{window_height}}px">
 
     <!-- header -->
-    <md-subheader class="header md-whiteframe-6dp" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+    <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
-        
+        <!-- Mini App Title -->
+        <div flex="100" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="center center" layout="row">
+            <h3 class="md-headline" style="font-size: 24px;">MyVault</h3>
+        </div>
+        <!-- Mini App Title -->
 
         <!-- =================== Start Action Buttons =================== -->
-        <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+        <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -16px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
         </md-button>
 
         <!-- =================== Action Buttons - Account =================== -->
         <md-menu>
             
-            <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 73px; background-color: {{base_hue_lightest.value}}!important;">
+            <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -16px; left: 73px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
             </md-button>
 
@@ -44,21 +49,12 @@
 
         <!-- =================== End Action Buttons =================== -->
 
-        <!-- <md-card-title-text> -->
-            <md-list-item>
-                <div class="md-list-item-text">
-                    <h3 class="md-headline" style="font-size: 24px;">{{me.firstname || me.email}} {{me.lastname}}</h3>
-                </div>
-            </md-list-item>
-        <!-- </md-card-title-text> -->
-        
-        <span flex></span>
+        <!-- Navigation Items -->
+        <div flex="25" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+            <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
+        </div>
+        <!-- Navigation Items -->
 
-        <!-- =================== Start Additional Action Items =================== -->
-
-        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
-
-        <!-- =================== End Additional Action Items =================== -->
     </md-subheader>
     <!-- header -->
 
@@ -74,7 +70,7 @@
             <md-content flex ng-show="overview == true">
                 <div layout="column" layout-align="center center" flex>
                     <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="40">
+                        <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100" flex-gt-sm="40">
                             <md-card-header>
                                 <md-card-header-text>
                                     <span class="md-title">Personal Info</span>
