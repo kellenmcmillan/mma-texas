@@ -70,7 +70,7 @@
 
 
         <!-- ======================== View ======================== -->
-        <md-card class="suite-dialog md-card-base">
+        <md-card class="md-card-base card">
 
             <md-card-content layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
 
@@ -100,10 +100,10 @@
                                 </md-list-item>
                             </md-list>
                             <md-list ng-if="!tasklist.length" class="md-dense" flex>
-                                <md-list-item flex>
+                                <md-list-item flex layout="row" layout-align="start center">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                    <div class="md-list-item-text">
-                                        <p class="md-secondary" md-truncate>You don't have any tasks configured yet.</p>
+                                    <div>
+                                        <p md-truncate>You don't have any tasks configured yet.</p>
                                     </div>
                                 </md-list-item>
                             </md-list>
@@ -120,9 +120,9 @@
                                 </md-card-header-text>
                             </md-card-header>
                             <md-card-content>                             
-                                <md-list-item class="md-dense" flex>
+                                <md-list-item class="md-dense" flex layout="row" layout-align="start center">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                    <p class="md-secondary" md-truncate>You don't have any incoming messsages yet.</p>
+                                    <p md-truncate>You don't have any incoming messsages yet.</p>
                                 </md-list-item>        
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center" flex>
