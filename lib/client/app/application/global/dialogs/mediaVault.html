@@ -12,7 +12,7 @@
 
         <!-- =================== header =================== -->
 
-        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
                 <!-- =================== Mini App Title =================== -->
@@ -81,7 +81,7 @@
 
 
 
-            <md-card-content flex>
+            <md-card-content flex style="padding: 0;">
 
                 <!-- ======================== Begin view - Manage Media ======================== -->
                 <!-- ======================== Begin view - Manage Media ======================== -->
@@ -123,10 +123,10 @@
                         </div>
                         <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex style="width: 100%;">
                             <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="25" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
-                                <md-button ng-show="!gallery_detail_view" class="md-icon-button custom-deep-button" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = true">
+                                <md-button ng-show="!gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = true">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                                 </md-button>
-                                <md-button ng-show="gallery_detail_view" class="md-icon-button custom-deep-button" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;" ng-click="gallery_detail_view = false">
+                                <md-button ng-show="gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;" ng-click="gallery_detail_view = false">
                                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                                 </md-button>
                                 <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false">

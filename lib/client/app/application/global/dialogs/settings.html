@@ -12,7 +12,7 @@
 
         <!-- =================== header =================== -->
 
-        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
                 <!-- =================== Mini App Title =================== -->
@@ -148,7 +148,7 @@
 
 
             <!-- Company Info Screen -->
-            <md-card-content ng-show="setting == 'Company Info'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap>
+            <md-card-content ng-show="setting == 'Company Info'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-wrap style="padding: 0;">
                 <!-- columns -->
                 <div flex="100" flex-gt-sm="40">
                     <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
@@ -393,7 +393,7 @@
 
 
             <!-- Manage Pages Screen -->
-            <md-card-content ng-show="setting == 'Manage Pages'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            <md-card-content ng-show="setting == 'Manage Pages'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
                 
                 <!-- columns -->
                     <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
@@ -429,7 +429,7 @@
             <!-- Manage Pages Screen -->
 
             <!-- Add Page -->
-            <md-card-content ng-show="setting == 'Add Page'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
+            <md-card-content ng-show="setting == 'Add Page'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin style="padding: 0;">
                 <!-- columns -->
                 <div flex flex-gt-sm="40">
                     <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
@@ -512,7 +512,7 @@
 
 
             <!-- Manage Navigation -->
-            <md-card-content ng-show="setting == 'Edit Navigation'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            <md-card-content ng-show="setting == 'Edit Navigation'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
                 <!-- columns -->
                 <div flex flex-gt-sm="60">
                     <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
@@ -573,7 +573,7 @@
 
 
             <!-- Manage Staff Screen -->
-            <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
                 
                 <!-- columns -->
                     <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
@@ -594,13 +594,13 @@
                     </div>
                     <div ng-show="staffgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                         <md-card class="md-card-base" ng-repeat="staff in settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
-                            <md-button ng-show="!staff_detail_view" class="md-icon-button custom-deep-button" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
+                            <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                             </md-button>
-                            <md-button ng-show="staff_detail_view" class="md-icon-button custom-deep-button" aria-label="edit staff member" style="position: absolute; top: 8px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
+                            <md-button ng-show="staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                             </md-button>
-                            <md-button ng-show="!staff_detail_view" class="md-icon-button custom-deep-button" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
+                            <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
                                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                             </md-button>
                             <img ng-if="staff.source" ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.source}}" class="md-card-image">

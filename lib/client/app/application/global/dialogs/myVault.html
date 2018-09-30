@@ -24,7 +24,7 @@
 
         <!-- =================== header =================== -->
 
-        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 5; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
                 <!-- =================== Mini App Title =================== -->
@@ -105,7 +105,7 @@
 
             
 
-            <md-card-content flex ng-init="overview = true; edit_info = false;">
+            <md-card-content flex ng-init="overview = true; edit_info = false;" style="padding: 0;">
 
                 <!-- =================== Start User Info Summary =================== -->
                 <md-content flex ng-show="overview == true">
@@ -273,7 +273,7 @@
 
 
 
-                <md-content flex ng-show="edit_info == true">
+                <md-content flex ng-show="edit_info == true" style="padding: 0;">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
                             <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
@@ -359,7 +359,7 @@
                     </div>
                 </md-content>
 
-                <md-content flex ng-show="file_view == true">
+                <md-content flex ng-show="file_view == true" style="padding: 0;">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
                             <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
