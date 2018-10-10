@@ -13,3 +13,5 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 @media screen and (max-width:599px) {
   	.projects-listing.full-width {width: 100%!important;}
 }
+
+.lightweight-md-input {width: 100%!important;}
