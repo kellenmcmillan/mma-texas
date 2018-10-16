@@ -47,6 +47,16 @@
 			</md-card>
 
 			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; margin-top: 8px; padding: 0; margin-bottom: 40px;">
+				<div flex="100" layout-margin>
+	                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="8px" md-gutter-gt-sm="4px">
+	                    <md-grid-tile ng-repeat="tile in project_imagelist | limitTo: 12" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+	                    <a href="{{tile.settings.url}}">
+	                        <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+	                        <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.metadata.tags[0]}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.metadata.tags[0]}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+	                    </a>
+	                    </md-grid-tile>
+	                </md-grid-list>
+	            </div>
 				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
 					<div style="text-align: center">
 						<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
