@@ -63,6 +63,8 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+    <script src="//www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&amp;render=explicit" async defer></script>
+
 
 
 
@@ -173,18 +175,23 @@
     <!-- sripts -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXG0JIjeg_YRG__rFYpgER--aWJjf2xws&callback=initMap"
   type="text/javascript"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-storage.js"></script>
     <!-- Firebase -->
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="vendors/touchpunch.js"></script>
     <!-- jquery -->
 
     <!-- Angular Material & Angular.js Libraries -->

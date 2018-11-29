@@ -165,25 +165,13 @@
 
                 <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <!-- Account Major Action Button -->
-                    <md-list-item ng-show="editor_element.settings.configs.multiview == true">
-                        <md-input-container class="md-block lightweight-md-dropdown">
-                            <label>{{editor_element.settings.configs.multiview_label}}</label>
-                            <md-select ng-model="view">
-                                <md-option ng-value="title">
-                                    Title &amp; Subtitle
-                                </md-option>
-                                <md-option ng-repeat="views in editor_element.data.items track by $index" ng-value="$index">
-                                    {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                    </md-list-item>
+                    
                     <!-- Account Major Action Button -->
-                    <md-button class="md-icon-button" aria-label="Close My Vault">
-                        <md-icon ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
+                    <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" class="md-icon-button" aria-label="Close My Vault">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                     </md-button>
-                    <md-button class="md-icon-button" aria-label="Close My Vault">
-                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 16px;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">close</md-icon>
+                    <md-button class="md-icon-button" aria-label="Close My Vault" ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
                     </md-button>
                 </div>
 
@@ -210,7 +198,23 @@
         <!-- ======================== View ======================== -->
         <md-card class="md-card-base card">
 
+            <br ng-if="editor_element.settings.configs.multiview == true">
 
+            <div flex layout="row" layout-wrap layout-align="center center" ng-show="editor_element.settings.configs.multiview == true">
+                <md-list-item flex="75" flex-gt-sm="25">
+                    <md-input-container class="md-block lightweight-md-dropdown">
+                        <label>{{editor_element.settings.configs.multiview_label}}</label>
+                        <md-select ng-model="view">
+                            <md-option ng-value="title">
+                                Title
+                            </md-option>
+                            <md-option ng-repeat="views in editor_element.data.items track by $index" ng-value="$index">
+                                {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </md-list-item>
+            </div>
 
             <!-- Dialog Editor | Body -->
             <!-- If its an element with a title -->
@@ -218,16 +222,28 @@
                 <div flex="100" flex-gt-sm="40">
                     <md-card class="md-card-base">
                         <md-card-content>
-                            <md-list-item>
+                            <md-list-item ng-if="editor_element.data">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.data.title">
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item>
+                            <md-list-item ng-if="editor_element.title">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Title</label>
+                                    <input ng-model="editor_element.title">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="editor_element.data">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Subtitle</label>
                                     <input ng-model="editor_element.data.subtitle">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="editor_element.subtitle">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Subtitle</label>
+                                    <input ng-model="editor_element.subtitle">
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
@@ -260,16 +276,20 @@
                             <!-- if it's a page - all pages have titles -->
 
                             <!-- if it's an element or a blog with a title and subtitle -->
-                            <md-card-title ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
+                            <md-card-title ng-if="editor_element.title || editor_element.data.title" ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <md-card-title-text ng-show="!items_sortable">
                                     <span class="md-headline">Title</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-list-item ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <!-- For Element -->
-                                <md-input-container ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
+                                <md-input-container ng-if="editor_element.title" ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.title">
+                                </md-input-container>
+                                <md-input-container ng-if="editor_element.data.title" ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
+                                    <label>Title</label>
+                                    <input ng-model="editor_element.data.title">
                                 </md-input-container>
                                 <!-- For Element -->
                                 <!-- For Blogs -->
@@ -280,16 +300,20 @@
                                 <!-- For Blogs -->
                             </md-list-item>
 
-                            <md-card-title ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
+                            <md-card-title ng-if="editor_element.subtitle || editor_element.data.subtitle" ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <md-card-title-text ng-show="!items_sortable">
                                     <span class="md-headline">Subtitle</span>
                                 </md-card-title-text>
                             </md-card-title>
                             <md-list-item ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <!-- For Element -->
-                                <md-input-container class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
+                                <md-input-container ng-if="editor_element.subtitle" class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
                                     <label>Sub Title</label>
                                     <input ng-model="editor_element.subtitle">
+                                </md-input-container>
+                                <md-input-container ng-if="editor_element.data.subtitle" class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
+                                    <label>Sub Title</label>
+                                    <input ng-model="editor_element.data.subtitle">
                                 </md-input-container>
                                 <!-- For Element -->
                                 <!-- For Blogs -->
@@ -595,7 +619,7 @@
 
                 <!-- Primary Image Editor | Index Element -->
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.background.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -603,7 +627,7 @@
                     </md-card>
                 </div>
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.foreground.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -614,7 +638,7 @@
 
                 <!-- Primary Image Editor | Index Element - Multiple Columns/Tabs -->
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.items[view].background.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -622,7 +646,7 @@
                     </md-card>
                 </div>
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.items[view].foreground.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -633,7 +657,7 @@
 
                 <!-- Primary Image Editor | Page -->
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.page.background.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.page.background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -641,7 +665,7 @@
                     </md-card>
                 </div>
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.page.foreground.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.page.foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
