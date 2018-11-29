@@ -5,13 +5,12 @@
 	<section style="background: {{base_hue_lighter.value}}">
 		
 		<!-- header -->
-		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- header -->
 
-		<div ng-include src="'application/partials/navigation-dropdown-parent-mobile.html'"></div>
-		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
 
 		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(blogPage.settings.configs, blogPage)" class="md-fab custom-deep-button" aria-label="Edit Blog Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
 	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
