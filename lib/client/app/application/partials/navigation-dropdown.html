@@ -15,7 +15,7 @@
     .dropdown md-tabs.md-default-theme .md-tab .md-ripple-container, .dropdown md-tabs .md-tab .md-ripple-container {
         color: {{base_hue_lightest.value}}!important; 
     }
-    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
+    .navigation.widget md-input-container {margin: 8px 0!important;}
 </style>
 
 <md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center center" layout-wrap class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{base_hue_darkest.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
@@ -47,7 +47,7 @@
     </div>
 
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Projects'}">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Projects', 'null': menu_title == 'Services', 'null': menu_title == 'People'}">
     	
 
     	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Projects'">
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'People'">
+        <div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'People'">
             <div flex="100" layout-margin>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="175px" md-row-height-gt-sm="200px" md-row-height="125px" md-gutter="8px" md-gutter-gt-sm="4px">
                     <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in settings.staff.members | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false">
@@ -131,58 +131,6 @@
                 </md-tab>
             </md-tabs>
         </div>
-
-        <div ng-show="menu_title == 'Services'" layout="row" layout-align="center center" flex="100" layout-margin class="container navigation widget" style="min-width: 100%;">
-            <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; background: #212121;">
-                <div style="text-align: center">
-                    <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
-                </div>
-                <form name="navigation" ng-show="!progressAnimation">
-                    <div style="text-align: center">
-                        <h1>Contact MMA Today!</h1>
-                    </div>
-                    <md-card-content>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input">
-                                <label style="color: {{base_hue_lightest.value}}!important">Full Name</label>
-                                <input name="name" ng-model="navForm.name" minlength="4" required>
-                                <div ng-messages="navigation.name.$error" ng-show="navigation.name.$dirty">
-                                    <div ng-message="required">Name required!</div>
-                                    <div ng-message="minlength">Name too short!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input">
-                                <label style="color: {{base_hue_lightest.value}}!important">Email</label>
-                                <input type="email" name="email" ng-model="navForm.email" required>
-                                <div ng-messages="navigation.email.$error" ng-show="navigation.email.$dirty">
-                                    <div ng-message="required">Email required!</div>
-                                    <div ng-message="email">Enter a valid email!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label style="color: {{base_hue_lightest.value}}!important">Message</label>
-                                <textarea name="message" md-detect-hidden="true" ng-model="navForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                <div ng-messages="navigation.message.$error" ng-show="navigation.message.$dirty">
-                                    <div ng-message="required">Message required!</div>
-                                    <div ng-message="minlength">Message too short!</div>
-                                    <div ng-message="md-maxlength">Message too long!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <div vc-recaptcha key="'6LdzITUUAAAAAJc60kmGZt8DBnyf-xbdPkv8JDff'" ng-model="navForm.recaptcha" style="margin: 0 16px;"></div>
-                        <br>
-                    </md-card-content>
-                    <md-button ng-disabled="navigation.$invalid" ng-click="sendLead(navForm, 'Navigation'); clearForm(navForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
-                        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
-                    </md-button>
-                </form>
-            </div>
-        </div>
-        
 
         <div class="navigation map-widget widget" ng-show="menu_title == 'About Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
 
