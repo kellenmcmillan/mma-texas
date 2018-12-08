@@ -6,7 +6,7 @@
 </style>
 
 <div layout="column" layout-align="center center" class="footer-container" flex ng-attr-style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;" ng-class="{'footer-ms-explorer': browser == 'ie'}">
-	<div class="footer-content-top" layout="column" layout-gt-sm="row" layout-padding flex style="z-index: 2">
+	<!-- <div class="footer-content-top" layout="column" layout-gt-sm="row" layout-padding flex style="z-index: 2">
 		<div layout="column" layout-padding layout-align="center center" flex="100" flex-gt-sm="33">
 			<div>
 				<img class="footer logo" src="media/logo-full-white.png">
@@ -31,9 +31,6 @@
 			</div>
 			<div layout-padding flex="100" flex-sm="25" flex-gt-sm="25">
 				<md-list>
-<!-- 					<md-list-item>
-						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};"></p>
-					</md-list-item> -->
 					<md-list-item>
 						<a href="/spotlight/planning"><p ng-attr-style="color: {{base_hue_lightest.value}};">Planning</p></a>
 					</md-list-item>
@@ -78,9 +75,13 @@
 				</md-list>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="footer-content-bottom" layout="row" layout-align="start center" layout-padding flex layout-wrap style="z-index: 2">
-		<span flex="30"></span>
+		<div layout="column" layout-padding layout-align="center center" flex="100" flex-gt-sm="30">
+			<div>
+				<img class="footer logo" src="media/logo-full-white.png">
+			</div>
+		</div>
 		<div layout-padding flex="100" flex-gt-sm="70">
 			<div flex layout="row" layout-align="end center" layout-wrap>
 				<div flex="50" flex-sm="25" flex-gt-sm="25">
