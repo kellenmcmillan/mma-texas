@@ -23,6 +23,9 @@
         display: inline-block;
     }
 }
+.sub-navigation.dropdown {
+    max-height: calc(100% - 100px);
+}
 .navigation.panel {
     width: 33%;
     height: 100%;
