@@ -16,6 +16,7 @@
         color: {{base_hue_lightest.value}}!important; 
     }
     .navigation.widget md-input-container {margin: 8px 0!important;}
+    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
 </style>
 
 <md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center center" layout-wrap class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{base_hue_darkest.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
@@ -75,18 +76,18 @@
         </div>
 
         <div ng-if="menu_title == 'Services'" layout="row" layout-align="center center" flex="100" layout-margin class="container navigation widget" style="min-width: 100%;">
-            <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; margin-bottom: 48px;">
+            <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; background: #373737; margin-bottom: 48px;">
                 <div style="text-align: center">
                     <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
                 </div>
                 <form name="navigation" ng-show="!progressAnimation">
                     <div style="text-align: center">
-                        <h1>Contact MMA Today!</h1>
+                        <h1 style="color: {{base_hue_lightest.value}}!important;">Contact MMA Today!</h1>
                     </div>
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input">
-                                <label>Full Name</label>
+                                <label style="color: {{base_hue_lightest.value}}!important">Full Name</label>
                                 <input name="name" ng-model="navForm.name" minlength="4" required>
                                 <div ng-messages="navigation.name.$error" ng-show="navigation.name.$dirty">
                                     <div ng-message="required">Name required!</div>
@@ -96,7 +97,7 @@
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input">
-                                <label>Email</label>
+                                <label style="color: {{base_hue_lightest.value}}!important">Email</label>
                                 <input type="email" name="email" ng-model="navForm.email" required>
                                 <div ng-messages="navigation.email.$error" ng-show="navigation.email.$dirty">
                                     <div ng-message="required">Email required!</div>
@@ -106,7 +107,7 @@
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Message</label>
+                                <label style="color: {{base_hue_lightest.value}}!important">Message</label>
                                 <textarea name="message" md-detect-hidden="true" ng-model="navForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
                                 <div ng-messages="navigation.message.$error" ng-show="navigation.message.$dirty">
                                     <div ng-message="required">Message required!</div>
@@ -115,7 +116,7 @@
                                 </div>
                             </md-input-container>
                         </md-list-item>
-                        <div vc-recaptcha key="'6LdzITUUAAAAAJc60kmGZt8DBnyf-xbdPkv8JDff'" ng-model="navForm.recaptcha" style="margin: 0 16px;"></div>
+                        <div vc-recaptcha theme="dark" key="'6LdzITUUAAAAAJc60kmGZt8DBnyf-xbdPkv8JDff'" ng-model="navForm.recaptcha" style="margin: 0 16px;"></div>
                         <br>
                     </md-card-content>
                     <md-button ng-disabled="navigation.$invalid" ng-click="sendLead(navForm, 'Navigation'); clearForm(navForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
