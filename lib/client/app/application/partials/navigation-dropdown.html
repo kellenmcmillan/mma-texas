@@ -37,11 +37,11 @@
                 <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
                     {{menu_title}}
                 </h2>
-                <!-- <div class="md-secondary">
-                    <md-button class="md-icon-button" ng-click="close_menu()" aria-label="Close">
+                <div class="md-secondary" hide-gt-sm>
+                    <md-button class="md-icon-button" ng-click="close_menu(); close_parent_menu()" aria-label="Close">
                         <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
                     </md-button>
-                </div> -->
+                </div>
             </md-list-item>
             <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
