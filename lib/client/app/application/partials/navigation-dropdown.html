@@ -80,7 +80,7 @@
                     </md-list-item>
                 </md-list>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="125px" md-row-height-gt-sm="90px" md-row-height="200px" md-gutter="8px" md-gutter-gt-sm="4px">
-                    <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in settings.staff.members | limitTo: 4" md-rowspan="2" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                    <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in settings.staff.members | limitTo: 2" md-rowspan="2" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 
                             <img ng-src="{{tile.source}}" ng-class="{'active': hovered}" style="width: auto; max-width:300%; min-height: 100%; margin-top: 304px; filter: grayscale(100%);">
                             <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
