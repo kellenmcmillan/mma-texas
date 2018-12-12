@@ -17,7 +17,7 @@
 				<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 				{{item.navigation.parent.name}}
 			</md-button>
-			<a ng-if="item.navigation.parent.name == 'People'" ng-href="{{item.navigation.parent.url}}">
+			<a ng-if="item.navigation.parent.name == 'People'" ng-click="sub_navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
 				<md-button class="navigation link" ng-attr-style="color: {{base_hue_darkest.value}};">
 					<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 					{{item.navigation.parent.name}}
