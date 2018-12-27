@@ -695,7 +695,8 @@
                                 <md-button class="md-raised" ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;" ng-click="cancelStaff()">Cancel</md-button>
                                 <md-button class="md-raised" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="addStaffMember(staff)">Save</md-button>
                                 <md-button class="md-raised" ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;" ng-click="removeStaff(staff.id, settings.staff.members)">Remove</md-button>
-                                <md-button class="md-raised" ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="updateStaffMember(staff)">Update</md-button>
+                                <md-button class="md-raised" ng-if="staff.id != undefined && staffgridview == true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="updateStaffMember(staff)">Update</md-button>
+                                <md-button class="md-raised" ng-if="staffgridview == false" ng-click="updateStaffOrder()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">update</md-button>
                             </md-card-actions>
                         </md-card>
                     </div>
