@@ -594,7 +594,8 @@
                                 </div>
                             </md-card-content>
                             <md-card-actions layout="row" layout-align="end center">
-                                <md-button class="md-raised" ng-click="updateStaff(staffSortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                <md-button class="md-raised" ng-if="staffgridview == false" ng-click="updateStaffOrder()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">update
+                                </md-button>
                             </md-card-actions>
                         </md-card>
                     </div>
@@ -703,9 +704,6 @@
                                 </md-button>
 
                                 <md-button class="md-raised" ng-if="staff.id != undefined && staffgridview == true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="updateStaffMember(staff)">Update
-                                </md-button>
-
-                                <md-button class="md-raised" ng-if="staffgridview == false" ng-click="updateStaffOrder()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">update
                                 </md-button>
 
                             </md-card-actions>
