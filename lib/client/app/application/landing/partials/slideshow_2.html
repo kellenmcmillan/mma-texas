@@ -23,6 +23,14 @@
 		<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" ng-class="{'slide-transition': $index == visible_slide}" ng-show="$index == visible_slide" style="display: block; margin: 0 auto; min-width: 100%; min-height: 100%; width: auto!important; height: auto!important;">
 
 		<div ng-show="$index == visible_slide" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 2;" layout="row" layout-align="center center" layout-wrap>
+
+			<md-button ng-click="left_slideshow_control()" class="md-fab custom-deep-button" aria-label="left slideshow control" style="position: absolute; bottom: calc(50% - 36px;); left: 8px; background-color: {{primary_hue_normal.value}}!important; z-index: 1;">
+    			<md-icon style="color: {{base_hue_lighter.value}};">keyboard_arrow_left</md-icon>
+			</md-button>
+
+			<md-button ng-click="right_slideshow_control()" class="md-fab custom-deep-button" aria-label="right slideshow control" style="position: absolute; bottom: calc(50% - 36px;); right: 8px; background-color: {{primary_hue_normal.value}}!important; z-index: 1;">
+    			<md-icon style="color: {{base_hue_lighter.value}};">keyboard_arrow_right</md-icon>
+			</md-button>
 		
 			<span flex="100" flex-sm="75" flex-gt-sm="50" style="text-align: center;">
 				<p class="slide-text-one" ng-class="{'active': $index == visible_slide}" style="color: {{base_hue_lightest.value}};">{{slide.metadata.name}}</p>
