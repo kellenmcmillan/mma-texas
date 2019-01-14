@@ -35,8 +35,11 @@
 /* Media */
 
 .slideshow_slide_image {
-  opacity: .75;
+  opacity: 0;
   will-change: opacity;
+}
+.slideshow_slide_image.slide-transition {
+  opacity: .75
 }
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
@@ -97,7 +100,7 @@
 
 /* Media Query */
 
-@media screen and (max-width: 840px) {
+/*@media screen and (max-width: 840px) {
   .slide-text-one,
   .slide-text-two {
     font-size: 36px!important;
@@ -121,7 +124,7 @@
     height: 100%;
     margin-left: -12.5%;
   }
-}
+}*/
 /* Media Query */
 
 /* ========== Lighweight Hero Slideshow ========== */
