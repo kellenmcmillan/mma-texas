@@ -21,11 +21,32 @@
 			
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 				<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
-					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -90%; left: -25%; transform: scale(.9);" ng-src="{{projectPage.data.page.foreground.images.source}}">
+					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -35%; left: -12.5%; transform: scale(.9);" ng-src="{{projectPage.data.page.foreground.images.source}}">
 				</div>
-				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
-			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
-			    </md-button>
+				
+			    <div class="lock-size" layout="row" layout-align="center center" style="position: absolute; top: 364px; right: 8px;">
+					<md-fab-speed-dial md-open="demo.isOpen" md-direction="left"
+					ng-class="demo.selectedMode">
+						<md-fab-trigger>
+							<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
+						        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
+						    </md-button>
+						</md-fab-trigger>
+
+						<md-fab-actions>
+							<md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+								<md-icon md-svg-src="media/twitter.png" aria-label="Share onTwitter"></md-icon>
+							</md-button>
+							<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+								<md-icon md-svg-src="media/facebook.png" aria-label="Share on Facebook"></md-icon>
+							</md-button>
+							<md-button aria-label="Instagram" class="md-fab md-raised md-mini">
+								<md-icon md-svg-src="media/instagram-mma-green.png" aria-label="Share on Instagram"></md-icon>
+							</md-button>
+						</md-fab-actions>
+					</md-fab-speed-dial>
+				</div>
+				
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 		    		<h1 class="type heading" style="margin-bottom: 24px;">{{projectPage.data.title}}</h1>
 			    	<div ng-repeat="content in projectPage.data.page.contents">
