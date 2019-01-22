@@ -51,8 +51,8 @@
 				<div flex="100" ng-show="projectImages.length > 0" style="margin: 0 0 8px 0; padding: 0;">
 	                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="8px" md-gutter-gt-sm="8px">
 	                    <md-grid-tile class="md-whiteframe-8dp" ng-repeat="tile in projectImages | limitTo: 12" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;">
-	                        <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
-	                        <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.metadata.tags[0]}}</h3></md-grid-tile-footer>
+	                        <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%; transform: scale(.6);">
+	                        <!-- <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.metadata.tags[0]}}</h3></md-grid-tile-footer> -->
 	                    </md-grid-tile>
 	                </md-grid-list>
 	            </div>
