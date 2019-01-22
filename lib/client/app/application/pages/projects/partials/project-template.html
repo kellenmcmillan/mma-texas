@@ -24,10 +24,11 @@
 					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -35%; left: -12.5%; transform: scale(.9);" ng-src="{{projectPage.data.page.foreground.images.source}}">
 				</div>
 				
-			    
+			    <div class="lock-size" layout="row" layout-align="center center" style="position: absolute; top: 364px; right: 8px;">
 					<md-fab-speed-dial md-direction="left" ng-class="md-scale">
+						
 						<md-fab-trigger>
-							<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
+							<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}};">
 						        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
 						    </md-button>
 						</md-fab-trigger>
@@ -44,6 +45,7 @@
 							</md-button>
 						</md-fab-actions>
 					</md-fab-speed-dial>
+				</div>
 
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 		    		<h1 class="type heading" style="margin-bottom: 24px;">{{projectPage.data.title}}</h1>
