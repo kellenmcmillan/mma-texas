@@ -39,8 +39,8 @@
 
 		</div>
 	</div> -->
-	<slick data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-	 <div ng-repeat="slide in secondary_slideshow_hero.images">
+	<slick ng-if="secondary_slideshow_hero.images.length" dots=true infinite=false speed=300 slides-to-show=5 touch-move=true slides-to-scroll=1>
+	 <div hero-slider-content-container ng-repeat="slide in secondary_slideshow_hero.images">
 	 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; min-height: 100%; width: auto!important; height: auto!important;">
 	 </div>
 	</slick>
