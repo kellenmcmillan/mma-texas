@@ -16,7 +16,7 @@
     @media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
 </style>
 <div class="lightweight-hero--slideshow component slideshow" hero-element style="position: relative;">
-	<slick style="max-height: 100%;" ng-if="secondary_slideshow_hero.images.length" infinite=true speed=3000 autoplay=true slides-to-show=2 touch-move=true slides-to-scroll=1>
+	<slick style="max-height: 100%;" ng-if="secondary_slideshow_hero.images.length" infinite=true speed=300 waitForAnimate=false pauseOnHover=false autoplay=true centerMode=true slides-to-show=1 touch-move=true slides-to-scroll=1>
 	 <div ng-repeat="slide in secondary_slideshow_hero.images">
 	 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-height: 100%; min-width: 100%; width: auto!important; height: auto!important;">
 	 </div>
