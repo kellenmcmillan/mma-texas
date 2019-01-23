@@ -16,7 +16,7 @@
     @media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
 </style>
-<div style="position: relative; height: 350px; width: 100%;">
+<div class="lightweight-hero--slideshow component slideshow" hero-element style="position: relative;">
 	<!-- <span id="top" hash="top" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
 
 	<div class="slide--display" style="width: 100%;" hero-slider-content-container ng-repeat="slide in secondary_slideshow_hero.images" orientation-aware>
@@ -39,8 +39,8 @@
 
 		</div>
 	</div> -->
-	<slick ng-if="secondary_slideshow_hero.images.length" dots=true infinite=false speed=300 slides-to-show=5 touch-move=true slides-to-scroll=1>
-	 <div hero-slider-content-container ng-repeat="slide in secondary_slideshow_hero.images">
+	<slick ng-if="secondary_slideshow_hero.images.length" dots=true infinite=true speed=300 slides-to-show=2 touch-move=true slides-to-scroll=1>
+	 <div ng-repeat="slide in secondary_slideshow_hero.images">
 	 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; min-height: 100%; width: auto!important; height: auto!important;">
 	 </div>
 	</slick>
