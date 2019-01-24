@@ -35,19 +35,30 @@
 						</md-fab-trigger>
 
 						<md-fab-actions>
-							<a href="#" socialshare socialshare-provider="twitter" socialshare-text="{{projectPage.data.title}}" socialshare-hashtags="mma texas" socialshare-url="{{pageURL}}">
+							<a href="#" socialshare socialshare-provider="twitter" socialshare-text="{{projectPage.data.title}}" socialshare-hashtags="mma texas" socialshare-url="{{pageURL}}" socialshare-trigger="click">
 								<md-button aria-label="Twitter" class="md-fab md-raised md-mini">
-									<md-icon md-svg-src="media/003-twitter.svg" aria-label="Share onTwitter"></md-icon>
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/003-twitter.svg" aria-label="Share on Twitter"></md-icon>
 								</md-button>
 							</a>
 							<a href="#" socialshare socialshare-provider="facebook" socialshare-text="{{projectPage.data.title}}" socialshare-trigger="click" socialshare-type="sharer">
 								<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-									<md-icon md-svg-src="media/001-facebook.svg" aria-label="Share on Facebook"></md-icon>
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/001-facebook.svg" aria-label="Share on Facebook"></md-icon>
 								</md-button>
 							</a>
-							<md-button aria-label="Instagram" class="md-fab md-raised md-mini">
-								<md-icon md-svg-src="media/002-instagram.svg" aria-label="Share on Instagram"></md-icon>
-							</md-button>
+							socialshare
+                        socialshare-provider="linkedin"
+                        socialshare-text="{{test.testValue}}"
+                        socialshare-url="http://720kb.net"
+                        socialshare-description="720kb linkedin summary"
+                        socialshare-source="720kb"
+                        socialshare-popup-height="300"
+                        socialshare-popup-width="400"
+                        socialshare-trigger="click"
+							<a href="#" socialshare socialshare-provider="linkedin" socialshare-url="{{pageURL}}" socialshare-text="{{projectPage.data.title}}" socialshare-description="{{projectPage.data.page.contents[1]}}" socialshare-source="{{settings.data.company_name}}">
+								<md-button aria-label="Linked In" class="md-fab md-raised md-mini" socialshare-trigger="click">
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/005-linkedin.svg" aria-label="Share on Linked In"></md-icon>
+								</md-button>
+							</a>
 						</md-fab-actions>
 
 					</md-fab-speed-dial>
