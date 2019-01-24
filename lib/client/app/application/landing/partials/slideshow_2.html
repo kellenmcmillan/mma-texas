@@ -19,18 +19,18 @@
  .slick-dots {
  	position: absolute; top: 16px; right: -40%;
  }
-.slick-container {
-	height: 600px;
+ .slick-container {
+  height: 60%;
 }
 .slick-slider, .slick-list, .slick-track {
- 	height: 100%;
+  height: 100%;
 }
 </style>
 <div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_darkest.value}};">
-	<div flex="100" style="position: relative;">
-		<slick ng-if="secondary_slideshow_hero.images.length" infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false autoplay=true centerMode=true slides-to-show=2 touch-move=true slides-to-scroll=2 responsive=slick_breakpoints>
+	<div flex="100" style="position: relative; height: 600px;">
+		<slick ng-if="secondary_slideshow_hero.images.length" infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false autoplay=true centerMode=true slides-to-show=2 touch-move=true slides-to-scroll=1>
 		 <div ng-repeat="slide in secondary_slideshow_hero.images">
-		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; width: auto!important; min-height: 600px!important; height: auto;">
+		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; width: auto!important; min-height: 00px!important; height: auto;">
 		 </div>
 		</slick>
 	</div>
