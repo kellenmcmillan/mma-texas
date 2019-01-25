@@ -2,10 +2,10 @@
 	.header-ms-explorer {position: fixed; width: 100%;}
 </style>
 <div ng-show="project_lightbox" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,.25); z-index: 21;" layout="row" layout-align="center center" layout-wrap>
-	<div flex="100" style="position: relative; height: 700px;">
-		<slick ng-if="projectImages.length"  responsive=slick_breakpoints infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false pauseOnFocus=false autoplay=true centerMode=true slides-to-show=1 touch-move=true slides-to-scroll=1 initialSlide=start_project_lightbox>
-		 <div ng-repeat="slide in projectImages">
-		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; width: auto!important; min-height: 700px!important; height: auto;">
+	<div flex="100" style="position: relative; height: 500px;">
+		<slick ng-if="projectImages.length"  responsive=slick_breakpoints infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false pauseOnFocus=false autoplay=true centerMode=true slides-to-show=1 touch-move=true slides-to-scroll=1 initialSlide=start_project_lightbox layout="row" layout-align="center center" layout-wrap>
+		 <div ng-repeat="slide in projectImages" flex="100">
+		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; width: auto!important; min-height: 500px!important; height: auto;">
 		 </div>
 		</slick>
 	</div>
