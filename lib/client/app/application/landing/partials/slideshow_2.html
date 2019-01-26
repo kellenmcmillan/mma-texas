@@ -17,7 +17,7 @@
 </style>
 <div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_darkest.value}};">
 	<div flex="100" style="position: relative; height: 700px;">
-		<slick ng-if="secondary_slideshow_hero.images.length" init-onload=true responsive=slick_breakpoints infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false autoplay=true centerMode=true slides-to-show=2 touch-move=true slides-to-scroll=2 autoplaySpeed=6000>
+		<slick ng-if="secondary_slideshow_hero.images.length" init-onload=true responsive=slick_breakpoints infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false autoplay=true centerMode=true slides-to-show=1 touch-move=true slides-to-scroll=1 autoplaySpeed=6000>
 		 <div ng-repeat="slide in secondary_slideshow_hero.images">
 		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; min-width: 100%; width: auto!important; min-height: 700px!important; height: auto;">
 		 </div>
