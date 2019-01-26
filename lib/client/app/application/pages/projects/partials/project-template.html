@@ -6,11 +6,7 @@
             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">close</md-icon>
     </md-button>
 	<div flex="100" style="position: relative; height: 600px;">
-		<slick ng-if="projectImages.length" init-onload=true responsive=slick_breakpoints infinite=true speed=1000 mobileFirst=true waitForAnimate=false pauseOnHover=false pauseOnFocus=false autoplay=true centerMode=true slides-to-show=1 touch-move=true slides-to-scroll=1 initialSlide={{start_project_lightbox}} autoplaySpeed=6000 style="max-height: 600px; overflow: hidden">
-		 <div ng-repeat="slide in projectImages">
-		 	<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{slide.source}}" style="display: block; margin: 0 auto; width: auto!important; max-height: 600px!important; height: auto;">
-		 </div>
-		</slick>
+		<img alt="{{slide.alt}}" class="slideshow_slide_image" ng-src="{{project_image_lightbox}}" style="display: block; margin: 0 auto; width: auto!important; max-height: 600px!important; height: auto;">
 	</div>
 </div>
 <md-content class="page project" style="height: {{window_height}}px">
@@ -93,7 +89,7 @@
 				<div flex="100" ng-show="projectImages.length > 0" style="margin: 0 0 8px 0; padding: 0;">
 	                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="8px" md-gutter-gt-sm="8px">
 	                    <md-grid-tile class="md-whiteframe-8dp" ng-repeat="tile in projectImages | limitTo: 24" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;">
-	                        <img ng-click="open_lightweight_box($index)" ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%; transform: scale(.6);">
+	                        <img ng-click="open_lightweight_box(tile.source)" ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%; transform: scale(.6);">
 	                        <!-- <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.metadata.tags[0]}}</h3></md-grid-tile-footer> -->
 	                    </md-grid-tile>
 	                </md-grid-list>
