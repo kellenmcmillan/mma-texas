@@ -60,7 +60,7 @@
 }
 
 .spotlight.hero {height: 408px;}
-.page.spotlight img {
+.page.spotlight .spotlight.hero img {
 	opacity: .2!important; 
 	min-height:100%!important; 
 	max-width: 100%!important; 
