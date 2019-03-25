@@ -2,6 +2,8 @@
 
 .header {
     z-index: 4!important;
+    height: 84px;
+    max-height: 84px;
 }
 .suite-dialog .header {
     z-index: 21!important;
