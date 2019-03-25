@@ -19,7 +19,7 @@
     .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
 </style>
 
-<div ng-show="navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
+<div ng-show="navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 84px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
 	
 	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="60" flex-gt-lg="60" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini" ng-attr-style="position: relative; padding: 0; background: transparent;">
 
@@ -94,7 +94,7 @@
 
 			            <div flex="100">
 			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="16px">
-			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_projects | limitTo: 4" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_projects | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 			                        <a href="{{tile.settings.url}}" ng-click="close_menu()">
 			                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:200%; max-height: 100%;">
 			                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
@@ -111,7 +111,7 @@
 
 		        <!-- Contact form -->
 
-		        <div ng-if="menu_title == 'Capabilities' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+		        <div ng-if="menu_title == 'Services' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
 
 			        <div layout="row" layout-align="center center" flex="100" class="container navigation" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
@@ -166,7 +166,7 @@
 
 		    	</div>
 
-		    	<div ng-if="menu_title == 'Our Team' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+		    	<div ng-if="menu_title == 'Careers' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
 
 			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
